@@ -64,6 +64,7 @@ def gpt_chat(
     max_tokens: int = 1024,
     temperature: float = 0.0,
     num_comps=1,
+    logprobs=False
 ):
     client = AzureOpenAI(
         api_key=os.getenv("OPENAI_API_KEY"),
@@ -74,10 +75,12 @@ def gpt_chat(
         model=model,
         messages=[dataclasses.asdict(message) for message in messages],
         # max_tokens=max_tokens,
-        temperature=temperature,
+        temperature=0.0,
         top_p=1,
         frequency_penalty=0.0,
         presence_penalty=0.0,
+        logprobs=logprobs
+        # response_format={"type": "json_object"}
         # n=num_comps,
     )
     if num_comps == 1:
@@ -94,7 +97,8 @@ class ModelBase():
     def __repr__(self) -> str:
         return f'{self.name}'
 
-    def generate_chat(self, messages: List[Message], max_tokens: int = 1024, temperature: float = 0.2, num_comps: int = 1) -> Union[List[str], str]:
+    def generate_chat(self, messages: List[Message], max_tokens: int = 1024, temperature: float = 0.2,
+                      num_comps: int = 1, logprobs: bool = False) -> Union[List[str], str]:
         raise NotImplementedError
 
     def generate(self, prompt: str, max_tokens: int = 1024, stop_strs: Optional[List[str]] = None, temperature: float = 0.0, num_comps=1) -> Union[List[str], str]:
@@ -106,13 +110,14 @@ class GPTChat(ModelBase):
         self.name = model_name
         self.is_chat = True
 
-    def generate_chat(self, messages: List[Message], max_tokens: int = 1024, temperature: float = 0.2, num_comps: int = 1) -> Union[List[str], str]:
-        return gpt_chat(self.name, messages, max_tokens, temperature, num_comps)
+    def generate_chat(self, messages: List[Message], max_tokens: int = 1024, temperature: float = 0.0,
+                      num_comps: int = 1, logprobs: bool = False) -> Union[List[str], str]:
+        return gpt_chat(self.name, messages, max_tokens, temperature, num_comps, logprobs)
 
 
 class GPT4(GPTChat):
-    def __init__(self):
-        super().__init__("gpt-4")
+    def __init__(self, name):
+        super().__init__(name)
 
 
 class GPT35(GPTChat):
