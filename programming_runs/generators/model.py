@@ -75,7 +75,7 @@ def gpt_chat(
         model=model,
         messages=[dataclasses.asdict(message) for message in messages],
         # max_tokens=max_tokens,
-        temperature=0.0,
+        temperature=temperature,
         top_p=1,
         frequency_penalty=0.0,
         presence_penalty=0.0,

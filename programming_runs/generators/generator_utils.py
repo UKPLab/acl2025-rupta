@@ -262,10 +262,13 @@ def generic_rewriting(
                 )
             ]
             if privacy_score == 'Yes' and utility_score == 'No':
+                u_set = set(reflection_utility.split(', '))
+                p_set = set(reflection_privacy.split(', '))
+                p_set_diff = ', '.join(list(p_set.difference(u_set)))
                 messages.append(
                     Message(
                         role="user",
-                        content=f"{reflection_privacy_rewriting_instruction}\nThe entity list is here:\n{reflection_privacy}",
+                        content=f"{reflection_privacy_rewriting_instruction}\nThe entity list is here:\n{p_set_diff}",
                     )
                 )
                 output_1, usage_1, finish_reason_1 = model.generate_chat(messages=messages, num_comps=num_comps,
@@ -404,7 +407,7 @@ def generic_privacy_reflection(
             ),
             Message(
                 role="user",
-                content=f'{privacy_reflection_chat_instruction_1}\nThe description text is here:\n{curr_rewriting}',
+                content=f'{privacy_reflection_chat_instruction_1}\nThe biography text is here:\n{curr_rewriting}',
             )
         ]
         output, usage_1, finish_reason_1 = model.generate_chat(messages=messages)
@@ -448,6 +451,7 @@ def generic_privacy_reflection(
             output_dict['finish_reason_1'] = finish_reason_1
             output_dict['finish_reason_2'] = finish_reason_2
             output_dict['candidates'] = candidate
+            output_dict['rank'] = sim_score.argmax()
         else:
             output_dict = {}
             output_dict["Confirmation"] = "No"
@@ -456,6 +460,7 @@ def generic_privacy_reflection(
             output_dict['usage_1']['prompt_tokens'] = usage_1.prompt_tokens
             output_dict['usage_1']['completion_tokens'] = usage_1.completion_tokens
             output_dict['candidates'] = candidate
+            output_dict['rank'] = sim_score.size + 1
     else:
         output = model.generate(
             f'{privacy_reflection_completion_instruction_1}\n[Description text]:\n{curr_rewriting}\n[Person name]:\n{people}')
@@ -485,21 +490,35 @@ def generic_utility_reflection(
             )
         ]
         output, usage_1, finish_reason_1 = model.generate_chat(messages=messages)
-        occupation = json.loads(output.replace('\n', '').replace("```json", '').replace("```", ""))['Occupation']
-        if occupation != label:
+        temp = json.loads(output.replace('\n', '').replace("```json", '').replace("```", ""))
+        occupation = temp['Occupation']
+        confidence_score = int(temp["Confidence Score"])
+        if occupation != label or (occupation == label and confidence_score < 90):
             messages.append(
                 Message(
                     role="assistant",
                     content=output
                 )
             )
-            messages.append(
-                Message(
-                    role="user",
-                    content=f'The true occupation of the person is {label}. {utility_reflection_completion_instruction_2}'
-                            # f'The original biography is here:\n{input_text}'
+            if occupation != label:
+                messages.append(
+                    Message(
+                        role="user",
+                        content=f'The true occupation of the person is {label}. Your classification is wrong.'
+                                f' {utility_reflection_completion_instruction_2}'
+                                # f'The original biography is here:\n{input_text}'
+                    )
                 )
-            )
+            else:
+                messages.append(
+                    Message(
+                        role="user",
+                        content=f'The true occupation of the person is {label}. '
+                                f'Your confidence of making this classification is no high enough. '
+                                f'{utility_reflection_completion_instruction_2}'
+                                # f'The original biography is here:\n{input_text}'
+                    )
+                )
             output, usage_2, finish_reason_2 = model.generate_chat(messages=messages)
             try:
                 output_dict = json.loads(output.replace('\n', '').replace("```json", '').replace("```", ""))
@@ -522,6 +541,8 @@ def generic_utility_reflection(
             output_dict['finish_reason_1'] = finish_reason_1
             output_dict['finish_reason_2'] = finish_reason_2
             output_dict['occupation'] = occupation
+            output_dict['Confidence Score'] = confidence_score
+            output_dict['Confirmation'] = 'No'
         else:
             output_dict = {}
             output_dict["Confirmation"] = "Yes"
@@ -530,6 +551,7 @@ def generic_utility_reflection(
             output_dict['usage_1']['prompt_tokens'] = usage_1.prompt_tokens
             output_dict['usage_1']['completion_tokens'] = usage_1.completion_tokens
             output_dict['occupation'] = occupation
+            output_dict['Confidence Score'] = confidence_score
     else:
         output = model.generate(
             f'{utility_reflection_completion_instruction_1}\n[Original text]:\n{input_text}\n[Anonymized text]:\n{curr_rewriting}\n[Classification label]{label}')
