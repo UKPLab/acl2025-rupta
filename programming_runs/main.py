@@ -34,6 +34,12 @@ def get_args():
 
     parser.add_argument("--verbose", action='store_true',
                         help="To print live logs")
+    parser.add_argument("--no_utility", action='store_true',
+                        help="Whether add utility evaluation module")
+    parser.add_argument("--mem_len", type=int,
+                        help="The maximum length of memory", default=3)
+    parser.add_argument("--p_threshold", type=int,
+                        help="The maximum number of distinguishable people", default=10)
     # TODO: implement this
     # parser.add_argument("--is_resume", action='store_true', help="To resume run")
     # parser.add_argument("--resume_dir", type=str, help="If resume, the logging directory", default="")
@@ -50,17 +56,20 @@ def strategy_factory(strategy: str):
         return kwargs_wrapper
 
     if strategy == "simple":
-        return kwargs_wrapper_gen(run_simple, delete_keys=["expansion_factor", "max_iters"])
+        return kwargs_wrapper_gen(run_simple, delete_keys=["expansion_factor", "max_iters", "no_utility", "p_threshold",
+                                                           "mem_len"])
     elif strategy == "reflexion":
         return kwargs_wrapper_gen(run_reflexion, delete_keys=["expansion_factor"])
     elif strategy == "immediate-reflexion":
-        return kwargs_wrapper_gen(run_immediate_reflexion, delete_keys=["expansion_factor"])
+        return kwargs_wrapper_gen(run_immediate_reflexion, delete_keys=["expansion_factor", "no_utility", "p_threshold",
+                                                                        "mem_len"])
     elif strategy == "immediate-refinement":
-        return kwargs_wrapper_gen(run_immediate_refinement, delete_keys=["expansion_factor"])
+        return kwargs_wrapper_gen(run_immediate_refinement, delete_keys=["expansion_factor", "no_utility", "p_threshold"
+                                                                         , "mem_len"])
     elif strategy == "reflexion-ucs":
         return kwargs_wrapper_gen(run_reflexion_ucs)
     elif strategy == "test-acc":
-        return kwargs_wrapper_gen(run_test_acc, delete_keys=["expansion_factor", "max_iters"])
+        return kwargs_wrapper_gen(run_test_acc, delete_keys=["expansion_factor", "max_iters", "mem_len"])
     else:
         raise ValueError(f"Strategy `{strategy}` is not supported")
 
@@ -77,7 +86,7 @@ def main(args):
     # check if log path already exists
     log_dir = os.path.join(args.root_dir, args.run_name)
     log_path = os.path.join(
-        log_dir, f"{dataset_name}_{args.strategy}_{args.max_iters}_{args.model.replace('/', '-')}_pass_at_k_{args.pass_at_k}_{args.language}.jsonl")
+        log_dir, f"{dataset_name}_{args.strategy}_{args.max_iters}_{args.model.replace('/', '-')}_pass_at_k_{args.pass_at_k}_{args.language}_no-utility_{args.no_utility}_p-threshold_{args.p_threshold}_mem-len_{args.mem_len}.jsonl")
     if not os.path.exists(log_dir):
         os.makedirs(log_dir)
 
@@ -116,7 +125,10 @@ pass@k: {args.pass_at_k}
         log_path=log_path,
         verbose=args.verbose,
         expansion_factor=args.expansion_factor,
-        is_leetcode=args.is_leetcode
+        is_leetcode=args.is_leetcode,
+        no_utility=args.no_utility,
+        mem_len=args.mem_len,
+        p_threshold=args.p_threshold
     )
 
     print(f"Done! Check out the logs in `{log_path}`")

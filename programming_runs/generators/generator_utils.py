@@ -192,6 +192,7 @@ def generic_rewriting(
     detection_result,
     num_comps,
     temperature,
+    no_utility,
     whole_task_instruction: str,
     general_system_instruction: str,
     detection_result_prefix: str,
@@ -200,7 +201,8 @@ def generic_rewriting(
     refelection_utility_instruction: str,
     simple_rewriting_instruction: str,
     reflection_privacy_rewriting_instruction: str,
-    reflection_utility_rewriting_instruction: str
+    reflection_utility_rewriting_instruction: str,
+    reinforcement_learning_instruction: str
 ):
     if strategy != "reflexion" and strategy != "simple":
         raise ValueError(
@@ -219,7 +221,7 @@ def generic_rewriting(
                 ),
                 Message(
                     role="user", # TODO: check this
-                    content=f"{whole_task_instruction}\n{detection_result_prefix}\nThe person description text is here:\n{input_text}",
+                    content=f"{whole_task_instruction}\n\n{detection_result_prefix}\nThe person description text is here:\n{input_text}",
                 ),
                 Message(
                     role="assistant",  # TODO: check this
@@ -239,82 +241,54 @@ def generic_rewriting(
             output_dict['usage']['completion_tokens'] = usage.completion_tokens
             output_dict['finish_reason'] = finish_reason
         else:
-            messages = [
-                Message(
-                    role="system",
-                    content=general_system_instruction,
-                ),
-                Message(
-                    role="user",  # TODO: check this
-                    content=f"{whole_task_instruction}\n{detection_result_prefix}\nThe person description text is here:\n{input_text}",
-                ),
-                Message(
-                    role="assistant",  # TODO: check this
-                    content=f"{detection_result}",
-                ),
-                Message(
-                    role="user",
-                    content=f"{simple_rewriting_instruction}",
-                ),
-                Message(
-                    role="assistant",
-                    content=prev_rewriting
-                )
-            ]
-            if privacy_score == 'Yes' and utility_score == 'No':
-                u_set = set(reflection_utility.split(', '))
-                p_set = set(reflection_privacy.split(', '))
-                p_set_diff = ', '.join(list(p_set.difference(u_set)))
-                messages.append(
+            if not no_utility:
+                if privacy_score == 'Yes':
+                    # prev_rewriting += f"Suggestion: These entities {reflection_privacy} could be further generalized to improve the privacy score."
+                    prev_rewriting += f"Suggestion: Entities that can be used to infer the person identity could be further generalized to improve the privacy score."
+                else:
+                    # prev_rewriting += f"Suggestion: These entities {reflection_utility} could be replaced with the original specific entities in the original biography to improve the utility score. You should also avoid specifying entities that could decrease the privacy score."
+                    prev_rewriting += f"Suggestion: Entities that are about the description of the occupation but can not be used to infer the person identity could be specified to improve the utility score. "
+                messages = [
+                    Message(
+                        role="system",
+                        content=general_system_instruction,
+                    ),
+                    Message(
+                        role='user',
+                        content=reinforcement_learning_instruction + f"\n\nThe original biography is {input_text}\n\n{prev_rewriting}"
+                    )
+                ]
+                output, usage, finish_reason = model.generate_chat(messages=messages, num_comps=num_comps,
+                                                                         temperature=temperature)
+                output_dict = json.loads(output.replace('\n', '').replace("```json", '').replace("```", ""))
+                output_dict['raw_text'] = output
+                output_dict['usage'] = {}
+                output_dict['usage']['prompt_tokens'] = usage.prompt_tokens
+                output_dict['usage']['completion_tokens'] = usage.completion_tokens
+                output_dict['finish_reason'] = finish_reason
+            else:
+                messages = [
+                    Message(
+                        role="system",
+                        content=general_system_instruction,
+                    ),
+                    Message(
+                        role="user",  # TODO: check this
+                        content=f"{whole_task_instruction}\n\n{detection_result_prefix}\nThe person description text is here:\n{input_text}",
+                    ),
+                    Message(
+                        role="assistant",  # TODO: check this
+                        content=f"{detection_result}",
+                    ),
                     Message(
                         role="user",
-                        content=f"{reflection_privacy_rewriting_instruction}\nThe entity list is here:\n{p_set_diff}",
+                        content=f"{simple_rewriting_instruction}",
+                    ),
+                    Message(
+                        role="assistant",
+                        content=prev_rewriting
                     )
-                )
-                output_1, usage_1, finish_reason_1 = model.generate_chat(messages=messages, num_comps=num_comps,
-                                                                         temperature=temperature)
-                messages.extend(
-                    [
-                        Message(
-                            role="assistant",
-                            content=output_1
-                        ),
-                        Message(
-                            role="user",
-                            content=f"{reflection_utility_rewriting_instruction}\nThe entity list is here:\n{reflection_utility}"
-                        )
-                    ]
-                )
-                output_2, usage_2, finish_reason_2 = model.generate_chat(messages=messages, num_comps=num_comps,
-                                                                         temperature=temperature)
-                output_dict = json.loads(output_2.replace('\n', '').replace("```json", '').replace("```", ""))
-                output_dict['raw_text_privacy'] = output_1
-                output_dict['usage_privacy'] = {}
-                output_dict['usage_privacy']['prompt_tokens'] = usage_1.prompt_tokens
-                output_dict['usage_privacy']['completion_tokens'] = usage_1.completion_tokens
-                output_dict['finish_reason_privacy'] = finish_reason_1
-
-                output_dict['raw_text_utility'] = output_2
-                output_dict['usage_utility'] = {}
-                output_dict['usage_utility']['prompt_tokens'] = usage_2.prompt_tokens
-                output_dict['usage_utility']['completion_tokens'] = usage_2.completion_tokens
-                output_dict['finish_reason_utility'] = finish_reason_2
-            else:
-                if utility_score == 'No':
-                    messages.append(
-                        Message(
-                            role="user",
-                            content=f"{reflection_utility_rewriting_instruction}\nThe entity list is here:\n{reflection_utility}",
-                        )
-                    )
-                    output, usage, finish_reason = model.generate_chat(messages=messages, num_comps=num_comps,
-                                                                             temperature=temperature)
-                    output_dict = json.loads(output.replace('\n', '').replace("```json", '').replace("```", ""))
-                    output_dict['raw_text_utility'] = output
-                    output_dict['usage_utility'] = {}
-                    output_dict['usage_utility']['prompt_tokens'] = usage.prompt_tokens
-                    output_dict['usage_utility']['completion_tokens'] = usage.completion_tokens
-                    output_dict['finish_reason_utility'] = finish_reason
+                ]
                 if privacy_score == 'Yes':
                     messages.append(
                         Message(
@@ -325,12 +299,11 @@ def generic_rewriting(
                     output, usage, finish_reason = model.generate_chat(messages=messages, num_comps=num_comps,
                                                                              temperature=temperature)
                     output_dict = json.loads(output.replace('\n', '').replace("```json", '').replace("```", ""))
-                    output_dict['raw_text_privacy'] = output
-                    output_dict['usage_privacy'] = {}
-                    output_dict['usage_privacy']['prompt_tokens'] = usage.prompt_tokens
-                    output_dict['usage_privacy']['completion_tokens'] = usage.completion_tokens
-                    output_dict['finish_reason_privacy'] = finish_reason
-
+                    output_dict['raw_text'] = output
+                    output_dict['usage'] = {}
+                    output_dict['usage']['prompt_tokens'] = usage.prompt_tokens
+                    output_dict['usage']['completion_tokens'] = usage.completion_tokens
+                    output_dict['finish_reason'] = finish_reason
     else:
         if strategy == "simple":
             prompt = (f"{whole_task_instruction}\n[description text]:\n{input_text}\n{detection_result_prefix}"
@@ -393,6 +366,7 @@ def generic_privacy_reflection(
         model: ModelBase,
         curr_rewriting: str,
         people: str,
+        no_utility: bool,
         general_system_instruction: str,
         privacy_reflection_chat_instruction_1: str,
         privacy_reflection_completion_instruction_1: str,
@@ -417,41 +391,51 @@ def generic_privacy_reflection(
         people_emb = emb_model.encode(people)
         sim_score = candidate_emb.dot(people_emb)
         if True in (sim_score > 0.75):
-            messages.append(
-                Message(
-                    role="assistant",
-                    content=output
+            if no_utility:
+                messages.append(
+                    Message(
+                        role="assistant",
+                        content=output
+                    )
                 )
-            )
-            messages.append(
-                Message(
-                    role="user",
-                    content=f"The person described by the text is {people}. {privacy_reflection_completion_instruction_2}"
+                messages.append(
+                    Message(
+                        role="user",
+                        content=f"The person described by the text is {people}. {privacy_reflection_completion_instruction_2}"
+                    )
                 )
-            )
-            output, usage_2, finish_reason_2 = model.generate_chat(messages=messages)
-            try:
-                output_dict = json.loads(output.replace('\n', '').replace("```json", '').replace("```", ""))
-            except json.decoder.JSONDecodeError:
-                messages.append(Message(role="assistant", content=output))
-                messages.append(Message(role="user",
-                                        content="Your response is not exactly in the JSON structure that I provide, "
-                                                "put your response in the JSON structure."))
-                output, usage_3, finish_reason_3 = model.generate_chat(messages=messages)
-                output_dict = json.loads(output.replace('\n', '').replace("```json", '').replace("```", ""))
-                output_dict['usage_3'] = {}
-                output_dict['usage_3']['prompt_tokens'] = usage_3.prompt_tokens
-                output_dict['usage_3']['completion_tokens'] = usage_3.completion_tokens
-            output_dict['usage_2'] = {}
-            output_dict['usage_1'] = {}
-            output_dict['usage_1']['prompt_tokens'] = usage_1.prompt_tokens
-            output_dict['usage_2']['prompt_tokens'] = usage_2.prompt_tokens
-            output_dict['usage_1']['completion_tokens'] = usage_1.completion_tokens
-            output_dict['usage_2']['completion_tokens'] = usage_2.completion_tokens
-            output_dict['finish_reason_1'] = finish_reason_1
-            output_dict['finish_reason_2'] = finish_reason_2
-            output_dict['candidates'] = candidate
-            output_dict['rank'] = sim_score.argmax()
+                output, usage_2, finish_reason_2 = model.generate_chat(messages=messages)
+                try:
+                    output_dict = json.loads(output.replace('\n', '').replace("```json", '').replace("```", ""))
+                except json.decoder.JSONDecodeError:
+                    messages.append(Message(role="assistant", content=output))
+                    messages.append(Message(role="user",
+                                            content="Your response is not exactly in the JSON structure that I provide, "
+                                                    "put your response in the JSON structure."))
+                    output, usage_3, finish_reason_3 = model.generate_chat(messages=messages)
+                    output_dict = json.loads(output.replace('\n', '').replace("```json", '').replace("```", ""))
+                    output_dict['usage_3'] = {}
+                    output_dict['usage_3']['prompt_tokens'] = usage_3.prompt_tokens
+                    output_dict['usage_3']['completion_tokens'] = usage_3.completion_tokens
+                output_dict['usage_2'] = {}
+                output_dict['usage_1'] = {}
+                output_dict['usage_1']['prompt_tokens'] = usage_1.prompt_tokens
+                output_dict['usage_2']['prompt_tokens'] = usage_2.prompt_tokens
+                output_dict['usage_1']['completion_tokens'] = usage_1.completion_tokens
+                output_dict['usage_2']['completion_tokens'] = usage_2.completion_tokens
+                output_dict['finish_reason_1'] = finish_reason_1
+                output_dict['finish_reason_2'] = finish_reason_2
+                output_dict['candidates'] = candidate
+                output_dict['rank'] = int(sim_score.argmax()) + 1
+            else:
+                output_dict = {}
+                output_dict["Confirmation"] = "Yes"
+                output_dict["Advice"] = ""
+                output_dict['usage_1'] = {}
+                output_dict['usage_1']['prompt_tokens'] = usage_1.prompt_tokens
+                output_dict['usage_1']['completion_tokens'] = usage_1.completion_tokens
+                output_dict['candidates'] = candidate
+                output_dict['rank'] = int(sim_score.argmax()) + 1
         else:
             output_dict = {}
             output_dict["Confirmation"] = "No"
@@ -471,6 +455,7 @@ def generic_utility_reflection(
         input_text: str,
         model: ModelBase,
         label: str,
+        privacy_score: str,
         curr_rewriting: str,
         general_system_instruction: str,
         utility_reflection_chat_instruction_1: str,
@@ -493,56 +478,61 @@ def generic_utility_reflection(
         temp = json.loads(output.replace('\n', '').replace("```json", '').replace("```", ""))
         occupation = temp['Occupation']
         confidence_score = int(temp["Confidence Score"])
-        if occupation != label or (occupation == label and confidence_score < 90):
-            messages.append(
-                Message(
-                    role="assistant",
-                    content=output
-                )
-            )
-            if occupation != label:
-                messages.append(
-                    Message(
-                        role="user",
-                        content=f'The true occupation of the person is {label}. Your classification is wrong.'
-                                f' {utility_reflection_completion_instruction_2}'
-                                # f'The original biography is here:\n{input_text}'
-                    )
-                )
-            else:
-                messages.append(
-                    Message(
-                        role="user",
-                        content=f'The true occupation of the person is {label}. '
-                                f'Your confidence of making this classification is no high enough. '
-                                f'{utility_reflection_completion_instruction_2}'
-                                # f'The original biography is here:\n{input_text}'
-                    )
-                )
-            output, usage_2, finish_reason_2 = model.generate_chat(messages=messages)
-            try:
-                output_dict = json.loads(output.replace('\n', '').replace("```json", '').replace("```", ""))
-            except json.decoder.JSONDecodeError:
-                messages.append(Message(role="assistant", content=output))
-                messages.append(Message(role="user",
-                                        content="Your response is not exactly in the JSON structure that I provide, "
-                                                "put your response in the JSON structure."))
-                output, usage_3, finish_reason_3 = model.generate_chat(messages=messages)
-                output_dict = json.loads(output.replace('\n', '').replace("```json", '').replace("```", ""))
-                output_dict['usage_3'] = {}
-                output_dict['usage_3']['prompt_tokens'] = usage_3.prompt_tokens
-                output_dict['usage_3']['completion_tokens'] = usage_3.completion_tokens
+        if occupation != label or (occupation == label and confidence_score < 100):
+            # messages.append(
+            #     Message(
+            #         role="assistant",
+            #         content=output
+            #     )
+            # )
+            # if occupation != label:
+            #     messages.append(
+            #         Message(
+            #             role="user",
+            #             content=f'The true occupation of the person is {label}. Your classification is wrong.'
+            #                     f' {utility_reflection_completion_instruction_2}'
+            #                     # f'The original biography is here:\n{input_text}'
+            #         )
+            #     )
+            # else:
+            #     messages.append(
+            #         Message(
+            #             role="user",
+            #             content=f'The true occupation of the person is {label}. '
+            #                     f'Your confidence of making this classification is no high enough. '
+            #                     f'{utility_reflection_completion_instruction_2}'
+            #                     # f'The original biography is here:\n{input_text}'
+            #         )
+            #     )
+            # output, usage_2, finish_reason_2 = model.generate_chat(messages=messages)
+            # try:
+            #     output_dict = json.loads(output.replace('\n', '').replace("```json", '').replace("```", ""))
+            # except json.decoder.JSONDecodeError:
+            #     messages.append(Message(role="assistant", content=output))
+            #     messages.append(Message(role="user",
+            #                             content="Your response is not exactly in the JSON structure that I provide, "
+            #                                     "put your response in the JSON structure."))
+            #     output, usage_3, finish_reason_3 = model.generate_chat(messages=messages)
+            #     output_dict = json.loads(output.replace('\n', '').replace("```json", '').replace("```", ""))
+            #     output_dict['usage_3'] = {}
+            #     output_dict['usage_3']['prompt_tokens'] = usage_3.prompt_tokens
+            #     output_dict['usage_3']['completion_tokens'] = usage_3.completion_tokens
+            # output_dict['usage_1'] = {}
+            # output_dict['usage_2'] = {}
+            # output_dict['usage_1']['prompt_tokens'] = usage_1.prompt_tokens
+            # output_dict['usage_2']['prompt_tokens'] = usage_2.prompt_tokens
+            # output_dict['usage_1']['completion_tokens'] = usage_1.completion_tokens
+            # output_dict['usage_2']['completion_tokens'] = usage_2.completion_tokens
+            # output_dict['finish_reason_1'] = finish_reason_1
+            # output_dict['finish_reason_2'] = finish_reason_2
+            output_dict = {}
+            output_dict["Confirmation"] = "No"
+            output_dict["Advice"] = ""
             output_dict['usage_1'] = {}
-            output_dict['usage_2'] = {}
             output_dict['usage_1']['prompt_tokens'] = usage_1.prompt_tokens
-            output_dict['usage_2']['prompt_tokens'] = usage_2.prompt_tokens
             output_dict['usage_1']['completion_tokens'] = usage_1.completion_tokens
-            output_dict['usage_2']['completion_tokens'] = usage_2.completion_tokens
-            output_dict['finish_reason_1'] = finish_reason_1
-            output_dict['finish_reason_2'] = finish_reason_2
             output_dict['occupation'] = occupation
             output_dict['Confidence Score'] = confidence_score
-            output_dict['Confirmation'] = 'No'
         else:
             output_dict = {}
             output_dict["Confirmation"] = "Yes"

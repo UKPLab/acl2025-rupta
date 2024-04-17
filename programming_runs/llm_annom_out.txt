@@ -4,982 +4,1282 @@ strategy: reflexion
 pass@k: 1
 
 Loading the dataset...
-Loaded 255 examples
-  0%|          | 0/244 [00:00<?, ?it/s]  0%|          | 1/244 [01:09<4:41:50, 69.59s/it]  1%|          | 2/244 [01:43<3:15:15, 48.41s/it]  1%|          | 3/244 [02:09<2:34:47, 38.54s/it]  2%|▏         | 4/244 [02:45<2:29:47, 37.45s/it]  2%|▏         | 5/244 [03:13<2:15:04, 33.91s/it]  2%|▏         | 6/244 [04:04<2:37:13, 39.64s/it]  3%|▎         | 7/244 [04:36<2:27:32, 37.35s/it]  3%|▎         | 8/244 [06:58<4:37:18, 70.50s/it]  4%|▎         | 9/244 [07:30<3:48:42, 58.39s/it]  4%|▍         | 10/244 [07:50<3:02:37, 46.83s/it]  5%|▍         | 11/244 [08:31<2:54:49, 45.02s/it]  5%|▍         | 12/244 [09:48<3:30:56, 54.55s/it]  5%|▌         | 13/244 [10:47<3:35:16, 55.92s/it]  6%|▌         | 14/244 [11:54<3:47:02, 59.23s/it]  6%|▌         | 15/244 [12:22<3:10:34, 49.93s/it]  7%|▋         | 16/244 [13:11<3:08:37, 49.64s/it]  7%|▋         | 17/244 [14:01<3:07:44, 49.62s/it]  7%|▋         | 18/244 [14:38<2:52:38, 45.83s/it]  8%|▊         | 19/244 [15:36<3:06:33, 49.75s/it]  8%|▊         | 20/244 [16:04<2:40:20, 42.95s/it]  9%|▊         | 21/244 [16:41<2:33:16, 41.24s/it]  9%|▉         | 22/244 [17:06<2:15:05, 36.51s/it]  9%|▉         | 23/244 [17:41<2:11:57, 35.83s/it] 10%|▉         | 24/244 [18:33<2:29:58, 40.90s/it] 10%|█         | 25/244 [19:12<2:26:59, 40.27s/it] 11%|█         | 26/244 [19:36<2:08:06, 35.26s/it] 11%|█         | 27/244 [20:12<2:08:22, 35.50s/it] 11%|█▏        | 28/244 [21:00<2:22:07, 39.48s/it] 12%|█▏        | 29/244 [22:30<3:14:45, 54.35s/it] 12%|█▏        | 30/244 [23:55<3:46:47, 63.59s/it] 13%|█▎        | 31/244 [24:37<3:23:03, 57.20s/it] 13%|█▎        | 32/244 [25:06<2:51:43, 48.60s/it] 14%|█▎        | 33/244 [25:55<2:52:02, 48.92s/it] 14%|█▍        | 34/244 [26:28<2:34:23, 44.11s/it] 14%|█▍        | 35/244 [27:20<2:41:38, 46.40s/it] 15%|█▍        | 36/244 [28:07<2:41:13, 46.51s/it] 15%|█▌        | 37/244 [28:48<2:35:02, 44.94s/it] 16%|█▌        | 38/244 [29:43<2:44:30, 47.92s/it] 16%|█▌        | 39/244 [30:09<2:21:58, 41.55s/it] 16%|█▋        | 40/244 [30:38<2:08:09, 37.69s/it] 17%|█▋        | 41/244 [31:28<2:19:48, 41.32s/it] 17%|█▋        | 42/244 [31:48<1:57:17, 34.84s/it] 18%|█▊        | 43/244 [32:26<2:00:27, 35.96s/it] 18%|█▊        | 44/244 [32:56<1:54:12, 34.26s/it] 18%|█▊        | 45/244 [33:29<1:51:37, 33.66s/it] 19%|█▉        | 46/244 [33:56<1:44:49, 31.76s/it] 19%|█▉        | 47/244 [34:33<1:49:09, 33.25s/it] 20%|█▉        | 48/244 [35:01<1:43:31, 31.69s/it] 20%|██        | 49/244 [35:49<1:58:38, 36.50s/it] 20%|██        | 50/244 [36:14<1:47:11, 33.15s/it] 21%|██        | 51/244 [36:57<1:55:50, 36.01s/it] 21%|██▏       | 52/244 [37:28<1:50:41, 34.59s/it] 22%|██▏       | 53/244 [38:20<2:06:27, 39.73s/it] 22%|██▏       | 54/244 [38:48<1:55:29, 36.47s/it] 23%|██▎       | 55/244 [39:17<1:46:56, 33.95s/it] 23%|██▎       | 56/244 [39:46<1:42:34, 32.74s/it] 23%|██▎       | 57/244 [40:29<1:51:19, 35.72s/it] 24%|██▍       | 58/244 [41:42<2:25:24, 46.91s/it] 24%|██▍       | 59/244 [42:08<2:05:29, 40.70s/it] 25%|██▍       | 60/244 [43:13<2:26:56, 47.92s/it] 25%|██▌       | 61/244 [43:45<2:11:04, 42.97s/it] 25%|██▌       | 62/244 [44:56<2:36:34, 51.62s/it] 26%|██▌       | 63/244 [45:27<2:16:51, 45.37s/it] 26%|██▌       | 64/244 [45:54<1:59:56, 39.98s/it] 27%|██▋       | 65/244 [46:17<1:44:02, 34.88s/it] 27%|██▋       | 66/244 [46:56<1:46:24, 35.87s/it] 27%|██▋       | 67/244 [49:42<3:40:59, 74.92s/it] 28%|██▊       | 68/244 [50:16<3:03:45, 62.65s/it] 28%|██▊       | 69/244 [50:51<2:39:05, 54.55s/it] 29%|██▊       | 70/244 [51:34<2:28:13, 51.11s/it] 29%|██▉       | 71/244 [52:17<2:20:04, 48.58s/it] 30%|██▉       | 72/244 [52:44<2:00:21, 41.99s/it] 30%|██▉       | 73/244 [53:34<2:07:03, 44.58s/it] 30%|███       | 74/244 [54:09<1:57:27, 41.46s/it] 31%|███       | 75/244 [55:20<2:22:06, 50.45s/it] 31%|███       | 76/244 [55:54<2:07:44, 45.62s/it] 32%|███▏      | 77/244 [56:20<1:49:58, 39.51s/it] 32%|███▏      | 78/244 [57:03<1:52:31, 40.67s/it] 32%|███▏      | 79/244 [58:14<2:16:40, 49.70s/it] 33%|███▎      | 80/244 [58:43<1:59:17, 43.65s/it] 33%|███▎      | 81/244 [59:11<1:45:27, 38.82s/it] 34%|███▎      | 82/244 [59:52<1:46:37, 39.49s/it] 34%|███▍      | 83/244 [1:01:06<2:13:54, 49.90s/it] 34%|███▍      | 84/244 [1:02:31<2:41:30, 60.57s/it] 35%|███▍      | 85/244 [1:02:55<2:11:00, 49.44s/it] 35%|███▌      | 86/244 [1:03:20<1:51:09, 42.21s/it] 36%|███▌      | 87/244 [1:04:12<1:58:07, 45.14s/it] 36%|███▌      | 88/244 [1:04:36<1:40:50, 38.78s/it] 36%|███▋      | 89/244 [1:05:03<1:30:40, 35.10s/it] 37%|███▋      | 90/244 [1:05:47<1:37:07, 37.84s/it] 37%|███▋      | 91/244 [1:06:34<1:43:13, 40.48s/it] 38%|███▊      | 92/244 [1:07:07<1:37:05, 38.33s/it] 38%|███▊      | 93/244 [1:07:41<1:33:19, 37.08s/it] 39%|███▊      | 94/244 [1:08:43<1:51:31, 44.61s/it] 39%|███▉      | 95/244 [1:11:59<3:43:13, 89.89s/it] 39%|███▉      | 96/244 [1:12:45<3:09:20, 76.76s/it] 40%|███▉      | 97/244 [1:15:58<4:33:22, 111.58s/it] 40%|████      | 98/244 [1:19:00<5:23:15, 132.84s/it] 41%|████      | 99/244 [1:21:52<5:49:25, 144.59s/it] 41%|████      | 100/244 [1:24:39<6:03:03, 151.28s/it] 41%|████▏     | 101/244 [1:27:51<6:29:51, 163.58s/it] 42%|████▏     | 102/244 [1:28:30<4:58:40, 126.20s/it] 42%|████▏     | 103/244 [1:29:41<4:17:25, 109.55s/it] 43%|████▎     | 104/244 [1:30:15<3:22:23, 86.74s/it]  43%|████▎     | 105/244 [1:33:25<4:33:16, 117.96s/it] 43%|████▎     | 106/244 [1:36:27<5:15:31, 137.18s/it] 44%|████▍     | 107/244 [1:37:15<4:11:36, 110.20s/it] 44%|████▍     | 108/244 [1:39:33<4:28:49, 118.60s/it] 45%|████▍     | 109/244 [1:41:13<4:14:31, 113.12s/it] 45%|████▌     | 110/244 [1:42:01<3:28:48, 93.49s/it]  45%|████▌     | 111/244 [1:42:35<2:47:35, 75.61s/it] 46%|████▌     | 112/244 [1:45:14<3:41:42, 100.77s/it] 46%|████▋     | 113/244 [1:48:26<4:39:41, 128.10s/it] 47%|████▋     | 114/244 [1:50:30<4:35:00, 126.93s/it] 47%|████▋     | 115/244 [1:53:22<5:01:45, 140.35s/it] 48%|████▊     | 116/244 [1:58:25<6:43:47, 189.28s/it] 48%|████▊     | 117/244 [2:01:36<6:41:22, 189.62s/it] 48%|████▊     | 118/244 [2:07:15<8:12:18, 234.43s/it] 49%|████▉     | 119/244 [2:13:31<9:36:54, 276.92s/it] 49%|████▉     | 120/244 [2:14:24<7:13:33, 209.78s/it] 50%|████▉     | 121/244 [2:15:21<5:35:58, 163.89s/it] 50%|█████     | 122/244 [2:19:33<6:26:55, 190.29s/it] 50%|█████     | 123/244 [2:20:53<5:17:19, 157.35s/it] 51%|█████     | 124/244 [2:22:32<4:39:19, 139.66s/it] 51%|█████     | 125/244 [2:23:07<3:34:57, 108.38s/it] 52%|█████▏    | 126/244 [2:26:22<4:24:20, 134.41s/it] 52%|█████▏    | 127/244 [2:29:45<5:02:03, 154.90s/it] 52%|█████▏    | 128/244 [2:33:35<5:43:05, 177.46s/it] 53%|█████▎    | 129/244 [2:37:58<6:29:17, 203.11s/it] 53%|█████▎    | 130/244 [2:38:26<4:46:11, 150.63s/it] 54%|█████▎    | 131/244 [2:39:24<3:51:02, 122.67s/it] 54%|█████▍    | 132/244 [2:40:14<3:08:39, 101.07s/it] 55%|█████▍    | 133/244 [2:41:14<2:44:10, 88.74s/it]  55%|█████▍    | 134/244 [2:41:57<2:17:18, 74.90s/it] 55%|█████▌    | 135/244 [2:42:38<1:57:57, 64.94s/it] 56%|█████▌    | 136/244 [2:43:47<1:58:54, 66.06s/it] 56%|█████▌    | 137/244 [2:44:58<2:00:22, 67.50s/it] 57%|█████▋    | 138/244 [2:45:36<1:43:39, 58.68s/it] 57%|█████▋    | 139/244 [2:46:39<1:44:57, 59.98s/it] 57%|█████▋    | 140/244 [2:49:42<2:47:51, 96.84s/it] 58%|█████▊    | 141/244 [2:50:28<2:20:07, 81.63s/it] 58%|█████▊    | 142/244 [2:51:35<2:11:01, 77.07s/it] 59%|█████▊    | 143/244 [2:52:22<1:54:43, 68.15s/it] 59%|█████▉    | 144/244 [2:53:18<1:47:37, 64.57s/it] 59%|█████▉    | 145/244 [2:54:34<1:52:01, 67.90s/it] 60%|█████▉    | 146/244 [2:55:07<1:34:09, 57.65s/it] 60%|██████    | 147/244 [2:56:26<1:43:28, 64.01s/it] 61%|██████    | 148/244 [2:57:55<1:54:09, 71.35s/it] 61%|██████    | 149/244 [3:01:26<2:59:19, 113.26s/it] 61%|██████▏   | 150/244 [3:02:04<2:22:13, 90.78s/it]  62%|██████▏   | 151/244 [3:03:02<2:05:20, 80.87s/it] 62%|██████▏   | 152/244 [3:04:19<2:02:05, 79.63s/it] 63%|██████▎   | 153/244 [3:05:42<2:02:23, 80.69s/it] 63%|██████▎   | 154/244 [3:06:39<1:50:22, 73.59s/it] 64%|██████▎   | 155/244 [3:07:20<1:34:31, 63.72s/it] 64%|██████▍   | 156/244 [3:08:10<1:27:31, 59.68s/it] 64%|██████▍   | 157/244 [3:08:57<1:20:58, 55.84s/it] 65%|██████▍   | 158/244 [3:10:06<1:25:57, 59.97s/it] 65%|██████▌   | 159/244 [3:10:41<1:14:10, 52.36s/it] 66%|██████▌   | 160/244 [3:11:32<1:12:45, 51.97s/it] 66%|██████▌   | 161/244 [3:12:22<1:11:13, 51.49s/it] 66%|██████▋   | 162/244 [3:13:59<1:28:41, 64.90s/it] 67%|██████▋   | 163/244 [3:14:43<1:19:25, 58.83s/it] 67%|██████▋   | 164/244 [3:15:31<1:14:10, 55.63s/it] 68%|██████▊   | 165/244 [3:16:43<1:19:45, 60.57s/it] 68%|██████▊   | 166/244 [3:18:42<1:41:25, 78.02s/it] 68%|██████▊   | 167/244 [3:19:36<1:30:39, 70.64s/it] 69%|██████▉   | 168/244 [3:20:47<1:29:47, 70.89s/it] 69%|██████▉   | 169/244 [3:25:22<2:45:00, 132.01s/it] 70%|██████▉   | 170/244 [3:25:59<2:07:46, 103.60s/it] 70%|███████   | 171/244 [3:26:50<1:46:45, 87.75s/it]  70%|███████   | 172/244 [3:30:35<2:34:43, 128.94s/it] 71%|███████   | 173/244 [3:31:32<2:06:59, 107.32s/it] 71%|███████▏  | 174/244 [3:32:11<1:41:34, 87.06s/it]  72%|███████▏  | 175/244 [3:33:35<1:38:52, 85.98s/it] 72%|███████▏  | 176/244 [3:34:43<1:31:26, 80.68s/it] 73%|███████▎  | 177/244 [3:35:42<1:22:42, 74.06s/it] 73%|███████▎  | 178/244 [3:36:26<1:11:33, 65.05s/it] 73%|███████▎  | 179/244 [3:38:29<1:29:29, 82.61s/it] 74%|███████▍  | 180/244 [3:39:21<1:18:00, 73.14s/it] 74%|███████▍  | 181/244 [3:40:24<1:13:50, 70.33s/it] 75%|███████▍  | 182/244 [3:41:06<1:03:44, 61.69s/it] 75%|███████▌  | 183/244 [3:41:58<59:45, 58.77s/it]   75%|███████▌  | 184/244 [3:42:41<53:59, 53.99s/it] 76%|███████▌  | 185/244 [3:43:37<53:43, 54.63s/it] 76%|███████▌  | 186/244 [3:44:31<52:38, 54.46s/it] 77%|███████▋  | 187/244 [3:50:47<2:23:23, 150.95s/it] 77%|███████▋  | 188/244 [3:52:13<2:02:48, 131.58s/it] 77%|███████▋  | 189/244 [3:52:57<1:36:25, 105.20s/it] 78%|███████▊  | 190/244 [3:54:00<1:23:13, 92.47s/it]  78%|███████▊  | 191/244 [3:54:50<1:10:34, 79.90s/it] 79%|███████▊  | 192/244 [3:56:24<1:12:51, 84.07s/it] 79%|███████▉  | 193/244 [3:57:33<1:07:40, 79.62s/it] 80%|███████▉  | 194/244 [3:58:58<1:07:38, 81.16s/it] 80%|███████▉  | 195/244 [4:00:34<1:09:50, 85.51s/it] 80%|████████  | 196/244 [4:01:19<58:42, 73.38s/it]   81%|████████  | 197/244 [4:02:19<54:22, 69.42s/it] 81%|████████  | 198/244 [4:03:06<47:59, 62.60s/it] 82%|████████▏ | 199/244 [4:03:44<41:28, 55.31s/it] 82%|████████▏ | 200/244 [4:05:34<52:42, 71.88s/it] 82%|████████▏ | 201/244 [4:06:32<48:21, 67.47s/it] 83%|████████▎ | 202/244 [4:07:36<46:28, 66.39s/it] 83%|████████▎ | 203/244 [4:08:14<39:37, 57.98s/it] 84%|████████▎ | 204/244 [4:09:22<40:34, 60.87s/it] 84%|████████▍ | 205/244 [4:10:45<44:03, 67.78s/it] 84%|████████▍ | 206/244 [4:12:13<46:45, 73.82s/it] 85%|████████▍ | 207/244 [4:13:13<42:50, 69.47s/it] 85%|████████▌ | 208/244 [4:13:58<37:16, 62.13s/it] 86%|████████▌ | 209/244 [4:14:30<31:04, 53.27s/it] 86%|████████▌ | 210/244 [4:16:42<43:29, 76.74s/it] 86%|████████▋ | 211/244 [4:18:07<43:36, 79.29s/it] 87%|████████▋ | 212/244 [4:18:55<37:15, 69.85s/it] 87%|████████▋ | 213/244 [4:20:14<37:36, 72.80s/it] 88%|████████▊ | 214/244 [4:21:22<35:36, 71.22s/it] 88%|████████▊ | 215/244 [4:22:07<30:35, 63.31s/it] 89%|████████▊ | 216/244 [4:23:15<30:12, 64.72s/it] 89%|████████▉ | 217/244 [4:23:52<25:21, 56.37s/it] 89%|████████▉ | 218/244 [4:24:49<24:32, 56.64s/it] 90%|████████▉ | 219/244 [4:25:53<24:31, 58.85s/it] 90%|█████████ | 220/244 [4:26:39<22:00, 55.03s/it] 91%|█████████ | 221/244 [4:29:41<35:43, 93.19s/it] 91%|█████████ | 222/244 [4:30:31<29:24, 80.22s/it] 91%|█████████▏| 223/244 [4:31:11<23:47, 67.96s/it] 92%|█████████▏| 224/244 [4:32:17<22:27, 67.40s/it] 92%|█████████▏| 225/244 [4:33:28<21:43, 68.61s/it] 93%|█████████▎| 226/244 [4:34:19<19:00, 63.37s/it] 93%|█████████▎| 227/244 [4:35:08<16:41, 58.90s/it] 93%|█████████▎| 228/244 [4:36:32<17:44, 66.51s/it] 94%|█████████▍| 229/244 [4:39:46<26:10, 104.68s/it] 94%|█████████▍| 230/244 [4:41:06<22:43, 97.37s/it]  95%|█████████▍| 231/244 [4:42:29<20:08, 92.96s/it] 95%|█████████▌| 232/244 [4:43:08<15:20, 76.69s/it] 95%|█████████▌| 233/244 [4:44:22<13:56, 76.01s/it] 96%|█████████▌| 234/244 [4:46:29<15:14, 91.42s/it] 96%|█████████▋| 235/244 [4:47:53<13:20, 88.95s/it] 97%|█████████▋| 236/244 [4:49:17<11:39, 87.46s/it] 97%|█████████▋| 237/244 [4:50:07<08:54, 76.42s/it] 98%|█████████▊| 238/244 [4:50:56<06:49, 68.25s/it] 98%|█████████▊| 239/244 [4:51:40<05:04, 60.91s/it] 98%|█████████▊| 240/244 [4:53:18<04:47, 71.89s/it] 99%|█████████▉| 241/244 [4:54:25<03:31, 70.39s/it] 99%|█████████▉| 242/244 [4:55:38<02:22, 71.20s/it]100%|█████████▉| 243/244 [4:56:30<01:05, 65.42s/it]100%|██████████| 244/244 [4:57:56<00:00, 71.76s/it]100%|██████████| 244/244 [4:57:56<00:00, 73.26s/it]
-Prompt tokens number: 6865, Completion tokens number: 948. 
+Loaded 239 examples
+  0%|          | 0/239 [00:00<?, ?it/s]  0%|          | 1/239 [03:11<12:38:49, 191.30s/it]  1%|          | 2/239 [05:19<10:09:03, 154.19s/it]  1%|▏         | 3/239 [05:58<6:38:50, 101.40s/it]   2%|▏         | 4/239 [10:35<11:09:18, 170.89s/it]  2%|▏         | 5/239 [11:54<8:57:54, 137.92s/it]   3%|▎         | 6/239 [17:09<12:49:24, 198.13s/it]  3%|▎         | 7/239 [17:56<9:34:46, 148.65s/it]   3%|▎         | 8/239 [22:48<12:27:50, 194.24s/it]  4%|▍         | 9/239 [24:20<10:22:16, 162.33s/it]  4%|▍         | 10/239 [25:17<8:15:24, 129.80s/it]  5%|▍         | 11/239 [30:33<11:49:22, 186.68s/it]  5%|▌         | 12/239 [31:12<8:56:37, 141.84s/it]   5%|▌         | 13/239 [35:04<10:37:27, 169.24s/it]  6%|▌         | 14/239 [35:58<8:23:19, 134.22s/it]   6%|▋         | 15/239 [40:39<11:07:02, 178.67s/it]  7%|▋         | 16/239 [43:54<11:21:27, 183.35s/it]  7%|▋         | 17/239 [49:16<13:53:23, 225.24s/it]  8%|▊         | 18/239 [50:20<10:51:20, 176.83s/it]  8%|▊         | 19/239 [51:44<9:05:15, 148.71s/it]   8%|▊         | 20/239 [52:27<7:06:59, 116.98s/it]  9%|▉         | 21/239 [53:55<6:33:18, 108.25s/it]  9%|▉         | 22/239 [59:25<10:32:06, 174.77s/it] 10%|▉         | 23/239 [1:00:24<8:24:27, 140.13s/it] 10%|█         | 24/239 [1:01:31<7:03:46, 118.26s/it] 10%|█         | 25/239 [1:06:04<9:47:24, 164.70s/it] 11%|█         | 26/239 [1:07:45<8:36:39, 145.54s/it] 11%|█▏        | 27/239 [1:08:42<6:59:59, 118.86s/it] 12%|█▏        | 28/239 [1:12:12<8:34:21, 146.26s/it] 12%|█▏        | 29/239 [1:16:42<10:42:10, 183.48s/it] 13%|█▎        | 30/239 [1:21:35<12:33:21, 216.27s/it] 13%|█▎        | 31/239 [1:25:37<12:57:05, 224.16s/it] 13%|█▎        | 32/239 [1:26:18<9:43:15, 169.06s/it]  14%|█▍        | 33/239 [1:31:17<11:54:18, 208.05s/it] 14%|█▍        | 34/239 [1:32:31<9:33:47, 167.94s/it]  15%|█▍        | 35/239 [1:33:04<7:12:58, 127.35s/it] 15%|█▌        | 36/239 [1:34:44<6:43:05, 119.14s/it] 15%|█▌        | 37/239 [1:35:47<5:44:45, 102.40s/it] 16%|█▌        | 38/239 [1:36:42<4:55:30, 88.21s/it]  16%|█▋        | 39/239 [1:37:49<4:32:07, 81.64s/it] 17%|█▋        | 40/239 [1:38:41<4:01:24, 72.79s/it] 17%|█▋        | 41/239 [1:39:19<3:25:40, 62.33s/it] 18%|█▊        | 42/239 [1:40:03<3:06:55, 56.93s/it] 18%|█▊        | 43/239 [1:40:41<2:47:29, 51.27s/it] 18%|█▊        | 44/239 [1:43:46<4:57:09, 91.43s/it] 19%|█▉        | 45/239 [1:50:44<10:11:48, 189.22s/it] 19%|█▉        | 46/239 [1:54:17<10:31:41, 196.38s/it] 20%|█▉        | 47/239 [1:58:13<11:06:55, 208.41s/it] 20%|██        | 48/239 [2:04:17<13:31:41, 254.98s/it] 21%|██        | 49/239 [2:05:44<10:48:21, 204.75s/it] 21%|██        | 50/239 [2:09:53<11:26:09, 217.83s/it] 21%|██▏       | 51/239 [2:11:27<9:26:12, 180.70s/it]  22%|██▏       | 52/239 [2:13:17<8:17:05, 159.49s/it] 22%|██▏       | 53/239 [2:17:04<9:17:29, 179.84s/it] 23%|██▎       | 54/239 [2:22:15<11:15:34, 219.10s/it] 23%|██▎       | 55/239 [2:23:54<9:21:48, 183.20s/it]  23%|██▎       | 56/239 [2:28:26<10:39:30, 209.68s/it] 24%|██▍       | 57/239 [2:30:38<9:25:25, 186.40s/it]  24%|██▍       | 58/239 [2:38:50<13:58:52, 278.08s/it] 25%|██▍       | 59/239 [2:43:49<14:13:02, 284.35s/it] 25%|██▌       | 60/239 [2:45:51<11:43:08, 235.69s/it] 26%|██▌       | 61/239 [2:50:25<12:13:43, 247.32s/it] 26%|██▌       | 62/239 [2:51:34<9:31:11, 193.62s/it]  26%|██▋       | 63/239 [2:56:22<10:51:05, 221.96s/it] 27%|██▋       | 64/239 [2:59:58<10:42:42, 220.36s/it] 27%|██▋       | 65/239 [3:04:26<11:20:20, 234.60s/it] 28%|██▊       | 66/239 [3:09:58<12:40:28, 263.75s/it] 28%|██▊       | 67/239 [3:13:11<11:35:26, 242.60s/it] 28%|██▊       | 68/239 [3:16:17<10:42:32, 225.45s/it] 29%|██▉       | 69/239 [3:24:41<14:35:24, 308.97s/it] 29%|██▉       | 70/239 [3:25:50<11:07:42, 237.05s/it] 30%|██▉       | 71/239 [3:29:45<11:02:02, 236.44s/it] 30%|███       | 72/239 [3:30:30<8:18:01, 178.93s/it]  31%|███       | 73/239 [3:31:26<6:33:23, 142.19s/it] 31%|███       | 74/239 [3:36:24<8:39:47, 189.02s/it] 31%|███▏      | 75/239 [3:41:32<10:14:20, 224.76s/it] 32%|███▏      | 76/239 [3:46:28<11:08:07, 245.94s/it] 32%|███▏      | 77/239 [3:51:09<11:32:31, 256.49s/it] 33%|███▎      | 78/239 [4:00:40<15:41:29, 350.87s/it] 33%|███▎      | 79/239 [4:07:47<16:36:39, 373.74s/it] 33%|███▎      | 80/239 [4:10:18<13:33:04, 306.82s/it] 34%|███▍      | 81/239 [4:13:24<11:52:35, 270.61s/it] 34%|███▍      | 82/239 [4:14:49<9:22:37, 215.01s/it]  35%|███▍      | 83/239 [4:23:10<13:02:10, 300.84s/it] 35%|███▌      | 84/239 [4:28:32<13:13:23, 307.12s/it] 36%|███▌      | 85/239 [4:34:57<14:08:17, 330.51s/it] 36%|███▌      | 86/239 [4:41:46<15:02:46, 354.03s/it] 36%|███▋      | 87/239 [4:43:58<12:07:51, 287.31s/it] 37%|███▋      | 88/239 [4:48:29<11:51:12, 282.60s/it] 37%|███▋      | 89/239 [4:49:40<9:07:28, 218.99s/it]  38%|███▊      | 90/239 [4:52:32<8:28:48, 204.89s/it] 38%|███▊      | 91/239 [4:57:49<9:48:23, 238.54s/it] 38%|███▊      | 92/239 [5:09:30<15:24:31, 377.36s/it] 39%|███▉      | 93/239 [5:14:03<14:01:40, 345.89s/it] 39%|███▉      | 94/239 [5:19:47<13:54:38, 345.37s/it] 40%|███▉      | 95/239 [5:24:36<13:08:34, 328.57s/it] 40%|████      | 96/239 [5:27:31<11:13:07, 282.43s/it] 41%|████      | 97/239 [5:29:05<8:54:40, 225.92s/it]  41%|████      | 98/239 [5:30:17<7:02:05, 179.62s/it] 41%|████▏     | 99/239 [5:31:20<5:37:41, 144.73s/it] 42%|████▏     | 100/239 [5:36:50<7:43:56, 200.26s/it] 42%|████▏     | 101/239 [5:41:02<8:16:37, 215.92s/it] 43%|████▎     | 102/239 [5:46:17<9:20:48, 245.61s/it] 43%|████▎     | 103/239 [5:52:40<10:49:50, 286.70s/it] 44%|████▎     | 104/239 [5:53:32<8:07:00, 216.45s/it]  44%|████▍     | 105/239 [5:54:47<6:28:45, 174.07s/it] 44%|████▍     | 106/239 [5:56:29<5:37:29, 152.25s/it] 45%|████▍     | 107/239 [5:58:30<5:14:49, 143.10s/it] 45%|████▌     | 108/239 [5:59:25<4:14:10, 116.42s/it] 46%|████▌     | 109/239 [6:02:17<4:48:22, 133.09s/it] 46%|████▌     | 110/239 [6:05:35<5:28:03, 152.58s/it] 46%|████▋     | 111/239 [6:08:19<5:33:12, 156.19s/it] 47%|████▋     | 112/239 [6:10:55<5:30:04, 155.94s/it] 47%|████▋     | 113/239 [6:16:42<7:28:07, 213.39s/it] 48%|████▊     | 114/239 [6:18:47<6:29:32, 186.98s/it] 48%|████▊     | 115/239 [6:20:45<5:43:22, 166.15s/it] 49%|████▊     | 116/239 [6:21:46<4:35:37, 134.45s/it] 49%|████▉     | 117/239 [6:22:42<3:45:31, 110.92s/it] 49%|████▉     | 118/239 [6:26:48<5:05:37, 151.55s/it] 50%|████▉     | 119/239 [6:30:53<5:58:59, 179.50s/it] 50%|█████     | 120/239 [6:32:11<4:56:08, 149.32s/it] 51%|█████     | 121/239 [6:37:48<6:44:11, 205.52s/it] 51%|█████     | 122/239 [6:44:33<8:37:06, 265.18s/it] 51%|█████▏    | 123/239 [6:45:26<6:29:46, 201.61s/it] 52%|█████▏    | 124/239 [6:46:31<5:07:49, 160.61s/it] 52%|█████▏    | 125/239 [6:48:13<4:31:55, 143.12s/it] 53%|█████▎    | 126/239 [6:49:45<4:00:46, 127.84s/it] 53%|█████▎    | 127/239 [6:51:38<3:49:54, 123.17s/it] 54%|█████▎    | 128/239 [6:52:58<3:24:25, 110.50s/it] 54%|█████▍    | 129/239 [6:57:41<4:57:05, 162.05s/it] 54%|█████▍    | 130/239 [7:04:10<6:58:00, 230.09s/it] 55%|█████▍    | 131/239 [7:06:13<5:56:28, 198.04s/it] 55%|█████▌    | 132/239 [7:11:03<6:42:33, 225.74s/it] 56%|█████▌    | 133/239 [7:11:50<5:03:52, 172.01s/it] 56%|█████▌    | 134/239 [7:15:14<5:18:06, 181.77s/it] 56%|█████▋    | 135/239 [7:16:48<4:29:19, 155.38s/it] 57%|█████▋    | 136/239 [7:18:15<3:51:08, 134.65s/it] 57%|█████▋    | 137/239 [7:26:04<6:39:47, 235.17s/it] 58%|█████▊    | 138/239 [7:31:42<7:27:35, 265.90s/it] 58%|█████▊    | 139/239 [7:35:22<7:00:25, 252.25s/it] 59%|█████▊    | 140/239 [7:36:26<5:23:07, 195.84s/it] 59%|█████▉    | 141/239 [7:40:22<5:39:09, 207.65s/it] 59%|█████▉    | 142/239 [7:42:07<4:46:17, 177.09s/it] 60%|█████▉    | 143/239 [7:43:58<4:11:13, 157.01s/it] 60%|██████    | 144/239 [7:50:05<5:48:24, 220.05s/it] 61%|██████    | 145/239 [7:51:48<4:49:44, 184.94s/it] 61%|██████    | 146/239 [7:54:02<4:23:04, 169.73s/it] 62%|██████▏   | 147/239 [7:56:47<4:18:09, 168.37s/it] 62%|██████▏   | 148/239 [8:01:06<4:56:18, 195.37s/it] 62%|██████▏   | 149/239 [8:08:06<6:34:20, 262.89s/it] 63%|██████▎   | 150/239 [8:09:45<5:16:52, 213.63s/it] 63%|██████▎   | 151/239 [8:11:48<4:33:39, 186.59s/it] 64%|██████▎   | 152/239 [8:15:45<4:52:31, 201.74s/it] 64%|██████▍   | 153/239 [8:20:04<5:13:30, 218.73s/it] 64%|██████▍   | 154/239 [8:20:49<3:55:59, 166.59s/it] 65%|██████▍   | 155/239 [8:22:59<3:38:06, 155.79s/it] 65%|██████▌   | 156/239 [8:25:20<3:29:19, 151.32s/it] 66%|██████▌   | 157/239 [8:27:11<3:10:24, 139.32s/it] 66%|██████▌   | 158/239 [8:29:22<3:04:41, 136.81s/it] 67%|██████▋   | 159/239 [8:30:19<2:30:14, 112.68s/it] 67%|██████▋   | 160/239 [8:37:24<4:31:46, 206.41s/it] 67%|██████▋   | 161/239 [8:39:45<4:02:43, 186.71s/it] 68%|██████▊   | 162/239 [8:41:35<3:30:24, 163.95s/it] 68%|██████▊   | 163/239 [8:42:40<2:49:45, 134.02s/it] 69%|██████▊   | 164/239 [8:47:42<3:50:40, 184.54s/it] 69%|██████▉   | 165/239 [8:49:27<3:18:00, 160.55s/it] 69%|██████▉   | 166/239 [8:50:42<2:44:06, 134.89s/it] 70%|██████▉   | 167/239 [8:55:40<3:40:39, 183.88s/it] 70%|███████   | 168/239 [8:59:29<3:53:34, 197.39s/it] 71%|███████   | 169/239 [9:00:28<3:01:48, 155.83s/it] 71%|███████   | 170/239 [9:03:14<3:02:55, 159.06s/it] 72%|███████▏  | 171/239 [9:04:11<2:25:23, 128.29s/it] 72%|███████▏  | 172/239 [9:05:06<1:58:51, 106.44s/it] 72%|███████▏  | 173/239 [9:06:25<1:47:50, 98.03s/it]  73%|███████▎  | 174/239 [9:10:20<2:30:51, 139.25s/it] 73%|███████▎  | 175/239 [9:13:50<2:51:08, 160.45s/it] 74%|███████▎  | 176/239 [9:19:15<3:40:17, 209.81s/it] 74%|███████▍  | 177/239 [9:20:44<2:59:28, 173.68s/it] 74%|███████▍  | 178/239 [9:21:42<2:21:15, 138.94s/it] 75%|███████▍  | 179/239 [9:25:37<2:47:45, 167.76s/it] 75%|███████▌  | 180/239 [9:27:04<2:20:58, 143.37s/it] 76%|███████▌  | 181/239 [9:31:05<2:46:52, 172.63s/it] 76%|███████▌  | 182/239 [9:36:15<3:23:17, 214.00s/it] 77%|███████▋  | 183/239 [9:41:48<3:53:01, 249.67s/it] 77%|███████▋  | 184/239 [9:45:57<3:48:40, 249.46s/it] 77%|███████▋  | 185/239 [9:47:09<2:56:33, 196.17s/it] 78%|███████▊  | 186/239 [9:51:30<3:10:27, 215.60s/it] 78%|███████▊  | 187/239 [9:57:13<3:40:11, 254.06s/it] 79%|███████▊  | 188/239 [10:02:19<3:49:11, 269.63s/it] 79%|███████▉  | 189/239 [10:04:17<3:06:38, 223.97s/it] 79%|███████▉  | 190/239 [10:05:36<2:27:19, 180.39s/it] 80%|███████▉  | 191/239 [10:09:44<2:40:37, 200.79s/it] 80%|████████  | 192/239 [10:16:14<3:21:47, 257.61s/it] 81%|████████  | 193/239 [10:17:18<2:32:57, 199.51s/it] 81%|████████  | 194/239 [10:21:56<2:47:13, 222.97s/it] 82%|████████▏ | 195/239 [10:24:25<2:27:20, 200.91s/it] 82%|████████▏ | 196/239 [10:26:25<2:06:36, 176.66s/it] 82%|████████▏ | 197/239 [10:28:50<1:56:53, 167.00s/it] 83%|████████▎ | 198/239 [10:29:46<1:31:25, 133.80s/it] 83%|████████▎ | 199/239 [10:30:57<1:16:35, 114.89s/it] 84%|████████▎ | 200/239 [10:36:16<1:54:28, 176.10s/it] 84%|████████▍ | 201/239 [10:40:14<2:03:18, 194.70s/it] 85%|████████▍ | 202/239 [10:43:48<2:03:38, 200.51s/it] 85%|████████▍ | 203/239 [10:49:10<2:22:06, 236.86s/it] 85%|████████▌ | 204/239 [10:53:08<2:18:20, 237.17s/it] 86%|████████▌ | 205/239 [10:54:16<1:45:45, 186.63s/it] 86%|████████▌ | 206/239 [10:59:28<2:03:20, 224.25s/it] 87%|████████▋ | 207/239 [11:00:10<1:30:19, 169.37s/it] 87%|████████▋ | 208/239 [11:01:23<1:12:33, 140.43s/it] 87%|████████▋ | 209/239 [11:02:11<56:24, 112.83s/it]   88%|████████▊ | 210/239 [11:02:52<44:11, 91.43s/it]  88%|████████▊ | 211/239 [11:08:33<1:17:29, 166.06s/it] 89%|████████▊ | 212/239 [11:13:19<1:30:58, 202.15s/it] 89%|████████▉ | 213/239 [11:14:20<1:09:17, 159.90s/it] 90%|████████▉ | 214/239 [11:16:27<1:02:25, 149.82s/it] 90%|████████▉ | 215/239 [11:18:58<1:00:08, 150.34s/it] 90%|█████████ | 216/239 [11:20:22<50:00, 130.45s/it]   91%|█████████ | 217/239 [11:25:19<1:06:08, 180.37s/it] 91%|█████████ | 218/239 [11:30:40<1:17:53, 222.53s/it] 92%|█████████▏| 219/239 [11:34:32<1:15:06, 225.30s/it] 92%|█████████▏| 220/239 [11:35:33<55:44, 176.05s/it]   92%|█████████▏| 221/239 [11:39:44<59:35, 198.63s/it] 93%|█████████▎| 222/239 [11:43:27<58:21, 205.94s/it] 93%|█████████▎| 223/239 [11:44:32<43:38, 163.65s/it] 94%|█████████▎| 224/239 [11:47:01<39:47, 159.14s/it] 94%|█████████▍| 225/239 [11:48:22<31:42, 135.87s/it] 95%|█████████▍| 226/239 [11:49:03<23:14, 107.26s/it] 95%|█████████▍| 227/239 [11:52:45<28:20, 141.67s/it] 95%|█████████▌| 228/239 [11:58:56<38:34, 210.38s/it] 96%|█████████▌| 229/239 [12:03:22<37:51, 227.18s/it] 96%|█████████▌| 230/239 [12:06:31<32:22, 215.80s/it] 97%|█████████▋| 231/239 [12:07:17<21:59, 164.95s/it] 97%|█████████▋| 232/239 [12:11:08<21:32, 184.65s/it] 97%|█████████▋| 233/239 [12:12:15<14:55, 149.32s/it] 98%|█████████▊| 234/239 [12:14:03<11:24, 136.94s/it] 98%|█████████▊| 235/239 [12:15:05<07:38, 114.52s/it] 99%|█████████▊| 236/239 [12:16:48<05:32, 110.97s/it] 99%|█████████▉| 237/239 [12:18:32<03:38, 109.02s/it]100%|█████████▉| 238/239 [12:19:07<01:26, 86.85s/it] 100%|██████████| 239/239 [12:19:43<00:00, 71.59s/it]100%|██████████| 239/239 [12:19:43<00:00, 185.71s/it]
+Prompt tokens number: 7553, Completion tokens number: 1336. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 9482, Completion tokens number: 1486. 
+Prompt tokens number: 14285, Completion tokens number: 2507. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 11614, Completion tokens number: 1829. 
+Prompt tokens number: 16934, Completion tokens number: 2983. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 14554, Completion tokens number: 2432. 
+Prompt tokens number: 16934, Completion tokens number: 2983. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 16614, Completion tokens number: 2774. 
+Prompt tokens number: 31407, Completion tokens number: 5387. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 19551, Completion tokens number: 3415. 
+Prompt tokens number: 35533, Completion tokens number: 6069. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 22057, Completion tokens number: 3944. 
+Prompt tokens number: 52220, Completion tokens number: 8838. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 43847, Completion tokens number: 5572. 
+Prompt tokens number: 54555, Completion tokens number: 9251. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 46151, Completion tokens number: 5996. 
+Prompt tokens number: 54555, Completion tokens number: 9251. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 48404, Completion tokens number: 6395. 
+Prompt tokens number: 67932, Completion tokens number: 11303. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 51685, Completion tokens number: 7090. 
+Prompt tokens number: 72545, Completion tokens number: 12163. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 59247, Completion tokens number: 8217. 
+Prompt tokens number: 74811, Completion tokens number: 12567. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 64781, Completion tokens number: 9002. 
+Prompt tokens number: 74811, Completion tokens number: 12567. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 68229, Completion tokens number: 9735. 
+Prompt tokens number: 91968, Completion tokens number: 15341. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 70562, Completion tokens number: 10179. 
+Prompt tokens number: 94358, Completion tokens number: 15755. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 76204, Completion tokens number: 10857. 
+Prompt tokens number: 94358, Completion tokens number: 15755. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 79634, Completion tokens number: 11588. 
+Prompt tokens number: 106935, Completion tokens number: 17632. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 82060, Completion tokens number: 12064. 
+Prompt tokens number: 109658, Completion tokens number: 18155. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 85937, Completion tokens number: 12993. 
+Prompt tokens number: 109658, Completion tokens number: 18155. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 88524, Completion tokens number: 13495. 
+Prompt tokens number: 126658, Completion tokens number: 20756. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 91135, Completion tokens number: 13999. 
+Prompt tokens number: 141040, Completion tokens number: 22869. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 93367, Completion tokens number: 14385. 
+Prompt tokens number: 158709, Completion tokens number: 25743. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 95950, Completion tokens number: 14885. 
+Prompt tokens number: 161724, Completion tokens number: 26413. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 102260, Completion tokens number: 15793. 
+Prompt tokens number: 161724, Completion tokens number: 26413. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 105371, Completion tokens number: 16431. 
+Prompt tokens number: 165260, Completion tokens number: 27264. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 107586, Completion tokens number: 16795. 
+Prompt tokens number: 165260, Completion tokens number: 27264. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 109992, Completion tokens number: 17236. 
+Prompt tokens number: 167772, Completion tokens number: 27761. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 113028, Completion tokens number: 17932. 
+Prompt tokens number: 167772, Completion tokens number: 27761. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 121655, Completion tokens number: 19229. 
+Prompt tokens number: 171907, Completion tokens number: 28488. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 131010, Completion tokens number: 20614. 
+Prompt tokens number: 191671, Completion tokens number: 31697. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 133432, Completion tokens number: 21075. 
+Prompt tokens number: 194425, Completion tokens number: 32189. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 135648, Completion tokens number: 21460. 
+Prompt tokens number: 194425, Completion tokens number: 32189. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 138491, Completion tokens number: 22096. 
+Prompt tokens number: 197973, Completion tokens number: 32723. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 141277, Completion tokens number: 22647. 
+Prompt tokens number: 212633, Completion tokens number: 34950. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 145369, Completion tokens number: 23557. 
+Prompt tokens number: 216054, Completion tokens number: 35665. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 148360, Completion tokens number: 24167. 
+Prompt tokens number: 216054, Completion tokens number: 35665. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 152247, Completion tokens number: 25054. 
+Prompt tokens number: 218804, Completion tokens number: 36210. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 155602, Completion tokens number: 25864. 
+Prompt tokens number: 218804, Completion tokens number: 36210. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 157930, Completion tokens number: 26324. 
+Prompt tokens number: 231721, Completion tokens number: 38065. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 160240, Completion tokens number: 26757. 
+Prompt tokens number: 247326, Completion tokens number: 40512. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 163399, Completion tokens number: 27553. 
+Prompt tokens number: 265573, Completion tokens number: 43451. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 165606, Completion tokens number: 27941. 
+Prompt tokens number: 279639, Completion tokens number: 45686. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 168369, Completion tokens number: 28385. 
+Prompt tokens number: 281902, Completion tokens number: 46055. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 170678, Completion tokens number: 28843. 
+Prompt tokens number: 281902, Completion tokens number: 46055. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 173106, Completion tokens number: 29310. 
+Prompt tokens number: 296761, Completion tokens number: 48414. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 175390, Completion tokens number: 29744. 
+Prompt tokens number: 300906, Completion tokens number: 49129. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 178075, Completion tokens number: 30322. 
+Prompt tokens number: 303255, Completion tokens number: 49522. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 180482, Completion tokens number: 30786. 
+Prompt tokens number: 303255, Completion tokens number: 49522. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 184082, Completion tokens number: 31646. 
+Prompt tokens number: 307689, Completion tokens number: 50351. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 186356, Completion tokens number: 32074. 
+Prompt tokens number: 310587, Completion tokens number: 50934. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 189593, Completion tokens number: 32793. 
+Prompt tokens number: 310587, Completion tokens number: 50934. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 192149, Completion tokens number: 33305. 
+Prompt tokens number: 313007, Completion tokens number: 51373. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 195574, Completion tokens number: 34119. 
+Prompt tokens number: 313007, Completion tokens number: 51373. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 198413, Completion tokens number: 34702. 
+Prompt tokens number: 315697, Completion tokens number: 51919. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 200870, Completion tokens number: 35212. 
+Prompt tokens number: 315697, Completion tokens number: 51919. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 203169, Completion tokens number: 35642. 
+Prompt tokens number: 318538, Completion tokens number: 52461. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 206418, Completion tokens number: 36410. 
+Prompt tokens number: 318538, Completion tokens number: 52461. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 213645, Completion tokens number: 37539. 
+Prompt tokens number: 320861, Completion tokens number: 52841. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 215870, Completion tokens number: 37940. 
+Prompt tokens number: 320861, Completion tokens number: 52841. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 220434, Completion tokens number: 38911. 
+Prompt tokens number: 323094, Completion tokens number: 53205. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 222864, Completion tokens number: 39338. 
+Prompt tokens number: 323094, Completion tokens number: 53205. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 231023, Completion tokens number: 40399. 
+Prompt tokens number: 325503, Completion tokens number: 53669. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 233498, Completion tokens number: 40892. 
+Prompt tokens number: 325503, Completion tokens number: 53669. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 235643, Completion tokens number: 41265. 
+Prompt tokens number: 337158, Completion tokens number: 55393. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 237860, Completion tokens number: 41660. 
+Prompt tokens number: 358573, Completion tokens number: 58930. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 241102, Completion tokens number: 42348. 
+Prompt tokens number: 370085, Completion tokens number: 60593. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 262218, Completion tokens number: 44761. 
+Prompt tokens number: 383136, Completion tokens number: 62566. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 264933, Completion tokens number: 45318. 
+Prompt tokens number: 400558, Completion tokens number: 65403. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 267466, Completion tokens number: 45784. 
+Prompt tokens number: 404950, Completion tokens number: 66245. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 273215, Completion tokens number: 46615. 
+Prompt tokens number: 416797, Completion tokens number: 68030. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 276061, Completion tokens number: 47177. 
+Prompt tokens number: 420912, Completion tokens number: 68739. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 278545, Completion tokens number: 47632. 
+Prompt tokens number: 426192, Completion tokens number: 69780. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 284102, Completion tokens number: 48407. 
+Prompt tokens number: 437830, Completion tokens number: 71445. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 286708, Completion tokens number: 48879. 
+Prompt tokens number: 452280, Completion tokens number: 73758. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 291043, Completion tokens number: 49689. 
+Prompt tokens number: 456852, Completion tokens number: 74574. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 293289, Completion tokens number: 50106. 
+Prompt tokens number: 471075, Completion tokens number: 76820. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 295608, Completion tokens number: 50521. 
+Prompt tokens number: 474480, Completion tokens number: 77568. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 298169, Completion tokens number: 50995. 
+Prompt tokens number: 474480, Completion tokens number: 77568. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 303627, Completion tokens number: 51774. 
+Prompt tokens number: 493302, Completion tokens number: 80635. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 305876, Completion tokens number: 52161. 
+Prompt tokens number: 506909, Completion tokens number: 82774. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 308074, Completion tokens number: 52580. 
+Prompt tokens number: 511306, Completion tokens number: 83597. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 310363, Completion tokens number: 53019. 
+Prompt tokens number: 523363, Completion tokens number: 85384. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 317219, Completion tokens number: 53986. 
+Prompt tokens number: 525831, Completion tokens number: 85829. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 326287, Completion tokens number: 55384. 
+Prompt tokens number: 525831, Completion tokens number: 85829. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 328475, Completion tokens number: 55769. 
+Prompt tokens number: 539120, Completion tokens number: 87943. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 331078, Completion tokens number: 56101. 
+Prompt tokens number: 550531, Completion tokens number: 89529. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 334646, Completion tokens number: 56901. 
+Prompt tokens number: 562744, Completion tokens number: 91314. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 336783, Completion tokens number: 57250. 
+Prompt tokens number: 577738, Completion tokens number: 93584. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 339112, Completion tokens number: 57698. 
+Prompt tokens number: 583820, Completion tokens number: 94583. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 341990, Completion tokens number: 58310. 
+Prompt tokens number: 590819, Completion tokens number: 95825. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 345322, Completion tokens number: 58873. 
+Prompt tokens number: 609615, Completion tokens number: 98872. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 347427, Completion tokens number: 59215. 
+Prompt tokens number: 612161, Completion tokens number: 99301. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 350674, Completion tokens number: 59889. 
+Prompt tokens number: 612161, Completion tokens number: 99301. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 356786, Completion tokens number: 60703. 
+Prompt tokens number: 623589, Completion tokens number: 100951. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 379828, Completion tokens number: 62947. 
+Prompt tokens number: 625781, Completion tokens number: 101290. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 383296, Completion tokens number: 63748. 
+Prompt tokens number: 625781, Completion tokens number: 101290. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 405015, Completion tokens number: 66202. 
+Prompt tokens number: 628282, Completion tokens number: 101750. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 423843, Completion tokens number: 68344. 
+Prompt tokens number: 628282, Completion tokens number: 101750. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 443687, Completion tokens number: 70403. 
+Prompt tokens number: 640126, Completion tokens number: 103494. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 462327, Completion tokens number: 72535. 
+Prompt tokens number: 653402, Completion tokens number: 105457. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 482652, Completion tokens number: 75177. 
+Prompt tokens number: 664745, Completion tokens number: 107126. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 485390, Completion tokens number: 75736. 
+Prompt tokens number: 676133, Completion tokens number: 108747. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 489965, Completion tokens number: 76789. 
+Prompt tokens number: 699880, Completion tokens number: 112725. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 492229, Completion tokens number: 77146. 
+Prompt tokens number: 717710, Completion tokens number: 115560. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 511988, Completion tokens number: 79415. 
+Prompt tokens number: 722990, Completion tokens number: 116577. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 530113, Completion tokens number: 81431. 
+Prompt tokens number: 729534, Completion tokens number: 117696. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 532551, Completion tokens number: 81924. 
+Prompt tokens number: 732371, Completion tokens number: 118257. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 546981, Completion tokens number: 83661. 
+Prompt tokens number: 732371, Completion tokens number: 118257. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 555417, Completion tokens number: 84740. 
+Prompt tokens number: 749728, Completion tokens number: 121037. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 558424, Completion tokens number: 85384. 
+Prompt tokens number: 761935, Completion tokens number: 122876. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 560776, Completion tokens number: 85792. 
+Prompt tokens number: 776264, Completion tokens number: 125061. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 579362, Completion tokens number: 87734. 
+Prompt tokens number: 792494, Completion tokens number: 127625. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 599486, Completion tokens number: 90062. 
+Prompt tokens number: 795272, Completion tokens number: 128194. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 608954, Completion tokens number: 91655. 
+Prompt tokens number: 795272, Completion tokens number: 128194. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 625397, Completion tokens number: 93394. 
+Prompt tokens number: 806427, Completion tokens number: 129728. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 655952, Completion tokens number: 96923. 
+Prompt tokens number: 808936, Completion tokens number: 130173. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 670410, Completion tokens number: 98804. 
+Prompt tokens number: 808936, Completion tokens number: 130173. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 697441, Completion tokens number: 102489. 
+Prompt tokens number: 814815, Completion tokens number: 131357. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 730065, Completion tokens number: 105858. 
+Prompt tokens number: 826629, Completion tokens number: 133015. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 732437, Completion tokens number: 106269. 
+Prompt tokens number: 850141, Completion tokens number: 137041. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 735524, Completion tokens number: 106907. 
+Prompt tokens number: 857540, Completion tokens number: 138658. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 759236, Completion tokens number: 109632. 
+Prompt tokens number: 870494, Completion tokens number: 140557. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 763299, Completion tokens number: 110541. 
+Prompt tokens number: 881668, Completion tokens number: 142160. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 767823, Completion tokens number: 111630. 
+Prompt tokens number: 890024, Completion tokens number: 143474. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 769920, Completion tokens number: 111971. 
+Prompt tokens number: 892955, Completion tokens number: 143996. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 786772, Completion tokens number: 113740. 
+Prompt tokens number: 892955, Completion tokens number: 143996. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 805574, Completion tokens number: 115957. 
+Prompt tokens number: 896619, Completion tokens number: 144610. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 827679, Completion tokens number: 118299. 
+Prompt tokens number: 899141, Completion tokens number: 145048. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 850308, Completion tokens number: 121427. 
+Prompt tokens number: 899141, Completion tokens number: 145048. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 852515, Completion tokens number: 121787. 
+Prompt tokens number: 915295, Completion tokens number: 147688. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 855302, Completion tokens number: 122347. 
+Prompt tokens number: 926776, Completion tokens number: 149297. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 857686, Completion tokens number: 122754. 
+Prompt tokens number: 939389, Completion tokens number: 151315. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 860059, Completion tokens number: 123176. 
+Prompt tokens number: 954960, Completion tokens number: 153771. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 862140, Completion tokens number: 123506. 
+Prompt tokens number: 957392, Completion tokens number: 154215. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 864869, Completion tokens number: 124067. 
+Prompt tokens number: 957392, Completion tokens number: 154215. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 870492, Completion tokens number: 124831. 
+Prompt tokens number: 960503, Completion tokens number: 154867. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 873434, Completion tokens number: 125467. 
+Prompt tokens number: 960503, Completion tokens number: 154867. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 875652, Completion tokens number: 125857. 
+Prompt tokens number: 964815, Completion tokens number: 155622. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 878531, Completion tokens number: 126431. 
+Prompt tokens number: 969589, Completion tokens number: 156597. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 894449, Completion tokens number: 128205. 
+Prompt tokens number: 971785, Completion tokens number: 156951. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 896826, Completion tokens number: 128627. 
+Prompt tokens number: 971785, Completion tokens number: 156951. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 899712, Completion tokens number: 129242. 
+Prompt tokens number: 979369, Completion tokens number: 158136. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 902548, Completion tokens number: 129836. 
+Prompt tokens number: 990343, Completion tokens number: 159619. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 905418, Completion tokens number: 130385. 
+Prompt tokens number: 996089, Completion tokens number: 160562. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 910001, Completion tokens number: 131482. 
+Prompt tokens number: 1002500, Completion tokens number: 161566. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 912275, Completion tokens number: 131888. 
+Prompt tokens number: 1016300, Completion tokens number: 163739. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 915549, Completion tokens number: 132523. 
+Prompt tokens number: 1022258, Completion tokens number: 164928. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 919445, Completion tokens number: 133401. 
+Prompt tokens number: 1027545, Completion tokens number: 165970. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 940861, Completion tokens number: 135304. 
+Prompt tokens number: 1030388, Completion tokens number: 166482. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 943239, Completion tokens number: 135744. 
+Prompt tokens number: 1030388, Completion tokens number: 166482. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 946066, Completion tokens number: 136309. 
+Prompt tokens number: 1032848, Completion tokens number: 166936. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 949194, Completion tokens number: 137011. 
+Prompt tokens number: 1032848, Completion tokens number: 166936. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 953020, Completion tokens number: 137909. 
+Prompt tokens number: 1043551, Completion tokens number: 168404. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 955788, Completion tokens number: 138487. 
+Prompt tokens number: 1056302, Completion tokens number: 170164. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 958450, Completion tokens number: 138988. 
+Prompt tokens number: 1059189, Completion tokens number: 170766. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 961185, Completion tokens number: 139525. 
+Prompt tokens number: 1059189, Completion tokens number: 170766. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 963721, Completion tokens number: 140018. 
+Prompt tokens number: 1074372, Completion tokens number: 173145. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 966328, Completion tokens number: 140555. 
+Prompt tokens number: 1091291, Completion tokens number: 175990. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 968741, Completion tokens number: 140986. 
+Prompt tokens number: 1093548, Completion tokens number: 176347. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 971735, Completion tokens number: 141623. 
+Prompt tokens number: 1093548, Completion tokens number: 176347. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 974472, Completion tokens number: 142162. 
+Prompt tokens number: 1095970, Completion tokens number: 176792. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 977972, Completion tokens number: 142920. 
+Prompt tokens number: 1095970, Completion tokens number: 176792. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 980236, Completion tokens number: 143341. 
+Prompt tokens number: 1099165, Completion tokens number: 177441. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 982937, Completion tokens number: 143864. 
+Prompt tokens number: 1099165, Completion tokens number: 177441. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 986346, Completion tokens number: 144622. 
+Prompt tokens number: 1103041, Completion tokens number: 178095. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 993822, Completion tokens number: 145742. 
+Prompt tokens number: 1108552, Completion tokens number: 178956. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 996289, Completion tokens number: 146213. 
+Prompt tokens number: 1111235, Completion tokens number: 179437. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1001368, Completion tokens number: 146840. 
+Prompt tokens number: 1111235, Completion tokens number: 179437. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1023812, Completion tokens number: 149540. 
+Prompt tokens number: 1123183, Completion tokens number: 181295. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1026018, Completion tokens number: 149927. 
+Prompt tokens number: 1139561, Completion tokens number: 184016. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1028199, Completion tokens number: 150299. 
+Prompt tokens number: 1144847, Completion tokens number: 185051. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1044662, Completion tokens number: 152163. 
+Prompt tokens number: 1156924, Completion tokens number: 186811. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1047286, Completion tokens number: 152694. 
+Prompt tokens number: 1159315, Completion tokens number: 187230. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1049496, Completion tokens number: 153091. 
+Prompt tokens number: 1159315, Completion tokens number: 187230. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1055289, Completion tokens number: 153880. 
+Prompt tokens number: 1165695, Completion tokens number: 188335. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1058298, Completion tokens number: 154520. 
+Prompt tokens number: 1169049, Completion tokens number: 189022. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1060851, Completion tokens number: 155028. 
+Prompt tokens number: 1169049, Completion tokens number: 189022. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1063043, Completion tokens number: 155424. 
+Prompt tokens number: 1172081, Completion tokens number: 189652. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1070645, Completion tokens number: 156544. 
+Prompt tokens number: 1172081, Completion tokens number: 189652. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1072733, Completion tokens number: 156890. 
+Prompt tokens number: 1191301, Completion tokens number: 192909. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1075260, Completion tokens number: 157353. 
+Prompt tokens number: 1204883, Completion tokens number: 195047. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1077532, Completion tokens number: 157797. 
+Prompt tokens number: 1215833, Completion tokens number: 196483. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1080105, Completion tokens number: 158309. 
+Prompt tokens number: 1218335, Completion tokens number: 196942. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1082354, Completion tokens number: 158731. 
+Prompt tokens number: 1218335, Completion tokens number: 196942. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1085127, Completion tokens number: 159253. 
+Prompt tokens number: 1230011, Completion tokens number: 198680. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1087413, Completion tokens number: 159650. 
+Prompt tokens number: 1233624, Completion tokens number: 199484. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1115539, Completion tokens number: 162863. 
+Prompt tokens number: 1233624, Completion tokens number: 199484. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1118754, Completion tokens number: 163582. 
+Prompt tokens number: 1237576, Completion tokens number: 200154. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1121327, Completion tokens number: 164067. 
+Prompt tokens number: 1252099, Completion tokens number: 202393. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1123879, Completion tokens number: 164570. 
+Prompt tokens number: 1255202, Completion tokens number: 203072. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1126389, Completion tokens number: 165006. 
+Prompt tokens number: 1255202, Completion tokens number: 203072. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1132668, Completion tokens number: 165865. 
+Prompt tokens number: 1259584, Completion tokens number: 204026. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1135283, Completion tokens number: 166394. 
+Prompt tokens number: 1259584, Completion tokens number: 204026. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1140604, Completion tokens number: 167051. 
+Prompt tokens number: 1265367, Completion tokens number: 204986. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1146677, Completion tokens number: 167892. 
+Prompt tokens number: 1278151, Completion tokens number: 206898. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1148807, Completion tokens number: 168251. 
+Prompt tokens number: 1295792, Completion tokens number: 209712. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1151651, Completion tokens number: 168849. 
+Prompt tokens number: 1299561, Completion tokens number: 210559. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1153960, Completion tokens number: 169263. 
+Prompt tokens number: 1299561, Completion tokens number: 210559. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1156069, Completion tokens number: 169634. 
+Prompt tokens number: 1304089, Completion tokens number: 211386. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1164000, Completion tokens number: 170872. 
+Prompt tokens number: 1315360, Completion tokens number: 213017. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1166353, Completion tokens number: 171285. 
+Prompt tokens number: 1326291, Completion tokens number: 214506. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1169097, Completion tokens number: 171804. 
+Prompt tokens number: 1328735, Completion tokens number: 214932. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1171660, Completion tokens number: 172242. 
+Prompt tokens number: 1328735, Completion tokens number: 214932. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1174547, Completion tokens number: 172876. 
+Prompt tokens number: 1333700, Completion tokens number: 215936. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1177764, Completion tokens number: 173564. 
+Prompt tokens number: 1338339, Completion tokens number: 216775. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1183445, Completion tokens number: 174367. 
+Prompt tokens number: 1343161, Completion tokens number: 217675. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1185855, Completion tokens number: 174808. 
+Prompt tokens number: 1348660, Completion tokens number: 218565. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1188226, Completion tokens number: 175233. 
+Prompt tokens number: 1350900, Completion tokens number: 218938. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1190295, Completion tokens number: 175579. 
+Prompt tokens number: 1350900, Completion tokens number: 218938. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1198928, Completion tokens number: 176681. 
+Prompt tokens number: 1368255, Completion tokens number: 221699. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1202148, Completion tokens number: 177451. 
+Prompt tokens number: 1371859, Completion tokens number: 222513. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1204727, Completion tokens number: 177980. 
+Prompt tokens number: 1371859, Completion tokens number: 222513. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1207843, Completion tokens number: 178713. 
+Prompt tokens number: 1375940, Completion tokens number: 223201. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1210875, Completion tokens number: 179350. 
+Prompt tokens number: 1378324, Completion tokens number: 223645. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1213055, Completion tokens number: 179717. 
+Prompt tokens number: 1378324, Completion tokens number: 223645. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1216017, Completion tokens number: 180365. 
+Prompt tokens number: 1392322, Completion tokens number: 225825. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1218141, Completion tokens number: 180738. 
+Prompt tokens number: 1395411, Completion tokens number: 226513. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1220859, Completion tokens number: 181321. 
+Prompt tokens number: 1395411, Completion tokens number: 226513. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1223667, Completion tokens number: 181945. 
+Prompt tokens number: 1398369, Completion tokens number: 227124. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1225993, Completion tokens number: 182402. 
+Prompt tokens number: 1398369, Completion tokens number: 227124. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1237164, Completion tokens number: 183735. 
+Prompt tokens number: 1413238, Completion tokens number: 229463. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1239452, Completion tokens number: 184185. 
+Prompt tokens number: 1419964, Completion tokens number: 230939. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1241630, Completion tokens number: 184562. 
+Prompt tokens number: 1422553, Completion tokens number: 231429. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1244144, Completion tokens number: 185052. 
+Prompt tokens number: 1422553, Completion tokens number: 231429. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1246591, Completion tokens number: 185575. 
+Prompt tokens number: 1429944, Completion tokens number: 232769. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1249009, Completion tokens number: 186042. 
+Prompt tokens number: 1432411, Completion tokens number: 233204. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1251629, Completion tokens number: 186498. 
+Prompt tokens number: 1432411, Completion tokens number: 233204. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1255205, Completion tokens number: 187297. 
+Prompt tokens number: 1434800, Completion tokens number: 233604. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1271073, Completion tokens number: 189043. 
+Prompt tokens number: 1434800, Completion tokens number: 233604. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1274360, Completion tokens number: 189787. 
+Prompt tokens number: 1438980, Completion tokens number: 234337. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1277427, Completion tokens number: 190442. 
+Prompt tokens number: 1451399, Completion tokens number: 236155. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1279496, Completion tokens number: 190753. 
+Prompt tokens number: 1462984, Completion tokens number: 237845. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1282495, Completion tokens number: 191361. 
+Prompt tokens number: 1478909, Completion tokens number: 240403. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1290007, Completion tokens number: 192547. 
+Prompt tokens number: 1482246, Completion tokens number: 241208. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1294414, Completion tokens number: 193480. 
+Prompt tokens number: 1482246, Completion tokens number: 241208. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1297699, Completion tokens number: 194209. 
+Prompt tokens number: 1484794, Completion tokens number: 241686. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1300070, Completion tokens number: 194682. 
+Prompt tokens number: 1484794, Completion tokens number: 241686. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1302420, Completion tokens number: 195135. 
+Prompt tokens number: 1496287, Completion tokens number: 243376. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1304856, Completion tokens number: 195603. 
+Prompt tokens number: 1499138, Completion tokens number: 243928. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1309010, Completion tokens number: 196567. 
+Prompt tokens number: 1499138, Completion tokens number: 243928. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1312026, Completion tokens number: 197230. 
+Prompt tokens number: 1511094, Completion tokens number: 245609. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1314967, Completion tokens number: 197863. 
+Prompt tokens number: 1522651, Completion tokens number: 247627. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1317368, Completion tokens number: 198348. 
+Prompt tokens number: 1534434, Completion tokens number: 249698. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Prompt tokens number: 1321584, Completion tokens number: 199400. 
+Prompt tokens number: 1545791, Completion tokens number: 251345. 
 
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
 
-Done! Check out the logs in `/ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_4_gpt-4_pass_at_k_1_text.jsonl`
+Prompt tokens number: 1548196, Completion tokens number: 251797. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1548196, Completion tokens number: 251797. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1558618, Completion tokens number: 253473. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1574176, Completion tokens number: 256062. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1587704, Completion tokens number: 258122. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1591450, Completion tokens number: 258716. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1595449, Completion tokens number: 259399. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1608710, Completion tokens number: 261411. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1626661, Completion tokens number: 264327. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1629240, Completion tokens number: 264809. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1629240, Completion tokens number: 264809. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1642001, Completion tokens number: 267079. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1648891, Completion tokens number: 268568. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1654179, Completion tokens number: 269548. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1660943, Completion tokens number: 270930. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1663316, Completion tokens number: 271343. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1663316, Completion tokens number: 271343. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1666063, Completion tokens number: 271852. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1666063, Completion tokens number: 271852. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1685179, Completion tokens number: 275030. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1698383, Completion tokens number: 277076. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1708529, Completion tokens number: 278860. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1722133, Completion tokens number: 280971. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1733884, Completion tokens number: 282683. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1736465, Completion tokens number: 283185. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1736465, Completion tokens number: 283185. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1754038, Completion tokens number: 285838. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1756395, Completion tokens number: 286199. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1756395, Completion tokens number: 286199. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1758587, Completion tokens number: 286530. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1758587, Completion tokens number: 286530. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1760867, Completion tokens number: 286913. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1760867, Completion tokens number: 286913. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1763240, Completion tokens number: 287319. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1763240, Completion tokens number: 287319. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1780901, Completion tokens number: 290163. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1793465, Completion tokens number: 292068. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1796199, Completion tokens number: 292573. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1796199, Completion tokens number: 292573. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1802122, Completion tokens number: 293564. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1808444, Completion tokens number: 294670. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1811638, Completion tokens number: 295368. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1811638, Completion tokens number: 295368. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1825171, Completion tokens number: 297557. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1841771, Completion tokens number: 300223. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1854173, Completion tokens number: 302091. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1856741, Completion tokens number: 302559. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1856741, Completion tokens number: 302559. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1870376, Completion tokens number: 304627. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1883409, Completion tokens number: 306546. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1887162, Completion tokens number: 307336. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1887162, Completion tokens number: 307336. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1892209, Completion tokens number: 308333. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1895287, Completion tokens number: 308974. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1895287, Completion tokens number: 308974. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1897600, Completion tokens number: 309380. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1897600, Completion tokens number: 309380. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1909081, Completion tokens number: 310995. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1925013, Completion tokens number: 313672. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1941014, Completion tokens number: 316281. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1953221, Completion tokens number: 318067. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1955544, Completion tokens number: 318466. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1955544, Completion tokens number: 318466. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1969633, Completion tokens number: 320600. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1973655, Completion tokens number: 321258. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1976895, Completion tokens number: 322073. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1976895, Completion tokens number: 322073. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1980601, Completion tokens number: 322665. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1985841, Completion tokens number: 323643. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1989582, Completion tokens number: 324530. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1989582, Completion tokens number: 324530. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1991932, Completion tokens number: 324902. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1991932, Completion tokens number: 324902. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1994523, Completion tokens number: 325336. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Prompt tokens number: 1994523, Completion tokens number: 325336. 
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl
+
+Done! Check out the logs in `/ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_gpt-4_pass_at_k_1_text_no-utility_False_p-threshold_10_mem-len_3.jsonl`

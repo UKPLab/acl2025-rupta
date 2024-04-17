@@ -50,7 +50,7 @@ REFELECTION_PRIVACY_REWRITING_INSTRUCTION = (
     " content of the text. Only tokens necessary to make the sentence natural and fluent can be added. "
     "Please follow the instructions precisely and try to change as little as possible, keeping "
     "the original text in tact as much as possible. "
-    "Fill in your response into the corresponding position enclosed in \"\" in the following JSON structure and respond me with the filled JSON structure:\n{\"Generalized text\": \"the generalized text\"}"
+    "Fill in your response into the corresponding position enclosed in \"\" in the following JSON structure and respond me with the filled JSON structure:\n{\"Anonymized text\": \"the generalized text\"}"
     )
 REFELECTION_UTILITY_REWRITING_INSTRUCTION = ("Here is the list of confused entities that can do harm to the performance of the downstream"
                                              " occupation classification task on the anonymized text. Please specialize"
@@ -67,13 +67,13 @@ REFELECTION_UTILITY_REWRITING_INSTRUCTION = ("Here is the list of confused entit
                                              # "the text should not be recovered from the original text. "
                                              "Fill in your response into the corresponding position enclosed in \"\" "
                                              "in the following JSON structure and respond me"
-                                             " with the filled JSON structure:\n{\"Specialized text\": "
+                                             " with the filled JSON structure:\n{\"Anonymized text\": "
                                              "\"the result text with better utility\"}"
                                              )
 SIMPLE_REWRITING_INSTRUCTION = (
     "Let's now complete the second task. "
-    "You are an expert anonymizer that carefully choose and generalize some of the detected sensitive entities of the"
-    " text to make the text anonymous, namely the text can be suitable to describe not only a specific one person but many similar "
+    "You are an expert anonymizer that carefully choose some of the detected sensitive entities of the"
+    " text and then generalize them to make the text anonymous, namely the text can be suitable to describe not only a specific one person but many similar "
     "person. You follow the instructions and format precisely and you try to change as "
     "little as possible, keep the original text in tact as much as possible. Only generalize information and do not"
     " invent new information. \nExample: 'my husband and I' -> 'my partner and I' is valid, but 'my husband and I' -> "
@@ -94,7 +94,7 @@ SIMPLE_REWRITING_INSTRUCTION = (
     # "meaning and coherence of the text."
     # " Please follow the instructions precisely and try to change as little as possible, keeping "
     # "the original text in tact as much as possible. Only generalize your detected sensitive information and do not invent new information. "
-    "Fill in your response into the corresponding position enclosed in \"\" in the following JSON structure and respond me with the filled JSON structure:\n{\"Generalized text\": \"the generalized text\"}")
+    "Fill in your response into the corresponding position enclosed in \"\" in the following JSON structure and respond me with the filled JSON structure:\n{\"Anonymized text\": \"your anonymization result\"}")
 PRIVACY_REFLECTION_INSTRUCTION_1 = (
     # "You are very good at evaluating the level of association between the given celebrity and a paragraph of biography."
     # " Given the name of the celebrity and the biography, you are supposed to give a confidence score confirming "
@@ -108,12 +108,11 @@ PRIVACY_REFLECTION_INSTRUCTION_1 = (
     # "\"the list of entities where every two entities are separated by \', \'\"}"
     "You are very knowledgeable about celebrities and can identify them from the given biography."
     " When asked to identify individuals, "
-    "respond only with the names of 10 celebrity candidates most likely being talked by"
+    "respond only with the names of {p_threshold} celebrity candidates most likely being talked by"
     " the provided biography text and sort the names from highest to lowest probability."
     " Now identify the individual talked by the following text and "
     "fill in your response into the corresponding position enclosed in \"\" in the following JSON structure "
-    "and respond me with the filled JSON structure:\n{\"Candidates\": \"the list of sorted name of 10 celebrity candidates"
-    " where every two names are separated by \', \'\"}"
+    "and respond me with the filled JSON structure:\n{js}"
     # "You are an experienced pricurrent or finalvacy risk evaluator. Given a paragraph of description text and the name of"
     # " a person described by the text, you should first play a role of attacker to try to guess who is described by the text."
     # " Then you need to compare your guess result with the given person name to see whether you guess correctly or not. "
@@ -149,9 +148,9 @@ UTILITY_REFLECTION_INSTRUCTION_1 = (
 UTILITY_REFLECTION_INSTRUCTION_2 = (
     # "If your answer is incorrect or your confidence score of making a correct classification is not higher than 90, respond with \'No\' and "
                                     # "and refer to the "
-                                    "You need to detect and then respond me with the confused entities in the anonymized biography that interfere with you from "
+                                    "You need to detect and then respond me with the confused entities in the occupation description part of the biography that interfere with you from "
                                     "making a correct classification with high confidence and should be specialized to make you can correctly"
-                                    "classify the occupation. "
+                                    "classify the occupation. Only respond the a few entities most relevant to the occupation description. "
                                     # "following original biography and give me advice about which span of the original"
                                     # " text mainly contains the occupation information rather than person identity information and should not be anonymized "
                                     # "and should be recovered to the anonymized text to keep the utility of the "
@@ -163,7 +162,48 @@ UTILITY_REFLECTION_INSTRUCTION_2 = (
                                     # ":\n{\"Confirmation\": \"Yes or No\", "
                                     ":\n{\"Advice\": \"the list of confused entities where every two entities are separated by \', \'\"}")
 
+REINFORCEMENT_INSTRUCTION = (
+    "Let's play a game to maximize accumulated rewards by editing biography texts. "
+    "Here’s how it works: You'll be provided with a paragraph of biography text alongside its editing history. "
+    "Each edit is associated with a privacy score, indicating the level of personal privacy maintained, and a utility "
+    "score, reflecting its usefulness for a specific task.\n\n"
+    "Your task is to edit the latest entry in the editing history. "
+    "You can only alter the text by replacing some entities with more general entities to improve the privacy score, or more specific entities in the"
+    " original biography to improve the utility score. \n"
+    "Here are the rewarding rules:\n"
+    "- If the privacy score is {p_threshold} or less, the reward is equivalent to the privacy score.\n"
+    "- If the privacy score exceeds 10, the reward is equivalent to the utility score.\n"
+    "The editing goal is to get a higher reward than before while keeping changes to the "
+    "text minimal, ensuring the original context and structure are preserved as much as possible. "
+    "You are also permitted to make minor adjustments to the text to maintain fluency and naturalness.\n"
+    "For example:\n"
+    "- Generalize: 'my husband and I' can be changed to 'my partner and I'. Incorrect generalizations like changing "
+    "'my husband and I' to 'my wife and I' are not allowed.\n"
+    "- Specify: You may replace generic terms with specific ones from the original text to increase utility, "
+    "without changing unrelated details.\n\n"
+    "Your ultimate goal is to maximize the total accumulated reward through strategic edits. I will provide editing "
+    "suggestions to guide your editing towards achieving higher rewards. "
+    "Fill in your response into the corresponding position enclosed in \"\" in the following JSON structure and "
+    "respond me with the filled JSON structure:\n{js}")
 
+    # "Let's play a maximizing accumulated reward game. I have a paragraph of biography text. "
+    #                          "You will be given a list of editing history of the biography text with each edited text corresponding to a privacy score, which manifests the level of privacy"
+    #                          " safety, and a utility score, which manifests the level of utility for a downstream "
+    #                          "task. The reward of every editing result depends on these two scores: if privacy score is less than or equal to 10, the reward is equal to the privacy score, else the reward is equal to the utility score."
+    #                          " You are supposed to edit the last one of editing history to get a higher reward so as to maximize the accumulated reward. You are only allowed to edit the text by replacing some entities with more general"
+    #                          " entities, to get a higher privacy reward, or by replacing some entities with more "
+    #                          "specific entities in the original biography, to get a higher utility reward. "
+    #                          "Your final goal is to maximize the reward accumulating across all rounds of your editing."
+    #                          " I will give you editing suggestions to help you make correct "
+    #                          "editing actions to get higher reward."
+    #                          )
+                             # "In the following, there is a paragraph of biography text, "
+                             # "and an anonymized version of the biography text, and the privacy and utility reward score of the "
+                             # "anonymized biography text. You can select and then replace some entities in the anonymized"
+                             # " biography text with more general entities to get a higher privacy reward. You can also"
+                             # " select and replace some entities in the anonymized with more specific entities referring "
+                             # "to the original biography to get a higher utility reward. "
+                             # ", your task it to try to get as much as possible the accumulative reward.")
 # "You are a utility evaluator of the anonymized text. Given the original text, "
 # "the anonymized text and the classification label of the original text,"
 # "you should first determine whether a people can still classify the"
@@ -211,6 +251,8 @@ class ReWriter(Generator):
             detection_result: Optional[str] = None,
             num_comps: int = 1,
             temperature: float = 0.0,
+            p_threshold: int = 10,
+            no_utility: bool = False
     ) -> Union[str, List[str]]:
         return generic_rewriting(
             input_text=input_text,
@@ -224,6 +266,7 @@ class ReWriter(Generator):
             detection_result=detection_result,
             num_comps=num_comps,
             temperature=temperature,
+            no_utility=no_utility,
             whole_task_instruction=WHOLE_TASK_INSTRUCTION,
             general_system_instruction=GENERAL_SYSTEM_INSTRUCTION,
             detection_result_prefix=DETECTION_INSTRUCTION,
@@ -232,26 +275,33 @@ class ReWriter(Generator):
             refelection_utility_instruction=REFELECTION_UTILITY_INSTRUCTION,
             simple_rewriting_instruction=SIMPLE_REWRITING_INSTRUCTION,
             reflection_privacy_rewriting_instruction=REFELECTION_PRIVACY_REWRITING_INSTRUCTION,
-            reflection_utility_rewriting_instruction=REFELECTION_UTILITY_REWRITING_INSTRUCTION
+            reflection_utility_rewriting_instruction=REFELECTION_UTILITY_REWRITING_INSTRUCTION,
+            reinforcement_learning_instruction=REINFORCEMENT_INSTRUCTION.format(p_threshold=p_threshold,
+                                                                                js="{\"Anonymized text\": "
+                                                                                   "\"your editing result\"}")
         )
 
-    def privacy_reflex(self, model: ModelBase, rewriting, people):
+    def privacy_reflex(self, model: ModelBase, rewriting, people, p_threshold, no_utility):
         return generic_privacy_reflection(
             model=model,
             curr_rewriting=rewriting,
             people=people,
+            no_utility=no_utility,
             general_system_instruction=GENERAL_SYSTEM_INSTRUCTION,
-            privacy_reflection_chat_instruction_1=PRIVACY_REFLECTION_INSTRUCTION_1,
+            privacy_reflection_chat_instruction_1=PRIVACY_REFLECTION_INSTRUCTION_1.format(p_threshold=p_threshold, js=
+                                                                                          "{\"Candidates\": \"the sorted list "
+                                                                                          "of name of celebrity candidates where every two names are separated by \', \'\"}"),
             privacy_reflection_completion_instruction_1=PRIVACY_REFLECTION_INSTRUCTION_1,
             privacy_reflection_chat_instruction_2=PRIVACY_REFLECTION_INSTRUCTION_2,
             privacy_reflection_completion_instruction_2=PRIVACY_REFLECTION_INSTRUCTION_2
         )
 
-    def utility_reflex(self, input_text: str, model: ModelBase, rewriting, label):
+    def utility_reflex(self, input_text: str, model: ModelBase, rewriting, label, privacy_score):
         return generic_utility_reflection(
             input_text=input_text,
             model=model,
             label=label,
+            privacy_score=privacy_score,
             curr_rewriting=rewriting,
             general_system_instruction=GENERAL_SYSTEM_INSTRUCTION,
             utility_reflection_chat_instruction_1=UTILITY_REFLECTION_INSTRUCTION_1,

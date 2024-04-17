@@ -1,6 +1,5 @@
 from utils import enumerate_resume, write_jsonl, make_printv
-from executors import executor_factory
-from generators import generator_factory
+from generators import generator_factory, model_factory
 
 from typing import List
 
@@ -12,36 +11,36 @@ def run_test_acc(
     pass_at_k: int,
     log_path: str,
     verbose: bool,
+    p_threshold: int,
+    no_utility: bool,
     is_leetcode: bool = False
 ) -> None:
-    exe = executor_factory(language, is_leet=is_leetcode)
     gen = generator_factory(language)
+    model = model_factory(model)
 
     print_v = make_printv(verbose)
 
     num_items = len(dataset)
     num_success = 0
+    rank = []
+    success = []
+    result = {}
     for i, item in enumerate_resume(dataset, log_path):
-        cur_pass = 0
-        is_solved = False
-        tests_i = []
-        while cur_pass < pass_at_k:
-            tests_i = gen.internal_tests(item["prompt"], model, 1)
-            print_v(tests_i)
-
-            cur_func_impl = item["prompt"] + item["canonical_solution"]
-            print_v(cur_func_impl, flush=True)
-
-            is_passing, _, _ = exe.execute(cur_func_impl, tests_i)
-            if is_passing:
-                is_solved = True
-                num_success += 1
-                break
-            cur_pass += 1
-        item["solution"] = tests_i
-
-        item["is_solved"] = is_solved
-        write_jsonl(log_path, [item], append=True)
+        privacy_evaluation = gen.privacy_reflex(model, item['Anonymized text'], 'None', p_threshold,
+                                                no_utility)
+        if privacy_evaluation["Confirmation"] == "Yes":
+            num_success += 1
+            success.append(True)
+        else:
+            num_success += 0
+            success.append(False)
+        rank.append(privacy_evaluation["rank"])
 
         print_v(
             f'completed {i+1}/{num_items}: acc = {round(num_success/(i+1), 2)}')
+    result['rank'] = rank
+    result['rank_avg'] = sum(rank)/len(rank)
+    result['success'] = success
+    result['success_rate'] = num_success/num_items
+    result['num_success'] = num_success
+    write_jsonl(log_path, [result], append=False)
