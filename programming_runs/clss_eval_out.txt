@@ -1,0 +1,335 @@
+04/18/2024 15:54:43 - WARNING - __main__ - Process rank: 0, device: cuda:0, n_gpu: 1, distributed training: False, 16-bits training: False
+04/18/2024 15:54:43 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+_n_gpu=1,
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True},
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+dispatch_batches=None,
+do_eval=True,
+do_predict=False,
+do_train=False,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_steps=100,
+evaluation_strategy=steps,
+fp16=False,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=False,
+group_by_length=False,
+half_precision_backend=auto,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+include_num_input_tokens_seen=False,
+include_tokens_per_second=False,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=2e-05,
+length_column_name=length,
+load_best_model_at_end=True,
+local_rank=0,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=/ukp-storage-1/yang/LLM_Anonymization/programming_runs/root/bert_cls_sampled3/evaluation/runs/Apr18_15-54-43_melvin,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=10,
+logging_strategy=steps,
+lr_scheduler_kwargs={},
+lr_scheduler_type=linear,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=loss,
+mp_parameters=,
+neftune_noise_alpha=None,
+no_cuda=False,
+num_train_epochs=20.0,
+optim=adamw_torch,
+optim_args=None,
+optim_target_modules=None,
+output_dir=/ukp-storage-1/yang/LLM_Anonymization/programming_runs/root/bert_cls_sampled3/evaluation,
+overwrite_output_dir=False,
+past_index=-1,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=32,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+ray_scope=last,
+remove_unused_columns=True,
+report_to=['wandb'],
+resume_from_checkpoint=None,
+run_name=lr2e-5_B32,
+save_on_each_node=False,
+save_only_model=False,
+save_safetensors=True,
+save_steps=100,
+save_strategy=steps,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+split_batches=None,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_cpu=False,
+use_ipex=False,
+use_legacy_prediction_loop=False,
+use_mps_device=False,
+warmup_ratio=0.0,
+warmup_steps=0,
+weight_decay=0.0,
+)
+04/18/2024 15:54:43 - INFO - __main__ - load a local file for train: /mnt/beegfs/work/yang/LLM_Anonymization/programming_runs/root/test_reflexion/evaluation/presidio_stanza.jsonl
+04/18/2024 15:54:43 - INFO - __main__ - load a local file for validation: /mnt/beegfs/work/yang/LLM_Anonymization/programming_runs/root/test_reflexion/evaluation/presidio_stanza.jsonl
+Using custom data configuration default-5ee9fd35a57cad41
+04/18/2024 15:54:44 - INFO - datasets.builder - Using custom data configuration default-5ee9fd35a57cad41
+Loading Dataset Infos from /mnt/beegfs/work/yang/reflexion/lib64/python3.9/site-packages/datasets/packaged_modules/json
+04/18/2024 15:54:44 - INFO - datasets.info - Loading Dataset Infos from /mnt/beegfs/work/yang/reflexion/lib64/python3.9/site-packages/datasets/packaged_modules/json
+Generating dataset json (/storage/ukp/work/yang/.cache/huggingface/datasets/json/default-5ee9fd35a57cad41/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05)
+04/18/2024 15:54:49 - INFO - datasets.builder - Generating dataset json (/storage/ukp/work/yang/.cache/huggingface/datasets/json/default-5ee9fd35a57cad41/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05)
+Downloading and preparing dataset json/default to /storage/ukp/work/yang/.cache/huggingface/datasets/json/default-5ee9fd35a57cad41/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05...
+04/18/2024 15:54:49 - INFO - datasets.builder - Downloading and preparing dataset json/default to /storage/ukp/work/yang/.cache/huggingface/datasets/json/default-5ee9fd35a57cad41/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05...
+Downloading took 0.0 min
+04/18/2024 15:54:49 - INFO - datasets.download.download_manager - Downloading took 0.0 min
+Checksum Computation took 0.0 min
+04/18/2024 15:54:49 - INFO - datasets.download.download_manager - Checksum Computation took 0.0 min
+Generating train split
+04/18/2024 15:54:49 - INFO - datasets.builder - Generating train split
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 238 examples [00:00, 6270.89 examples/s]
+Generating validation split
+04/18/2024 15:54:49 - INFO - datasets.builder - Generating validation split
+Generating validation split: 0 examples [00:00, ? examples/s]Generating validation split: 238 examples [00:00, 12914.07 examples/s]
+Unable to verify splits sizes.
+04/18/2024 15:54:49 - INFO - datasets.utils.info_utils - Unable to verify splits sizes.
+Dataset json downloaded and prepared to /storage/ukp/work/yang/.cache/huggingface/datasets/json/default-5ee9fd35a57cad41/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05. Subsequent calls will reuse this data.
+04/18/2024 15:54:49 - INFO - datasets.builder - Dataset json downloaded and prepared to /storage/ukp/work/yang/.cache/huggingface/datasets/json/default-5ee9fd35a57cad41/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05. Subsequent calls will reuse this data.
+[INFO|configuration_utils.py:724] 2024-04-18 15:54:50,009 >> loading configuration file /mnt/beegfs/work/yang/LLM_Anonymization/programming_runs/root/bert_cls_sampled3/config.json
+[INFO|configuration_utils.py:789] 2024-04-18 15:54:50,089 >> Model config BertConfig {
+  "_name_or_path": "/mnt/beegfs/work/yang/LLM_Anonymization/programming_runs/root/bert_cls_sampled3",
+  "architectures": [
+    "BertForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "finetuning_task": "text-classification",
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "Ambassador",
+    "1": "Architect",
+    "2": "Astronaut",
+    "3": "Baseball Player",
+    "4": "Basketball Player",
+    "5": "Chef",
+    "6": "Chess Player",
+    "7": "Classical Music Artist",
+    "8": "Comedian",
+    "9": "Congressman",
+    "10": "Cyclist",
+    "11": "Engineer",
+    "12": "Entomologist",
+    "13": "Fashion Designer",
+    "14": "Formula One Racer",
+    "15": "Horse Trainer",
+    "16": "Lacrosse Player",
+    "17": "Martial Artist",
+    "18": "Medician",
+    "19": "Painter",
+    "20": "Photographer",
+    "21": "Soccer Player",
+    "22": "Table Tennis Player",
+    "23": "Tennis Player"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "label2id": {
+    "Ambassador": 0,
+    "Architect": 1,
+    "Astronaut": 2,
+    "Baseball Player": 3,
+    "Basketball Player": 4,
+    "Chef": 5,
+    "Chess Player": 6,
+    "Classical Music Artist": 7,
+    "Comedian": 8,
+    "Congressman": 9,
+    "Cyclist": 10,
+    "Engineer": 11,
+    "Entomologist": 12,
+    "Fashion Designer": 13,
+    "Formula One Racer": 14,
+    "Horse Trainer": 15,
+    "Lacrosse Player": 16,
+    "Martial Artist": 17,
+    "Medician": 18,
+    "Painter": 19,
+    "Photographer": 20,
+    "Soccer Player": 21,
+    "Table Tennis Player": 22,
+    "Tennis Player": 23
+  },
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "problem_type": "single_label_classification",
+  "torch_dtype": "float32",
+  "transformers_version": "4.39.3",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+04/18/2024 15:54:50 - INFO - __main__ - setting problem type to single label classification
+[INFO|tokenization_utils_base.py:2082] 2024-04-18 15:54:50,103 >> loading file vocab.txt
+[INFO|tokenization_utils_base.py:2082] 2024-04-18 15:54:50,105 >> loading file tokenizer.json
+[INFO|tokenization_utils_base.py:2082] 2024-04-18 15:54:50,107 >> loading file added_tokens.json
+[INFO|tokenization_utils_base.py:2082] 2024-04-18 15:54:50,109 >> loading file special_tokens_map.json
+[INFO|tokenization_utils_base.py:2082] 2024-04-18 15:54:50,110 >> loading file tokenizer_config.json
+[INFO|modeling_utils.py:3280] 2024-04-18 15:54:51,997 >> loading weights file /mnt/beegfs/work/yang/LLM_Anonymization/programming_runs/root/bert_cls_sampled3/model.safetensors
+[INFO|modeling_utils.py:4024] 2024-04-18 15:54:53,636 >> All model checkpoint weights were used when initializing BertForSequenceClassification.
+
+[INFO|modeling_utils.py:4032] 2024-04-18 15:54:53,638 >> All the weights of BertForSequenceClassification were initialized from the model checkpoint at /mnt/beegfs/work/yang/LLM_Anonymization/programming_runs/root/bert_cls_sampled3.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use BertForSequenceClassification for predictions without further training.
+04/18/2024 15:54:53 - INFO - __main__ - using label infos in the model config
+04/18/2024 15:54:53 - INFO - __main__ - label2id: {'Ambassador': 0, 'Architect': 1, 'Astronaut': 2, 'Baseball Player': 3, 'Basketball Player': 4, 'Chef': 5, 'Chess Player': 6, 'Classical Music Artist': 7, 'Comedian': 8, 'Congressman': 9, 'Cyclist': 10, 'Engineer': 11, 'Entomologist': 12, 'Fashion Designer': 13, 'Formula One Racer': 14, 'Horse Trainer': 15, 'Lacrosse Player': 16, 'Martial Artist': 17, 'Medician': 18, 'Painter': 19, 'Photographer': 20, 'Soccer Player': 21, 'Table Tennis Player': 22, 'Tennis Player': 23}
+Running tokenizer on dataset:   0%|          | 0/238 [00:00<?, ? examples/s]Caching processed dataset at /storage/ukp/work/yang/.cache/huggingface/datasets/json/default-5ee9fd35a57cad41/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05/cache-ab80ec093dc0d1bc.arrow
+04/18/2024 15:54:53 - INFO - datasets.arrow_dataset - Caching processed dataset at /storage/ukp/work/yang/.cache/huggingface/datasets/json/default-5ee9fd35a57cad41/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05/cache-ab80ec093dc0d1bc.arrow
+Running tokenizer on dataset: 100%|██████████| 238/238 [00:00<00:00, 947.54 examples/s]Running tokenizer on dataset: 100%|██████████| 238/238 [00:00<00:00, 895.71 examples/s]
+Running tokenizer on dataset:   0%|          | 0/238 [00:00<?, ? examples/s]Caching processed dataset at /storage/ukp/work/yang/.cache/huggingface/datasets/json/default-5ee9fd35a57cad41/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05/cache-80d7c70d5dcef728.arrow
+04/18/2024 15:54:54 - INFO - datasets.arrow_dataset - Caching processed dataset at /storage/ukp/work/yang/.cache/huggingface/datasets/json/default-5ee9fd35a57cad41/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05/cache-80d7c70d5dcef728.arrow
+Running tokenizer on dataset: 100%|██████████| 238/238 [00:00<00:00, 1121.49 examples/s]Running tokenizer on dataset: 100%|██████████| 238/238 [00:00<00:00, 974.46 examples/s] 
+04/18/2024 15:54:55 - INFO - __main__ - Using metric accuracy for evaluation.
+/mnt/beegfs/work/yang/reflexion/lib64/python3.9/site-packages/accelerate/accelerator.py:432: FutureWarning: Passing the following arguments to `Accelerator` is deprecated and will be removed in version 1.0 of Accelerate: dict_keys(['dispatch_batches', 'split_batches', 'even_batches', 'use_seedable_sampler']). Please pass an `accelerate.DataLoaderConfiguration` instead: 
+dataloader_config = DataLoaderConfiguration(dispatch_batches=None, split_batches=False, even_batches=True, use_seedable_sampler=True)
+  warnings.warn(
+04/18/2024 15:54:55 - WARNING - accelerate.utils.other - Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+04/18/2024 15:55:04 - INFO - __main__ - *** Evaluate ***
+[INFO|trainer.py:765] 2024-04-18 15:55:04,354 >> The following columns in the evaluation set don't have a corresponding argument in `BertForSequenceClassification.forward` and have been ignored: wiki_name, sentence, text, l3, l1, anonymized_text, l2, word_count, people. If wiki_name, sentence, text, l3, l1, anonymized_text, l2, word_count, people are not expected by `BertForSequenceClassification.forward`,  you can safely ignore this message.
+[INFO|trainer.py:3512] 2024-04-18 15:55:04,362 >> ***** Running Evaluation *****
+[INFO|trainer.py:3514] 2024-04-18 15:55:04,364 >>   Num examples = 238
+[INFO|trainer.py:3517] 2024-04-18 15:55:04,366 >>   Batch size = 8
+  0%|          | 0/30 [00:00<?, ?it/s] 10%|█         | 3/30 [00:00<00:01, 17.25it/s] 17%|█▋        | 5/30 [00:00<00:01, 13.87it/s] 23%|██▎       | 7/30 [00:00<00:01, 12.80it/s] 30%|███       | 9/30 [00:00<00:01, 12.30it/s] 37%|███▋      | 11/30 [00:00<00:01, 12.03it/s] 43%|████▎     | 13/30 [00:01<00:01, 11.86it/s] 50%|█████     | 15/30 [00:01<00:01, 11.75it/s] 57%|█████▋    | 17/30 [00:01<00:01, 11.68it/s] 63%|██████▎   | 19/30 [00:01<00:00, 11.63it/s] 70%|███████   | 21/30 [00:01<00:00, 11.60it/s] 77%|███████▋  | 23/30 [00:01<00:00, 11.59it/s] 83%|████████▎ | 25/30 [00:02<00:00, 11.57it/s] 90%|█████████ | 27/30 [00:02<00:00, 11.56it/s] 97%|█████████▋| 29/30 [00:02<00:00, 11.57it/s][INFO|integration_utils.py:723] 2024-04-18 15:55:08,087 >> Automatic Weights & Biases logging enabled, to disable set os.environ["WANDB_DISABLED"] = "true"
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+wandb: Currently logged in as: skyfishq (ukp-conv). Use `wandb login --relogin` to force relogin
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: | Waiting for wandb.init()...100%|██████████| 30/30 [00:18<00:00, 11.57it/s]wandb: / Waiting for wandb.init()...wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.16.4
+wandb: Run data is saved locally in /mnt/beegfs/work/yang/LLM_Anonymization/programming_runs/wandb/run-20240418_155520-d8wzkko9
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lr2e-5_B32
+wandb: ⭐️ View project at https://wandb.ai/ukp-conv/Privacy-NLP
+wandb: 🚀 View run at https://wandb.ai/ukp-conv/Privacy-NLP/runs/d8wzkko9
+100%|██████████| 30/30 [00:23<00:00,  1.26it/s]
+[INFO|modelcard.py:450] 2024-04-18 15:55:29,327 >> Dropping the following result as it does not have all the necessary fields:
+{'task': {'name': 'Text Classification', 'type': 'text-classification'}}
+***** eval metrics *****
+  eval_accuracy           =     0.9916
+  eval_loss               =     0.0656
+  eval_runtime            = 0:00:03.72
+  eval_samples            =        238
+  eval_samples_per_second =     63.844
+  eval_steps_per_second   =      8.048
+wandb: WARNING No program path found, not creating job artifact. See https://docs.wandb.ai/guides/launch/create-job
+wandb: - 0.015 MB of 0.015 MB uploadedwandb: \ 0.015 MB of 0.029 MB uploadedwandb: 
+wandb: Run history:
+wandb:           eval/accuracy ▁
+wandb:               eval/loss ▁
+wandb:            eval/runtime ▁
+wandb: eval/samples_per_second ▁
+wandb:   eval/steps_per_second ▁
+wandb:       train/global_step ▁
+wandb: 
+wandb: Run summary:
+wandb:           eval/accuracy 0.9916
+wandb:               eval/loss 0.06561
+wandb:            eval/runtime 3.7278
+wandb: eval/samples_per_second 63.844
+wandb:   eval/steps_per_second 8.048
+wandb:       train/global_step 0
+wandb: 
+wandb: 🚀 View run lr2e-5_B32 at: https://wandb.ai/ukp-conv/Privacy-NLP/runs/d8wzkko9
+wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240418_155520-d8wzkko9/logs

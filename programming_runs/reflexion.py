@@ -85,16 +85,8 @@ def run_reflexion(
 
             # if solved, exit early
             if privacy_score == 'No' and utility_score == 'Yes':
-                item["rewritings"] = rewritings
-                item["privacy_reflections"] = privacy_reflections
-                item["utility_reflections"] = utility_reflections
-                item["detection_result"] = detection_i
-                item["complete"] = 'True'
-                item["acc_reward"] = p_threshold + 1 + 100
-                write_jsonl(log_path, [item], append=True)
-                print(f"Prompt tokens number: {prompt_tokens}, Completion tokens number: {completion_tokens}. \n")
-                print(f"log path: {log_path}\n")
                 complete = True
+                acc_reward = p_threshold + 1 + 100 if not no_utility else p_threshold + 1
                 break
 
             cur_iter = 1
@@ -111,6 +103,7 @@ def run_reflexion(
                 # apply self-reflection in the next attempt
                 if no_utility:
                     prev_rewriting = cur_rewriting['raw_text']
+                    acc_reward += int(privacy_evaluation['rank'])
                 else:
                     prev_rewriting = ''
                     h_idx = 1
