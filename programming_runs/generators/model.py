@@ -67,9 +67,9 @@ def gpt_chat(
     logprobs=False
 ):
     client = AzureOpenAI(
-        api_key=os.getenv("OPENAI_API_KEY"),
+        # api_key=os.getenv("OPENAI_API_KEY"),
         api_version="2023-05-15",
-        azure_endpoint=os.getenv("OPENAI_API_BASE")
+        # azure_endpoint=os.getenv("OPENAI_API_BASE")
     )
     response = client.chat.completions.create(
         model=model,

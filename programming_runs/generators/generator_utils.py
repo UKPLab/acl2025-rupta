@@ -1,7 +1,10 @@
+import copy
+
 from programming_runs.generators.model import ModelBase, Message
 import random
 import json
 from sentence_transformers import SentenceTransformer
+from langchain.output_parsers import ResponseSchema, StructuredOutputParser
 
 from typing import Union, List, Optional, Callable
 
@@ -157,6 +160,16 @@ def generic_detection(
 ):
     """Generates tests for a function."""
     if model.is_chat:
+        response_schemas = [
+            ResponseSchema(name="People", description="name of the detected people separated by ', '"),
+            ResponseSchema(
+                name="Sensitive entities",
+                description="the list of detected sensitive entities where every two entities are separated by ', '",
+            ),
+        ]
+        output_parser = StructuredOutputParser.from_response_schemas(response_schemas)
+        format_instructions = output_parser.get_format_instructions()
+
         messages = [
             Message(
                 role="system",
@@ -164,7 +177,7 @@ def generic_detection(
             ),
             Message(
                 role="user",
-                content=f"{whole_task_instruction}\n\n{detection_chat_instruction}\nThe person description text is here:\n{input_text}"
+                content=f"{whole_task_instruction}\n\n{detection_chat_instruction.format(format_instructions_1=format_instructions)}\nThe person description text is here:\n{input_text}"
             )
         ]
         output, usage, finish_reason = model.generate_chat(messages=messages)
@@ -172,7 +185,8 @@ def generic_detection(
         prompt = f'{whole_task_instruction}\n{detection_completion_instruction}\n\n[description text]:\n{input_text}'
         output, usage, finish_reason = model.generate(prompt)
 
-    output_dict = json.loads(output.replace('\n', '').replace("```json", '').replace("```", ""))
+    output_dict = output_parser.invoke(output)
+    # output_dict = json.loads(output.replace('\n', '').replace("```json", '').replace("```", ""))
     output_dict['raw_response'] = output
     output_dict['usage'] = {}
     output_dict['usage']['prompt_tokens'] = usage.prompt_tokens
@@ -193,6 +207,7 @@ def generic_rewriting(
     num_comps,
     temperature,
     no_utility,
+    p_threshold,
     whole_task_instruction: str,
     general_system_instruction: str,
     detection_result_prefix: str,
@@ -214,27 +229,45 @@ def generic_rewriting(
 
     if model.is_chat:
         if strategy == "simple":
+            response_schemas_1 = [
+                ResponseSchema(name="People", description="name of the detected people separated by ', '"),
+                ResponseSchema(
+                    name="Sensitive entities",
+                    description="the list of detected sensitive entities where every two entities are separated by ', '",
+                ),
+            ]
+            output_parser_1 = StructuredOutputParser.from_response_schemas(response_schemas_1)
+            format_instructions_1 = output_parser_1.get_format_instructions()
+
+            response_schemas_2 = [
+                ResponseSchema(name="Anonymized text", description="your anonymization result")
+            ]
+            output_parser_2 = StructuredOutputParser.from_response_schemas(response_schemas_2)
+            format_instructions_2 = output_parser_2.get_format_instructions()
+
             messages = [
                 Message(
                     role="system",
                     content=general_system_instruction,
                 ),
-                Message(
-                    role="user", # TODO: check this
-                    content=f"{whole_task_instruction}\n\n{detection_result_prefix}\nThe person description text is here:\n{input_text}",
-                ),
-                Message(
-                    role="assistant",  # TODO: check this
-                    content=f"{detection_result}",
-                ),
+                # Message(
+                #     role="user", # TODO: check this
+                #     content=f"{whole_task_instruction}\n\n{detection_result_prefix.format(format_instructions_1=format_instructions_1)}\nThe person description text is here:\n{input_text}",
+                # ),
+                # Message(
+                #     role="assistant",  # TODO: check this
+                #     content=f"{detection_result}",
+                # ),
                 Message(
                     role="user",
-                    content=simple_rewriting_instruction,
+                    content=simple_rewriting_instruction.format(format_instructions_2=format_instructions_2) +
+                    f"\n\nThe biography is here: {input_text}",
                 )
             ]
             output, usage, finish_reason = model.generate_chat(messages=messages, num_comps=num_comps,
                                                                temperature=temperature)
-            output_dict = json.loads(output.replace('\n', '').replace("```json", '').replace("```", ""))
+            output_dict = output_parser_2.invoke(output)
+            # output_dict = json.loads(output.replace('\n', '').replace("```json", '').replace("```", ""))
             output_dict['raw_text'] = output
             output_dict['usage'] = {}
             output_dict['usage']['prompt_tokens'] = usage.prompt_tokens
@@ -244,10 +277,16 @@ def generic_rewriting(
             if not no_utility:
                 if privacy_score == 'Yes':
                     # prev_rewriting += f"Suggestion: These entities {reflection_privacy} could be further generalized to improve the privacy score."
-                    prev_rewriting += f"Suggestion: Entities that can be used to infer the person identity could be further generalized to improve the privacy score."
+                    prev_rewriting += f"Suggestion: Entities that can be used to infer the person identity could be further generalized to improve the privacy score. You can refer the following detected sensitive entity list: {reflection_privacy}"
                 else:
                     # prev_rewriting += f"Suggestion: These entities {reflection_utility} could be replaced with the original specific entities in the original biography to improve the utility score. You should also avoid specifying entities that could decrease the privacy score."
                     prev_rewriting += f"Suggestion: Entities that are about the description of the occupation but can not be used to infer the person identity could be specified to improve the utility score. "
+                response_schemas = [
+                    ResponseSchema(name="Anonymized text", description="your editing result")
+                ]
+                output_parser = StructuredOutputParser.from_response_schemas(response_schemas)
+                format_instructions = output_parser.get_format_instructions()
+
                 messages = [
                     Message(
                         role="system",
@@ -255,34 +294,55 @@ def generic_rewriting(
                     ),
                     Message(
                         role='user',
-                        content=reinforcement_learning_instruction + f"\n\nThe original biography is {input_text}\n\n{prev_rewriting}"
+                        content=reinforcement_learning_instruction.format(p_threshold=p_threshold, format_instructions=format_instructions) + f"\n\nThe original biography is {input_text}\n\n{prev_rewriting}"
                     )
                 ]
                 output, usage, finish_reason = model.generate_chat(messages=messages, num_comps=num_comps,
                                                                          temperature=temperature)
-                output_dict = json.loads(output.replace('\n', '').replace("```json", '').replace("```", ""))
+                output_dict = output_parser.invoke(output)
+                # output_dict = json.loads(output.replace('\n', '').replace("```json", '').replace("```", ""))
                 output_dict['raw_text'] = output
                 output_dict['usage'] = {}
                 output_dict['usage']['prompt_tokens'] = usage.prompt_tokens
                 output_dict['usage']['completion_tokens'] = usage.completion_tokens
                 output_dict['finish_reason'] = finish_reason
             else:
+                # response_schemas_1 = [
+                #     ResponseSchema(name="People", description="name of the detected people separated by ', '"),
+                #     ResponseSchema(
+                #         name="Sensitive entities",
+                #         description="the list of detected sensitive entities where every two entities are separated by ', '",
+                #     ),
+                # ]
+                # output_parser_1 = StructuredOutputParser.from_response_schemas(response_schemas_1)
+                # format_instructions_1 = output_parser_1.get_format_instructions()
+                response_schemas_2 = [
+                    ResponseSchema(name="Anonymized text", description="your anonymization result")
+                ]
+                output_parser_2 = StructuredOutputParser.from_response_schemas(response_schemas_2)
+                format_instructions_2 = output_parser_2.get_format_instructions()
+                response_schemas_3 = [
+                    ResponseSchema(name="Anonymized text", description="your further anonymization result")
+                ]
+                output_parser_3 = StructuredOutputParser.from_response_schemas(response_schemas_3)
+                format_instructions_3 = output_parser_3.get_format_instructions()
+
                 messages = [
                     Message(
                         role="system",
                         content=general_system_instruction,
                     ),
-                    Message(
-                        role="user",  # TODO: check this
-                        content=f"{whole_task_instruction}\n\n{detection_result_prefix}\nThe person description text is here:\n{input_text}",
-                    ),
-                    Message(
-                        role="assistant",  # TODO: check this
-                        content=f"{detection_result}",
-                    ),
+                    # Message(
+                    #     role="user",  # TODO: check this
+                    #     content=f"{whole_task_instruction}\n\n{detection_result_prefix.format(format_instructions_1=format_instructions_1)}\nThe person description text is here:\n{input_text}",
+                    # ),
+                    # Message(
+                    #     role="assistant",  # TODO: check this
+                    #     content=f"{detection_result}",
+                    # ),
                     Message(
                         role="user",
-                        content=f"{simple_rewriting_instruction}",
+                        content=f"{simple_rewriting_instruction.format(format_instructions_2=format_instructions_2)}",
                     ),
                     Message(
                         role="assistant",
@@ -293,12 +353,13 @@ def generic_rewriting(
                     messages.append(
                         Message(
                             role="user",
-                            content=f"{reflection_privacy_rewriting_instruction}\nThe entity list is here:\n{reflection_privacy}",
+                            content=f"{reflection_privacy_rewriting_instruction.format(format_instructions_3=format_instructions_3)}\nThe entity list is here:\n{reflection_privacy}",
                         )
                     )
                     output, usage, finish_reason = model.generate_chat(messages=messages, num_comps=num_comps,
                                                                              temperature=temperature)
-                    output_dict = json.loads(output.replace('\n', '').replace("```json", '').replace("```", ""))
+                    output_dict = output_parser_3.invoke(output)
+                    # output_dict = json.loads(output.replace('\n', '').replace("```json", '').replace("```", ""))
                     output_dict['raw_text'] = output
                     output_dict['usage'] = {}
                     output_dict['usage']['prompt_tokens'] = usage.prompt_tokens
@@ -364,8 +425,10 @@ def generic_generate_self_reflection(
 
 def generic_privacy_reflection(
         model: ModelBase,
+        retriever,
         curr_rewriting: str,
         people: str,
+        p_threshold: int,
         no_utility: bool,
         general_system_instruction: str,
         privacy_reflection_chat_instruction_1: str,
@@ -374,6 +437,18 @@ def generic_privacy_reflection(
         privacy_reflection_completion_instruction_2: str
 ):
     if model.is_chat:
+        response_schemas = [
+            ResponseSchema(name="Candidates", description=f"the sorted list of name of {p_threshold} celebrity "
+                                                          "candidates where every two names are separated by \', \'")
+        ]
+        output_parser = StructuredOutputParser.from_response_schemas(response_schemas)
+        format_instructions_1 = output_parser.get_format_instructions()
+
+        # retrieved_docs = retriever.invoke(curr_rewriting)
+        # retrieved_docs_str = ""
+        # for d in retrieved_docs:
+        #     retrieved_docs_str += f"{d.page_content}\n"
+
         messages = [
             Message(
                 role="system",
@@ -381,61 +456,72 @@ def generic_privacy_reflection(
             ),
             Message(
                 role="user",
-                content=f'{privacy_reflection_chat_instruction_1}\nThe biography text is here:\n{curr_rewriting}',
+                content=f'{privacy_reflection_chat_instruction_1.format(format_instructions_1=format_instructions_1, p_threshold=p_threshold)}\n\nThe anonymized biography text is here:\n{curr_rewriting}'
+                        # f'The retrieved context is here:{retrieved_docs_str}',
             )
         ]
         output, usage_1, finish_reason_1 = model.generate_chat(messages=messages)
-        candidate = json.loads(output.replace('\n', ''))["Candidates"].split(', ')
+        candidate = output_parser.invoke(output)["Candidates"].split(', ')
+        # candidate = json.loads(output.replace('\n', ''))["Candidates"].split(', ')
         emb_model = SentenceTransformer("all-mpnet-base-v2")
         candidate_emb = emb_model.encode(candidate)
         people_emb = emb_model.encode(people)
         sim_score = candidate_emb.dot(people_emb)
         if True in (sim_score > 0.75):
-            if no_utility:
-                messages.append(
-                    Message(
-                        role="assistant",
-                        content=output
-                    )
+            # if no_utility:
+            response_schemas = [
+                ResponseSchema(name="Confirmation", description="\"Yes or No\""),
+                ResponseSchema(name="Advice", description="\"the list of detected sensitive entities where"
+                                                          " every two entities are separated by \', \'\"}")
+            ]
+            output_parser = StructuredOutputParser.from_response_schemas(response_schemas)
+            format_instructions_2 = output_parser.get_format_instructions()
+
+            messages.append(
+                Message(
+                    role="assistant",
+                    content=output
                 )
-                messages.append(
-                    Message(
-                        role="user",
-                        content=f"The person described by the text is {people}. {privacy_reflection_completion_instruction_2}"
-                    )
+            )
+            messages.append(
+                Message(
+                    role="user",
+                    content=f"The person described by the text is {people}. {privacy_reflection_completion_instruction_2.format(format_instructions_2=format_instructions_2)}"
                 )
-                output, usage_2, finish_reason_2 = model.generate_chat(messages=messages)
-                try:
-                    output_dict = json.loads(output.replace('\n', '').replace("```json", '').replace("```", ""))
-                except json.decoder.JSONDecodeError:
-                    messages.append(Message(role="assistant", content=output))
-                    messages.append(Message(role="user",
-                                            content="Your response is not exactly in the JSON structure that I provide, "
-                                                    "put your response in the JSON structure."))
-                    output, usage_3, finish_reason_3 = model.generate_chat(messages=messages)
-                    output_dict = json.loads(output.replace('\n', '').replace("```json", '').replace("```", ""))
-                    output_dict['usage_3'] = {}
-                    output_dict['usage_3']['prompt_tokens'] = usage_3.prompt_tokens
-                    output_dict['usage_3']['completion_tokens'] = usage_3.completion_tokens
-                output_dict['usage_2'] = {}
-                output_dict['usage_1'] = {}
-                output_dict['usage_1']['prompt_tokens'] = usage_1.prompt_tokens
-                output_dict['usage_2']['prompt_tokens'] = usage_2.prompt_tokens
-                output_dict['usage_1']['completion_tokens'] = usage_1.completion_tokens
-                output_dict['usage_2']['completion_tokens'] = usage_2.completion_tokens
-                output_dict['finish_reason_1'] = finish_reason_1
-                output_dict['finish_reason_2'] = finish_reason_2
-                output_dict['candidates'] = candidate
-                output_dict['rank'] = int(sim_score.argmax()) + 1
-            else:
-                output_dict = {}
-                output_dict["Confirmation"] = "Yes"
-                output_dict["Advice"] = ""
-                output_dict['usage_1'] = {}
-                output_dict['usage_1']['prompt_tokens'] = usage_1.prompt_tokens
-                output_dict['usage_1']['completion_tokens'] = usage_1.completion_tokens
-                output_dict['candidates'] = candidate
-                output_dict['rank'] = int(sim_score.argmax()) + 1
+            )
+            output, usage_2, finish_reason_2 = model.generate_chat(messages=messages)
+            output_dict = output_parser.invoke(output)
+            # try:
+            #     output_dict = json.loads(output.replace('\n', '').replace("```json", '').replace("```", ""))
+            # except json.decoder.JSONDecodeError:
+            #     messages.append(Message(role="assistant", content=output))
+            #     messages.append(Message(role="user",
+            #                             content="Your response is not exactly in the JSON structure that I provide, "
+            #                                     "put your response in the JSON structure."))
+            #     output, usage_3, finish_reason_3 = model.generate_chat(messages=messages)
+            #     output_dict = json.loads(output.replace('\n', '').replace("```json", '').replace("```", ""))
+            #     output_dict['usage_3'] = {}
+            #     output_dict['usage_3']['prompt_tokens'] = usage_3.prompt_tokens
+            #     output_dict['usage_3']['completion_tokens'] = usage_3.completion_tokens
+            output_dict['usage_2'] = {}
+            output_dict['usage_1'] = {}
+            output_dict['usage_1']['prompt_tokens'] = usage_1.prompt_tokens
+            output_dict['usage_2']['prompt_tokens'] = usage_2.prompt_tokens
+            output_dict['usage_1']['completion_tokens'] = usage_1.completion_tokens
+            output_dict['usage_2']['completion_tokens'] = usage_2.completion_tokens
+            output_dict['finish_reason_1'] = finish_reason_1
+            output_dict['finish_reason_2'] = finish_reason_2
+            output_dict['candidates'] = candidate
+            output_dict['rank'] = int(sim_score.argmax()) + 1
+            # else:
+            #     output_dict = {}
+            #     output_dict["Confirmation"] = "Yes"
+            #     output_dict["Advice"] = ""
+            #     output_dict['usage_1'] = {}
+            #     output_dict['usage_1']['prompt_tokens'] = usage_1.prompt_tokens
+            #     output_dict['usage_1']['completion_tokens'] = usage_1.completion_tokens
+            #     output_dict['candidates'] = candidate
+            #     output_dict['rank'] = int(sim_score.argmax()) + 1
         else:
             output_dict = {}
             output_dict["Confirmation"] = "No"
@@ -464,6 +550,13 @@ def generic_utility_reflection(
         utility_reflection_completion_instruction_2: str
 ):
     if model.is_chat:
+        response_schemas = [
+            ResponseSchema(name="Occupation", description="the occupation you choose"),
+            ResponseSchema(name="Confidence Score", description="the confidence score of making your choice")
+        ]
+        output_parser = StructuredOutputParser.from_response_schemas(response_schemas)
+        format_instructions = output_parser.get_format_instructions()
+
         messages = [
             Message(
                 role="system",
@@ -471,7 +564,7 @@ def generic_utility_reflection(
             ),
             Message(
                 role="user",
-                content=f'{utility_reflection_chat_instruction_1}\nThe anonymized biography is here:\n{curr_rewriting}',
+                content=f'{utility_reflection_chat_instruction_1.format(format_instructions=format_instructions)}\nThe anonymized biography is here:\n{curr_rewriting}',
             )
         ]
         output, usage_1, finish_reason_1 = model.generate_chat(messages=messages)
@@ -547,6 +640,127 @@ def generic_utility_reflection(
             f'{utility_reflection_completion_instruction_1}\n[Original text]:\n{input_text}\n[Anonymized text]:\n{curr_rewriting}\n[Classification label]{label}')
 
     return output_dict  # type: ignore
+
+
+def generic_privacy_confidence_evaluation(
+        model: ModelBase,
+        curr_rewriting: str,
+        people: str,
+        general_system_instruction: str,
+        privacy_confidence_evaluation_instruction: str,
+):
+    if model.is_chat:
+        response_schemas = [
+            ResponseSchema(name="Confidence Score", description="the confidence score of making your choice"),
+            ResponseSchema(name="Reason", description="the reason for your scoring")
+        ]
+        output_parser = StructuredOutputParser.from_response_schemas(response_schemas)
+        format_instructions = output_parser.get_format_instructions()
+
+        messages = [
+            Message(
+                role="system",
+                content=general_system_instruction,
+            ),
+            Message(
+                role="user",
+                content=f'{privacy_confidence_evaluation_instruction.format(format_instructions=format_instructions)}\n\nThe anonymized text is here:\n{curr_rewriting}\nThe possible celebrity is {people}',
+            )
+        ]
+        output, usage_1, finish_reason_1 = model.generate_chat(messages=messages)
+        output_dict = output_parser.invoke(output)
+        output_dict['usage'] = {}
+        output_dict['usage']['prompt_tokens'] = usage_1.prompt_tokens
+        output_dict['usage']['completion_tokens'] = usage_1.completion_tokens
+        output_dict['finish_reason'] = finish_reason_1
+
+    else:
+        output = model.generate(
+            f'{privacy_confidence_evaluation_instruction}\n[Description text]:\n{curr_rewriting}\n[Person name]:\n{people}')
+
+    return output_dict  # type: ignore
+
+
+def generic_privacy_selection_evaluation(
+        model: ModelBase,
+        curr_rewriting: str,
+        people: str,
+        candidate_list: str,
+        general_system_instruction: str,
+        candidate_generation_instruction: str,
+        privacy_selection_evaluation_instruction: str,
+):
+    if model.is_chat:
+        gn_flag = False
+        if candidate_list is None:
+            gn_flag = True
+            response_schemas = [
+                ResponseSchema(name="Similar celebrities", description="the list of the most similar celebrities where "
+                                                                       "every two celebrities are separated by a comma")
+            ]
+            output_parser = StructuredOutputParser.from_response_schemas(response_schemas)
+            format_instructions = output_parser.get_format_instructions()
+
+            messages = [
+                Message(
+                    role="system",
+                    content=general_system_instruction,
+                ),
+                Message(
+                    role="user",
+                    content=f'{candidate_generation_instruction.format(format_instructions=format_instructions)}\n\nThe anonymized text is here:\n{curr_rewriting}\nThe described celebrity is {people}',
+                )
+            ]
+            output, usage, finish_reason = model.generate_chat(messages=messages)
+            output_dict = output_parser.invoke(output)
+            candidate_list = copy.deepcopy(output_dict["Similar celebrities"])
+            candidate_list = candidate_list.split(', ')
+            candidate_list.append(people)
+            random.shuffle(candidate_list)
+            candidate_list = ', '.join(candidate_list)
+        response_schemas = [
+            ResponseSchema(name="People", description="the name of the most possible celebrity")
+        ]
+        output_parser = StructuredOutputParser.from_response_schemas(response_schemas)
+        format_instructions = output_parser.get_format_instructions()
+
+        messages = [
+            Message(
+                role="system",
+                content=general_system_instruction,
+            ),
+            Message(
+                role="user",
+                content=f'{privacy_selection_evaluation_instruction.format(format_instructions=format_instructions)}\n\nThe anonymized text is here:\n{curr_rewriting}\nThe candidate list is here:\n{candidate_list}',
+            )
+        ]
+        output, usage_1, finish_reason_1 = model.generate_chat(messages=messages)
+        output_dict = output_parser.invoke(output)
+        # candidate = json.loads(output.replace('\n', ''))["Candidates"].split(', ')
+        emb_model = SentenceTransformer("all-mpnet-base-v2")
+        candidate_emb = emb_model.encode(output_dict['People'])
+        people_emb = emb_model.encode(people)
+        sim_score = candidate_emb.dot(people_emb)
+        if sim_score > 0.75:
+            output_dict['success'] = True
+        else:
+            output_dict['success'] = False
+        output_dict['usage_1'] = {}
+        output_dict['usage_1']['prompt_tokens'] = usage_1.prompt_tokens
+        output_dict['usage_1']['completion_tokens'] = usage_1.completion_tokens
+        output_dict['finish_reason_1'] = finish_reason_1
+        if gn_flag:
+            output_dict['usage_2'] = {}
+            output_dict['usage_2']['prompt_tokens'] = usage.prompt_tokens
+            output_dict['usage_2']['completion_tokens'] = usage.completion_tokens
+            output_dict['finish_reason_2'] = finish_reason
+            output_dict['candidate_list'] = candidate_list
+    else:
+        output = model.generate(
+            f'{privacy_selection_evaluation_instruction}\n[Description text]:\n{curr_rewriting}\n[Person name]:\n{people}')
+
+    return output_dict  # type: ignore
+
 
 
 def sample_n_random(items: List[str], n: int) -> List[str]:

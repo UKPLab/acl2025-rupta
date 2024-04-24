@@ -50,13 +50,21 @@ class Generator:
             detection_result: Optional[str] = None,
             num_comps: int = 1,
             temperature: float = 0.0,
-    ) -> Union[str, List[str]]:
+    ):
         ...
 
     @abstractmethod
-    def privacy_reflex(self, model: ModelBase, rewriting, people):
+    def privacy_reflex(self, model: ModelBase, rewriting, people, p_threshold, no_utility, retriever):
         ...
 
     @abstractmethod
-    def utility_reflex(self, input_text: str, model: ModelBase, rewriting, label):
+    def utility_reflex(self, input_text: str, model: ModelBase, rewriting, label, privacy_score):
+        ...
+
+    @abstractmethod
+    def privacy_confidence_evaluation(self, model: ModelBase, rewriting, people):
+        ...
+
+    @abstractmethod
+    def privacy_selection_evaluation(self, model: ModelBase, rewriting, people, candidate_list):
         ...

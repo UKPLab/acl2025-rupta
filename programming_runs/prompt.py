@@ -1,21 +1,12 @@
-from programming_runs.generators.model import ModelBase, message_to_str
-from .generator_types import Generator
-from .generator_utils import (generic_detection, generic_rewriting,
-                              generic_privacy_reflection, generic_utility_reflection,
-                              generic_privacy_selection_evaluation, generic_privacy_confidence_evaluation)
-
-from typing import Optional, List, Union
-import ast
-import re
-
 DETECTION_INSTRUCTION = (
     "Let's first complete the personally identifiable information detection task, "
     "given the person description text, you need to answer the name of the"
     " person that is mainly talked about by the text, then identify every entities "
     "(including words, dates, and numerals) in the provided person description text that"
     " can be connected to the person being talked about, such that if these entities "
-    "are removed the result text is anonymized, namely people can not know who is described in the text. \n"
+    "are removed the result text is anonymized, namely people can not know who is described in the text. "
     "{format_instructions_1}")
+    # "Fill in your response into the corresponding position enclosed in \"\" in the following JSON structure and respond me with the filled JSON structure:\n{\"People\": \"name of the detected people separated by \', \'\", \"Sensitive entities\": \" the list of detected sensitive entities where every two entities are separated by \', \'\"}")
 GENERAL_SYSTEM_INSTRUCTION = ("You are an efficient assistant. "
                               "Only respond with the given JSON template filled with your answers.")
 WHOLE_TASK_INSTRUCTION = ("You are a text anonymization annotator. "
@@ -41,17 +32,13 @@ REFELECTION_UTILITY_INSTRUCTION = "Here is the feedback about how to improve the
 REFELECTION_PRIVACY_REWRITING_INSTRUCTION = (
     "Here is the list of the sensitive entities that still can be used to correctly infer"
     "the identity of the people being talked about by your anonymized text."
-    " Please further generalize the sensitive entities in your anonymized text"
-    # " about "
-    # "how to further improve the privacy safety of it. Please refer to"
-    # " the feedback"
+    " Please further generalize these sensitive entities in your anonymized text"
     " to give me a better anonymized text with a higher level of safety. "
     "Note that you are only allowed to decrease the specificity by "
-    "replacing sensitive"
-    " words or entities with more general one and should not delete the"
+    "replacing sensitive words or entities with more general one and should not delete the"
     " content of the text. Only tokens necessary to make the sentence natural and fluent can be added. "
     "Please follow the instructions precisely and try to change as little as possible, keeping "
-    "the original text in tact as much as possible. \n{format_instructions_3}"
+    "the original text in tact as much as possible. {format_instructions_3}"
     # "Fill in your response into the corresponding position enclosed in \"\" in the following JSON structure and respond me with the filled JSON structure:\n{\"Anonymized text\": \"the generalized text\"}"
     )
 REFELECTION_UTILITY_REWRITING_INSTRUCTION = ("Here is the list of confused entities that can do harm to the performance of the downstream"
@@ -74,45 +61,24 @@ REFELECTION_UTILITY_REWRITING_INSTRUCTION = ("Here is the list of confused entit
                                              )
 SIMPLE_REWRITING_INSTRUCTION = (
     # "Let's now complete the second task. "
-    "You are an expert anonymizer that carefully choose some of the detected sensitive entities of the"
-    " given biography text and then generalize them to make the text anonymous, namely the text can be suitable to describe not only a specific one person but many similar "
-    "person. You follow the instructions and format precisely and you try to change as "
-    "little as possible, keep the original text in tact as much as possible. Only generalize information and do not"
-    " invent new information. \nExample: 'my husband and I' -> 'my partner and I' is valid, but 'my husband and I' -> "
+    "You are an expert anonymizer that edits the given person description text to make the text anonymous, namely the text can be suitable to describe not only one specific person but many similar person."
+    "The only allowed editing operation is replacing an entity them with its more general counterpart."
+    " \nExample: 'my husband and I' -> 'my partner and I' is valid, but 'my husband and I' -> "
     "'my wife and I' is not. \nExample: 'my husband and I have a dog' -> 'my partner and I have a dog' is valid, "
     "but 'my husband and I have a dog' -> 'my partner and I have a cat' is not. \nExample: 'He is a basketball player'"
     " -> 'He is an athlete' is valid but 'He is an artist' or 'She is an athlete', 'They are athlete' is not.\n"
-    # "You are an expert anonymizer that carefully adapts small parts of the description text to make it anonymous."
-    # " Given a paragraph of description text, please generalize all your detected entities that can be used to infer the person being talked about to make sure people can not easily guess who is talked by the description text."
-    "Names can be replaced with common pronoun like 'A person', or other "
-    "sensitive entities can be replaced with more general counterparts. "
-    # "Note that the generalization should not affect the occupation classification of the text."
-    "Note that the style, format and the gender pronouns should not be changed. Especially pay attention to the "
-    "consistent use of \"he\", \"she\" and \"They\". You are only allowed to adapt small parts of the description"
-    " text to make it anonymous."
-    " Additionally, you can insert as little as possible tokens to ensure the final "
-    "output text is fluent and natural while preserving anonymity. Removing content is not allowed, only decrease"
-    "the specificity by generalizing. {format_instructions_2}"
+    "Additionally, you can insert as few as possible tokens to ensure the final "
+    "output text is fluent and natural while preserving anonymity. "
+    "Your goal is to anonymize text while replacing as few entities as possible, keeping the original text in tact as much as possible. So you need to carefully choose some"
+    " of your just detected sensitive entities and replace them. Only generalize information and do not"
+    " invent new information or delete existing information. "
+    "Note that the style, format and the gender pronouns of the original text should be kept. Especially pay attention to the "
+    "consistent use of \"he\", \"she\" and \"They\". "
+    "{format_instructions_2}")
     # "meaning and coherence of the text."
     # " Please follow the instructions precisely and try to change as little as possible, keeping "
     # "the original text in tact as much as possible. Only generalize your detected sensitive information and do not invent new information. "
-    # "Fill in your response into the corresponding position enclosed in \"\" in the following JSON structure and respond me with the filled JSON structure:\n{\"Anonymized text\": \"your anonymization result\"}"
-    # "Let's now complete the second task. "
-    # "You are an expert anonymizer that edits the given biography text to make the text anonymous, namely the text can be suitable to describe not only one specific person but many similar person."
-    # "The only allowed editing operation is replacing an entity them with its more general counterpart."
-    # " \nExample: 'my husband and I' -> 'my partner and I' is valid, but 'my husband and I' -> "
-    # "'my wife and I' is not. \nExample: 'my husband and I have a dog' -> 'my partner and I have a dog' is valid, "
-    # "but 'my husband and I have a dog' -> 'my partner and I have a cat' is not. \nExample: 'He is a basketball player'"
-    # " -> 'He is an athlete' is valid but 'He is an artist' or 'She is an athlete', 'They are athlete' is not.\n"
-    # "Additionally, you can insert as few as possible tokens to ensure the final "
-    # "output text is fluent and natural while preserving anonymity. "
-    # "Your goal is to anonymize text while replacing as few entities as possible, keeping the original text in tact as much as possible. So you need to carefully choose some"
-    # " of your just detected sensitive entities and replace them. Only generalize information and do not"
-    # " invent new information or delete existing information. "
-    # "Note that the style, format and the gender pronouns of the original text should be kept. Especially pay attention to the "
-    # "consistent use of \"he\", \"she\" and \"They\". "
-    # "{format_instructions_2}"
-    )
+    # "Fill in your response into the corresponding position enclosed in \"\" in the following JSON structure and respond me with the filled JSON structure:\n{\"Anonymized text\": \"your anonymization result\"}")
 PRIVACY_REFLECTION_INSTRUCTION_1 = (
     # "You are very good at evaluating the level of association between the given celebrity and a paragraph of biography."
     # " Given the name of the celebrity and the biography, you are supposed to give a confidence score confirming "
@@ -122,23 +88,14 @@ PRIVACY_REFLECTION_INSTRUCTION_1 = (
     # " entities appearing in the biography that you used to evaluate the confidence score and could be generalized to "
     # "decrease the association confidence score. "
     # "Fill in your response into the corresponding position enclosed in \"\" in the following JSON structure and respond "
-    # "me with the filled JSON structure:\n{\"Confidence score\": \"the association confidence escore\", \"Entities\": "
+    # "me with the filled JSON structure:\n{\"Confidence score\": \"the association confidenc escore\", \"Entities\": "
     # "\"the list of entities where every two entities are separated by \', \'\"}"
     "You are very knowledgeable about celebrities and can identify them from the given anonymized biography."
     " When asked to identify individuals, disregard any missing information and context, like placeholder '<PERSON>' or 'ORGANIZATION', "
     "respond only with the names of {p_threshold} celebrity candidates most likely being talked by"
     " the provided anonymized biography text and sort the names from highest to lowest probability. "
-    "Note that the retrieved literature is for reference only, and the correct answer may not be among them."
-    " {format_instructions_1}"
-# "Objective: Simulate a reidentification attack using retrieval-augmented generation on Wikipedia biography data. \n\n"
-#     "Input Details:\nAnonymized Biography: A paragraph with certain identity-informing entities generalized to prevent direct identification.\n"
-#     "Retrieved Documents: Documents selected based on the similarity of embeddings with the anonymized biography.\n\n"
-#     "Task Description:\n1. Using the anonymized biography and a set of retrieved documents: \n"
-#     "Infer Potential Candidates: Identify and list {p_threshold} celebrity candidates who could potentially be the subject of"
-#     " the anonymized biography. This inference should be based on the content of the biography rather than direct "
-#     "extraction from the documents. \n2. Ranking Criteria: Sort the candidates from the most likely to the least likely"
-#     " based on their relevance to the content of the anonymized biography. "
-#     "Consider the retrieved documents for contextual assistance only. \n\nOutput: {format_instructions_1}"
+    "{format_instructions_1}"
+    # " Now identify the individual talked by the following text and "
     # "fill in your response into the corresponding position enclosed in \"\" in the following JSON structure "
     # "and respond me with the filled JSON structure:\n{js}"
     # "You are an experienced pricurrent or finalvacy risk evaluator. Given a paragraph of description text and the name of"
@@ -150,9 +107,8 @@ PRIVACY_REFLECTION_INSTRUCTION_1 = (
 PRIVACY_REFLECTION_INSTRUCTION_2 = ("If the name is within your output name list, respond with \'Yes\' and"
                                     # "with me a confidence score (0-100) of associating the person with the description text. "
                                     " you need to detect and then respond me with the sensitive entities (including words, dates, and numerals) in the biography that "
-                                    "you just used to infer the person's identity and should be generalized to decrease"
-                                    " the confidence score of associating the person with the biography text. "
-                                    "Otherwise, just give me the answer \'No\'. {format_instructions_2}"
+                                    "you just used to infer the person's identity and should be generalized to decrease the confidence score of associating the person with the biography text. Otherwise, just give me the answer \'No\'. "
+                                    "{format_instructions_2}"
                                     # "You are very knowledgeable about celebrities. Given the description text"
                                     #                               " and the name of a person, please respond with the confidence score "
                                     #                               "about associating the description text with the given person, 0 represents fully "
@@ -165,12 +121,14 @@ PRIVACY_REFLECTION_INSTRUCTION_2 = ("If the name is within your output name list
                                     # " \"Advice\": \"the list of detected sensitive entities where every two entities are separated by \', \'\"}"
                                     )
 UTILITY_REFLECTION_INSTRUCTION_1 = (
-    "You are an expert at classifying people's occupation according to their anonymized biography. Given the anonymized biography of"
-    " a person and the set of optional occupation, choose the most likely occupation of the person from the optional "
-    "occupation set according to the anonymized biography and give me your confidence score of making this classification on a continuous scale from 0 to 100.\nThe optional occupation set is here:\n"
+    "You are an expert at classifying people's occupation according to their anonymized biography. Given the anonymized"
+    " biography of a person and the set of optional occupation, choose the most likely occupation of the person from "
+    "the optional occupation set according to the anonymized biography and give me your confidence score of making "
+    "this classification on a continuous scale from 0 to 100.\nThe optional occupation set is here:\n"
     "Chef, Classical Music Artist, Table Tennis Player, Entomologist, Lacrosse Player, Astronaut, Medician,"
-    " Fashion Designer, Horse Trainer, Ambassador, Photographer, Engineer, Formula One Racer, Comedian, Martial Artist, "
-    "Chess Player, Painter, Soccer Player, Tennis Player, Architect, Cyclist, Basketball Player, Congressman, Baseball Player. {format_instructions}"
+    " Fashion Designer, Horse Trainer, Ambassador, Photographer, Engineer, Formula One Racer, Comedian, Martial Artist,"
+    " Chess Player, Painter, Soccer Player, Tennis Player, Architect, Cyclist, Basketball Player, Congressman, "
+    "Baseball Player. \n{format_instructions}"
     # "Fill in your response into "
     # "the corresponding position enclosed in \"\" in the following JSON structure and respond me with the filled JSON structure"
     # ":\n{\"Occupation\": \"the occupation you choose\", \"Confidence Score\": \"the confidence score of making your choice\": \"\"}"
@@ -198,11 +156,12 @@ REINFORCEMENT_INSTRUCTION = (
     "Each edit is associated with a privacy score, indicating the level of personal privacy maintained, and a utility "
     "score, reflecting its usefulness for a specific task.\n\n"
     "Your task is to edit the latest entry in the editing history. "
-    "You can only alter the text by replacing some entities with more general entities to improve the privacy score, or more specific entities in the"
+    "You can only alter the text by replacing some entities with more general entities to improve the privacy score, "
+    "or more specific entities in the"
     " original biography to improve the utility score. \n"
     "Here are the rewarding rules:\n"
-    "- If the privacy score is {p_threshold} or less, the reward is equivalent to the privacy score.\n"
-    "- If the privacy score exceeds {p_threshold}, the reward is equivalent to the utility score.\n"
+    "- If the privacy score is {p_threshold_1} or less, the reward is equivalent to the privacy score.\n"
+    "- If the privacy score exceeds {p_threshold_2}, the reward is equivalent to the utility score.\n"
     "The editing goal is to get a higher reward than before while keeping changes to the "
     "text minimal, ensuring the original context and structure are preserved as much as possible. "
     "You are also permitted to make minor adjustments to the text to maintain fluency and naturalness.\n"
@@ -212,7 +171,7 @@ REINFORCEMENT_INSTRUCTION = (
     "- Specify: You may replace generic terms with specific ones from the original text to increase utility, "
     "without changing unrelated details.\n\n"
     "Your ultimate goal is to maximize the total accumulated reward through strategic edits. I will provide editing "
-    "suggestions to guide your editing towards achieving higher rewards. \n{format_instructions}"
+    "suggestions to guide your editing towards achieving higher rewards. {format_instructions}"
     # "Fill in your response into the corresponding position enclosed in \"\" in the following JSON structure and "
     # "respond me with the filled JSON structure:\n{js}"
 )
@@ -258,201 +217,18 @@ REINFORCEMENT_INSTRUCTION = (
 PRIVACY_EVALUATION_CONFIDENCE_INSTRUCTION = ("You are very knowledgeable about celebrities. When asked to identify "
                                              "individuals, given a paragraph of anonymized text and the name of "
                                              "a possible celebrity, disregard any missing or confused information and context,"
-                                             " respond with me your confidence score of"
+                                             "  only respond with me your confidence score of"
                                              " associating the person with the anonymized text "
-                                             "on a continuous scale ranging from 0 to 100 that starts with 0 corresponding to 'completely "
-                                             "irrelevant', goes through 1 - 50 corresponding to 'some details matching', then 51 - 99 corresponding to'most details matching', up to 100 corresponding to 'completely matching'. And then respond the reason why you give this score. {format_instructions}")
+                                             "on a continuous scale ranging from 0 to 100 that starts with 'completely "
+                                             "irrelevant' up to 'completely matching'. ")
 PRIVACY_EVALUATION_SELECTION_INSTRUCTION_1 = ("You are very knowledgeable about celebrities. "
                                               "Given a paragraph of anonymized celebrity biography and the name of the"
-                                              "person described by the biography, generate a list of 9 celebrities that"
-                                              "are so similar to the given celebrity that can also be described or partialy described by"
-                                              "the given anonymized celebrity biography. {format_instructions}")
+                                              "person described by the biography, generate a list of celebrities that"
+                                              "are so similar to the given celebrity that can also be described using"
+                                              "the given celebrity biography. {format_instructions}")
 PRIVACY_EVALUATION_SELECTION_INSTRUCTION_2 = ("You are very knowledgeable about celebrities. When asked to identify "
                                              "individuals, given a paragraph of anonymized text and a list of "
                                              "possible celebrity candidate, disregard any missing or confused "
                                               "information and context, choose the most possible celebrity from "
-                                              "the candidate list. {format_instructions}")
+                                              "the candidate list.")
 
-class ReWriter(Generator):
-
-    def detect(self, input_text: str, model: ModelBase):
-        return generic_detection(
-            input_text=input_text,
-            model=model,
-            whole_task_instruction=WHOLE_TASK_INSTRUCTION,
-            general_task_instruction=GENERAL_SYSTEM_INSTRUCTION,
-            detection_chat_instruction=DETECTION_INSTRUCTION,
-            detection_completion_instruction=DETECTION_INSTRUCTION,
-        )
-
-    def rewrite(
-            self,
-            input_text: str,
-            model: ModelBase,
-            strategy: str,
-            prev_rewriting: Optional[str] = None,
-            reflection_privacy: Optional[str] = None,
-            reflection_utility: Optional[str] = None,
-            privacy_score: Optional[int] = None,
-            utility_score: Optional[int] = None,
-            detection_result: Optional[str] = None,
-            num_comps: int = 1,
-            temperature: float = 0.0,
-            p_threshold: int = 10,
-            no_utility: bool = False
-    ) -> Union[str, List[str]]:
-        return generic_rewriting(
-            input_text=input_text,
-            model=model,
-            strategy=strategy,
-            prev_rewriting=prev_rewriting,
-            reflection_privacy=reflection_privacy,
-            reflection_utility=reflection_utility,
-            privacy_score=privacy_score,
-            utility_score=utility_score,
-            detection_result=detection_result,
-            num_comps=num_comps,
-            temperature=temperature,
-            no_utility=no_utility,
-            p_threshold=p_threshold,
-            whole_task_instruction=WHOLE_TASK_INSTRUCTION,
-            general_system_instruction=GENERAL_SYSTEM_INSTRUCTION,
-            detection_result_prefix=DETECTION_INSTRUCTION,
-            refelection_prev_re_instruction=REFELECTION_PREV_RE_INSTRUCTION,
-            reflection_privacy_instruction=REFELECTION_PRIVACY_INSTRUCTION,
-            refelection_utility_instruction=REFELECTION_UTILITY_INSTRUCTION,
-            simple_rewriting_instruction=SIMPLE_REWRITING_INSTRUCTION,
-            reflection_privacy_rewriting_instruction=REFELECTION_PRIVACY_REWRITING_INSTRUCTION,
-            reflection_utility_rewriting_instruction=REFELECTION_UTILITY_REWRITING_INSTRUCTION,
-            reinforcement_learning_instruction=REINFORCEMENT_INSTRUCTION
-        )
-
-    def privacy_reflex(self, model: ModelBase, rewriting, people, p_threshold, no_utility, retriever):
-        return generic_privacy_reflection(
-            model=model,
-            retriever=retriever,
-            curr_rewriting=rewriting,
-            people=people,
-            p_threshold=p_threshold,
-            no_utility=no_utility,
-            general_system_instruction=GENERAL_SYSTEM_INSTRUCTION,
-            privacy_reflection_chat_instruction_1=PRIVACY_REFLECTION_INSTRUCTION_1,
-            privacy_reflection_completion_instruction_1=PRIVACY_REFLECTION_INSTRUCTION_1,
-            privacy_reflection_chat_instruction_2=PRIVACY_REFLECTION_INSTRUCTION_2,
-            privacy_reflection_completion_instruction_2=PRIVACY_REFLECTION_INSTRUCTION_2
-        )
-
-    def utility_reflex(self, input_text: str, model: ModelBase, rewriting, label, privacy_score):
-        return generic_utility_reflection(
-            input_text=input_text,
-            model=model,
-            label=label,
-            privacy_score=privacy_score,
-            curr_rewriting=rewriting,
-            general_system_instruction=GENERAL_SYSTEM_INSTRUCTION,
-            utility_reflection_chat_instruction_1=UTILITY_REFLECTION_INSTRUCTION_1,
-            utility_reflection_completion_instruction_1=UTILITY_REFLECTION_INSTRUCTION_1,
-            utility_reflection_chat_instruction_2=UTILITY_REFLECTION_INSTRUCTION_2,
-            utility_reflection_completion_instruction_2=UTILITY_REFLECTION_INSTRUCTION_2
-        )
-
-    def privacy_confidence_evaluation(self, model: ModelBase, rewriting, people):
-        return generic_privacy_confidence_evaluation(
-            model=model,
-            curr_rewriting=rewriting,
-            people=people,
-            general_system_instruction=GENERAL_SYSTEM_INSTRUCTION,
-            privacy_confidence_evaluation_instruction=PRIVACY_EVALUATION_CONFIDENCE_INSTRUCTION
-        )
-
-    def privacy_selection_evaluation(self, model: ModelBase, rewriting, people, candidate_list):
-        return generic_privacy_selection_evaluation(
-            model=model,
-            curr_rewriting=rewriting,
-            people=people,
-            candidate_list=candidate_list,
-            general_system_instruction=GENERAL_SYSTEM_INSTRUCTION,
-            candidate_generation_instruction=PRIVACY_EVALUATION_SELECTION_INSTRUCTION_1,
-            privacy_selection_evaluation_instruction=PRIVACY_EVALUATION_SELECTION_INSTRUCTION_2
-        )
-
-
-DUMMY_FUNC_SIG = "def func():"
-DUMMY_FUNC_CALL = "func()"
-
-
-def handle_first_line_indent(func_body: str) -> str:
-    if func_body.startswith("    "):
-        return func_body
-    split = func_body.splitlines()
-    return f"    {split[0]}\n" + "\n".join(split[1:])
-
-
-def handle_entire_body_indent(func_body: str) -> str:
-    split = func_body.splitlines()
-    res = "\n".join(["    " + line for line in split])
-    return res
-
-
-def fix_turbo_response(func_body: str) -> str:
-    return fix_markdown(remove_unindented_signatures(func_body))
-
-
-def fix_markdown(func_body: str) -> str:
-    return re.sub("`{3}", "", func_body)
-
-
-def remove_unindented_signatures(code: str) -> str:
-    regex = r"^def\s+\w+\s*\("
-
-    before_signature = []
-    after_signature = []
-    signature_found = False
-
-    for line in code.split("\n"):
-        if re.match(regex, line):
-            signature_found = True
-            continue
-
-        if signature_found:
-            after_signature.append(line)
-        else:
-            if not line.startswith("    ") and line.strip():
-                line = "    " + line
-            before_signature.append(line)
-
-    return "\n".join(before_signature + after_signature)
-
-
-def py_fix_indentation(func_body: str) -> str:
-    func_body = fix_turbo_response(func_body)
-    """
-    3 cases:
-        1. good syntax
-        2. first line not good
-        3. entire body not good
-    """
-
-    def parse_indent_rec(f_body: str, cur_state: int) -> str:
-        f_body = fix_markdown(f_body)
-        if cur_state > 1:
-            return f_body
-        code = f'{DUMMY_FUNC_SIG}\n{f_body}\n{DUMMY_FUNC_CALL}'
-        try:
-            exec(code)
-            return f_body
-        except (IndentationError, SyntaxError):
-            p_func = handle_first_line_indent if cur_state == 0 else handle_entire_body_indent
-            return parse_indent_rec(p_func(func_body), cur_state + 1)
-        except Exception:
-            return f_body
-
-    return parse_indent_rec(func_body, 0)
-
-
-def py_is_syntax_valid(code: str) -> bool:
-    try:
-        ast.parse(code)
-        return True
-    except Exception:
-        return False

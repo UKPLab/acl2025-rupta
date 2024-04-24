@@ -40,6 +40,12 @@ def get_args():
                         help="The maximum length of memory", default=3)
     parser.add_argument("--p_threshold", type=int,
                         help="The maximum number of distinguishable people", default=10)
+    parser.add_argument("--rag_data_path", type=str,
+                        help="The path of rag data")
+    parser.add_argument("--rag_embed_cache_dir", type=str,
+                        help="The embedding cache directory")
+    parser.add_argument("--rag_num", type=int,
+                        help="The maximum number of retrieved documents", default=5)
     # TODO: implement this
     # parser.add_argument("--is_resume", action='store_true', help="To resume run")
     # parser.add_argument("--resume_dir", type=str, help="If resume, the logging directory", default="")
@@ -57,15 +63,17 @@ def strategy_factory(strategy: str):
 
     if strategy == "simple":
         return kwargs_wrapper_gen(run_simple, delete_keys=["expansion_factor", "max_iters", "no_utility", "p_threshold",
-                                                           "mem_len"])
+                                                           "mem_len", "rag_embed_cache_dir", "rag_num", "rag_data_path"])
     elif strategy == "reflexion":
         return kwargs_wrapper_gen(run_reflexion, delete_keys=["expansion_factor"])
     elif strategy == "immediate-reflexion":
         return kwargs_wrapper_gen(run_immediate_reflexion, delete_keys=["expansion_factor", "no_utility", "p_threshold",
-                                                                        "mem_len"])
+                                                                        "mem_len", "rag_embed_cache_dir", "rag_num"
+                                                                        , "rag_data_path"])
     elif strategy == "immediate-refinement":
         return kwargs_wrapper_gen(run_immediate_refinement, delete_keys=["expansion_factor", "no_utility", "p_threshold"
-                                                                         , "mem_len"])
+                                                                         , "mem_len", "rag_embed_cache_dir", "rag_num",
+                                                                         "rag_data_path"])
     elif strategy == "reflexion-ucs":
         return kwargs_wrapper_gen(run_reflexion_ucs)
     elif strategy == "test-acc":
@@ -128,7 +136,10 @@ pass@k: {args.pass_at_k}
         is_leetcode=args.is_leetcode,
         no_utility=args.no_utility,
         mem_len=args.mem_len,
-        p_threshold=args.p_threshold
+        p_threshold=args.p_threshold,
+        rag_data_path=args.rag_data_path,
+        rag_num=args.rag_num,
+        rag_embed_cache_dir=args.rag_embed_cache_dir,
     )
 
     print(f"Done! Check out the logs in `{log_path}`")

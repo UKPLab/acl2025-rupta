@@ -1,8 +1,14 @@
 import tqdm
 
 from utils import enumerate_resume, make_printv, write_jsonl, resume_success_count
-from executors import executor_factory
+# from executors import executor_factory
 from generators import generator_factory, model_factory
+# from langchain_community.document_loaders.csv_loader import CSVLoader
+# from langchain_community.document_loaders import JSONLoader
+# from langchain_chroma import Chroma
+# from langchain_community.embeddings import HuggingFaceEmbeddings
+# from langchain.storage import LocalFileStore
+# from langchain.embeddings import CacheBackedEmbeddings
 
 from typing import List
 
@@ -19,13 +25,51 @@ def run_reflexion(
     p_threshold: int,
     is_leetcode: bool = False,
     no_utility: bool = False,
+    rag_data_path: str = '',
+    rag_num: int = 5,
+    rag_embed_cache_dir: str = '',
 ) -> None:
     gen = generator_factory(language)
     model = model_factory(model_name)
     completion_tokens = 0
     prompt_tokens = 0
 
-    for i, item in enumerate_resume(tqdm.tqdm(dataset), log_path):
+    # if rag_data_path.endswith('.csv'):
+    #     loader = CSVLoader(file_path=rag_data_path, source_column="text")
+    #     # "./programming_runs/benchmarks/Wiki_People/DBP_wiki_data.csv"
+    # else:
+    #     assert rag_data_path.endswith('.jsonl')
+    #
+    #     def metadata_func(record: dict, metadata: dict) -> dict:
+    #         metadata['l1'] = record.get("l1")
+    #         metadata['l2'] = record.get("l2")
+    #         metadata['l3'] = record.get('l3')
+    #         name = record.get('wiki_name')
+    #         name = name.replace('_', ' ')
+    #         if '(' in name:
+    #             name = name.replace(name[name.index('('):name.index(')') + 1], '')
+    #         metadata['wiki_name'] = name
+    #         metadata['word_count'] = record.get('word_count')
+    #         return metadata
+    #
+    #     loader = JSONLoader(
+    #         file_path=rag_data_path,
+    #         # './programming_runs/benchmarks/Wiki_People/All_data_for_retrieval.jsonl'
+    #         jq_schema='.',
+    #         content_key='text',
+    #         metadata_func=metadata_func,
+    #         json_lines=True)
+    # data = loader.load()
+    # embeddings = HuggingFaceEmbeddings(model_name="BAAI/llm-embedder")
+    # # "all-MiniLM-L6-v2"
+    # store = LocalFileStore(rag_embed_cache_dir)
+    # cached_embedder = CacheBackedEmbeddings.from_bytes_store(
+    #     embeddings, store, namespace="llm-embedder"
+    # )
+    # vectorstore = Chroma.from_documents(documents=data, embedding=cached_embedder)
+    # retriever = vectorstore.as_retriever(search_type="similarity", search_kwargs={"k": rag_num})
+
+    for i, item in enumerate_resume(tqdm.tqdm(dataset[109:]), log_path):
         # try:
         cur_pass = 0
         complete = False
@@ -33,11 +77,11 @@ def run_reflexion(
         privacy_reflections = []
         utility_reflections = []
         rewritings = []
-        detection_i = gen.detect(item["text"], model)
+        # detection_i = gen.detect(item["text"], model)
         people = item["people"]
-        s_entity = detection_i["Sensitive entities"]
-        completion_tokens += detection_i['usage']['completion_tokens']
-        prompt_tokens += detection_i['usage']['prompt_tokens']
+        # s_entity = detection_i["Sensitive entities"]
+        # completion_tokens += detection_i['usage']['completion_tokens']
+        # prompt_tokens += detection_i['usage']['prompt_tokens']
 
         while cur_pass < pass_at_k and not complete:
             privacy_reflections.append(f"pass: {cur_pass}")
@@ -45,13 +89,14 @@ def run_reflexion(
             rewritings.append(f"pass: {cur_pass}")
 
             # first attempt
-            cur_rewriting = gen.rewrite(item["text"], model, "simple", detection_result=detection_i['raw_response'],
+            cur_rewriting = gen.rewrite(item["text"], model, "simple", detection_result=None,
                                         temperature=0.0)
             rewritings.append(cur_rewriting)
             completion_tokens += cur_rewriting['usage']['completion_tokens']
             prompt_tokens += cur_rewriting['usage']['prompt_tokens']
 
-            privacy_evaluation = gen.privacy_reflex(model, rewritings[-1]['Anonymized text'], people, p_threshold, no_utility)
+            privacy_evaluation = gen.privacy_reflex(model, rewritings[-1]['Anonymized text'], people, p_threshold,
+                                                    no_utility, None)
             privacy_score = privacy_evaluation["Confirmation"]
             privacy_feedback = privacy_evaluation["Advice"]
             privacy_reflections.append(privacy_evaluation)
@@ -136,7 +181,7 @@ def run_reflexion(
                     reflection_utility=utility_feedback,
                     privacy_score=privacy_score,
                     utility_score=utility_score,
-                    detection_result=', '.join(s_entity),
+                    detection_result=None,
                     p_threshold=p_threshold,
                     no_utility=no_utility
                 )
@@ -157,7 +202,8 @@ def run_reflexion(
                 #     text_tobe_evaluated = cur_rewriting['Anonymized text']
                 # else:
                 #     text_tobe_evaluated = cur_rewriting['Specialized text']
-                privacy_evaluation = gen.privacy_reflex(model, text_tobe_evaluated, people, p_threshold, no_utility)
+                privacy_evaluation = gen.privacy_reflex(model, text_tobe_evaluated, people, p_threshold, no_utility,
+                                                        None)
                 privacy_score = privacy_evaluation["Confirmation"]
                 privacy_feedback = privacy_evaluation["Advice"]
                 privacy_reflections.append(privacy_evaluation)
@@ -171,7 +217,8 @@ def run_reflexion(
                     prompt_tokens += privacy_evaluation['usage_3']['prompt_tokens']
 
                 if not no_utility:
-                    utility_evaluation = gen.utility_reflex(item['text'], model, text_tobe_evaluated, item['label'], privacy_score)
+                    utility_evaluation = gen.utility_reflex(item['text'], model, text_tobe_evaluated, item['label'],
+                                                            privacy_score)
                     utility_score = utility_evaluation["Confirmation"]
                     utility_feedback = utility_evaluation["Advice"]
                     utility_reflections.append(utility_evaluation)
@@ -202,7 +249,7 @@ def run_reflexion(
         item["utility_reflections"] = utility_reflections
         item["complete"] = 'False' if not complete else 'True'
         item["acc_reward"] = acc_reward
-        item["detection_result"] = detection_i
+        # item["detection_result"] = detection_i
         write_jsonl(log_path, [item], append=True)
         print(f"Prompt tokens number: {prompt_tokens}, Completion tokens number: {completion_tokens}. \n")
         print(f"log path: {log_path}\n")
