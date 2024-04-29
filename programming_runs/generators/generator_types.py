@@ -40,8 +40,10 @@ class Generator:
     def rewrite(
             self,
             input_text: str,
-            model: ModelBase,
+            act_model: ModelBase,
+            parser_model: ModelBase,
             strategy: str,
+            cot: bool = False,
             prev_rewriting: Optional[str] = None,
             reflection_privacy: Optional[str] = None,
             reflection_utility: Optional[str] = None,
@@ -50,6 +52,8 @@ class Generator:
             detection_result: Optional[str] = None,
             num_comps: int = 1,
             temperature: float = 0.0,
+            p_threshold: int = 10,
+            no_utility: bool = False
     ):
         ...
 

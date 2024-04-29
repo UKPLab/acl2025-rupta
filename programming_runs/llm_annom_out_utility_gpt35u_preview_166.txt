@@ -1,0 +1,31 @@
+
+Starting run with the following parameters:
+strategy: reflexion
+pass@k: 1
+
+Loading the dataset...
+Loaded 239 examples
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [01:11<00:00, 71.56s/it]100%|██████████| 1/1 [01:11<00:00, 71.56s/it]
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 8101
+Completion tokens number: 1739. Full price: 0.006659
+
+
+*******gpt-4*******
+Prompt tokens number: 3513
+Completion tokens number: 461. Full price: 0.13305
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 3155
+Completion tokens number: 150. Full price: 0.03605
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+Done! Check out the logs in `/ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl`

@@ -1,0 +1,29 @@
+
+Starting run with the following parameters:
+strategy: reflexion
+pass@k: 1
+
+Loading the dataset...
+Loaded 239 examples
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [01:55<00:00, 115.35s/it]100%|██████████| 1/1 [01:55<00:00, 115.36s/it]
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 10714
+Completion tokens number: 1892. 
+*******gpt-4*******
+Prompt tokens number: 2340
+Completion tokens number: 320. Full price: 0.0894
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 2706
+Completion tokens number: 144. Full price: 0.03138
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 422
+Completion tokens number: 215. Full price: 0.010669999999999999
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt4-turbo-128k_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+Done! Check out the logs in `/ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt4-turbo-128k_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl`

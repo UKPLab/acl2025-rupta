@@ -1,8 +1,9 @@
 import tqdm
 
 from utils import enumerate_resume, make_printv, write_jsonl, resume_success_count
-# from executors import executor_factory
 from generators import generator_factory, model_factory
+import ezsheets
+import time
 # from langchain_community.document_loaders.csv_loader import CSVLoader
 # from langchain_community.document_loaders import JSONLoader
 # from langchain_chroma import Chroma
@@ -15,7 +16,10 @@ from typing import List
 
 def run_reflexion(
     dataset: List[dict],
-    model_name: str,
+    pe_model_name: str,
+    ue_model_name: str,
+    act_model_name: str,
+    parser_model_name: str,
     language: str,
     max_iters: int,
     pass_at_k: int,
@@ -25,14 +29,16 @@ def run_reflexion(
     p_threshold: int,
     is_leetcode: bool = False,
     no_utility: bool = False,
+    cot: bool = False,
     rag_data_path: str = '',
     rag_num: int = 5,
     rag_embed_cache_dir: str = '',
 ) -> None:
     gen = generator_factory(language)
-    model = model_factory(model_name)
-    completion_tokens = 0
-    prompt_tokens = 0
+    pe_model = model_factory(pe_model_name)
+    ue_model = model_factory(ue_model_name)
+    act_model = model_factory(act_model_name)
+    parser_model = model_factory(parser_model_name)
 
     # if rag_data_path.endswith('.csv'):
     #     loader = CSVLoader(file_path=rag_data_path, source_column="text")
@@ -69,189 +75,169 @@ def run_reflexion(
     # vectorstore = Chroma.from_documents(documents=data, embedding=cached_embedder)
     # retriever = vectorstore.as_retriever(search_type="similarity", search_kwargs={"k": rag_num})
 
-    for i, item in enumerate_resume(tqdm.tqdm(dataset[109:]), log_path):
-        # try:
-        cur_pass = 0
-        complete = False
-        acc_reward = 0
-        privacy_reflections = []
-        utility_reflections = []
-        rewritings = []
-        # detection_i = gen.detect(item["text"], model)
-        people = item["people"]
-        # s_entity = detection_i["Sensitive entities"]
-        # completion_tokens += detection_i['usage']['completion_tokens']
-        # prompt_tokens += detection_i['usage']['prompt_tokens']
-
-        while cur_pass < pass_at_k and not complete:
-            privacy_reflections.append(f"pass: {cur_pass}")
-            utility_reflections.append(f"pass: {cur_pass}")
-            rewritings.append(f"pass: {cur_pass}")
-
-            # first attempt
-            cur_rewriting = gen.rewrite(item["text"], model, "simple", detection_result=None,
-                                        temperature=0.0)
-            rewritings.append(cur_rewriting)
-            completion_tokens += cur_rewriting['usage']['completion_tokens']
-            prompt_tokens += cur_rewriting['usage']['prompt_tokens']
-
-            privacy_evaluation = gen.privacy_reflex(model, rewritings[-1]['Anonymized text'], people, p_threshold,
-                                                    no_utility, None)
-            privacy_score = privacy_evaluation["Confirmation"]
-            privacy_feedback = privacy_evaluation["Advice"]
-            privacy_reflections.append(privacy_evaluation)
-            completion_tokens += privacy_evaluation['usage_1']['completion_tokens']
-            prompt_tokens += privacy_evaluation['usage_1']['prompt_tokens']
-            if "usage_2" in privacy_evaluation.keys():
-                completion_tokens += privacy_evaluation['usage_2']['completion_tokens']
-                prompt_tokens += privacy_evaluation['usage_2']['prompt_tokens']
-            if "usage_3" in privacy_evaluation.keys():
-                completion_tokens += privacy_evaluation['usage_3']['completion_tokens']
-                prompt_tokens += privacy_evaluation['usage_3']['prompt_tokens']
-
-            if not no_utility:
-                utility_evaluation = gen.utility_reflex(item['text'], model, rewritings[-1]['Anonymized text'], item['label'], privacy_score)
-                utility_score = utility_evaluation["Confirmation"]
-                utility_feedback = utility_evaluation["Advice"]
-                utility_reflections.append(utility_evaluation)
-                completion_tokens += utility_evaluation['usage_1']['completion_tokens']
-                prompt_tokens += utility_evaluation['usage_1']['prompt_tokens']
-                if "usage_2" in utility_evaluation.keys():
-                    completion_tokens += utility_evaluation['usage_2']['completion_tokens']
-                    prompt_tokens += utility_evaluation['usage_2']['prompt_tokens']
-                if "usage_3" in utility_evaluation.keys():
-                    completion_tokens += utility_evaluation['usage_3']['completion_tokens']
-                    prompt_tokens += utility_evaluation['usage_3']['prompt_tokens']
-            else:
-                utility_evaluation = {'Confirmation': 'Yes', 'Advice': ''}
-                utility_score = utility_evaluation["Confirmation"]
-                utility_feedback = utility_evaluation["Advice"]
-                utility_reflections.append(utility_evaluation)
-
-            # if solved, exit early
-            if privacy_score == 'No' and utility_score == 'Yes':
-                complete = True
-                acc_reward = p_threshold + 1 + 100 if not no_utility else p_threshold + 1
-                break
-
-            cur_iter = 1
+    for i, item in enumerate_resume(tqdm.tqdm(dataset), log_path):
+        try:
+            cur_pass = 0
             complete = False
             acc_reward = 0
-            while cur_iter <= max_iters:
-                # prev_rewriting_feedback_str = ""
-                # prev_rewriting_feedback_str += "Anonymized text:\n" + cur_rewriting['Anonymized text'] + '\n'
-                # if privacy_score == 'Yes':
-                #     prev_rewriting_feedback_str += "Privacy feedback:\n" + privacy_feedback + '\n'
-                # if utility_score == 'No':
-                #     prev_rewriting_feedback_str += "Utility feedback:\n" + utility_feedback + '\n'
+            privacy_reflections = []
+            utility_reflections = []
+            rewritings = []
+            people = item["people"]
 
-                # apply self-reflection in the next attempt
-                if no_utility:
-                    prev_rewriting = cur_rewriting['raw_text']
-                    acc_reward += int(privacy_evaluation['rank'])
-                else:
-                    prev_rewriting = ''
-                    h_idx = 1
-                    acc_reward = 0
-                    if len(rewritings) > mem_len:
-                        p_rer = rewritings[-mem_len:]
-                        p_pr = privacy_reflections[-mem_len:]
-                        p_ur = utility_reflections[-mem_len:]
-                    else:
-                        p_rer = rewritings
-                        p_pr = privacy_reflections
-                        p_ur = utility_reflections
-                    for rewriting, p_r, u_r in zip(p_rer, p_pr, p_ur):
-                        if type(rewriting) is str:
-                            continue
-                        prev_rewriting += f"Edition: {h_idx}\nEditing results; {rewriting['Anonymized text']}\nPrivacy score: {p_r['rank']}\nUtility score: {u_r['Confidence Score']}\n"
-                        if p_r['Confirmation'] == 'Yes':
-                            prev_rewriting += f"Reward: {p_r['rank']}\n\n"
-                            acc_reward += int(p_r['rank'])
-                        else:
-                            prev_rewriting += f"Reward: {u_r['Confidence Score']}\n\n"
-                            acc_reward += int(u_r['Confidence Score'])
-                        h_idx = h_idx + 1
-                cur_rewriting = gen.rewrite(
-                    input_text=item["text"],
-                    model=model,
-                    strategy="reflexion",
-                    prev_rewriting=prev_rewriting,
-                    reflection_privacy=privacy_feedback,
-                    reflection_utility=utility_feedback,
-                    privacy_score=privacy_score,
-                    utility_score=utility_score,
-                    detection_result=None,
-                    p_threshold=p_threshold,
-                    no_utility=no_utility
-                )
+            if cot:
+                detection_i = gen.detect(item["text"], act_model)
+
+            while cur_pass < pass_at_k and not complete:
+                privacy_reflections.append(f"pass: {cur_pass}")
+                utility_reflections.append(f"pass: {cur_pass}")
+                rewritings.append(f"pass: {cur_pass}")
+
+                # first attempt
+                cur_rewriting = gen.rewrite(item["text"], act_model, parser_model, "simple", cot=cot,
+                                            detection_result=detection_i['raw_response'] if cot else None,
+                                            temperature=0.0)
                 rewritings.append(cur_rewriting)
-                completion_tokens += cur_rewriting['usage']['completion_tokens']
-                prompt_tokens += cur_rewriting['usage']['prompt_tokens']
-                # if "usage_privacy" in cur_rewriting.keys():
-                #     completion_tokens += cur_rewriting['usage_privacy']['completion_tokens']
-                #     prompt_tokens += cur_rewriting['usage_privacy']['prompt_tokens']
-                # if "usage_utility" in cur_rewriting.keys():
-                #     completion_tokens += cur_rewriting['usage_utility']['completion_tokens']
-                #     prompt_tokens += cur_rewriting['usage_utility']['prompt_tokens']
 
-
-                # get self-reflection
-                text_tobe_evaluated = cur_rewriting['Anonymized text']
-                # if 'Anonymized text' in cur_rewriting.keys():
-                #     text_tobe_evaluated = cur_rewriting['Anonymized text']
-                # else:
-                #     text_tobe_evaluated = cur_rewriting['Specialized text']
-                privacy_evaluation = gen.privacy_reflex(model, text_tobe_evaluated, people, p_threshold, no_utility,
-                                                        None)
+                privacy_evaluation = gen.privacy_reflex(pe_model, rewritings[-1]['Anonymized text'], people, p_threshold,
+                                                        no_utility, None)
                 privacy_score = privacy_evaluation["Confirmation"]
                 privacy_feedback = privacy_evaluation["Advice"]
                 privacy_reflections.append(privacy_evaluation)
-                completion_tokens += privacy_evaluation['usage_1']['completion_tokens']
-                prompt_tokens += privacy_evaluation['usage_1']['prompt_tokens']
-                if "usage_2" in privacy_evaluation.keys():
-                    completion_tokens += privacy_evaluation['usage_2']['completion_tokens']
-                    prompt_tokens += privacy_evaluation['usage_2']['prompt_tokens']
-                if "usage_3" in privacy_evaluation.keys():
-                    completion_tokens += privacy_evaluation['usage_3']['completion_tokens']
-                    prompt_tokens += privacy_evaluation['usage_3']['prompt_tokens']
 
                 if not no_utility:
-                    utility_evaluation = gen.utility_reflex(item['text'], model, text_tobe_evaluated, item['label'],
-                                                            privacy_score)
+                    utility_evaluation = gen.utility_reflex(item['text'], ue_model, rewritings[-1]['Anonymized text'], item['label'], privacy_score)
                     utility_score = utility_evaluation["Confirmation"]
                     utility_feedback = utility_evaluation["Advice"]
                     utility_reflections.append(utility_evaluation)
-                    completion_tokens += utility_evaluation['usage_1']['completion_tokens']
-                    prompt_tokens += utility_evaluation['usage_1']['prompt_tokens']
-                    if "usage_2" in utility_evaluation.keys():
-                        completion_tokens += utility_evaluation['usage_2']['completion_tokens']
-                        prompt_tokens += utility_evaluation['usage_2']['prompt_tokens']
-                    if "usage_3" in utility_evaluation.keys():
-                        completion_tokens += utility_evaluation['usage_3']['completion_tokens']
-                        prompt_tokens += utility_evaluation['usage_3']['prompt_tokens']
                 else:
                     utility_evaluation = {'Confirmation': 'Yes', 'Advice': ''}
                     utility_score = utility_evaluation["Confirmation"]
                     utility_feedback = utility_evaluation["Advice"]
                     utility_reflections.append(utility_evaluation)
 
-                # if solved, check if it passes the real tests, exit early
+                # if solved, exit early
                 if privacy_score == 'No' and utility_score == 'Yes':
                     complete = True
+                    acc_reward = p_threshold + 1 + 100 if not no_utility else p_threshold + 1
                     break
 
-                cur_iter += 1
-            cur_pass += 1
+                cur_iter = 1
+                complete = False
+                acc_reward = 0
+                while cur_iter <= max_iters:
+                    # apply self-reflection in the next attempt
+                    if no_utility:
+                        prev_rewriting = cur_rewriting['raw_response']
+                        acc_reward += int(privacy_evaluation['rank'])
+                    else:
+                        prev_rewriting = ''
+                        h_idx = 1
+                        acc_reward = 0
+                        if len(rewritings) > mem_len:
+                            p_rer = rewritings[-mem_len:]
+                            p_pr = privacy_reflections[-mem_len:]
+                            p_ur = utility_reflections[-mem_len:]
+                        else:
+                            p_rer = rewritings
+                            p_pr = privacy_reflections
+                            p_ur = utility_reflections
+                        for rewriting, p_r, u_r in zip(p_rer, p_pr, p_ur):
+                            if type(rewriting) is str:
+                                continue
+                            prev_rewriting += f"Edition: {h_idx}\nEditing results; {rewriting['Anonymized text']}\nPrivacy score: {p_r['rank']}\nUtility score: {u_r['Confidence Score']}\n"
+                            if p_r['Confirmation'] == 'Yes':
+                                prev_rewriting += f"Reward: {p_r['rank']}\n\n"
+                                acc_reward += int(p_r['rank'])
+                            else:
+                                prev_rewriting += f"Reward: {u_r['Confidence Score']}\n\n"
+                                acc_reward += int(u_r['Confidence Score'])
+                            h_idx = h_idx + 1
+                    cur_rewriting = gen.rewrite(
+                        input_text=item["text"],
+                        act_model=act_model,
+                        parser_model=parser_model,
+                        cot=cot,
+                        strategy="reflexion",
+                        prev_rewriting=prev_rewriting,
+                        reflection_privacy=privacy_feedback,
+                        reflection_utility=utility_feedback,
+                        privacy_score=privacy_score,
+                        utility_score=utility_score,
+                        detection_result=None,
+                        p_threshold=p_threshold,
+                        no_utility=no_utility
+                    )
+                    rewritings.append(cur_rewriting)
 
-        item["rewritings"] = rewritings
-        item["privacy_reflections"] = privacy_reflections
-        item["utility_reflections"] = utility_reflections
-        item["complete"] = 'False' if not complete else 'True'
-        item["acc_reward"] = acc_reward
-        # item["detection_result"] = detection_i
-        write_jsonl(log_path, [item], append=True)
-        print(f"Prompt tokens number: {prompt_tokens}, Completion tokens number: {completion_tokens}. \n")
-        print(f"log path: {log_path}\n")
-        # except:
-        #     print(f"{i}-th example failed")
+                    # get self-reflection
+                    text_tobe_evaluated = cur_rewriting['Anonymized text']
+                    privacy_evaluation = gen.privacy_reflex(pe_model, text_tobe_evaluated, people, p_threshold, no_utility,
+                                                            None)
+                    privacy_score = privacy_evaluation["Confirmation"]
+                    privacy_feedback = privacy_evaluation["Advice"]
+                    privacy_reflections.append(privacy_evaluation)
+
+                    if not no_utility:
+                        utility_evaluation = gen.utility_reflex(item['text'], ue_model, text_tobe_evaluated, item['label'],
+                                                                privacy_score)
+                        utility_score = utility_evaluation["Confirmation"]
+                        utility_feedback = utility_evaluation["Advice"]
+                        utility_reflections.append(utility_evaluation)
+                    else:
+                        utility_evaluation = {'Confirmation': 'Yes', 'Advice': ''}
+                        utility_score = utility_evaluation["Confirmation"]
+                        utility_feedback = utility_evaluation["Advice"]
+                        utility_reflections.append(utility_evaluation)
+
+                    # if solved, check if it passes the real tests, exit early
+                    if privacy_score == 'No' and utility_score == 'Yes':
+                        complete = True
+                        break
+
+                    cur_iter += 1
+                cur_pass += 1
+
+            item["rewritings"] = rewritings
+            item["privacy_reflections"] = privacy_reflections
+            item["utility_reflections"] = utility_reflections
+            item["complete"] = 'False' if not complete else 'True'
+            item["acc_reward"] = acc_reward
+            if cot:
+                item["detection_result"] = detection_i
+            write_jsonl(log_path, [item], append=True)
+            act_model.print_usage()
+            pe_model.print_usage()
+            ue_model.print_usage()
+            parser_model.print_usage()
+            print(f"log path: {log_path}\n")
+
+        except Exception as e:
+            act_model.print_usage()
+            pe_model.print_usage()
+            ue_model.print_usage()
+            parser_model.print_usage()
+            write_jsonl(log_path, [{'status': 'Failed'}], append=True)
+            print(f"{e}\n{i}-th example failed")
+    ss = ezsheets.Spreadsheet('1-uHO5DnE32WmImaucvHaVMvasO2mGh2eqWfWYksXljI')
+    sheet = ss[0]
+    update_idx = sheet.getColumn(1).index('') + 1
+    update_row = sheet.getRow(update_idx)
+
+    name2column = {'gpt-35-turbo-0301': 7, 'gpt-4': 1, 'gpt4-turbo-128k': 4}
+    name2prompt_tokens = {'gpt-35-turbo-0301': 0, 'gpt-4': 0, 'gpt4-turbo-128k': 0}
+    name2completion_tokens = {'gpt-35-turbo-0301': 0, 'gpt-4': 0, 'gpt4-turbo-128k': 0}
+
+    model_list = [act_model, pe_model, ue_model, parser_model]
+    for model in model_list:
+        if model.name in name2column.keys():
+            name2prompt_tokens[model.name] += model.prompt_tokens
+            name2completion_tokens[model.name] += model.completion_tokens
+    for k, v in name2prompt_tokens.items():
+        update_row[name2column[k]] = v
+    for k, v in name2completion_tokens.items():
+        update_row[name2column[k] + 1] = v
+    update_row[0] = time.ctime()
+    sheet.refresh()
+    update_idx = sheet.getColumn(1).index('') + 1
+    sheet.updateRow(update_idx, update_row)

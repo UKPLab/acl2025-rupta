@@ -1,0 +1,5267 @@
+
+Starting run with the following parameters:
+strategy: reflexion
+pass@k: 1
+
+Loading the dataset...
+Loaded 239 examples
+  0%|          | 0/239 [00:00<?, ?it/s]  0%|          | 1/239 [00:20<1:21:06, 20.45s/it]  1%|          | 2/239 [01:57<4:19:31, 65.70s/it]  1%|▏         | 3/239 [02:08<2:39:36, 40.58s/it]  2%|▏         | 4/239 [02:22<1:57:27, 29.99s/it]  2%|▏         | 5/239 [03:43<3:09:03, 48.48s/it]  3%|▎         | 6/239 [05:05<3:51:53, 59.71s/it]  3%|▎         | 7/239 [05:16<2:49:52, 43.93s/it]  3%|▎         | 8/239 [06:28<3:23:14, 52.79s/it]  4%|▍         | 9/239 [06:37<2:29:54, 39.10s/it]  4%|▍         | 10/239 [06:44<1:52:12, 29.40s/it]  5%|▍         | 11/239 [08:14<3:01:40, 47.81s/it]  5%|▌         | 12/239 [08:39<2:34:22, 40.80s/it]  5%|▌         | 13/239 [09:22<2:37:01, 41.69s/it]  6%|▌         | 14/239 [10:40<3:16:20, 52.36s/it]  6%|▋         | 15/239 [12:49<4:41:51, 75.50s/it]  7%|▋         | 16/239 [14:16<4:53:31, 78.98s/it]  7%|▋         | 17/239 [15:31<4:47:45, 77.77s/it]  8%|▊         | 18/239 [15:40<3:31:08, 57.33s/it]  8%|▊         | 19/239 [15:50<2:37:42, 43.01s/it]  8%|▊         | 20/239 [16:45<2:49:50, 46.53s/it]  9%|▉         | 21/239 [17:03<2:18:05, 38.01s/it]  9%|▉         | 22/239 [18:51<3:33:45, 59.11s/it] 10%|▉         | 23/239 [19:10<2:49:18, 47.03s/it] 10%|█         | 24/239 [20:15<3:07:58, 52.46s/it] 10%|█         | 25/239 [21:28<3:28:58, 58.59s/it] 11%|█         | 26/239 [22:13<3:13:21, 54.47s/it] 11%|█▏        | 27/239 [22:24<2:26:40, 41.51s/it] 12%|█▏        | 28/239 [22:32<1:50:43, 31.49s/it] 12%|█▏        | 29/239 [23:32<2:19:51, 39.96s/it] 13%|█▎        | 30/239 [25:17<3:27:32, 59.58s/it] 13%|█▎        | 31/239 [26:36<3:46:20, 65.29s/it] 13%|█▎        | 32/239 [28:09<4:14:05, 73.65s/it] 14%|█▍        | 33/239 [29:22<4:11:44, 73.32s/it] 14%|█▍        | 34/239 [30:33<4:08:39, 72.78s/it] 15%|█▍        | 35/239 [31:45<4:06:51, 72.60s/it] 15%|█▌        | 36/239 [33:13<4:21:17, 77.23s/it] 15%|█▌        | 37/239 [33:22<3:10:06, 56.47s/it] 16%|█▌        | 38/239 [33:32<2:23:26, 42.82s/it] 16%|█▋        | 39/239 [33:50<1:57:23, 35.22s/it] 17%|█▋        | 40/239 [34:19<1:50:17, 33.25s/it] 17%|█▋        | 41/239 [35:11<2:08:31, 38.95s/it] 18%|█▊        | 42/239 [35:21<1:39:07, 30.19s/it] 18%|█▊        | 43/239 [36:07<1:54:45, 35.13s/it] 18%|█▊        | 44/239 [37:25<2:35:24, 47.82s/it] 19%|█▉        | 45/239 [39:09<3:29:46, 64.88s/it] 19%|█▉        | 46/239 [40:04<3:18:49, 61.81s/it] 20%|█▉        | 47/239 [41:27<3:37:53, 68.09s/it] 20%|██        | 48/239 [42:46<3:47:12, 71.37s/it] 21%|██        | 49/239 [42:58<2:49:47, 53.62s/it] 21%|██        | 50/239 [43:13<2:12:32, 42.08s/it] 21%|██▏       | 51/239 [44:41<2:55:08, 55.90s/it] 22%|██▏       | 52/239 [46:06<3:20:42, 64.40s/it] 22%|██▏       | 53/239 [47:25<3:33:33, 68.89s/it] 23%|██▎       | 54/239 [48:27<3:25:57, 66.80s/it] 23%|██▎       | 55/239 [48:36<2:31:33, 49.42s/it] 23%|██▎       | 56/239 [50:04<3:06:27, 61.13s/it] 24%|██▍       | 57/239 [50:18<2:22:22, 46.94s/it] 24%|██▍       | 58/239 [52:05<3:16:00, 64.98s/it] 25%|██▍       | 59/239 [53:01<3:06:37, 62.21s/it] 25%|██▌       | 60/239 [53:38<2:43:23, 54.77s/it] 26%|██▌       | 61/239 [54:49<2:56:46, 59.59s/it] 26%|██▌       | 62/239 [55:36<2:44:58, 55.93s/it] 26%|██▋       | 63/239 [56:50<2:59:33, 61.21s/it] 27%|██▋       | 64/239 [57:16<2:28:06, 50.78s/it] 27%|██▋       | 65/239 [58:18<2:36:19, 53.90s/it] 28%|██▊       | 66/239 [59:41<3:00:41, 62.67s/it] 28%|██▊       | 67/239 [1:00:03<2:24:54, 50.55s/it] 28%|██▊       | 68/239 [1:00:33<2:06:55, 44.54s/it] 29%|██▉       | 69/239 [1:02:30<3:07:29, 66.17s/it] 29%|██▉       | 70/239 [1:02:38<2:17:02, 48.66s/it] 30%|██▉       | 71/239 [1:03:42<2:29:26, 53.37s/it] 30%|███       | 72/239 [1:04:50<2:40:06, 57.52s/it] 31%|███       | 73/239 [1:06:01<2:50:38, 61.68s/it] 31%|███       | 74/239 [1:07:29<3:11:48, 69.75s/it] 31%|███▏      | 75/239 [1:08:38<3:10:00, 69.51s/it] 32%|███▏      | 76/239 [1:09:49<3:09:19, 69.69s/it] 32%|███▏      | 77/239 [1:10:05<2:24:53, 53.66s/it] 33%|███▎      | 78/239 [1:11:43<3:00:14, 67.17s/it] 33%|███▎      | 79/239 [1:13:04<3:09:41, 71.14s/it] 33%|███▎      | 80/239 [1:13:29<2:31:44, 57.26s/it] 34%|███▍      | 81/239 [1:13:38<1:52:37, 42.77s/it] 34%|███▍      | 82/239 [1:15:09<2:30:06, 57.37s/it] 35%|███▍      | 83/239 [1:17:00<3:11:06, 73.50s/it] 35%|███▌      | 84/239 [1:18:09<3:06:22, 72.14s/it] 36%|███▌      | 85/239 [1:19:30<3:11:59, 74.80s/it] 36%|███▌      | 86/239 [1:21:01<3:23:11, 79.68s/it] 36%|███▋      | 87/239 [1:21:21<2:36:15, 61.68s/it] 37%|███▋      | 88/239 [1:22:35<2:44:11, 65.24s/it] 37%|███▋      | 89/239 [1:22:44<2:01:15, 48.50s/it] 38%|███▊      | 90/239 [1:24:10<2:28:31, 59.81s/it] 38%|███▊      | 91/239 [1:25:04<2:23:03, 58.00s/it] 38%|███▊      | 92/239 [1:27:19<3:18:47, 81.14s/it] 39%|███▉      | 93/239 [1:29:14<3:42:07, 91.29s/it] 39%|███▉      | 94/239 [1:30:14<3:17:57, 81.91s/it] 40%|███▉      | 95/239 [1:31:26<3:09:17, 78.87s/it] 40%|████      | 96/239 [1:31:37<2:19:37, 58.59s/it] 41%|████      | 97/239 [1:31:58<1:51:36, 47.16s/it] 41%|████      | 98/239 [1:33:11<2:09:01, 54.90s/it] 41%|████▏     | 99/239 [1:33:33<1:45:04, 45.03s/it] 42%|████▏     | 100/239 [1:35:18<2:26:19, 63.16s/it] 42%|████▏     | 101/239 [1:36:31<2:31:54, 66.04s/it] 43%|████▎     | 102/239 [1:37:43<2:34:55, 67.85s/it] 43%|████▎     | 103/239 [1:39:10<2:46:58, 73.66s/it] 44%|████▎     | 104/239 [1:39:20<2:02:29, 54.44s/it] 44%|████▍     | 105/239 [1:40:31<2:12:39, 59.40s/it] 44%|████▍     | 106/239 [1:41:50<2:24:53, 65.37s/it] 45%|████▍     | 107/239 [1:42:01<1:47:45, 48.98s/it] 45%|████▌     | 108/239 [1:43:03<1:55:52, 53.07s/it] 46%|████▌     | 109/239 [1:44:32<2:18:13, 63.80s/it] 46%|████▌     | 110/239 [1:46:02<2:34:04, 71.66s/it] 46%|████▋     | 111/239 [1:47:04<2:26:21, 68.60s/it] 47%|████▋     | 112/239 [1:47:21<1:52:21, 53.09s/it] 47%|████▋     | 113/239 [1:47:49<1:36:05, 45.76s/it] 48%|████▊     | 114/239 [1:48:45<1:41:32, 48.74s/it] 48%|████▊     | 115/239 [1:48:54<1:16:13, 36.88s/it] 49%|████▊     | 116/239 [1:49:46<1:24:46, 41.35s/it] 49%|████▉     | 117/239 [1:49:54<1:03:48, 31.38s/it] 49%|████▉     | 118/239 [1:51:07<1:28:34, 43.92s/it] 50%|████▉     | 119/239 [1:52:34<1:53:39, 56.83s/it] 50%|█████     | 120/239 [1:52:43<1:24:25, 42.57s/it] 51%|█████     | 121/239 [1:54:04<1:46:09, 53.98s/it] 51%|█████     | 122/239 [1:55:39<2:09:02, 66.17s/it] 51%|█████▏    | 123/239 [1:55:49<1:35:19, 49.30s/it] 52%|█████▏    | 124/239 [1:56:14<1:20:32, 42.02s/it] 52%|█████▏    | 125/239 [1:57:43<1:46:55, 56.28s/it] 53%|█████▎    | 126/239 [1:57:52<1:19:19, 42.12s/it] 53%|█████▎    | 127/239 [1:59:07<1:36:45, 51.83s/it] 54%|█████▎    | 128/239 [1:59:45<1:28:14, 47.70s/it] 54%|█████▍    | 129/239 [2:01:20<1:53:50, 62.09s/it] 54%|█████▍    | 130/239 [2:02:21<1:51:46, 61.52s/it] 55%|█████▍    | 131/239 [2:03:34<1:56:54, 64.95s/it] 55%|█████▌    | 132/239 [2:04:44<1:58:32, 66.47s/it] 56%|█████▌    | 133/239 [2:05:46<1:55:29, 65.37s/it] 56%|█████▌    | 134/239 [2:06:57<1:57:20, 67.05s/it] 56%|█████▋    | 135/239 [2:07:30<1:38:26, 56.79s/it] 57%|█████▋    | 136/239 [2:08:27<1:37:40, 56.90s/it] 57%|█████▋    | 137/239 [2:10:05<1:57:28, 69.11s/it] 58%|█████▊    | 138/239 [2:10:29<1:33:35, 55.60s/it] 58%|█████▊    | 139/239 [2:11:32<1:36:30, 57.91s/it] 59%|█████▊    | 140/239 [2:12:42<1:41:21, 61.42s/it] 59%|█████▉    | 141/239 [2:13:42<1:39:35, 60.97s/it] 59%|█████▉    | 142/239 [2:14:19<1:26:49, 53.70s/it] 60%|█████▉    | 143/239 [2:14:26<1:03:35, 39.75s/it] 60%|██████    | 144/239 [2:15:42<1:20:15, 50.69s/it] 61%|██████    | 145/239 [2:17:13<1:38:19, 62.76s/it] 61%|██████    | 146/239 [2:18:45<1:50:48, 71.49s/it] 62%|██████▏   | 147/239 [2:19:57<1:50:05, 71.80s/it] 62%|██████▏   | 148/239 [2:21:04<1:46:25, 70.17s/it] 62%|██████▏   | 149/239 [2:22:27<1:51:20, 74.23s/it] 63%|██████▎   | 150/239 [2:22:41<1:22:54, 55.90s/it] 63%|██████▎   | 151/239 [2:23:58<1:31:36, 62.46s/it] 64%|██████▎   | 152/239 [2:25:02<1:30:55, 62.71s/it] 64%|██████▍   | 153/239 [2:26:19<1:36:18, 67.19s/it] 64%|██████▍   | 154/239 [2:26:27<1:09:56, 49.37s/it] 65%|██████▍   | 155/239 [2:27:46<1:21:28, 58.20s/it] 65%|██████▌   | 156/239 [2:28:21<1:11:01, 51.34s/it] 66%|██████▌   | 157/239 [2:29:28<1:16:23, 55.90s/it] 66%|██████▌   | 158/239 [2:30:23<1:15:08, 55.67s/it] 67%|██████▋   | 159/239 [2:30:56<1:05:21, 49.02s/it] 67%|██████▋   | 160/239 [2:32:07<1:12:54, 55.37s/it] 67%|██████▋   | 161/239 [2:33:54<1:32:06, 70.85s/it] 68%|██████▊   | 162/239 [2:34:13<1:11:04, 55.38s/it] 68%|██████▊   | 163/239 [2:34:21<52:12, 41.22s/it]   69%|██████▊   | 164/239 [2:35:37<1:04:45, 51.80s/it] 69%|██████▉   | 165/239 [2:36:00<52:56, 42.93s/it]   69%|██████▉   | 166/239 [2:37:26<1:08:13, 56.08s/it] 70%|██████▉   | 167/239 [2:38:08<1:02:11, 51.82s/it] 70%|███████   | 168/239 [2:38:46<56:20, 47.61s/it]   71%|███████   | 169/239 [2:38:54<41:41, 35.74s/it] 71%|███████   | 170/239 [2:40:07<53:45, 46.75s/it] 72%|███████▏  | 171/239 [2:40:27<44:06, 38.91s/it] 72%|███████▏  | 172/239 [2:41:42<55:32, 49.74s/it] 72%|███████▏  | 173/239 [2:43:00<1:03:59, 58.17s/it] 73%|███████▎  | 174/239 [2:44:10<1:06:49, 61.68s/it] 73%|███████▎  | 175/239 [2:44:55<1:00:34, 56.79s/it] 74%|███████▎  | 176/239 [2:46:22<1:09:00, 65.72s/it] 74%|███████▍  | 177/239 [2:48:01<1:18:15, 75.73s/it] 74%|███████▍  | 178/239 [2:48:12<57:08, 56.20s/it]   75%|███████▍  | 179/239 [2:49:33<1:03:46, 63.78s/it] 75%|███████▌  | 180/239 [2:49:48<48:12, 49.02s/it]   76%|███████▌  | 181/239 [2:50:39<48:06, 49.76s/it] 76%|███████▌  | 182/239 [2:52:04<57:22, 60.39s/it] 77%|███████▋  | 183/239 [2:53:55<1:10:30, 75.54s/it] 77%|███████▋  | 184/239 [2:54:53<1:04:21, 70.21s/it] 77%|███████▋  | 185/239 [2:55:05<47:21, 52.62s/it]   78%|███████▊  | 186/239 [2:56:45<59:01, 66.83s/it] 78%|███████▊  | 187/239 [2:58:03<1:00:50, 70.21s/it] 79%|███████▊  | 188/239 [2:59:16<1:00:26, 71.11s/it] 79%|███████▉  | 189/239 [2:59:30<45:05, 54.11s/it]   79%|███████▉  | 190/239 [2:59:40<33:18, 40.78s/it] 80%|███████▉  | 191/239 [3:01:13<45:08, 56.42s/it] 80%|████████  | 192/239 [3:03:00<56:12, 71.75s/it] 81%|████████  | 193/239 [3:03:10<40:43, 53.13s/it] 81%|████████  | 194/239 [3:03:38<34:14, 45.66s/it] 82%|████████▏ | 195/239 [3:05:06<42:43, 58.26s/it] 82%|████████▏ | 196/239 [3:06:42<49:53, 69.61s/it] 82%|████████▏ | 197/239 [3:06:59<37:40, 53.82s/it] 83%|████████▎ | 198/239 [3:07:08<27:30, 40.27s/it] 83%|████████▎ | 199/239 [3:07:19<21:08, 31.71s/it] 84%|████████▎ | 200/239 [3:08:32<28:38, 44.06s/it] 84%|████████▍ | 201/239 [3:09:57<35:39, 56.30s/it] 85%|████████▍ | 202/239 [3:10:29<30:13, 49.02s/it] 85%|████████▍ | 203/239 [3:11:36<32:35, 54.33s/it] 85%|████████▌ | 204/239 [3:13:03<37:25, 64.15s/it] 86%|████████▌ | 205/239 [3:14:14<37:26, 66.07s/it] 86%|████████▌ | 206/239 [3:15:44<40:18, 73.29s/it] 87%|████████▋ | 207/239 [3:16:15<32:24, 60.78s/it] 87%|████████▋ | 208/239 [3:16:23<23:13, 44.96s/it] 87%|████████▋ | 209/239 [3:17:18<23:57, 47.92s/it] 88%|████████▊ | 210/239 [3:18:32<26:57, 55.78s/it] 88%|████████▊ | 211/239 [3:20:07<31:31, 67.55s/it] 89%|████████▊ | 212/239 [3:21:46<34:35, 76.88s/it] 89%|████████▉ | 213/239 [3:22:09<26:18, 60.73s/it] 90%|████████▉ | 214/239 [3:22:23<19:28, 46.75s/it] 90%|████████▉ | 215/239 [3:23:26<20:39, 51.65s/it] 90%|█████████ | 216/239 [3:23:37<15:04, 39.33s/it] 91%|█████████ | 217/239 [3:24:41<17:10, 46.82s/it] 91%|█████████ | 218/239 [3:26:05<20:15, 57.88s/it] 92%|█████████▏| 219/239 [3:27:28<21:48, 65.41s/it] 92%|█████████▏| 220/239 [3:27:36<15:16, 48.25s/it] 92%|█████████▏| 221/239 [3:27:45<10:56, 36.50s/it] 93%|█████████▎| 222/239 [3:28:25<10:38, 37.56s/it] 93%|█████████▎| 223/239 [3:29:26<11:51, 44.44s/it] 94%|█████████▎| 224/239 [3:29:35<08:31, 34.07s/it] 94%|█████████▍| 225/239 [3:29:45<06:14, 26.77s/it] 95%|█████████▍| 226/239 [3:29:53<04:35, 21.22s/it] 95%|█████████▍| 227/239 [3:31:04<07:13, 36.14s/it] 95%|█████████▌| 228/239 [3:32:28<09:14, 50.40s/it] 96%|█████████▌| 229/239 [3:33:50<09:59, 59.90s/it] 96%|█████████▌| 230/239 [3:35:02<09:32, 63.56s/it] 97%|█████████▋| 231/239 [3:35:10<06:14, 46.82s/it] 97%|█████████▋| 232/239 [3:36:24<06:24, 54.96s/it] 97%|█████████▋| 233/239 [3:36:33<04:06, 41.04s/it] 98%|█████████▊| 234/239 [3:38:41<05:36, 67.25s/it] 98%|█████████▊| 235/239 [3:39:54<04:36, 69.01s/it] 99%|█████████▊| 236/239 [3:41:23<03:45, 75.09s/it] 99%|█████████▉| 237/239 [3:41:37<01:53, 56.74s/it]100%|█████████▉| 238/239 [3:41:46<00:42, 42.29s/it]100%|██████████| 239/239 [3:42:00<00:00, 33.72s/it]100%|██████████| 239/239 [3:42:00<00:00, 55.73s/it]
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 812
+Completion tokens number: 344. Full price: 0.000922
+
+
+*******gpt-4*******
+Prompt tokens number: 519
+Completion tokens number: 58. Full price: 0.01905
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 580
+Completion tokens number: 24. Full price: 0.00652
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 8876
+Completion tokens number: 2052. Full price: 0.007516
+
+
+*******gpt-4*******
+Prompt tokens number: 6983
+Completion tokens number: 1117. Full price: 0.27651
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 3511
+Completion tokens number: 174. Full price: 0.040330000000000005
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 9630
+Completion tokens number: 2349. Full price: 0.008338499999999999
+
+
+*******gpt-4*******
+Prompt tokens number: 7455
+Completion tokens number: 1186. Full price: 0.29480999999999996
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 4044
+Completion tokens number: 199. Full price: 0.04641
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 10472
+Completion tokens number: 2761. Full price: 0.0093775
+
+
+*******gpt-4*******
+Prompt tokens number: 8042
+Completion tokens number: 1232. Full price: 0.31517999999999996
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 4692
+Completion tokens number: 224. Full price: 0.05364000000000001
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 17718
+Completion tokens number: 4224. Full price: 0.015195
+
+
+*******gpt-4*******
+Prompt tokens number: 14136
+Completion tokens number: 2038. Full price: 0.54636
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 7432
+Completion tokens number: 368. Full price: 0.08536
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 28928
+Completion tokens number: 6672. Full price: 0.024472
+
+
+*******gpt-4*******
+Prompt tokens number: 18837
+Completion tokens number: 2760. Full price: 0.73071
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 10959
+Completion tokens number: 512. Full price: 0.12494999999999999
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 29573
+Completion tokens number: 6893. Full price: 0.025126
+
+
+*******gpt-4*******
+Prompt tokens number: 19233
+Completion tokens number: 2823. Full price: 0.74637
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 11416
+Completion tokens number: 538. Full price: 0.13030000000000003
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 37214
+Completion tokens number: 8545. Full price: 0.0314245
+
+
+*******gpt-4*******
+Prompt tokens number: 23282
+Completion tokens number: 3401. Full price: 0.90252
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 14492
+Completion tokens number: 682. Full price: 0.16538000000000003
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 37925
+Completion tokens number: 8841. Full price: 0.032224
+
+
+*******gpt-4*******
+Prompt tokens number: 23753
+Completion tokens number: 3451. Full price: 0.91965
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 15024
+Completion tokens number: 707. Full price: 0.17145
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 38542
+Completion tokens number: 9046. Full price: 0.03284
+
+
+*******gpt-4*******
+Prompt tokens number: 24133
+Completion tokens number: 3518. Full price: 0.9350699999999998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 15465
+Completion tokens number: 732. Full price: 0.17661000000000002
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 48224
+Completion tokens number: 11133. Full price: 0.0408115
+
+
+*******gpt-4*******
+Prompt tokens number: 30303
+Completion tokens number: 4355. Full price: 1.17039
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 18972
+Completion tokens number: 876. Full price: 0.21600000000000003
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 49924
+Completion tokens number: 11601. Full price: 0.0423635
+
+
+*******gpt-4*******
+Prompt tokens number: 31773
+Completion tokens number: 4584. Full price: 1.22823
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 19912
+Completion tokens number: 922. Full price: 0.22677999999999998
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 54136
+Completion tokens number: 12439. Full price: 0.0457265
+
+
+*******gpt-4*******
+Prompt tokens number: 35190
+Completion tokens number: 5077. Full price: 1.3603199999999998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 21694
+Completion tokens number: 1014. Full price: 0.24736
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 64342
+Completion tokens number: 14394. Full price: 0.053762
+
+
+*******gpt-4*******
+Prompt tokens number: 40585
+Completion tokens number: 5913. Full price: 1.57233
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 24755
+Completion tokens number: 1164. Full price: 0.28247
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 76381
+Completion tokens number: 17146. Full price: 0.06390950000000001
+
+
+*******gpt-4*******
+Prompt tokens number: 49514
+Completion tokens number: 7226. Full price: 1.91898
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 28931
+Completion tokens number: 1314. Full price: 0.32873
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 84753
+Completion tokens number: 18595. Full price: 0.070269
+
+
+*******gpt-4*******
+Prompt tokens number: 55813
+Completion tokens number: 8317. Full price: 2.17341
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 31796
+Completion tokens number: 1464. Full price: 0.36188000000000003
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 93933
+Completion tokens number: 20282. Full price: 0.0773895
+
+
+*******gpt-4*******
+Prompt tokens number: 60817
+Completion tokens number: 9161. Full price: 2.37417
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 34911
+Completion tokens number: 1608. Full price: 0.39735000000000004
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 94758
+Completion tokens number: 20437. Full price: 0.0780345
+
+
+*******gpt-4*******
+Prompt tokens number: 61147
+Completion tokens number: 9225. Full price: 2.3879099999999998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 35302
+Completion tokens number: 1632. Full price: 0.40198
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 95673
+Completion tokens number: 20887. Full price: 0.07916699999999999
+
+
+*******gpt-4*******
+Prompt tokens number: 61772
+Completion tokens number: 9283. Full price: 2.4101399999999997
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 35988
+Completion tokens number: 1657. Full price: 0.40958999999999995
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 102866
+Completion tokens number: 22245. Full price: 0.0848005
+
+
+*******gpt-4*******
+Prompt tokens number: 65298
+Completion tokens number: 9895. Full price: 2.55264
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 37598
+Completion tokens number: 1732. Full price: 0.42794
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+Got invalid JSON object. Error: Expecting property name enclosed in double quotes: line 3 column 1 (char 984)
+19-th example failed
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 103523
+Completion tokens number: 22478. Full price: 0.08547850000000001
+
+
+*******gpt-4*******
+Prompt tokens number: 65706
+Completion tokens number: 9943. Full price: 2.56776
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 38067
+Completion tokens number: 1757. Full price: 0.43338
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 115177
+Completion tokens number: 25128. Full price: 0.0952805
+
+
+*******gpt-4*******
+Prompt tokens number: 74418
+Completion tokens number: 10856. Full price: 2.8839
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 42133
+Completion tokens number: 1913. Full price: 0.47872000000000003
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 117031
+Completion tokens number: 25776. Full price: 0.0971795
+
+
+*******gpt-4*******
+Prompt tokens number: 75416
+Completion tokens number: 10959. Full price: 2.9200199999999996
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 43253
+Completion tokens number: 1963. Full price: 0.49142
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 123657
+Completion tokens number: 26892. Full price: 0.1021665
+
+
+*******gpt-4*******
+Prompt tokens number: 78224
+Completion tokens number: 11488. Full price: 3.0359999999999996
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 45785
+Completion tokens number: 2101. Full price: 0.52088
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 131522
+Completion tokens number: 28452. Full price: 0.10843900000000001
+
+
+*******gpt-4*******
+Prompt tokens number: 84112
+Completion tokens number: 12095. Full price: 3.24906
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 48765
+Completion tokens number: 2245. Full price: 0.555
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 135906
+Completion tokens number: 29718. Full price: 0.11253
+
+
+*******gpt-4*******
+Prompt tokens number: 86865
+Completion tokens number: 12547. Full price: 3.35877
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 50744
+Completion tokens number: 2314. Full price: 0.57686
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 136660
+Completion tokens number: 30057. Full price: 0.1134155
+
+
+*******gpt-4*******
+Prompt tokens number: 87374
+Completion tokens number: 12607. Full price: 3.3776399999999995
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 51314
+Completion tokens number: 2338. Full price: 0.58328
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 137350
+Completion tokens number: 30301. Full price: 0.1141265
+
+
+*******gpt-4*******
+Prompt tokens number: 87793
+Completion tokens number: 12653. Full price: 3.39297
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 51794
+Completion tokens number: 2363. Full price: 0.58883
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 145341
+Completion tokens number: 31976. Full price: 0.12063449999999999
+
+
+*******gpt-4*******
+Prompt tokens number: 91260
+Completion tokens number: 13084. Full price: 3.52284
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 54888
+Completion tokens number: 2507. Full price: 0.62409
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 156633
+Completion tokens number: 34461. Full price: 0.130008
+
+
+*******gpt-4*******
+Prompt tokens number: 99642
+Completion tokens number: 14223. Full price: 3.84264
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 58793
+Completion tokens number: 2657. Full price: 0.66764
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 164100
+Completion tokens number: 35875. Full price: 0.1358625
+
+
+*******gpt-4*******
+Prompt tokens number: 104098
+Completion tokens number: 14947. Full price: 4.01976
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 61622
+Completion tokens number: 2813. Full price: 0.70061
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 170630
+Completion tokens number: 37047. Full price: 0.1408855
+
+
+*******gpt-4*******
+Prompt tokens number: 108737
+Completion tokens number: 15740. Full price: 4.20651
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 64209
+Completion tokens number: 2963. Full price: 0.7309800000000001
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 178274
+Completion tokens number: 38695. Full price: 0.1471795
+
+
+*******gpt-4*******
+Prompt tokens number: 113352
+Completion tokens number: 16398. Full price: 4.38444
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 67164
+Completion tokens number: 3107. Full price: 0.76485
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 185379
+Completion tokens number: 40115. Full price: 0.152862
+
+
+*******gpt-4*******
+Prompt tokens number: 117702
+Completion tokens number: 17078. Full price: 4.55574
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 69951
+Completion tokens number: 3263. Full price: 0.7974
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 192620
+Completion tokens number: 41476. Full price: 0.158524
+
+
+*******gpt-4*******
+Prompt tokens number: 122698
+Completion tokens number: 17896. Full price: 4.7547
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 72728
+Completion tokens number: 3413. Full price: 0.8296699999999999
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 199969
+Completion tokens number: 42932. Full price: 0.1643825
+
+
+*******gpt-4*******
+Prompt tokens number: 126564
+Completion tokens number: 18535. Full price: 4.90902
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 75600
+Completion tokens number: 3563. Full price: 0.86289
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 200768
+Completion tokens number: 43205. Full price: 0.1651915
+
+
+*******gpt-4*******
+Prompt tokens number: 127012
+Completion tokens number: 18598. Full price: 4.92624
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 76109
+Completion tokens number: 3586. Full price: 0.8686699999999999
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 201424
+Completion tokens number: 43445. Full price: 0.16587949999999999
+
+
+*******gpt-4*******
+Prompt tokens number: 127427
+Completion tokens number: 18649. Full price: 4.94175
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 76585
+Completion tokens number: 3612. Full price: 0.8742099999999999
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 202147
+Completion tokens number: 43750. Full price: 0.16669849999999997
+
+
+*******gpt-4*******
+Prompt tokens number: 127900
+Completion tokens number: 18719. Full price: 4.96014
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 77119
+Completion tokens number: 3636. Full price: 0.88027
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 204248
+Completion tokens number: 44350. Full price: 0.168649
+
+
+*******gpt-4*******
+Prompt tokens number: 129578
+Completion tokens number: 18985. Full price: 5.02644
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 78189
+Completion tokens number: 3684. Full price: 0.8924099999999999
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 208395
+Completion tokens number: 45195. Full price: 0.17199
+
+
+*******gpt-4*******
+Prompt tokens number: 132318
+Completion tokens number: 19404. Full price: 5.13378
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 79961
+Completion tokens number: 3780. Full price: 0.91301
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 209013
+Completion tokens number: 45407. Full price: 0.17261700000000002
+
+
+*******gpt-4*******
+Prompt tokens number: 133310
+Completion tokens number: 19473. Full price: 5.16768
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 80409
+Completion tokens number: 3805. Full price: 0.9182400000000001
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 213241
+Completion tokens number: 46379. Full price: 0.17618899999999998
+
+
+*******gpt-4*******
+Prompt tokens number: 135537
+Completion tokens number: 19815. Full price: 5.25501
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 82281
+Completion tokens number: 3901. Full price: 0.93984
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 220129
+Completion tokens number: 47907. Full price: 0.181925
+
+
+*******gpt-4*******
+Prompt tokens number: 139893
+Completion tokens number: 20497. Full price: 5.42661
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 85007
+Completion tokens number: 4051. Full price: 0.9716000000000001
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 232618
+Completion tokens number: 50267. Full price: 0.19170949999999998
+
+
+*******gpt-4*******
+Prompt tokens number: 147269
+Completion tokens number: 21594. Full price: 5.713710000000001
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 88787
+Completion tokens number: 4195. Full price: 1.0137200000000002
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 238933
+Completion tokens number: 51327. Full price: 0.196457
+
+
+*******gpt-4*******
+Prompt tokens number: 151164
+Completion tokens number: 22247. Full price: 5.869739999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 91267
+Completion tokens number: 4351. Full price: 1.0432
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 246695
+Completion tokens number: 52804. Full price: 0.2025535
+
+
+*******gpt-4*******
+Prompt tokens number: 156938
+Completion tokens number: 23296. Full price: 6.105899999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 94160
+Completion tokens number: 4495. Full price: 1.07645
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 256053
+Completion tokens number: 54841. Full price: 0.21028799999999997
+
+
+*******gpt-4*******
+Prompt tokens number: 162320
+Completion tokens number: 23904. Full price: 6.303839999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 97612
+Completion tokens number: 4645. Full price: 1.11547
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 256753
+Completion tokens number: 55129. Full price: 0.21107
+
+
+*******gpt-4*******
+Prompt tokens number: 162783
+Completion tokens number: 23961. Full price: 6.321149999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 98136
+Completion tokens number: 4669. Full price: 1.12143
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 259574
+Completion tokens number: 55642. Full price: 0.21325
+
+
+*******gpt-4*******
+Prompt tokens number: 163806
+Completion tokens number: 24134. Full price: 6.36222
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 98596
+Completion tokens number: 4694. Full price: 1.1267800000000001
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+Got invalid JSON object. Error: Expecting property name enclosed in double quotes: line 3 column 1 (char 688)
+49-th example failed
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 266888
+Completion tokens number: 56956. Full price: 0.21887800000000002
+
+
+*******gpt-4*******
+Prompt tokens number: 169809
+Completion tokens number: 25086. Full price: 6.59943
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 101334
+Completion tokens number: 4844. Full price: 1.1586600000000002
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 276306
+Completion tokens number: 58835. Full price: 0.22640549999999998
+
+
+*******gpt-4*******
+Prompt tokens number: 176312
+Completion tokens number: 25845. Full price: 6.84006
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 104633
+Completion tokens number: 5000. Full price: 1.19633
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 284682
+Completion tokens number: 60222. Full price: 0.232674
+
+
+*******gpt-4*******
+Prompt tokens number: 181518
+Completion tokens number: 26641. Full price: 7.043999999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 107243
+Completion tokens number: 5156. Full price: 1.22711
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 292746
+Completion tokens number: 62063. Full price: 0.2394675
+
+
+*******gpt-4*******
+Prompt tokens number: 184409
+Completion tokens number: 27009. Full price: 7.15281
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 110500
+Completion tokens number: 5305. Full price: 1.2641499999999999
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 293488
+Completion tokens number: 62306. Full price: 0.240203
+
+
+*******gpt-4*******
+Prompt tokens number: 184827
+Completion tokens number: 27057. Full price: 7.168229999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 110979
+Completion tokens number: 5330. Full price: 1.26969
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 301855
+Completion tokens number: 64040. Full price: 0.2469875
+
+
+*******gpt-4*******
+Prompt tokens number: 189871
+Completion tokens number: 28038. Full price: 7.378410000000001
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 114137
+Completion tokens number: 5486. Full price: 1.30595
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 302730
+Completion tokens number: 64478. Full price: 0.248082
+
+
+*******gpt-4*******
+Prompt tokens number: 190484
+Completion tokens number: 28091. Full price: 7.39998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 114811
+Completion tokens number: 5511. Full price: 1.3134400000000002
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 313250
+Completion tokens number: 66653. Full price: 0.2566045
+
+
+*******gpt-4*******
+Prompt tokens number: 198288
+Completion tokens number: 29213. Full price: 7.701420000000001
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 118400
+Completion tokens number: 5655. Full price: 1.3536500000000002
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 321676
+Completion tokens number: 68353. Full price: 0.2633675
+
+
+*******gpt-4*******
+Prompt tokens number: 201526
+Completion tokens number: 29750. Full price: 7.83078
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 120481
+Completion tokens number: 5751. Full price: 1.37734
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+Got invalid JSON object. Error: Expecting ':' delimiter: line 3 column 1 (char 1106)
+58-th example failed
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 324802
+Completion tokens number: 69051. Full price: 0.2659775
+
+
+*******gpt-4*******
+Prompt tokens number: 204022
+Completion tokens number: 30166. Full price: 7.930619999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 121887
+Completion tokens number: 5826. Full price: 1.39365
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 332913
+Completion tokens number: 70352. Full price: 0.2719845
+
+
+*******gpt-4*******
+Prompt tokens number: 208641
+Completion tokens number: 30916. Full price: 8.114189999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 124423
+Completion tokens number: 5976. Full price: 1.4235099999999998
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 337226
+Completion tokens number: 71235. Full price: 0.27546550000000003
+
+
+*******gpt-4*******
+Prompt tokens number: 212092
+Completion tokens number: 31440. Full price: 8.24916
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 126250
+Completion tokens number: 6072. Full price: 1.4446599999999998
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 344705
+Completion tokens number: 72790. Full price: 0.2815375
+
+
+*******gpt-4*******
+Prompt tokens number: 216641
+Completion tokens number: 32178. Full price: 8.42991
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 129158
+Completion tokens number: 6216. Full price: 1.47806
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 347524
+Completion tokens number: 73412. Full price: 0.28388
+
+
+*******gpt-4*******
+Prompt tokens number: 217650
+Completion tokens number: 32329. Full price: 8.46924
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 129610
+Completion tokens number: 6242. Full price: 1.4833600000000002
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+Got invalid JSON object. Error: Expecting property name enclosed in double quotes: line 3 column 1 (char 993)
+63-th example failed
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 353808
+Completion tokens number: 74346. Full price: 0.288423
+
+
+*******gpt-4*******
+Prompt tokens number: 221913
+Completion tokens number: 32920. Full price: 8.63259
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 131960
+Completion tokens number: 6386. Full price: 1.5111800000000002
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 364247
+Completion tokens number: 76429. Full price: 0.296767
+
+
+*******gpt-4*******
+Prompt tokens number: 227504
+Completion tokens number: 33626. Full price: 8.842679999999998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 135131
+Completion tokens number: 6530. Full price: 1.54721
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 366089
+Completion tokens number: 76959. Full price: 0.298483
+
+
+*******gpt-4*******
+Prompt tokens number: 229097
+Completion tokens number: 33904. Full price: 8.90715
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 136132
+Completion tokens number: 6578. Full price: 1.5586600000000002
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 367945
+Completion tokens number: 77492. Full price: 0.30021050000000005
+
+
+*******gpt-4*******
+Prompt tokens number: 230674
+Completion tokens number: 34137. Full price: 8.96844
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 137137
+Completion tokens number: 6628. Full price: 1.5702099999999999
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 378793
+Completion tokens number: 79857. Full price: 0.30918199999999996
+
+
+*******gpt-4*******
+Prompt tokens number: 238828
+Completion tokens number: 35167. Full price: 9.27486
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 140926
+Completion tokens number: 6778. Full price: 1.6126
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 379510
+Completion tokens number: 80080. Full price: 0.309875
+
+
+*******gpt-4*******
+Prompt tokens number: 239226
+Completion tokens number: 35219. Full price: 9.28992
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 141385
+Completion tokens number: 6803. Full price: 1.61794
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 386268
+Completion tokens number: 81406. Full price: 0.315243
+
+
+*******gpt-4*******
+Prompt tokens number: 242214
+Completion tokens number: 35672. Full price: 9.40674
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 144127
+Completion tokens number: 6947. Full price: 1.64968
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 392817
+Completion tokens number: 82556. Full price: 0.3202425
+
+
+*******gpt-4*******
+Prompt tokens number: 246828
+Completion tokens number: 36386. Full price: 9.588000000000001
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 146693
+Completion tokens number: 7097. Full price: 1.67984
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 400490
+Completion tokens number: 84079. Full price: 0.32636350000000003
+
+
+*******gpt-4*******
+Prompt tokens number: 252021
+Completion tokens number: 37200. Full price: 9.792629999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 149631
+Completion tokens number: 7247. Full price: 1.71372
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 407417
+Completion tokens number: 85322. Full price: 0.3316915
+
+
+*******gpt-4*******
+Prompt tokens number: 257376
+Completion tokens number: 38073. Full price: 10.005659999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 152819
+Completion tokens number: 7415. Full price: 1.75064
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 414766
+Completion tokens number: 86766. Full price: 0.337532
+
+
+*******gpt-4*******
+Prompt tokens number: 263658
+Completion tokens number: 38830. Full price: 10.23954
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 155683
+Completion tokens number: 7559. Full price: 1.7835999999999999
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 421112
+Completion tokens number: 87948. Full price: 0.34247799999999995
+
+
+*******gpt-4*******
+Prompt tokens number: 267759
+Completion tokens number: 39532. Full price: 10.404689999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 158281
+Completion tokens number: 7703. Full price: 1.8139
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 422589
+Completion tokens number: 88361. Full price: 0.343836
+
+
+*******gpt-4*******
+Prompt tokens number: 268522
+Completion tokens number: 39645. Full price: 10.43436
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 159166
+Completion tokens number: 7751. Full price: 1.8241900000000002
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 435928
+Completion tokens number: 91089. Full price: 0.3545975
+
+
+*******gpt-4*******
+Prompt tokens number: 275325
+Completion tokens number: 40775. Full price: 10.706249999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 163318
+Completion tokens number: 7895. Full price: 1.87003
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 445658
+Completion tokens number: 93115. Full price: 0.36250150000000003
+
+
+*******gpt-4*******
+Prompt tokens number: 282104
+Completion tokens number: 41520. Full price: 10.95432
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 166760
+Completion tokens number: 8039. Full price: 1.90877
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 447818
+Completion tokens number: 93768. Full price: 0.364561
+
+
+*******gpt-4*******
+Prompt tokens number: 283849
+Completion tokens number: 41783. Full price: 11.02245
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 167885
+Completion tokens number: 8089. Full price: 1.92152
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 448509
+Completion tokens number: 94026. Full price: 0.3652935
+
+
+*******gpt-4*******
+Prompt tokens number: 284282
+Completion tokens number: 41832. Full price: 11.03838
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 168379
+Completion tokens number: 8114. Full price: 1.9272099999999999
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 457757
+Completion tokens number: 95887. Full price: 0.372709
+
+
+*******gpt-4*******
+Prompt tokens number: 291456
+Completion tokens number: 42982. Full price: 11.3226
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 171664
+Completion tokens number: 8264. Full price: 1.9645599999999999
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 469984
+Completion tokens number: 98181. Full price: 0.3822635
+
+
+*******gpt-4*******
+Prompt tokens number: 297497
+Completion tokens number: 43923. Full price: 11.56029
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 175086
+Completion tokens number: 8408. Full price: 2.0031
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 476541
+Completion tokens number: 99444. Full price: 0.3874365
+
+
+*******gpt-4*******
+Prompt tokens number: 302162
+Completion tokens number: 44510. Full price: 11.73546
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 177718
+Completion tokens number: 8552. Full price: 2.03374
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 484282
+Completion tokens number: 101125. Full price: 0.3938285
+
+
+*******gpt-4*******
+Prompt tokens number: 307201
+Completion tokens number: 45177. Full price: 11.92665
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 180553
+Completion tokens number: 8696. Full price: 2.0664100000000003
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 492713
+Completion tokens number: 102617. Full price: 0.400282
+
+
+*******gpt-4*******
+Prompt tokens number: 313586
+Completion tokens number: 45979. Full price: 12.166319999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 183443
+Completion tokens number: 8840. Full price: 2.0996300000000003
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 493454
+Completion tokens number: 102959. Full price: 0.40116549999999995
+
+
+*******gpt-4*******
+Prompt tokens number: 314103
+Completion tokens number: 46041. Full price: 12.18555
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 184021
+Completion tokens number: 8864. Full price: 2.10613
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 499238
+Completion tokens number: 104429. Full price: 0.40626249999999997
+
+
+*******gpt-4*******
+Prompt tokens number: 319201
+Completion tokens number: 46680. Full price: 12.376830000000002
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 186282
+Completion tokens number: 9008. Full price: 2.13306
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 499931
+Completion tokens number: 104722. Full price: 0.40704850000000004
+
+
+*******gpt-4*******
+Prompt tokens number: 319669
+Completion tokens number: 46730. Full price: 12.39387
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 186811
+Completion tokens number: 9034. Full price: 2.13913
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 510522
+Completion tokens number: 107124. Full price: 0.415947
+
+
+*******gpt-4*******
+Prompt tokens number: 326431
+Completion tokens number: 47576. Full price: 12.647489999999998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 190637
+Completion tokens number: 9184. Full price: 2.18189
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 517246
+Completion tokens number: 108307. Full price: 0.4210835
+
+
+*******gpt-4*******
+Prompt tokens number: 329068
+Completion tokens number: 48017. Full price: 12.753059999999998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 192301
+Completion tokens number: 9276. Full price: 2.2012899999999997
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+Got invalid JSON object. Error: Expecting property name enclosed in double quotes: line 3 column 1 (char 811)
+90-th example failed
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 532347
+Completion tokens number: 111554. Full price: 0.4335045
+
+
+*******gpt-4*******
+Prompt tokens number: 337279
+Completion tokens number: 48971. Full price: 13.056629999999998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 196506
+Completion tokens number: 9414. Full price: 2.24748
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 547362
+Completion tokens number: 115212. Full price: 0.446499
+
+
+*******gpt-4*******
+Prompt tokens number: 345205
+Completion tokens number: 50147. Full price: 13.36497
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 201592
+Completion tokens number: 9570. Full price: 2.3030200000000005
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 554712
+Completion tokens number: 116783. Full price: 0.4525305
+
+
+*******gpt-4*******
+Prompt tokens number: 348463
+Completion tokens number: 50571. Full price: 13.48815
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 204546
+Completion tokens number: 9720. Full price: 2.3370599999999997
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 560884
+Completion tokens number: 117967. Full price: 0.45739250000000004
+
+
+*******gpt-4*******
+Prompt tokens number: 352423
+Completion tokens number: 51099. Full price: 13.63863
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 207109
+Completion tokens number: 9864. Full price: 2.3670100000000005
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 561542
+Completion tokens number: 118199. Full price: 0.4580695
+
+
+*******gpt-4*******
+Prompt tokens number: 352830
+Completion tokens number: 51147. Full price: 13.65372
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 207577
+Completion tokens number: 9889. Full price: 2.37244
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 563547
+Completion tokens number: 118967. Full price: 0.460224
+
+
+*******gpt-4*******
+Prompt tokens number: 353948
+Completion tokens number: 51260. Full price: 13.69404
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 208817
+Completion tokens number: 9937. Full price: 2.38628
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 570150
+Completion tokens number: 120078. Full price: 0.46519200000000005
+
+
+*******gpt-4*******
+Prompt tokens number: 359690
+Completion tokens number: 52213. Full price: 13.92348
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 211344
+Completion tokens number: 10081. Full price: 2.41587
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 570843
+Completion tokens number: 120357. Full price: 0.465957
+
+
+*******gpt-4*******
+Prompt tokens number: 360143
+Completion tokens number: 52277. Full price: 13.940909999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 211858
+Completion tokens number: 10104. Full price: 2.4217
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 580576
+Completion tokens number: 122467. Full price: 0.47398850000000003
+
+
+*******gpt-4*******
+Prompt tokens number: 366326
+Completion tokens number: 53460. Full price: 14.197379999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 215388
+Completion tokens number: 10248. Full price: 2.46132
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 587134
+Completion tokens number: 123867. Full price: 0.47936750000000006
+
+
+*******gpt-4*******
+Prompt tokens number: 371466
+Completion tokens number: 54216. Full price: 14.396939999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 217965
+Completion tokens number: 10386. Full price: 2.49123
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 594103
+Completion tokens number: 125204. Full price: 0.48485750000000005
+
+
+*******gpt-4*******
+Prompt tokens number: 375795
+Completion tokens number: 54940. Full price: 14.57025
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 220701
+Completion tokens number: 10530. Full price: 2.52291
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 603309
+Completion tokens number: 127107. Full price: 0.492315
+
+
+*******gpt-4*******
+Prompt tokens number: 383110
+Completion tokens number: 55983. Full price: 14.85228
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 224024
+Completion tokens number: 10674. Full price: 2.56046
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 603973
+Completion tokens number: 127330. Full price: 0.49298149999999996
+
+
+*******gpt-4*******
+Prompt tokens number: 383508
+Completion tokens number: 56043. Full price: 14.867819999999998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 224483
+Completion tokens number: 10697. Full price: 2.56574
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 612553
+Completion tokens number: 128893. Full price: 0.499616
+
+
+*******gpt-4*******
+Prompt tokens number: 389448
+Completion tokens number: 56773. Full price: 15.08982
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 227466
+Completion tokens number: 10841. Full price: 2.5998900000000003
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 620087
+Completion tokens number: 130321. Full price: 0.505525
+
+
+*******gpt-4*******
+Prompt tokens number: 395446
+Completion tokens number: 57755. Full price: 15.328680000000002
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 230176
+Completion tokens number: 10991. Full price: 2.63149
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 620848
+Completion tokens number: 130622. Full price: 0.506357
+
+
+*******gpt-4*******
+Prompt tokens number: 395922
+Completion tokens number: 57855. Full price: 15.34896
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 230713
+Completion tokens number: 11016. Full price: 2.63761
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 627136
+Completion tokens number: 131745. Full price: 0.5111855000000001
+
+
+*******gpt-4*******
+Prompt tokens number: 400413
+Completion tokens number: 58455. Full price: 15.51969
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 233235
+Completion tokens number: 11160. Full price: 2.6671500000000004
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 633845
+Completion tokens number: 132923. Full price: 0.5163070000000001
+
+
+*******gpt-4*******
+Prompt tokens number: 405997
+Completion tokens number: 59521. Full price: 15.75117
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 235701
+Completion tokens number: 11316. Full price: 2.69649
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 644065
+Completion tokens number: 135272. Full price: 0.5249405
+
+
+*******gpt-4*******
+Prompt tokens number: 412563
+Completion tokens number: 60388. Full price: 16.00017
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 239466
+Completion tokens number: 11460. Full price: 2.73846
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 650470
+Completion tokens number: 136403. Full price: 0.5298395
+
+
+*******gpt-4*******
+Prompt tokens number: 417064
+Completion tokens number: 60997. Full price: 16.17174
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 242013
+Completion tokens number: 11604. Full price: 2.76825
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 651209
+Completion tokens number: 136703. Full price: 0.530659
+
+
+*******gpt-4*******
+Prompt tokens number: 417537
+Completion tokens number: 61046. Full price: 16.188869999999998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 242547
+Completion tokens number: 11628. Full price: 2.7743100000000003
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 655764
+Completion tokens number: 137864. Full price: 0.534678
+
+
+*******gpt-4*******
+Prompt tokens number: 418424
+Completion tokens number: 61172. Full price: 16.223039999999997
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 243556
+Completion tokens number: 11676. Full price: 2.7858400000000003
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+Got invalid JSON object. Error: Expecting property name enclosed in double quotes: line 3 column 1 (char 1317)
+112-th example failed
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 662288
+Completion tokens number: 139706. Full price: 0.5407029999999999
+
+
+*******gpt-4*******
+Prompt tokens number: 421845
+Completion tokens number: 61529. Full price: 16.34709
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 246342
+Completion tokens number: 11776. Full price: 2.8167
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 663109
+Completion tokens number: 140076. Full price: 0.5416685
+
+
+*******gpt-4*******
+Prompt tokens number: 422389
+Completion tokens number: 61584. Full price: 16.36671
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 246947
+Completion tokens number: 11801. Full price: 2.8235
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 668641
+Completion tokens number: 141399. Full price: 0.546419
+
+
+*******gpt-4*******
+Prompt tokens number: 426636
+Completion tokens number: 62101. Full price: 16.52514
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 249214
+Completion tokens number: 11901. Full price: 2.84917
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 669311
+Completion tokens number: 141604. Full price: 0.5470615
+
+
+*******gpt-4*******
+Prompt tokens number: 427016
+Completion tokens number: 62156. Full price: 16.539839999999998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 249655
+Completion tokens number: 11925. Full price: 2.8543000000000003
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 677123
+Completion tokens number: 143165. Full price: 0.553309
+
+
+*******gpt-4*******
+Prompt tokens number: 432031
+Completion tokens number: 62929. Full price: 16.73667
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 252116
+Completion tokens number: 12075. Full price: 2.88341
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 684412
+Completion tokens number: 144405. Full price: 0.5588135000000001
+
+
+*******gpt-4*******
+Prompt tokens number: 437569
+Completion tokens number: 63674. Full price: 16.94751
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 254611
+Completion tokens number: 12219. Full price: 2.91268
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 685178
+Completion tokens number: 144727. Full price: 0.5596795
+
+
+*******gpt-4*******
+Prompt tokens number: 438061
+Completion tokens number: 63732. Full price: 16.96575
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 255164
+Completion tokens number: 12244. Full price: 2.9189599999999998
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 694087
+Completion tokens number: 146442. Full price: 0.5667065
+
+
+*******gpt-4*******
+Prompt tokens number: 443529
+Completion tokens number: 64477. Full price: 17.17449
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 258299
+Completion tokens number: 12394. Full price: 2.9548099999999997
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 704067
+Completion tokens number: 148531. Full price: 0.57483
+
+
+*******gpt-4*******
+Prompt tokens number: 450498
+Completion tokens number: 65708. Full price: 17.45742
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 261804
+Completion tokens number: 12538. Full price: 2.9941799999999996
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 704705
+Completion tokens number: 148729. Full price: 0.575446
+
+
+*******gpt-4*******
+Prompt tokens number: 450871
+Completion tokens number: 65763. Full price: 17.471909999999998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 262238
+Completion tokens number: 12561. Full price: 2.99921
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 706353
+Completion tokens number: 149090. Full price: 0.5768115
+
+
+*******gpt-4*******
+Prompt tokens number: 452197
+Completion tokens number: 66003. Full price: 17.52609
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 263068
+Completion tokens number: 12609. Full price: 3.00895
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 716390
+Completion tokens number: 151041. Full price: 0.5847565
+
+
+*******gpt-4*******
+Prompt tokens number: 458872
+Completion tokens number: 66976. Full price: 17.78472
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 266443
+Completion tokens number: 12753. Full price: 3.04702
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 717024
+Completion tokens number: 151240. Full price: 0.585372
+
+
+*******gpt-4*******
+Prompt tokens number: 459246
+Completion tokens number: 67041. Full price: 17.79984
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 266878
+Completion tokens number: 12778. Full price: 3.05212
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 723836
+Completion tokens number: 152555. Full price: 0.5907505
+
+
+*******gpt-4*******
+Prompt tokens number: 463486
+Completion tokens number: 67760. Full price: 17.97018
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 269609
+Completion tokens number: 12922. Full price: 3.0837499999999998
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 727193
+Completion tokens number: 153510. Full price: 0.5938615
+
+
+*******gpt-4*******
+Prompt tokens number: 465680
+Completion tokens number: 68041. Full price: 18.05286
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 271272
+Completion tokens number: 12997. Full price: 3.10263
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 734257
+Completion tokens number: 154841. Full price: 0.5993900000000001
+
+
+*******gpt-4*******
+Prompt tokens number: 471248
+Completion tokens number: 69017. Full price: 18.27846
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 274023
+Completion tokens number: 13153. Full price: 3.1348200000000004
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 741735
+Completion tokens number: 155826. Full price: 0.6046065
+
+
+*******gpt-4*******
+Prompt tokens number: 475666
+Completion tokens number: 69768. Full price: 18.456059999999997
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 276421
+Completion tokens number: 13303. Full price: 3.1633
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 751037
+Completion tokens number: 157819. Full price: 0.612247
+
+
+*******gpt-4*******
+Prompt tokens number: 480996
+Completion tokens number: 70474. Full price: 18.65832
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 279830
+Completion tokens number: 13453. Full price: 3.2018899999999997
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 758365
+Completion tokens number: 159065. Full price: 0.61778
+
+
+*******gpt-4*******
+Prompt tokens number: 485790
+Completion tokens number: 71198. Full price: 18.845579999999998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 282205
+Completion tokens number: 13597. Full price: 3.22996
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 764919
+Completion tokens number: 160269. Full price: 0.6228629999999999
+
+
+*******gpt-4*******
+Prompt tokens number: 490487
+Completion tokens number: 71870. Full price: 19.02681
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 284825
+Completion tokens number: 13741. Full price: 3.26048
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 771886
+Completion tokens number: 161722. Full price: 0.6285259999999999
+
+
+*******gpt-4*******
+Prompt tokens number: 495242
+Completion tokens number: 72567. Full price: 19.21128
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 287461
+Completion tokens number: 13885. Full price: 3.29116
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 774565
+Completion tokens number: 162591. Full price: 0.631169
+
+
+*******gpt-4*******
+Prompt tokens number: 497274
+Completion tokens number: 72963. Full price: 19.296
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 288778
+Completion tokens number: 13933. Full price: 3.3057700000000003
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 778529
+Completion tokens number: 163778. Full price: 0.6349315
+
+
+*******gpt-4*******
+Prompt tokens number: 500448
+Completion tokens number: 73404. Full price: 19.417679999999997
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 290560
+Completion tokens number: 14008. Full price: 3.3258400000000004
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 790332
+Completion tokens number: 166618. Full price: 0.645093
+
+
+*******gpt-4*******
+Prompt tokens number: 507742
+Completion tokens number: 74420. Full price: 19.69746
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 294820
+Completion tokens number: 14158. Full price: 3.37294
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 792451
+Completion tokens number: 167369. Full price: 0.6472789999999999
+
+
+*******gpt-4*******
+Prompt tokens number: 509636
+Completion tokens number: 74632. Full price: 19.767
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 296042
+Completion tokens number: 14206. Full price: 3.3865999999999996
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 798663
+Completion tokens number: 168280. Full price: 0.6517515
+
+
+*******gpt-4*******
+Prompt tokens number: 514903
+Completion tokens number: 75373. Full price: 19.96947
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 298368
+Completion tokens number: 14350. Full price: 3.41418
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 806061
+Completion tokens number: 169657. Full price: 0.657516
+
+
+*******gpt-4*******
+Prompt tokens number: 519862
+Completion tokens number: 76150. Full price: 20.164859999999997
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 301126
+Completion tokens number: 14500. Full price: 3.44626
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 812624
+Completion tokens number: 170897. Full price: 0.6626575
+
+
+*******gpt-4*******
+Prompt tokens number: 523993
+Completion tokens number: 76765. Full price: 20.32569
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 303776
+Completion tokens number: 14650. Full price: 3.4772600000000002
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 815356
+Completion tokens number: 171891. Full price: 0.6655145
+
+
+*******gpt-4*******
+Prompt tokens number: 526295
+Completion tokens number: 77104. Full price: 20.41509
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 305242
+Completion tokens number: 14698. Full price: 3.49336
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 816007
+Completion tokens number: 172101. Full price: 0.666155
+
+
+*******gpt-4*******
+Prompt tokens number: 526680
+Completion tokens number: 77161. Full price: 20.430059999999997
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 305688
+Completion tokens number: 14723. Full price: 3.49857
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 824003
+Completion tokens number: 173882. Full price: 0.6728245
+
+
+*******gpt-4*******
+Prompt tokens number: 531899
+Completion tokens number: 77870. Full price: 20.629170000000002
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 308639
+Completion tokens number: 14867. Full price: 3.5324
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 834377
+Completion tokens number: 176150. Full price: 0.6814135
+
+
+*******gpt-4*******
+Prompt tokens number: 539094
+Completion tokens number: 79156. Full price: 20.92218
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 312323
+Completion tokens number: 15017. Full price: 3.57374
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 846944
+Completion tokens number: 179674. Full price: 0.692983
+
+
+*******gpt-4*******
+Prompt tokens number: 545676
+Completion tokens number: 79870. Full price: 21.162480000000002
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 317027
+Completion tokens number: 15142. Full price: 3.62453
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 854056
+Completion tokens number: 180906. Full price: 0.6983870000000001
+
+
+*******gpt-4*******
+Prompt tokens number: 551624
+Completion tokens number: 80906. Full price: 21.40308
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 319662
+Completion tokens number: 15292. Full price: 3.6553799999999996
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 861407
+Completion tokens number: 182045. Full price: 0.703771
+
+
+*******gpt-4*******
+Prompt tokens number: 556715
+Completion tokens number: 81644. Full price: 21.60009
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 322217
+Completion tokens number: 15430. Full price: 3.6850699999999996
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 873846
+Completion tokens number: 184744. Full price: 0.714039
+
+
+*******gpt-4*******
+Prompt tokens number: 560914
+Completion tokens number: 82071. Full price: 21.75168
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 325961
+Completion tokens number: 15568. Full price: 3.7266500000000002
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 874831
+Completion tokens number: 185255. Full price: 0.715298
+
+
+*******gpt-4*******
+Prompt tokens number: 561600
+Completion tokens number: 82117. Full price: 21.775019999999998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 326708
+Completion tokens number: 15593. Full price: 3.7348700000000004
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 882749
+Completion tokens number: 186917. Full price: 0.72175
+
+
+*******gpt-4*******
+Prompt tokens number: 566367
+Completion tokens number: 82824. Full price: 21.960449999999998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 329786
+Completion tokens number: 15743. Full price: 3.77015
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 889185
+Completion tokens number: 188055. Full price: 0.726675
+
+
+*******gpt-4*******
+Prompt tokens number: 572151
+Completion tokens number: 83551. Full price: 22.17759
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 332344
+Completion tokens number: 15887. Full price: 3.80005
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 897143
+Completion tokens number: 189418. Full price: 0.7326985
+
+
+*******gpt-4*******
+Prompt tokens number: 577897
+Completion tokens number: 84345. Full price: 22.39761
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 334900
+Completion tokens number: 16037. Full price: 3.8301099999999995
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 897812
+Completion tokens number: 189654. Full price: 0.733387
+
+
+*******gpt-4*******
+Prompt tokens number: 578308
+Completion tokens number: 84403. Full price: 22.41342
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 335372
+Completion tokens number: 16062. Full price: 3.83558
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 906456
+Completion tokens number: 191549. Full price: 0.7405515
+
+
+*******gpt-4*******
+Prompt tokens number: 582799
+Completion tokens number: 85268. Full price: 22.60005
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 338687
+Completion tokens number: 16206. Full price: 3.87305
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 909727
+Completion tokens number: 192506. Full price: 0.7436225
+
+
+*******gpt-4*******
+Prompt tokens number: 584982
+Completion tokens number: 85487. Full price: 22.67868
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 340352
+Completion tokens number: 16281. Full price: 3.8919499999999996
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 918523
+Completion tokens number: 194585. Full price: 0.751139
+
+
+*******gpt-4*******
+Prompt tokens number: 588111
+Completion tokens number: 85782. Full price: 22.79025
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 343847
+Completion tokens number: 16431. Full price: 3.9313999999999996
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 922347
+Completion tokens number: 195730. Full price: 0.7547685
+
+
+*******gpt-4*******
+Prompt tokens number: 591173
+Completion tokens number: 86312. Full price: 22.913909999999998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 345451
+Completion tokens number: 16531. Full price: 3.9504400000000004
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 925024
+Completion tokens number: 196321. Full price: 0.7569935
+
+
+*******gpt-4*******
+Prompt tokens number: 593488
+Completion tokens number: 86671. Full price: 23.004900000000003
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 346750
+Completion tokens number: 16606. Full price: 3.9656800000000003
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 934459
+Completion tokens number: 198603. Full price: 0.765134
+
+
+*******gpt-4*******
+Prompt tokens number: 596820
+Completion tokens number: 87048. Full price: 23.127480000000002
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 350448
+Completion tokens number: 16744. Full price: 4.0068
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 946322
+Completion tokens number: 201302. Full price: 0.7751140000000001
+
+
+*******gpt-4*******
+Prompt tokens number: 604267
+Completion tokens number: 88249. Full price: 23.42295
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 354557
+Completion tokens number: 16900. Full price: 4.05257
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 947921
+Completion tokens number: 201819. Full price: 0.776689
+
+
+*******gpt-4*******
+Prompt tokens number: 605792
+Completion tokens number: 88365. Full price: 23.47566
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 355544
+Completion tokens number: 16950. Full price: 4.06394
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 948591
+Completion tokens number: 201973. Full price: 0.777255
+
+
+*******gpt-4*******
+Prompt tokens number: 606121
+Completion tokens number: 88439. Full price: 23.489969999999996
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 355934
+Completion tokens number: 16974. Full price: 4.06856
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 956364
+Completion tokens number: 203513. Full price: 0.7834515
+
+
+*******gpt-4*******
+Prompt tokens number: 612453
+Completion tokens number: 89289. Full price: 23.73093
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 358785
+Completion tokens number: 17130. Full price: 4.10175
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 958459
+Completion tokens number: 204149. Full price: 0.785453
+
+
+*******gpt-4*******
+Prompt tokens number: 614186
+Completion tokens number: 89546. Full price: 23.79834
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 359893
+Completion tokens number: 17176. Full price: 4.11421
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 967599
+Completion tokens number: 206084. Full price: 0.7929255
+
+
+*******gpt-4*******
+Prompt tokens number: 620108
+Completion tokens number: 90445. Full price: 24.029939999999996
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 363244
+Completion tokens number: 17332. Full price: 4.1524
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 974568
+Completion tokens number: 207585. Full price: 0.7986614999999999
+
+
+*******gpt-4*******
+Prompt tokens number: 622247
+Completion tokens number: 90756. Full price: 24.112769999999998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 364841
+Completion tokens number: 17407. Full price: 4.17062
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+Got invalid JSON object. Error: Expecting ':' delimiter: line 3 column 1 (char 1292)
+166-th example failed
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 979160
+Completion tokens number: 208632. Full price: 0.802528
+
+
+*******gpt-4*******
+Prompt tokens number: 624804
+Completion tokens number: 91132. Full price: 24.21204
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 366596
+Completion tokens number: 17482. Full price: 4.19042
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 979884
+Completion tokens number: 208906. Full price: 0.803301
+
+
+*******gpt-4*******
+Prompt tokens number: 625252
+Completion tokens number: 91181. Full price: 24.22842
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 367105
+Completion tokens number: 17506. Full price: 4.19623
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 988312
+Completion tokens number: 210629. Full price: 0.8100995
+
+
+*******gpt-4*******
+Prompt tokens number: 631509
+Completion tokens number: 91964. Full price: 24.46311
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 370244
+Completion tokens number: 17656. Full price: 4.23212
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 989981
+Completion tokens number: 211116. Full price: 0.8116645
+
+
+*******gpt-4*******
+Prompt tokens number: 632989
+Completion tokens number: 92169. Full price: 24.51981
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 371201
+Completion tokens number: 17706. Full price: 4.24319
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 997161
+Completion tokens number: 212578. Full price: 0.8174475
+
+
+*******gpt-4*******
+Prompt tokens number: 636100
+Completion tokens number: 92626. Full price: 24.64056
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 374034
+Completion tokens number: 17844. Full price: 4.27566
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1004611
+Completion tokens number: 214005. Full price: 0.823313
+
+
+*******gpt-4*******
+Prompt tokens number: 641121
+Completion tokens number: 93483. Full price: 24.842609999999997
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 376877
+Completion tokens number: 17994. Full price: 4.30859
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1011659
+Completion tokens number: 215443. Full price: 0.828994
+
+
+*******gpt-4*******
+Prompt tokens number: 644259
+Completion tokens number: 93962. Full price: 24.965490000000003
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 379731
+Completion tokens number: 18138. Full price: 4.34145
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1016854
+Completion tokens number: 216331. Full price: 0.8329234999999999
+
+
+*******gpt-4*******
+Prompt tokens number: 647014
+Completion tokens number: 94342. Full price: 25.07094
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 380953
+Completion tokens number: 18210. Full price: 4.355829999999999
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+Got invalid JSON object. Error: Expecting property name enclosed in double quotes: line 3 column 1 (char 762)
+174-th example failed
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1025751
+Completion tokens number: 218177. Full price: 0.840141
+
+
+*******gpt-4*******
+Prompt tokens number: 652776
+Completion tokens number: 95199. Full price: 25.295219999999997
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 384215
+Completion tokens number: 18354. Full price: 4.39277
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1035920
+Completion tokens number: 220232. Full price: 0.8483080000000001
+
+
+*******gpt-4*******
+Prompt tokens number: 658850
+Completion tokens number: 96276. Full price: 25.54206
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 387692
+Completion tokens number: 18498. Full price: 4.43186
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1036617
+Completion tokens number: 220518. Full price: 0.8490854999999999
+
+
+*******gpt-4*******
+Prompt tokens number: 659311
+Completion tokens number: 96335. Full price: 25.55943
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 388214
+Completion tokens number: 18523. Full price: 4.43783
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1042659
+Completion tokens number: 221432. Full price: 0.8534775
+
+
+*******gpt-4*******
+Prompt tokens number: 663020
+Completion tokens number: 96986. Full price: 25.70976
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 390544
+Completion tokens number: 18673. Full price: 4.46563
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1043437
+Completion tokens number: 221709. Full price: 0.854282
+
+
+*******gpt-4*******
+Prompt tokens number: 664166
+Completion tokens number: 97077. Full price: 25.7496
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 391057
+Completion tokens number: 18698. Full price: 4.47151
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1049641
+Completion tokens number: 222882. Full price: 0.8591435000000001
+
+
+*******gpt-4*******
+Prompt tokens number: 666389
+Completion tokens number: 97400. Full price: 25.83567
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 393646
+Completion tokens number: 18836. Full price: 4.50154
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1059618
+Completion tokens number: 225015. Full price: 0.8673314999999999
+
+
+*******gpt-4*******
+Prompt tokens number: 674165
+Completion tokens number: 98339. Full price: 26.12529
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 397198
+Completion tokens number: 18992. Full price: 4.54174
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1075907
+Completion tokens number: 228454. Full price: 0.8806345
+
+
+*******gpt-4*******
+Prompt tokens number: 681138
+Completion tokens number: 99381. Full price: 26.397
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 401167
+Completion tokens number: 19136. Full price: 4.585749999999999
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1082063
+Completion tokens number: 229427. Full price: 0.885172
+
+
+*******gpt-4*******
+Prompt tokens number: 685242
+Completion tokens number: 99986. Full price: 26.55642
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 403539
+Completion tokens number: 19280. Full price: 4.61379
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1082697
+Completion tokens number: 229650. Full price: 0.8858235
+
+
+*******gpt-4*******
+Prompt tokens number: 685640
+Completion tokens number: 100033. Full price: 26.57118
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 403998
+Completion tokens number: 19304. Full price: 4.6190999999999995
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1093281
+Completion tokens number: 231893. Full price: 0.8944799999999999
+
+
+*******gpt-4*******
+Prompt tokens number: 693555
+Completion tokens number: 101337. Full price: 26.88687
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 407625
+Completion tokens number: 19454. Full price: 4.65987
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1101912
+Completion tokens number: 234350. Full price: 0.902481
+
+
+*******gpt-4*******
+Prompt tokens number: 696681
+Completion tokens number: 101669. Full price: 27.00057
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 411117
+Completion tokens number: 19598. Full price: 4.69911
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1109503
+Completion tokens number: 235984. Full price: 0.9087274999999999
+
+
+*******gpt-4*******
+Prompt tokens number: 701356
+Completion tokens number: 102248. Full price: 27.175559999999997
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 414143
+Completion tokens number: 19742. Full price: 4.733689999999999
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1112133
+Completion tokens number: 236419. Full price: 0.910695
+
+
+*******gpt-4*******
+Prompt tokens number: 702266
+Completion tokens number: 102392. Full price: 27.211499999999997
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 414548
+Completion tokens number: 19767. Full price: 4.73849
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+Got invalid JSON object. Error: Expecting value: line 2 column 573 (char 574)
+188-th example failed
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1112789
+Completion tokens number: 236638. Full price: 0.9113515
+
+
+*******gpt-4*******
+Prompt tokens number: 702660
+Completion tokens number: 102443. Full price: 27.22638
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 415003
+Completion tokens number: 19792. Full price: 4.743790000000001
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1120378
+Completion tokens number: 238301. Full price: 0.9176405000000001
+
+
+*******gpt-4*******
+Prompt tokens number: 707974
+Completion tokens number: 103408. Full price: 27.4437
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 417900
+Completion tokens number: 19942. Full price: 4.77726
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1131752
+Completion tokens number: 241018. Full price: 0.9274030000000001
+
+
+*******gpt-4*******
+Prompt tokens number: 715174
+Completion tokens number: 104370. Full price: 27.717419999999997
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 422037
+Completion tokens number: 20086. Full price: 4.82295
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1132463
+Completion tokens number: 241314. Full price: 0.9282025
+
+
+*******gpt-4*******
+Prompt tokens number: 715645
+Completion tokens number: 104421. Full price: 27.73461
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 422569
+Completion tokens number: 20111. Full price: 4.82902
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1135017
+Completion tokens number: 242065. Full price: 0.930606
+
+
+*******gpt-4*******
+Prompt tokens number: 717554
+Completion tokens number: 104718. Full price: 27.8097
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 423792
+Completion tokens number: 20161. Full price: 4.84275
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1148952
+Completion tokens number: 245853. Full price: 0.9432555
+
+
+*******gpt-4*******
+Prompt tokens number: 722374
+Completion tokens number: 105090. Full price: 27.976619999999997
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 428978
+Completion tokens number: 20317. Full price: 4.899290000000001
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1158641
+Completion tokens number: 247838. Full price: 0.9510775
+
+
+*******gpt-4*******
+Prompt tokens number: 729816
+Completion tokens number: 106075. Full price: 28.25898
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 432379
+Completion tokens number: 20467. Full price: 4.937800000000001
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1159677
+Completion tokens number: 248440. Full price: 0.9524985
+
+
+*******gpt-4*******
+Prompt tokens number: 731597
+Completion tokens number: 106155. Full price: 28.31721
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 433216
+Completion tokens number: 20491. Full price: 4.94689
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1160326
+Completion tokens number: 248669. Full price: 0.9531665
+
+
+*******gpt-4*******
+Prompt tokens number: 732001
+Completion tokens number: 106205. Full price: 28.33233
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 433681
+Completion tokens number: 20517. Full price: 4.95232
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1161081
+Completion tokens number: 248979. Full price: 0.954009
+
+
+*******gpt-4*******
+Prompt tokens number: 732486
+Completion tokens number: 106255. Full price: 28.34988
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 434227
+Completion tokens number: 20542. Full price: 4.95853
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1171039
+Completion tokens number: 251314. Full price: 0.9624904999999999
+
+
+*******gpt-4*******
+Prompt tokens number: 736631
+Completion tokens number: 106687. Full price: 28.500149999999998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 437978
+Completion tokens number: 20686. Full price: 5.000360000000001
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1179748
+Completion tokens number: 252978. Full price: 0.969341
+
+
+*******gpt-4*******
+Prompt tokens number: 741649
+Completion tokens number: 107541. Full price: 28.701929999999997
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 440733
+Completion tokens number: 20842. Full price: 5.03259
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1182390
+Completion tokens number: 253462. Full price: 0.971388
+
+
+*******gpt-4*******
+Prompt tokens number: 743143
+Completion tokens number: 107775. Full price: 28.76079
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 441693
+Completion tokens number: 20892. Full price: 5.04369
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1189732
+Completion tokens number: 254866. Full price: 0.977165
+
+
+*******gpt-4*******
+Prompt tokens number: 748663
+Completion tokens number: 108556. Full price: 28.973249999999997
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 444429
+Completion tokens number: 21038. Full price: 5.07543
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1195856
+Completion tokens number: 255814. Full price: 0.981649
+
+
+*******gpt-4*******
+Prompt tokens number: 754016
+Completion tokens number: 109261. Full price: 29.176139999999997
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 446793
+Completion tokens number: 21194. Full price: 5.10375
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1203624
+Completion tokens number: 257195. Full price: 0.9876045
+
+
+*******gpt-4*******
+Prompt tokens number: 759527
+Completion tokens number: 110152. Full price: 29.394930000000002
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 449590
+Completion tokens number: 21332. Full price: 5.13586
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1214620
+Completion tokens number: 259664. Full price: 0.9968060000000001
+
+
+*******gpt-4*******
+Prompt tokens number: 767844
+Completion tokens number: 111020. Full price: 29.69652
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 453479
+Completion tokens number: 21476. Full price: 5.17907
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1216316
+Completion tokens number: 260180. Full price: 0.998428
+
+
+*******gpt-4*******
+Prompt tokens number: 769270
+Completion tokens number: 111213. Full price: 29.75088
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 454381
+Completion tokens number: 21524. Full price: 5.1895299999999995
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1216921
+Completion tokens number: 260373. Full price: 0.99902
+
+
+*******gpt-4*******
+Prompt tokens number: 769638
+Completion tokens number: 111264. Full price: 29.76498
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 454810
+Completion tokens number: 21548. Full price: 5.19454
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1223293
+Completion tokens number: 261385. Full price: 1.003724
+
+
+*******gpt-4*******
+Prompt tokens number: 773493
+Completion tokens number: 111927. Full price: 29.92041
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 457238
+Completion tokens number: 21692. Full price: 5.22314
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1230516
+Completion tokens number: 262780. Full price: 1.009428
+
+
+*******gpt-4*******
+Prompt tokens number: 778458
+Completion tokens number: 112742. Full price: 30.11826
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 460015
+Completion tokens number: 21842. Full price: 5.25541
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1240957
+Completion tokens number: 265054. Full price: 1.0180595000000001
+
+
+*******gpt-4*******
+Prompt tokens number: 786432
+Completion tokens number: 113796. Full price: 30.42072
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 463693
+Completion tokens number: 21986. Full price: 5.29651
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1248240
+Completion tokens number: 268487. Full price: 1.0268505
+
+
+*******gpt-4*******
+Prompt tokens number: 790731
+Completion tokens number: 114556. Full price: 30.59529
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 466391
+Completion tokens number: 22136. Full price: 5.327990000000001
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1250154
+Completion tokens number: 268999. Full price: 1.0285755
+
+
+*******gpt-4*******
+Prompt tokens number: 792275
+Completion tokens number: 114800. Full price: 30.65625
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 467375
+Completion tokens number: 22186. Full price: 5.33933
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1250826
+Completion tokens number: 269257. Full price: 1.0292985
+
+
+*******gpt-4*******
+Prompt tokens number: 793383
+Completion tokens number: 114890. Full price: 30.69489
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 467869
+Completion tokens number: 22210. Full price: 5.34499
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1257946
+Completion tokens number: 270688. Full price: 1.035005
+
+
+*******gpt-4*******
+Prompt tokens number: 797123
+Completion tokens number: 115425. Full price: 30.83919
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 470699
+Completion tokens number: 22360. Full price: 5.37779
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1258816
+Completion tokens number: 271092. Full price: 1.036046
+
+
+*******gpt-4*******
+Prompt tokens number: 797690
+Completion tokens number: 115488. Full price: 30.85998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 471327
+Completion tokens number: 22384. Full price: 5.384790000000001
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1265638
+Completion tokens number: 272400. Full price: 1.0414189999999999
+
+
+*******gpt-4*******
+Prompt tokens number: 801220
+Completion tokens number: 116092. Full price: 31.002119999999998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 473970
+Completion tokens number: 22528. Full price: 5.41554
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1275306
+Completion tokens number: 274398. Full price: 1.04925
+
+
+*******gpt-4*******
+Prompt tokens number: 808665
+Completion tokens number: 117067. Full price: 31.283969999999997
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 477388
+Completion tokens number: 22678. Full price: 5.45422
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1282375
+Completion tokens number: 275727. Full price: 1.054778
+
+
+*******gpt-4*******
+Prompt tokens number: 814778
+Completion tokens number: 117862. Full price: 31.51506
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 480116
+Completion tokens number: 22828. Full price: 5.486000000000001
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1283068
+Completion tokens number: 275969. Full price: 1.0554875000000001
+
+
+*******gpt-4*******
+Prompt tokens number: 815195
+Completion tokens number: 117910. Full price: 31.530450000000002
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 480594
+Completion tokens number: 22853. Full price: 5.49153
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1283770
+Completion tokens number: 276212. Full price: 1.056203
+
+
+*******gpt-4*******
+Prompt tokens number: 815613
+Completion tokens number: 117967. Full price: 31.546409999999998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 481073
+Completion tokens number: 22877. Full price: 5.497039999999999
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1288800
+Completion tokens number: 277386. Full price: 1.060479
+
+
+*******gpt-4*******
+Prompt tokens number: 817308
+Completion tokens number: 118239. Full price: 31.61358
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 482126
+Completion tokens number: 22927. Full price: 5.5090699999999995
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+Got invalid JSON object. Error: Expecting property name enclosed in double quotes: line 3 column 1 (char 1006)
+221-th example failed
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1293812
+Completion tokens number: 279093. Full price: 1.0655454999999998
+
+
+*******gpt-4*******
+Prompt tokens number: 820571
+Completion tokens number: 118685. Full price: 31.73823
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 484541
+Completion tokens number: 23002. Full price: 5.53547
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1294560
+Completion tokens number: 279398. Full price: 1.066377
+
+
+*******gpt-4*******
+Prompt tokens number: 821051
+Completion tokens number: 118734. Full price: 31.75557
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 485082
+Completion tokens number: 23027. Full price: 5.54163
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1295417
+Completion tokens number: 279783. Full price: 1.067383
+
+
+*******gpt-4*******
+Prompt tokens number: 821611
+Completion tokens number: 118801. Full price: 31.77639
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 485703
+Completion tokens number: 23051. Full price: 5.54856
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1296059
+Completion tokens number: 279989. Full price: 1.068013
+
+
+*******gpt-4*******
+Prompt tokens number: 821992
+Completion tokens number: 118848. Full price: 31.790639999999996
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 486145
+Completion tokens number: 23076. Full price: 5.55373
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1303655
+Completion tokens number: 281351. Full price: 1.073854
+
+
+*******gpt-4*******
+Prompt tokens number: 825916
+Completion tokens number: 119394. Full price: 31.94112
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 488657
+Completion tokens number: 23232. Full price: 5.58353
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1314329
+Completion tokens number: 283512. Full price: 1.0824325
+
+
+*******gpt-4*******
+Prompt tokens number: 831968
+Completion tokens number: 120265. Full price: 32.17494
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 491738
+Completion tokens number: 23376. Full price: 5.61866
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1323827
+Completion tokens number: 285616. Full price: 1.0903375
+
+
+*******gpt-4*******
+Prompt tokens number: 836823
+Completion tokens number: 121150. Full price: 32.373689999999996
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 495262
+Completion tokens number: 23532. Full price: 5.658580000000001
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1330700
+Completion tokens number: 286901. Full price: 1.0957015
+
+
+*******gpt-4*******
+Prompt tokens number: 840933
+Completion tokens number: 121900. Full price: 32.54199
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 497869
+Completion tokens number: 23676. Full price: 5.68897
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1331328
+Completion tokens number: 287105. Full price: 1.0963215000000002
+
+
+*******gpt-4*******
+Prompt tokens number: 841311
+Completion tokens number: 121957. Full price: 32.55675
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 498308
+Completion tokens number: 23701. Full price: 5.69411
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1339378
+Completion tokens number: 288788. Full price: 1.102871
+
+
+*******gpt-4*******
+Prompt tokens number: 847205
+Completion tokens number: 122602. Full price: 32.77227
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 501320
+Completion tokens number: 23851. Full price: 5.7287300000000005
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1340053
+Completion tokens number: 289027. Full price: 1.103567
+
+
+*******gpt-4*******
+Prompt tokens number: 847618
+Completion tokens number: 122659. Full price: 32.78808
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 501794
+Completion tokens number: 23876. Full price: 5.7342200000000005
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1350074
+Completion tokens number: 291046. Full price: 1.111606
+
+
+*******gpt-4*******
+Prompt tokens number: 854419
+Completion tokens number: 123949. Full price: 33.069509999999994
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 505233
+Completion tokens number: 24026. Full price: 5.773110000000001
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1356504
+Completion tokens number: 292234. Full price: 1.116603
+
+
+*******gpt-4*******
+Prompt tokens number: 858508
+Completion tokens number: 124553. Full price: 33.22842
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 507837
+Completion tokens number: 24170. Full price: 5.80347
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1366459
+Completion tokens number: 294455. Full price: 1.1249120000000001
+
+
+*******gpt-4*******
+Prompt tokens number: 864901
+Completion tokens number: 125482. Full price: 33.47595
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 511471
+Completion tokens number: 24314. Full price: 5.844130000000001
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1367463
+Completion tokens number: 295024. Full price: 1.1262675
+
+
+*******gpt-4*******
+Prompt tokens number: 865645
+Completion tokens number: 125536. Full price: 33.501509999999996
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 512276
+Completion tokens number: 24339. Full price: 5.85293
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1368124
+Completion tokens number: 295259. Full price: 1.1269505
+
+
+*******gpt-4*******
+Prompt tokens number: 866055
+Completion tokens number: 125596. Full price: 33.51741
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 512747
+Completion tokens number: 24364. Full price: 5.85839
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 1368833
+Completion tokens number: 295553. Full price: 1.1277460000000001
+
+
+*******gpt-4*******
+Prompt tokens number: 866524
+Completion tokens number: 125649. Full price: 33.53466
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 513277
+Completion tokens number: 24387. Full price: 5.864380000000001
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+Done! Check out the logs in `/ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_gpt-35-turbo-0301_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl`

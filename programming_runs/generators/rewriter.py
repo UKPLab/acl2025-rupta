@@ -288,8 +288,10 @@ class ReWriter(Generator):
     def rewrite(
             self,
             input_text: str,
-            model: ModelBase,
+            act_model: ModelBase,
+            parser_model: ModelBase,
             strategy: str,
+            cot: bool = False,
             prev_rewriting: Optional[str] = None,
             reflection_privacy: Optional[str] = None,
             reflection_utility: Optional[str] = None,
@@ -300,11 +302,13 @@ class ReWriter(Generator):
             temperature: float = 0.0,
             p_threshold: int = 10,
             no_utility: bool = False
-    ) -> Union[str, List[str]]:
+    ):
         return generic_rewriting(
             input_text=input_text,
-            model=model,
+            model=act_model,
+            parser_model=parser_model,
             strategy=strategy,
+            cot=cot,
             prev_rewriting=prev_rewriting,
             reflection_privacy=reflection_privacy,
             reflection_utility=reflection_utility,

@@ -21,7 +21,7 @@ def get_args():
                         help="Strategy: `simple`, `reflexion`")
     parser.add_argument("--language", type=str, help="Strategy: `py` or `rs`")
     parser.add_argument(
-        "--model", type=str, help="OpenAI models only for now. For best results, use GPT-4")
+        "--pe_model", type=str, help="OpenAI models only for now. For best results, use GPT-4")
     parser.add_argument("--pass_at_k", type=int,
                         help="Pass@k metric", default=1)
     parser.add_argument("--max_iters", type=int,
@@ -36,6 +36,8 @@ def get_args():
                         help="To print live logs")
     parser.add_argument("--no_utility", action='store_true',
                         help="Whether add utility evaluation module")
+    parser.add_argument("--cot", action='store_true',
+                        help="Whether use COT prompt to generate the initial state")
     parser.add_argument("--mem_len", type=int,
                         help="The maximum length of memory", default=3)
     parser.add_argument("--p_threshold", type=int,
@@ -46,6 +48,13 @@ def get_args():
                         help="The embedding cache directory")
     parser.add_argument("--rag_num", type=int,
                         help="The maximum number of retrieved documents", default=5)
+    parser.add_argument(
+        "--ue_model", type=str, help="OpenAI models only for now. For best results, use GPT-4")
+    parser.add_argument(
+        "--act_model", type=str, help="OpenAI models only for now. For best results, use GPT-4")
+    parser.add_argument(
+        "--parser_model", type=str, help="OpenAI models only for now. For best results, use GPT-4")
+
     # TODO: implement this
     # parser.add_argument("--is_resume", action='store_true', help="To resume run")
     # parser.add_argument("--resume_dir", type=str, help="If resume, the logging directory", default="")
@@ -63,21 +72,23 @@ def strategy_factory(strategy: str):
 
     if strategy == "simple":
         return kwargs_wrapper_gen(run_simple, delete_keys=["expansion_factor", "max_iters", "no_utility", "p_threshold",
-                                                           "mem_len", "rag_embed_cache_dir", "rag_num", "rag_data_path"])
+                                                           "mem_len", "rag_embed_cache_dir", "rag_num", "rag_data_path",
+                                                           "cot"])
     elif strategy == "reflexion":
         return kwargs_wrapper_gen(run_reflexion, delete_keys=["expansion_factor"])
     elif strategy == "immediate-reflexion":
         return kwargs_wrapper_gen(run_immediate_reflexion, delete_keys=["expansion_factor", "no_utility", "p_threshold",
                                                                         "mem_len", "rag_embed_cache_dir", "rag_num"
-                                                                        , "rag_data_path"])
+                                                                        , "rag_data_path", "cot"])
     elif strategy == "immediate-refinement":
         return kwargs_wrapper_gen(run_immediate_refinement, delete_keys=["expansion_factor", "no_utility", "p_threshold"
                                                                          , "mem_len", "rag_embed_cache_dir", "rag_num",
-                                                                         "rag_data_path"])
+                                                                         "rag_data_path", "cot"])
     elif strategy == "reflexion-ucs":
         return kwargs_wrapper_gen(run_reflexion_ucs)
     elif strategy == "test-acc":
-        return kwargs_wrapper_gen(run_test_acc, delete_keys=["expansion_factor", "max_iters", "mem_len"])
+        return kwargs_wrapper_gen(run_test_acc, delete_keys=["expansion_factor", "max_iters", "mem_len", "ue_model_name",
+                                                             "act_model_name", "parser_model_name", "cot"])
     else:
         raise ValueError(f"Strategy `{strategy}` is not supported")
 
@@ -92,9 +103,13 @@ def main(args):
     dataset_name = os.path.dirname(args.dataset_path).replace("./benchmarks/", "")
 
     # check if log path already exists
-    log_dir = os.path.join(args.root_dir, args.run_name)
-    log_path = os.path.join(
-        log_dir, f"{dataset_name}_{args.strategy}_{args.max_iters}_{args.model.replace('/', '-')}_pass_at_k_{args.pass_at_k}_{args.language}_no-utility_{args.no_utility}_p-threshold_{args.p_threshold}_mem-len_{args.mem_len}.jsonl")
+    log_dir = str(os.path.join(args.root_dir, args.run_name))
+    log_path = os.path.join(log_dir,
+                            f"{dataset_name}_{args.strategy}_{args.max_iters}_act_{args.act_model.replace('/', '-')}"
+                            f"_pe_{args.pe_model.replace('/', '-')}_ue_{args.ue_model.replace('/', '-')}"
+                            f"_parser_{args.parser_model.replace('/', '-')}"
+                            f"_pass_at_k_{args.pass_at_k}_{args.language}_no-utility_{args.no_utility}"
+                            f"_COT_{args.cot}_p-threshold_{args.p_threshold}_mem-len_{args.mem_len}.jsonl")
     if not os.path.exists(log_dir):
         os.makedirs(log_dir)
 
@@ -126,7 +141,10 @@ pass@k: {args.pass_at_k}
     # evaluate with pass@k
     run_strategy(
         dataset=dataset,
-        model_name=args.model,
+        pe_model_name=args.pe_model,
+        ue_model_name=args.ue_model,
+        act_model_name=args.act_model,
+        parser_model_name=args.parser_model,
         language=args.language,
         max_iters=args.max_iters,
         pass_at_k=args.pass_at_k,
@@ -135,6 +153,7 @@ pass@k: {args.pass_at_k}
         expansion_factor=args.expansion_factor,
         is_leetcode=args.is_leetcode,
         no_utility=args.no_utility,
+        cot=args.cot,
         mem_len=args.mem_len,
         p_threshold=args.p_threshold,
         rag_data_path=args.rag_data_path,

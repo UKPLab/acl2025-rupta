@@ -8,11 +8,11 @@ from tenacity import (
 )
 import openai
 import os
+from openai import OpenAI
 from openai import AzureOpenAI
-# openai.api_type = 'azure'
-# openai.api_version = '2023-05-15'
-# openai.api_key = os.getenv("OPENAI_API_KEY")
-# openai.api_base = os.getenv("OPENAI_API_BASE")
+from langchain_openai import AzureChatOpenAI
+from langchain_openai import ChatOpenAI
+import programming_runs.credentials as credentials
 
 MessageRole = Literal["system", "user", "assistant"]
 
@@ -59,6 +59,7 @@ def gpt_completion(
 
 # @retry(wait=wait_random_exponential(min=1, max=180), stop=stop_after_attempt(6))
 def gpt_chat(
+    client,
     model: str,
     messages: List[Message],
     max_tokens: int = 1024,
@@ -66,11 +67,7 @@ def gpt_chat(
     num_comps=1,
     logprobs=False
 ):
-    client = AzureOpenAI(
-        # api_key=os.getenv("OPENAI_API_KEY"),
-        api_version="2023-05-15",
-        # azure_endpoint=os.getenv("OPENAI_API_BASE")
-    )
+
     response = client.chat.completions.create(
         model=model,
         messages=[dataclasses.asdict(message) for message in messages],
@@ -93,44 +90,195 @@ class ModelBase():
     def __init__(self, name: str):
         self.name = name
         self.is_chat = False
+        self.prompt_tokens = 0
+        self.completion_tokens = 0
 
     def __repr__(self) -> str:
         return f'{self.name}'
 
-    def generate_chat(self, messages: List[Message], max_tokens: int = 1024, temperature: float = 0.2,
-                      num_comps: int = 1, logprobs: bool = False) -> Union[List[str], str]:
+    def generate_chat(self, messages: List[Message], format_instructions: str, parser, max_tokens: int = 1024, temperature: float = 0.2,
+                      num_comps: int = 1, logprobs: bool = False) -> dict:
         raise NotImplementedError
 
     def generate(self, prompt: str, max_tokens: int = 1024, stop_strs: Optional[List[str]] = None, temperature: float = 0.0, num_comps=1) -> Union[List[str], str]:
         raise NotImplementedError
 
+    def get_langchain_model(self, temperature: float = 0.0):
+        raise NotImplementedError
+
+    def print_usage(self):
+        raise NotImplementedError
+
 
 class GPTChat(ModelBase):
     def __init__(self, model_name: str):
+        super().__init__(model_name)
         self.name = model_name
         self.is_chat = True
+        self.client = None
 
-    def generate_chat(self, messages: List[Message], max_tokens: int = 1024, temperature: float = 0.0,
-                      num_comps: int = 1, logprobs: bool = False) -> Union[List[str], str]:
-        return gpt_chat(self.name, messages, max_tokens, temperature, num_comps, logprobs)
+    def generate_chat(self, messages: List[Message], format_instructions, parser, max_tokens: int = 1024, temperature: float = 0.0,
+                      num_comps: int = 1, logprobs: bool = False):
+        response = self.client.chat.completions.create(
+            model=self.name,
+            messages=[dataclasses.asdict(message) for message in messages],
+            # max_tokens=max_tokens,
+            temperature=temperature,
+            top_p=1,
+            frequency_penalty=0.0,
+            presence_penalty=0.0,
+            logprobs=logprobs
+            # response_format={"type": "json_object"}
+            # n=num_comps,
+        )
+        self.prompt_tokens += response.usage.prompt_tokens
+        self.completion_tokens += response.usage.completion_tokens
+        output_finish_reason = response.choices[0].finish_reason
+        output_text = response.choices[0].message.content
+        try:
+            output_dict = parser.invoke(output_text)
+            output_dict['parse_success'] = True
+        except Exception as e:
+            messages.extend(
+                [
+                    Message(
+                        role="assistant",
+                        content=output_text,
+                    ),
+                    Message(
+                        role="user",
+                        content=format_instructions + f"\n\nWhen I parse your output, I got this error: {e}"
+                    )
+                ]
+            )
+            response_2 = self.client.chat.completions.create(
+                model=self.name,
+                messages=[dataclasses.asdict(message) for message in messages],
+                # max_tokens=max_tokens,
+                temperature=temperature,
+                top_p=1,
+                frequency_penalty=0.0,
+                presence_penalty=0.0,
+                logprobs=logprobs
+                # response_format={"type": "json_object"}
+                # n=num_comps,
+            )
+            self.prompt_tokens += response_2.usage.prompt_tokens
+            self.completion_tokens += response_2.usage.completion_tokens
+            output_retry_finish_reason = response_2.choices[0].finish_reason
+            output_retry_text = response_2.choices[0].message.content
+            try:
+                output_dict = parser.invoke(output_retry_text)
+                output_dict['parse_success'] = True
+            except:
+                output_dict = {'parse_success': False}
+            output_dict['retry_finish_reason'] = output_retry_finish_reason
+            output_dict['raw_response'] = output_retry_text
+        output_dict['finish_reason'] = output_finish_reason
+        if 'raw_response' not in output_dict.keys():
+            output_dict['raw_response'] = output_text
+
+        return output_dict
 
 
 class GPT4(GPTChat):
     def __init__(self, name):
         super().__init__(name)
+        if name == "gpt-4":
+            self.endpoint = credentials.gpt4_endpoint
+            self.api_key = credentials.gpt4_api_key
+            self.api_version = credentials.gpt4_api_version
+        else:
+            assert name == "gpt4-turbo-128k"
+            self.endpoint = credentials.gpt4_tb_endpoint
+            self.api_key = credentials.gpt4_tb_api_key
+            self.api_version = credentials.gpt4_tb_api_version
+        self.client = AzureOpenAI(
+            api_key=self.api_key,
+            api_version=self.api_version,
+            azure_endpoint=self.endpoint
+        )
+
+    def get_langchain_model(self, temperature: float = 0.0):
+        return AzureChatOpenAI(
+            azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
+            openai_api_version=os.getenv("OPENAI_API_VERSION"),
+            deployment_name=self.name,
+            openai_api_key=os.getenv("AZURE_OPENAI_API_KEY"),
+            openai_api_type="azure",
+            temperature=temperature
+        )
+
+    def print_usage(self):
+        if self.name == "gpt-4":
+            print(
+                f"*******{self.name}*******\nPrompt tokens number: {self.prompt_tokens}\n"
+                f"Completion tokens number: {self.completion_tokens}. "
+                f"Full price: {self.prompt_tokens / 1000 * 0.03 + self.completion_tokens / 1000 * 0.06}\n\n")
+        else:
+            assert self.name == "gpt4-turbo-128k"
+            print(
+                f"*******{self.name}*******\nPrompt tokens number: {self.prompt_tokens}\n"
+                f"Completion tokens number: {self.completion_tokens}. "
+                f"Full price: {self.prompt_tokens / 1000 * 0.01 + self.completion_tokens / 1000 * 0.03}\n\n")
 
 
 class GPT35(GPTChat):
-    def __init__(self):
-        super().__init__("gpt-35-turbo-0301")
+    def __init__(self, name):
+        super().__init__(name)
+        self.endpoint = credentials.gpt35_endpoint
+        self.api_key = credentials.gpt35_api_key
+        self.api_version = credentials.gpt35_api_version
+        self.client = AzureOpenAI(
+            api_key=self.api_key,
+            api_version=self.api_version,
+            azure_endpoint=self.endpoint
+        )
+
+    def get_langchain_model(self, temperature: float = 0.0):
+        return AzureChatOpenAI(
+            azure_endpoint=self.endpoint,
+            openai_api_version=self.api_version,
+            deployment_name=self.name,
+            openai_api_key=self.api_key,
+            openai_api_type="azure",
+            temperature=temperature
+        )
+
+    def print_usage(self):
+        print(
+            f"*******{self.name}*******\nPrompt tokens number: {self.prompt_tokens}\n"
+            f"Completion tokens number: {self.completion_tokens}. "
+            f"Full price: {self.prompt_tokens / 1000000 * 0.5 + self.completion_tokens / 1000000 * 1.5}\n\n")
+
 
 class OpenChat(GPTChat):
     def __init__(self, name):
         super().__init__(name)
+        self.endpoint = credentials.openllm_endpoint
+        self.api_key = credentials.openllm_api_key
+        self.client = OpenAI(
+            api_key=self.api_key,
+            base_url=self.endpoint
+        )
+
+    def get_langchain_model(self, temperature: float = 0.0):
+        return ChatOpenAI(
+            openai_api_base=self.endpoint,
+            model=self.name,
+            openai_api_key=self.api_key,
+            temperature=temperature
+        )
+
+    def print_usage(self):
+        print(
+            f"*******{self.name}*******\nPrompt tokens number: {self.prompt_tokens}\n"
+            f"Completion tokens number: {self.completion_tokens}. ")
 
 
 class GPTDavinci(ModelBase):
     def __init__(self, model_name: str):
+        super().__init__(model_name)
         self.name = model_name
 
     def generate(self, prompt: str, max_tokens: int = 1024, stop_strs: Optional[List[str]] = None, temperature: float = 0, num_comps=1) -> Union[List[str], str]:
@@ -143,6 +291,7 @@ class HFModelBase(ModelBase):
     """
 
     def __init__(self, model_name: str, model, tokenizer, eos_token_id=None):
+        super().__init__(model_name)
         self.name = model_name
         self.model = model
         self.tokenizer = tokenizer

@@ -1,0 +1,4789 @@
+
+Starting run with the following parameters:
+strategy: reflexion
+pass@k: 1
+
+Loading the dataset...
+Loaded 239 examples
+  0%|          | 0/239 [00:00<?, ?it/s]  0%|          | 1/239 [00:21<1:25:24, 21.53s/it]  1%|          | 2/239 [02:49<6:18:35, 95.85s/it]  1%|▏         | 3/239 [03:06<3:55:01, 59.75s/it]  2%|▏         | 4/239 [03:19<2:41:53, 41.33s/it]  2%|▏         | 5/239 [04:50<3:50:57, 59.22s/it]  3%|▎         | 6/239 [05:01<2:47:01, 43.01s/it]  3%|▎         | 7/239 [06:49<4:08:01, 64.15s/it]  3%|▎         | 8/239 [09:21<5:54:45, 92.15s/it]  4%|▍         | 9/239 [09:44<4:30:31, 70.57s/it]  4%|▍         | 10/239 [09:59<3:23:53, 53.42s/it]  5%|▍         | 11/239 [11:54<4:34:04, 72.13s/it]  5%|▌         | 12/239 [13:34<5:05:05, 80.64s/it]  5%|▌         | 13/239 [15:33<5:47:24, 92.23s/it]  6%|▌         | 14/239 [17:31<6:15:53, 100.24s/it]  6%|▋         | 15/239 [18:15<5:10:28, 83.16s/it]   7%|▋         | 16/239 [20:22<5:57:37, 96.22s/it]  7%|▋         | 17/239 [20:46<4:36:32, 74.74s/it]  8%|▊         | 18/239 [21:08<3:36:46, 58.85s/it]  8%|▊         | 19/239 [21:34<2:59:16, 48.89s/it]  8%|▊         | 20/239 [24:27<5:14:07, 86.06s/it]  9%|▉         | 21/239 [24:45<3:59:05, 65.80s/it]  9%|▉         | 22/239 [26:20<4:29:57, 74.64s/it] 10%|▉         | 23/239 [26:38<3:27:18, 57.59s/it] 10%|█         | 24/239 [27:08<2:56:55, 49.37s/it] 10%|█         | 25/239 [28:34<3:34:18, 60.09s/it] 11%|█         | 26/239 [28:55<2:51:55, 48.43s/it] 11%|█▏        | 27/239 [29:24<2:30:36, 42.63s/it] 12%|█▏        | 28/239 [30:33<2:58:09, 50.66s/it] 12%|█▏        | 29/239 [33:00<4:38:03, 79.45s/it] 13%|█▎        | 30/239 [34:43<5:01:22, 86.52s/it] 13%|█▎        | 31/239 [36:27<5:18:19, 91.83s/it] 13%|█▎        | 32/239 [37:19<4:35:40, 79.91s/it] 14%|█▍        | 33/239 [39:03<4:58:40, 86.99s/it] 14%|█▍        | 34/239 [39:59<4:26:09, 77.90s/it] 15%|█▍        | 35/239 [40:59<4:06:31, 72.51s/it] 15%|█▌        | 36/239 [41:56<3:49:21, 67.79s/it] 15%|█▌        | 37/239 [42:08<2:52:03, 51.11s/it] 16%|█▌        | 38/239 [42:22<2:13:30, 39.85s/it] 16%|█▋        | 39/239 [42:40<1:51:01, 33.31s/it] 17%|█▋        | 40/239 [45:33<4:09:53, 75.34s/it] 17%|█▋        | 41/239 [46:53<4:13:19, 76.77s/it] 18%|█▊        | 42/239 [47:05<3:07:30, 57.11s/it] 18%|█▊        | 43/239 [47:34<2:39:23, 48.79s/it] 18%|█▊        | 44/239 [48:40<2:55:12, 53.91s/it] 19%|█▉        | 45/239 [51:04<4:22:08, 81.08s/it] 19%|█▉        | 46/239 [53:38<5:30:42, 102.81s/it] 20%|█▉        | 47/239 [56:04<6:10:23, 115.75s/it] 20%|██        | 48/239 [58:06<6:14:31, 117.65s/it] 21%|██        | 49/239 [1:00:01<6:09:52, 116.80s/it] 21%|██        | 50/239 [1:02:30<6:38:29, 126.51s/it] 21%|██▏       | 51/239 [1:04:50<6:49:24, 130.66s/it] 22%|██▏       | 52/239 [1:06:29<6:17:42, 121.19s/it] 22%|██▏       | 53/239 [1:08:25<6:10:52, 119.64s/it] 23%|██▎       | 54/239 [1:10:03<5:48:27, 113.02s/it] 23%|██▎       | 55/239 [1:10:20<4:18:31, 84.30s/it]  23%|██▎       | 56/239 [1:11:40<4:12:37, 82.83s/it] 24%|██▍       | 57/239 [1:14:25<5:26:17, 107.57s/it] 24%|██▍       | 58/239 [1:16:42<5:51:31, 116.53s/it] 25%|██▍       | 59/239 [1:17:04<4:23:45, 87.92s/it]  25%|██▌       | 60/239 [1:17:24<3:21:50, 67.66s/it] 26%|██▌       | 61/239 [1:19:34<4:16:09, 86.35s/it] 26%|██▌       | 62/239 [1:19:50<3:12:26, 65.23s/it] 26%|██▋       | 63/239 [1:20:30<2:49:02, 57.63s/it] 27%|██▋       | 64/239 [1:22:27<3:40:20, 75.54s/it] 27%|██▋       | 65/239 [1:24:05<3:58:11, 82.13s/it] 28%|██▊       | 66/239 [1:25:41<4:09:02, 86.37s/it] 28%|██▊       | 67/239 [1:27:50<4:44:24, 99.21s/it] 28%|██▊       | 68/239 [1:30:35<5:39:03, 118.97s/it] 29%|██▉       | 69/239 [1:33:40<6:32:59, 138.70s/it] 29%|██▉       | 70/239 [1:33:55<4:46:10, 101.60s/it] 30%|██▉       | 71/239 [1:35:50<4:55:26, 105.51s/it] 30%|███       | 72/239 [1:35:59<3:33:49, 76.82s/it]  31%|███       | 73/239 [1:36:17<2:43:11, 58.99s/it] 31%|███       | 74/239 [1:38:32<3:45:02, 81.83s/it] 31%|███▏      | 75/239 [1:40:56<4:34:42, 100.51s/it] 32%|███▏      | 76/239 [1:42:37<4:33:45, 100.77s/it] 32%|███▏      | 77/239 [1:42:49<3:19:51, 74.02s/it]  33%|███▎      | 78/239 [1:43:38<2:58:17, 66.44s/it] 33%|███▎      | 79/239 [1:44:29<2:44:38, 61.74s/it] 33%|███▎      | 80/239 [1:44:44<2:06:59, 47.92s/it] 34%|███▍      | 81/239 [1:45:07<1:46:30, 40.45s/it] 34%|███▍      | 82/239 [1:45:24<1:27:34, 33.47s/it] 35%|███▍      | 83/239 [1:46:57<2:12:59, 51.15s/it] 35%|███▌      | 84/239 [1:47:10<1:42:59, 39.87s/it] 36%|███▌      | 85/239 [1:49:12<2:45:18, 64.41s/it] 36%|███▌      | 86/239 [1:52:00<4:03:29, 95.49s/it] 36%|███▋      | 87/239 [1:52:21<3:04:56, 73.00s/it] 37%|███▋      | 88/239 [1:53:54<3:18:49, 79.00s/it] 37%|███▋      | 89/239 [1:54:07<2:27:58, 59.19s/it] 38%|███▊      | 90/239 [1:54:29<1:59:26, 48.10s/it] 38%|███▊      | 91/239 [1:56:47<3:05:39, 75.27s/it] 38%|███▊      | 92/239 [1:59:29<4:07:44, 101.12s/it] 39%|███▉      | 93/239 [2:03:05<5:29:53, 135.57s/it] 39%|███▉      | 94/239 [2:03:36<4:12:14, 104.38s/it] 40%|███▉      | 95/239 [2:05:32<4:18:18, 107.63s/it] 40%|████      | 96/239 [2:07:26<4:21:38, 109.78s/it] 41%|████      | 97/239 [2:08:58<4:06:53, 104.32s/it] 41%|████      | 98/239 [2:11:04<4:20:17, 110.76s/it] 41%|████▏     | 99/239 [2:13:09<4:28:53, 115.24s/it] 42%|████▏     | 100/239 [2:16:21<5:19:46, 138.03s/it] 42%|████▏     | 101/239 [2:18:01<4:51:16, 126.64s/it] 43%|████▎     | 102/239 [2:19:26<4:20:55, 114.27s/it] 43%|████▎     | 103/239 [2:21:38<4:31:08, 119.62s/it] 44%|████▎     | 104/239 [2:23:15<4:14:00, 112.89s/it] 44%|████▍     | 105/239 [2:25:17<4:18:12, 115.62s/it] 44%|████▍     | 106/239 [2:25:58<3:26:12, 93.03s/it]  45%|████▍     | 107/239 [2:26:19<2:37:28, 71.58s/it] 45%|████▌     | 108/239 [2:26:33<1:58:38, 54.34s/it] 46%|████▌     | 109/239 [2:29:34<3:19:35, 92.12s/it] 46%|████▌     | 110/239 [2:31:54<3:48:50, 106.44s/it] 46%|████▋     | 111/239 [2:32:20<2:55:45, 82.39s/it]  47%|████▋     | 112/239 [2:33:42<2:53:59, 82.20s/it] 47%|████▋     | 113/239 [2:35:40<3:15:41, 93.18s/it] 48%|████▊     | 114/239 [2:37:20<3:18:26, 95.26s/it] 48%|████▊     | 115/239 [2:38:05<2:45:44, 80.20s/it] 49%|████▊     | 116/239 [2:38:22<2:05:29, 61.21s/it] 49%|████▉     | 117/239 [2:38:37<1:35:51, 47.14s/it] 49%|████▉     | 118/239 [2:40:16<2:06:54, 62.93s/it] 50%|████▉     | 119/239 [2:42:42<2:55:34, 87.79s/it] 50%|█████     | 120/239 [2:42:58<2:11:14, 66.17s/it] 51%|█████     | 121/239 [2:43:14<1:40:44, 51.23s/it] 51%|█████     | 122/239 [2:43:49<1:29:59, 46.15s/it] 51%|█████▏    | 123/239 [2:44:01<1:09:50, 36.12s/it] 52%|█████▏    | 124/239 [2:44:15<56:06, 29.27s/it]   52%|█████▏    | 125/239 [2:44:39<53:00, 27.90s/it] 53%|█████▎    | 126/239 [2:45:13<55:45, 29.61s/it] 53%|█████▎    | 127/239 [2:46:48<1:31:45, 49.16s/it] 54%|█████▎    | 128/239 [2:47:30<1:27:11, 47.13s/it] 54%|█████▍    | 129/239 [2:49:05<1:52:45, 61.51s/it] 54%|█████▍    | 130/239 [2:50:42<2:11:10, 72.21s/it] 55%|█████▍    | 131/239 [2:51:10<1:45:57, 58.87s/it] 55%|█████▌    | 132/239 [2:52:34<1:58:38, 66.53s/it] 56%|█████▌    | 133/239 [2:55:04<2:41:34, 91.46s/it] 56%|█████▌    | 134/239 [2:56:34<2:39:27, 91.12s/it] 56%|█████▋    | 135/239 [2:59:01<3:06:37, 107.67s/it] 57%|█████▋    | 136/239 [3:02:27<3:55:32, 137.20s/it] 57%|█████▋    | 137/239 [3:04:56<3:59:04, 140.63s/it] 58%|█████▊    | 138/239 [3:06:39<3:37:58, 129.49s/it] 58%|█████▊    | 139/239 [3:08:37<3:29:54, 125.94s/it] 59%|█████▊    | 140/239 [3:08:51<2:32:36, 92.49s/it]  59%|█████▉    | 141/239 [3:09:17<1:58:39, 72.64s/it] 59%|█████▉    | 142/239 [3:11:40<2:31:19, 93.60s/it] 60%|█████▉    | 143/239 [3:11:56<1:52:20, 70.21s/it] 60%|██████    | 144/239 [3:13:52<2:13:01, 84.02s/it] 61%|██████    | 145/239 [3:14:11<1:41:14, 64.62s/it] 61%|██████    | 146/239 [3:14:34<1:20:46, 52.11s/it] 62%|██████▏   | 147/239 [3:14:49<1:02:50, 40.98s/it] 62%|██████▏   | 148/239 [3:16:39<1:33:36, 61.72s/it] 62%|██████▏   | 149/239 [3:18:38<1:58:05, 78.73s/it] 63%|██████▎   | 150/239 [3:19:38<1:48:31, 73.16s/it] 63%|██████▎   | 151/239 [3:21:39<2:08:26, 87.57s/it] 64%|██████▎   | 152/239 [3:23:44<2:23:04, 98.67s/it] 64%|██████▍   | 153/239 [3:24:23<1:56:08, 81.03s/it] 64%|██████▍   | 154/239 [3:24:38<1:26:34, 61.11s/it] 65%|██████▍   | 155/239 [3:26:16<1:41:04, 72.20s/it] 65%|██████▌   | 156/239 [3:28:03<1:54:17, 82.63s/it] 66%|██████▌   | 157/239 [3:29:28<1:53:43, 83.21s/it] 66%|██████▌   | 158/239 [3:31:30<2:08:19, 95.05s/it] 67%|██████▋   | 159/239 [3:31:44<1:34:10, 70.63s/it] 67%|██████▋   | 160/239 [3:33:30<1:46:55, 81.21s/it] 67%|██████▋   | 161/239 [3:34:48<1:44:10, 80.14s/it] 68%|██████▊   | 162/239 [3:35:02<1:17:23, 60.31s/it] 68%|██████▊   | 163/239 [3:35:16<58:49, 46.45s/it]   69%|██████▊   | 164/239 [3:37:05<1:21:39, 65.33s/it] 69%|██████▉   | 165/239 [3:37:24<1:03:30, 51.49s/it] 69%|██████▉   | 166/239 [3:37:54<54:43, 44.98s/it]   70%|██████▉   | 167/239 [3:39:35<1:14:10, 61.82s/it] 70%|███████   | 168/239 [3:40:02<1:00:51, 51.42s/it] 71%|███████   | 169/239 [3:40:17<47:09, 40.43s/it]   71%|███████   | 170/239 [3:40:42<41:15, 35.87s/it] 72%|███████▏  | 171/239 [3:40:55<32:36, 28.77s/it] 72%|███████▏  | 172/239 [3:42:05<46:04, 41.26s/it] 72%|███████▏  | 173/239 [3:42:19<36:27, 33.14s/it] 73%|███████▎  | 174/239 [3:44:00<58:01, 53.57s/it] 73%|███████▎  | 175/239 [3:45:46<1:13:43, 69.12s/it] 74%|███████▎  | 176/239 [3:48:07<1:35:10, 90.65s/it] 74%|███████▍  | 177/239 [3:49:30<1:31:17, 88.35s/it] 74%|███████▍  | 178/239 [3:49:51<1:09:17, 68.16s/it] 75%|███████▍  | 179/239 [3:51:15<1:13:04, 73.08s/it] 75%|███████▌  | 180/239 [3:51:32<55:07, 56.06s/it]   76%|███████▌  | 181/239 [3:52:56<1:02:22, 64.53s/it] 76%|███████▌  | 182/239 [3:55:42<1:30:17, 95.04s/it] 77%|███████▋  | 183/239 [3:57:10<1:26:50, 93.04s/it] 77%|███████▋  | 184/239 [3:59:15<1:33:56, 102.49s/it] 77%|███████▋  | 185/239 [3:59:31<1:08:58, 76.64s/it]  78%|███████▊  | 186/239 [4:01:28<1:18:20, 88.70s/it] 78%|███████▊  | 187/239 [4:03:41<1:28:25, 102.04s/it] 79%|███████▊  | 188/239 [4:05:47<1:32:38, 108.99s/it] 79%|███████▉  | 189/239 [4:07:13<1:25:18, 102.36s/it] 79%|███████▉  | 190/239 [4:07:53<1:08:12, 83.52s/it]  80%|███████▉  | 191/239 [4:10:24<1:22:54, 103.64s/it] 80%|████████  | 192/239 [4:12:35<1:27:40, 111.92s/it] 81%|████████  | 193/239 [4:12:51<1:03:40, 83.05s/it]  81%|████████  | 194/239 [4:13:12<48:29, 64.66s/it]   82%|████████▏ | 195/239 [4:13:38<38:54, 53.06s/it] 82%|████████▏ | 196/239 [4:16:21<1:01:34, 85.92s/it] 82%|████████▏ | 197/239 [4:17:08<51:56, 74.20s/it]   83%|████████▎ | 198/239 [4:17:34<40:48, 59.72s/it] 83%|████████▎ | 199/239 [4:17:53<31:40, 47.50s/it] 84%|████████▎ | 200/239 [4:19:48<44:06, 67.86s/it] 84%|████████▍ | 201/239 [4:21:52<53:38, 84.70s/it] 85%|████████▍ | 202/239 [4:24:32<1:06:07, 107.22s/it] 85%|████████▍ | 203/239 [4:26:32<1:06:40, 111.13s/it] 85%|████████▌ | 204/239 [4:28:11<1:02:37, 107.36s/it] 86%|████████▌ | 205/239 [4:30:01<1:01:23, 108.33s/it] 86%|████████▌ | 206/239 [4:32:51<1:09:46, 126.86s/it] 87%|████████▋ | 207/239 [4:33:04<49:21, 92.53s/it]    87%|████████▋ | 208/239 [4:33:17<35:29, 68.71s/it] 87%|████████▋ | 209/239 [4:35:00<39:27, 78.91s/it] 88%|████████▊ | 210/239 [4:35:14<28:51, 59.71s/it] 88%|████████▊ | 211/239 [4:37:40<39:51, 85.42s/it] 89%|████████▊ | 212/239 [4:39:38<42:51, 95.22s/it] 89%|████████▉ | 213/239 [4:40:59<39:27, 91.05s/it] 90%|████████▉ | 214/239 [4:41:22<29:26, 70.67s/it] 90%|████████▉ | 215/239 [4:42:47<29:58, 74.95s/it] 90%|█████████ | 216/239 [4:45:57<41:58, 109.48s/it] 91%|█████████ | 217/239 [4:46:13<29:52, 81.48s/it]  91%|█████████ | 218/239 [4:47:36<28:34, 81.64s/it] 92%|█████████▏| 219/239 [4:49:39<31:22, 94.10s/it] 92%|█████████▏| 220/239 [4:49:54<22:21, 70.60s/it] 92%|█████████▏| 221/239 [4:50:06<15:54, 53.01s/it] 93%|█████████▎| 222/239 [4:51:33<17:51, 63.05s/it] 93%|█████████▎| 223/239 [4:51:49<13:02, 48.88s/it] 94%|█████████▎| 224/239 [4:52:06<09:51, 39.45s/it] 94%|█████████▍| 225/239 [4:52:24<07:39, 32.82s/it] 95%|█████████▍| 226/239 [4:52:37<05:52, 27.09s/it] 95%|█████████▍| 227/239 [4:53:00<05:11, 25.92s/it] 95%|█████████▌| 228/239 [4:54:15<07:24, 40.37s/it] 96%|█████████▌| 229/239 [4:56:41<12:01, 72.18s/it] 96%|█████████▌| 230/239 [4:58:04<11:19, 75.45s/it] 97%|█████████▋| 231/239 [4:58:17<07:34, 56.79s/it] 97%|█████████▋| 232/239 [4:59:53<07:59, 68.47s/it] 97%|█████████▋| 233/239 [5:00:08<05:14, 52.36s/it] 98%|█████████▊| 234/239 [5:00:33<03:40, 44.16s/it] 98%|█████████▊| 235/239 [5:02:06<03:55, 58.85s/it] 99%|█████████▊| 236/239 [5:04:47<04:28, 89.56s/it] 99%|█████████▉| 237/239 [5:06:35<03:09, 94.96s/it]100%|█████████▉| 238/239 [5:06:51<01:11, 71.24s/it]100%|██████████| 239/239 [5:08:27<00:00, 78.68s/it]100%|██████████| 239/239 [5:08:27<00:00, 77.44s/it]
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 926
+Completion tokens number: 147. 
+*******gpt-4*******
+Prompt tokens number: 294
+Completion tokens number: 50. Full price: 0.01182
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 355
+Completion tokens number: 24. Full price: 0.0042699999999999995
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 10465
+Completion tokens number: 2334. 
+*******gpt-4*******
+Prompt tokens number: 6831
+Completion tokens number: 1042. Full price: 0.26745
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 3326
+Completion tokens number: 174. Full price: 0.03848
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 11300
+Completion tokens number: 2603. 
+*******gpt-4*******
+Prompt tokens number: 7235
+Completion tokens number: 1111. Full price: 0.28371
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 3791
+Completion tokens number: 199. Full price: 0.04388
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 12252
+Completion tokens number: 2818. 
+*******gpt-4*******
+Prompt tokens number: 7616
+Completion tokens number: 1158. Full price: 0.29796
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 4233
+Completion tokens number: 224. Full price: 0.049049999999999996
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 19166
+Completion tokens number: 3920. 
+*******gpt-4*******
+Prompt tokens number: 12544
+Completion tokens number: 1716. Full price: 0.47928
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 6393
+Completion tokens number: 368. Full price: 0.07497
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 21165
+Completion tokens number: 4230. 
+*******gpt-4*******
+Prompt tokens number: 12544
+Completion tokens number: 1716. Full price: 0.47928
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 6393
+Completion tokens number: 368. Full price: 0.07497
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+Got invalid JSON object. Error: Expecting ',' delimiter: line 2 column 33 (char 34)
+5-th example failed
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 27897
+Completion tokens number: 5390. 
+*******gpt-4*******
+Prompt tokens number: 14560
+Completion tokens number: 2074. Full price: 0.56124
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 8775
+Completion tokens number: 524. Full price: 0.10347
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 37041
+Completion tokens number: 7800. 
+*******gpt-4*******
+Prompt tokens number: 21175
+Completion tokens number: 2979. Full price: 0.81399
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 11770
+Completion tokens number: 668. Full price: 0.13774
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 37843
+Completion tokens number: 8139. 
+*******gpt-4*******
+Prompt tokens number: 21645
+Completion tokens number: 3030. Full price: 0.8311499999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 12301
+Completion tokens number: 693. Full price: 0.1438
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 38522
+Completion tokens number: 8367. 
+*******gpt-4*******
+Prompt tokens number: 22018
+Completion tokens number: 3083. Full price: 0.84552
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 12735
+Completion tokens number: 718. Full price: 0.14889
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 46160
+Completion tokens number: 10383. 
+*******gpt-4*******
+Prompt tokens number: 23854
+Completion tokens number: 3407. Full price: 0.92004
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 14937
+Completion tokens number: 868. Full price: 0.17541
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 53318
+Completion tokens number: 11978. 
+*******gpt-4*******
+Prompt tokens number: 25923
+Completion tokens number: 3705. Full price: 0.9999899999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 17372
+Completion tokens number: 1006. Full price: 0.20390000000000003
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 61068
+Completion tokens number: 13507. 
+*******gpt-4*******
+Prompt tokens number: 29367
+Completion tokens number: 4256. Full price: 1.1363699999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 19953
+Completion tokens number: 1144. Full price: 0.23384999999999997
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 70518
+Completion tokens number: 15573. 
+*******gpt-4*******
+Prompt tokens number: 32770
+Completion tokens number: 4712. Full price: 1.2658200000000002
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 23043
+Completion tokens number: 1294. Full price: 0.26925
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 72975
+Completion tokens number: 16147. 
+*******gpt-4*******
+Prompt tokens number: 34783
+Completion tokens number: 4906. Full price: 1.33785
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 23954
+Completion tokens number: 1344. Full price: 0.27986
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 81639
+Completion tokens number: 17565. 
+*******gpt-4*******
+Prompt tokens number: 40473
+Completion tokens number: 5839. Full price: 1.56453
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 26514
+Completion tokens number: 1494. Full price: 0.30996
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 84086
+Completion tokens number: 18297. 
+*******gpt-4*******
+Prompt tokens number: 40473
+Completion tokens number: 5839. Full price: 1.56453
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 26514
+Completion tokens number: 1494. Full price: 0.30996
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+Got invalid JSON object. Error: Expecting ',' delimiter: line 2 column 33 (char 34)
+16-th example failed
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 85021
+Completion tokens number: 18764. 
+*******gpt-4*******
+Prompt tokens number: 41033
+Completion tokens number: 5904. Full price: 1.5852300000000001
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 27135
+Completion tokens number: 1518. Full price: 0.31689
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 86033
+Completion tokens number: 19276. 
+*******gpt-4*******
+Prompt tokens number: 41667
+Completion tokens number: 5965. Full price: 1.60791
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 27830
+Completion tokens number: 1543. Full price: 0.32459
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 95298
+Completion tokens number: 21579. 
+*******gpt-4*******
+Prompt tokens number: 48743
+Completion tokens number: 7215. Full price: 1.89519
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 31028
+Completion tokens number: 1693. Full price: 0.36107
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 96044
+Completion tokens number: 21879. 
+*******gpt-4*******
+Prompt tokens number: 49167
+Completion tokens number: 7261. Full price: 1.9106699999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 31513
+Completion tokens number: 1718. Full price: 0.36667
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 105364
+Completion tokens number: 23213. 
+*******gpt-4*******
+Prompt tokens number: 51905
+Completion tokens number: 7631. Full price: 2.01501
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 34037
+Completion tokens number: 1874. Full price: 0.39659
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 106234
+Completion tokens number: 23512. 
+*******gpt-4*******
+Prompt tokens number: 52349
+Completion tokens number: 7682. Full price: 2.03139
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 34542
+Completion tokens number: 1899. Full price: 0.40239
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 107973
+Completion tokens number: 24040. 
+*******gpt-4*******
+Prompt tokens number: 53141
+Completion tokens number: 7790. Full price: 2.0616299999999996
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 35456
+Completion tokens number: 1945. Full price: 0.41291000000000005
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 115653
+Completion tokens number: 25335. 
+*******gpt-4*******
+Prompt tokens number: 55199
+Completion tokens number: 8114. Full price: 2.14281
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 37880
+Completion tokens number: 2089. Full price: 0.44147000000000003
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 118214
+Completion tokens number: 25945. 
+*******gpt-4*******
+Prompt tokens number: 55199
+Completion tokens number: 8114. Full price: 2.14281
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 37880
+Completion tokens number: 2089. Full price: 0.44147000000000003
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+Got invalid JSON object. Error: Expecting ',' delimiter: line 2 column 33 (char 34)
+25-th example failed
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 120439
+Completion tokens number: 26807. 
+*******gpt-4*******
+Prompt tokens number: 55199
+Completion tokens number: 8114. Full price: 2.14281
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 37880
+Completion tokens number: 2089. Full price: 0.44147000000000003
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+Got invalid JSON object. Error: Expecting ',' delimiter: line 2 column 33 (char 34)
+26-th example failed
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 125989
+Completion tokens number: 27423. 
+*******gpt-4*******
+Prompt tokens number: 56537
+Completion tokens number: 8411. Full price: 2.20077
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 39584
+Completion tokens number: 2239. Full price: 0.46301000000000003
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 142072
+Completion tokens number: 30450. 
+*******gpt-4*******
+Prompt tokens number: 59267
+Completion tokens number: 8702. Full price: 2.3001300000000002
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 42680
+Completion tokens number: 2383. Full price: 0.49829
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 151284
+Completion tokens number: 31617. 
+*******gpt-4*******
+Prompt tokens number: 64425
+Completion tokens number: 9593. Full price: 2.50833
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 44969
+Completion tokens number: 2533. Full price: 0.52568
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 159525
+Completion tokens number: 33511. 
+*******gpt-4*******
+Prompt tokens number: 66790
+Completion tokens number: 9947. Full price: 2.6005200000000004
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 47700
+Completion tokens number: 2689. Full price: 0.55767
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 161329
+Completion tokens number: 34072. 
+*******gpt-4*******
+Prompt tokens number: 68121
+Completion tokens number: 10160. Full price: 2.6532299999999998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 48553
+Completion tokens number: 2739. Full price: 0.5677
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 170389
+Completion tokens number: 35926. 
+*******gpt-4*******
+Prompt tokens number: 70737
+Completion tokens number: 10471. Full price: 2.7503699999999998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 51535
+Completion tokens number: 2883. Full price: 0.6018399999999999
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 173774
+Completion tokens number: 36940. 
+*******gpt-4*******
+Prompt tokens number: 72141
+Completion tokens number: 10626. Full price: 2.8017899999999996
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 53122
+Completion tokens number: 2961. Full price: 0.62005
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 177220
+Completion tokens number: 37785. 
+*******gpt-4*******
+Prompt tokens number: 74577
+Completion tokens number: 11040. Full price: 2.89971
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 54473
+Completion tokens number: 3036. Full price: 0.63581
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 181658
+Completion tokens number: 38701. 
+*******gpt-4*******
+Prompt tokens number: 75967
+Completion tokens number: 11283. Full price: 2.95599
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 56107
+Completion tokens number: 3136. Full price: 0.6551499999999999
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 182547
+Completion tokens number: 38860. 
+*******gpt-4*******
+Prompt tokens number: 76277
+Completion tokens number: 11352. Full price: 2.96943
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 56478
+Completion tokens number: 3159. Full price: 0.6595500000000001
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 183284
+Completion tokens number: 39072. 
+*******gpt-4*******
+Prompt tokens number: 76631
+Completion tokens number: 11401. Full price: 2.98299
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 56893
+Completion tokens number: 3185. Full price: 0.6644800000000001
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 184097
+Completion tokens number: 39422. 
+*******gpt-4*******
+Prompt tokens number: 77096
+Completion tokens number: 11469. Full price: 3.0010199999999996
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 57419
+Completion tokens number: 3209. Full price: 0.67046
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 196749
+Completion tokens number: 42180. 
+*******gpt-4*******
+Prompt tokens number: 84206
+Completion tokens number: 12833. Full price: 3.29616
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 61055
+Completion tokens number: 3353. Full price: 0.71114
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 203535
+Completion tokens number: 43224. 
+*******gpt-4*******
+Prompt tokens number: 86168
+Completion tokens number: 13167. Full price: 3.3750600000000004
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 63383
+Completion tokens number: 3497. Full price: 0.73874
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 204218
+Completion tokens number: 43359. 
+*******gpt-4*******
+Prompt tokens number: 86458
+Completion tokens number: 13220. Full price: 3.38694
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 63734
+Completion tokens number: 3522. Full price: 0.743
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 205961
+Completion tokens number: 43872. 
+*******gpt-4*******
+Prompt tokens number: 87176
+Completion tokens number: 13331. Full price: 3.4151399999999996
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 64574
+Completion tokens number: 3570. Full price: 0.75284
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 211712
+Completion tokens number: 44619. 
+*******gpt-4*******
+Prompt tokens number: 88617
+Completion tokens number: 13671. Full price: 3.47877
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 66381
+Completion tokens number: 3720. Full price: 0.77541
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 224840
+Completion tokens number: 47123. 
+*******gpt-4*******
+Prompt tokens number: 92639
+Completion tokens number: 14196. Full price: 3.6309299999999998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 70002
+Completion tokens number: 3864. Full price: 0.81594
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 231820
+Completion tokens number: 49220. 
+*******gpt-4*******
+Prompt tokens number: 98017
+Completion tokens number: 14912. Full price: 3.8352299999999997
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 72412
+Completion tokens number: 4020. Full price: 0.8447200000000001
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 241953
+Completion tokens number: 51216. 
+*******gpt-4*******
+Prompt tokens number: 104601
+Completion tokens number: 16243. Full price: 4.112609999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 75404
+Completion tokens number: 4164. Full price: 0.87896
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 252010
+Completion tokens number: 53354. 
+*******gpt-4*******
+Prompt tokens number: 108147
+Completion tokens number: 16775. Full price: 4.25091
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 78602
+Completion tokens number: 4314. Full price: 0.91544
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 261352
+Completion tokens number: 55394. 
+*******gpt-4*******
+Prompt tokens number: 110901
+Completion tokens number: 17131. Full price: 4.354889999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 81722
+Completion tokens number: 4458. Full price: 0.9509599999999999
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 269776
+Completion tokens number: 57641. 
+*******gpt-4*******
+Prompt tokens number: 117139
+Completion tokens number: 18158. Full price: 4.60365
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 84484
+Completion tokens number: 4608. Full price: 0.98308
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 278822
+Completion tokens number: 59315. 
+*******gpt-4*******
+Prompt tokens number: 123432
+Completion tokens number: 19273. Full price: 4.8593399999999995
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 87358
+Completion tokens number: 4758. Full price: 1.0163200000000001
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 287546
+Completion tokens number: 60986. 
+*******gpt-4*******
+Prompt tokens number: 125754
+Completion tokens number: 19600. Full price: 4.94862
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 90046
+Completion tokens number: 4914. Full price: 1.0478800000000001
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 295192
+Completion tokens number: 62557. 
+*******gpt-4*******
+Prompt tokens number: 130247
+Completion tokens number: 20313. Full price: 5.12619
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 92563
+Completion tokens number: 5070. Full price: 1.07773
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 301629
+Completion tokens number: 63553. 
+*******gpt-4*******
+Prompt tokens number: 132430
+Completion tokens number: 20708. Full price: 5.21538
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 94601
+Completion tokens number: 5220. Full price: 1.10261
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 302467
+Completion tokens number: 63862. 
+*******gpt-4*******
+Prompt tokens number: 132872
+Completion tokens number: 20759. Full price: 5.2317
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 95104
+Completion tokens number: 5245. Full price: 1.10839
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 309661
+Completion tokens number: 64964. 
+*******gpt-4*******
+Prompt tokens number: 134726
+Completion tokens number: 21089. Full price: 5.30712
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 97324
+Completion tokens number: 5401. Full price: 1.13527
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 319610
+Completion tokens number: 68590. 
+*******gpt-4*******
+Prompt tokens number: 135872
+Completion tokens number: 21401. Full price: 5.360220000000001
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 98836
+Completion tokens number: 5541. Full price: 1.15459
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+invalid literal for int() with base 10: ''
+56-th example failed
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 330378
+Completion tokens number: 70875. 
+*******gpt-4*******
+Prompt tokens number: 142614
+Completion tokens number: 22151. Full price: 5.60748
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 101894
+Completion tokens number: 5685. Full price: 1.1894900000000002
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 331171
+Completion tokens number: 71186. 
+*******gpt-4*******
+Prompt tokens number: 143045
+Completion tokens number: 22210. Full price: 5.62395
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 102386
+Completion tokens number: 5709. Full price: 1.19513
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 331983
+Completion tokens number: 71471. 
+*******gpt-4*******
+Prompt tokens number: 143459
+Completion tokens number: 22264. Full price: 5.63961
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 102861
+Completion tokens number: 5734. Full price: 1.20063
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 339383
+Completion tokens number: 72813. 
+*******gpt-4*******
+Prompt tokens number: 148944
+Completion tokens number: 23150. Full price: 5.85732
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 105259
+Completion tokens number: 5884. Full price: 1.22911
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 340128
+Completion tokens number: 73063. 
+*******gpt-4*******
+Prompt tokens number: 149328
+Completion tokens number: 23198. Full price: 5.87172
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 105704
+Completion tokens number: 5908. Full price: 1.23428
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 342037
+Completion tokens number: 73818. 
+*******gpt-4*******
+Prompt tokens number: 150206
+Completion tokens number: 23323. Full price: 5.9055599999999995
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 106704
+Completion tokens number: 5956. Full price: 1.24572
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 348687
+Completion tokens number: 75501. 
+*******gpt-4*******
+Prompt tokens number: 155098
+Completion tokens number: 24104. Full price: 6.0991800000000005
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 108835
+Completion tokens number: 6112. Full price: 1.27171
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 354933
+Completion tokens number: 76961. 
+*******gpt-4*******
+Prompt tokens number: 156814
+Completion tokens number: 24404. Full price: 6.16866
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 110917
+Completion tokens number: 6256. Full price: 1.29685
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 362013
+Completion tokens number: 78360. 
+*******gpt-4*******
+Prompt tokens number: 158596
+Completion tokens number: 24731. Full price: 6.24174
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 113065
+Completion tokens number: 6400. Full price: 1.3226499999999999
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 370792
+Completion tokens number: 80616. 
+*******gpt-4*******
+Prompt tokens number: 163167
+Completion tokens number: 25469. Full price: 6.42315
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 115347
+Completion tokens number: 6520. Full price: 1.34907
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 383235
+Completion tokens number: 83279. 
+*******gpt-4*******
+Prompt tokens number: 169913
+Completion tokens number: 26520. Full price: 6.68859
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 118388
+Completion tokens number: 6670. Full price: 1.38398
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 396564
+Completion tokens number: 86325. 
+*******gpt-4*******
+Prompt tokens number: 178419
+Completion tokens number: 27980. Full price: 7.03137
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 122348
+Completion tokens number: 6820. Full price: 1.42808
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 397373
+Completion tokens number: 86532. 
+*******gpt-4*******
+Prompt tokens number: 178769
+Completion tokens number: 28033. Full price: 7.04505
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 122759
+Completion tokens number: 6845. Full price: 1.4329399999999999
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 405209
+Completion tokens number: 88569. 
+*******gpt-4*******
+Prompt tokens number: 181163
+Completion tokens number: 28390. Full price: 7.1382900000000005
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 125519
+Completion tokens number: 6989. Full price: 1.46486
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 405897
+Completion tokens number: 88685. 
+*******gpt-4*******
+Prompt tokens number: 181440
+Completion tokens number: 28448. Full price: 7.15008
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 125857
+Completion tokens number: 7014. Full price: 1.46899
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 406671
+Completion tokens number: 88987. 
+*******gpt-4*******
+Prompt tokens number: 181879
+Completion tokens number: 28498. Full price: 7.16625
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 126357
+Completion tokens number: 7039. Full price: 1.4747400000000002
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 414904
+Completion tokens number: 90826. 
+*******gpt-4*******
+Prompt tokens number: 187298
+Completion tokens number: 29343. Full price: 7.37952
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 129056
+Completion tokens number: 7183. Full price: 1.50605
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 422649
+Completion tokens number: 92870. 
+*******gpt-4*******
+Prompt tokens number: 192596
+Completion tokens number: 30175. Full price: 7.58838
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 131405
+Completion tokens number: 7327. Full price: 1.53386
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 429915
+Completion tokens number: 94323. 
+*******gpt-4*******
+Prompt tokens number: 194852
+Completion tokens number: 30562. Full price: 7.67928
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 134027
+Completion tokens number: 7471. Full price: 1.5643999999999998
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 430632
+Completion tokens number: 94471. 
+*******gpt-4*******
+Prompt tokens number: 195158
+Completion tokens number: 30608. Full price: 7.6912199999999995
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 134394
+Completion tokens number: 7495. Full price: 1.5687900000000001
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 436388
+Completion tokens number: 95401. 
+*******gpt-4*******
+Prompt tokens number: 195731
+Completion tokens number: 30760. Full price: 7.71753
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 135150
+Completion tokens number: 7563. Full price: 1.5783900000000002
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+invalid literal for int() with base 10: ''
+77-th example failed
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 441052
+Completion tokens number: 96669. 
+*******gpt-4*******
+Prompt tokens number: 196992
+Completion tokens number: 30928. Full price: 7.76544
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 135729
+Completion tokens number: 7587. Full price: 1.5849000000000002
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+Got invalid JSON object. Error: Expecting ',' delimiter: line 2 column 1582 (char 1583)
+78-th example failed
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 441998
+Completion tokens number: 96961. 
+*******gpt-4*******
+Prompt tokens number: 197419
+Completion tokens number: 30989. Full price: 7.78191
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 136217
+Completion tokens number: 7612. Full price: 1.5905300000000002
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 442786
+Completion tokens number: 97275. 
+*******gpt-4*******
+Prompt tokens number: 197856
+Completion tokens number: 31040. Full price: 7.79808
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 136715
+Completion tokens number: 7637. Full price: 1.59626
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 444856
+Completion tokens number: 97783. 
+*******gpt-4*******
+Prompt tokens number: 197856
+Completion tokens number: 31040. Full price: 7.79808
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 136715
+Completion tokens number: 7637. Full price: 1.59626
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+Got invalid JSON object. Error: Expecting ',' delimiter: line 2 column 33 (char 34)
+81-th example failed
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 453791
+Completion tokens number: 99271. 
+*******gpt-4*******
+Prompt tokens number: 201202
+Completion tokens number: 31519. Full price: 7.9272
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 139247
+Completion tokens number: 7781. Full price: 1.6259000000000001
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 454486
+Completion tokens number: 99496. 
+*******gpt-4*******
+Prompt tokens number: 201571
+Completion tokens number: 31571. Full price: 7.94139
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 139677
+Completion tokens number: 7805. Full price: 1.6309199999999997
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 463478
+Completion tokens number: 101406. 
+*******gpt-4*******
+Prompt tokens number: 206493
+Completion tokens number: 32268. Full price: 8.13087
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 142467
+Completion tokens number: 7949. Full price: 1.66314
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 474733
+Completion tokens number: 104273. 
+*******gpt-4*******
+Prompt tokens number: 214225
+Completion tokens number: 33437. Full price: 8.43297
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 146043
+Completion tokens number: 8093. Full price: 1.7032200000000002
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 475571
+Completion tokens number: 104675. 
+*******gpt-4*******
+Prompt tokens number: 214739
+Completion tokens number: 33499. Full price: 8.452110000000001
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 146618
+Completion tokens number: 8117. Full price: 1.7096900000000002
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 481806
+Completion tokens number: 106034. 
+*******gpt-4*******
+Prompt tokens number: 217100
+Completion tokens number: 33879. Full price: 8.54574
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 148823
+Completion tokens number: 8261. Full price: 1.7360600000000002
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 482593
+Completion tokens number: 106251. 
+*******gpt-4*******
+Prompt tokens number: 217464
+Completion tokens number: 33928. Full price: 8.5596
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 149248
+Completion tokens number: 8287. Full price: 1.74109
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 483617
+Completion tokens number: 106763. 
+*******gpt-4*******
+Prompt tokens number: 217655
+Completion tokens number: 33980. Full price: 8.56845
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 149500
+Completion tokens number: 8307. Full price: 1.74421
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+invalid literal for int() with base 10: ''
+89-th example failed
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 492222
+Completion tokens number: 108714. 
+*******gpt-4*******
+Prompt tokens number: 223708
+Completion tokens number: 35040. Full price: 8.81364
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 152228
+Completion tokens number: 8445. Full price: 1.77563
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 505264
+Completion tokens number: 111715. 
+*******gpt-4*******
+Prompt tokens number: 231060
+Completion tokens number: 36128. Full price: 9.09948
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 155771
+Completion tokens number: 8584. Full price: 1.81523
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 529665
+Completion tokens number: 116270. 
+*******gpt-4*******
+Prompt tokens number: 236356
+Completion tokens number: 36849. Full price: 9.30162
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 159714
+Completion tokens number: 8740. Full price: 1.85934
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 531491
+Completion tokens number: 116821. 
+*******gpt-4*******
+Prompt tokens number: 237153
+Completion tokens number: 36949. Full price: 9.331529999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 160633
+Completion tokens number: 8790. Full price: 1.87003
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 538416
+Completion tokens number: 118710. 
+*******gpt-4*******
+Prompt tokens number: 240376
+Completion tokens number: 37452. Full price: 9.4584
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 163077
+Completion tokens number: 8934. Full price: 1.89879
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 546314
+Completion tokens number: 120709. 
+*******gpt-4*******
+Prompt tokens number: 243240
+Completion tokens number: 37834. Full price: 9.56724
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 165712
+Completion tokens number: 9084. Full price: 1.92964
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 554480
+Completion tokens number: 122125. 
+*******gpt-4*******
+Prompt tokens number: 245177
+Completion tokens number: 38117. Full price: 9.64233
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 168015
+Completion tokens number: 9228. Full price: 1.9569899999999998
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 562901
+Completion tokens number: 123619. 
+*******gpt-4*******
+Prompt tokens number: 251183
+Completion tokens number: 39353. Full price: 9.89667
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 170667
+Completion tokens number: 9372. Full price: 1.9878300000000002
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 571349
+Completion tokens number: 125700. 
+*******gpt-4*******
+Prompt tokens number: 253751
+Completion tokens number: 39701. Full price: 9.994589999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 173601
+Completion tokens number: 9510. Full price: 2.02131
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 583465
+Completion tokens number: 128398. 
+*******gpt-4*******
+Prompt tokens number: 261605
+Completion tokens number: 41123. Full price: 10.31553
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 177243
+Completion tokens number: 9654. Full price: 2.06205
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 590656
+Completion tokens number: 130269. 
+*******gpt-4*******
+Prompt tokens number: 263837
+Completion tokens number: 41417. Full price: 10.400129999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 179841
+Completion tokens number: 9792. Full price: 2.09217
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 598201
+Completion tokens number: 131488. 
+*******gpt-4*******
+Prompt tokens number: 265859
+Completion tokens number: 41949. Full price: 10.492709999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 182229
+Completion tokens number: 9936. Full price: 2.1203700000000003
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 607455
+Completion tokens number: 133940. 
+*******gpt-4*******
+Prompt tokens number: 269841
+Completion tokens number: 42403. Full price: 10.639410000000002
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 185223
+Completion tokens number: 10080. Full price: 2.15463
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 614103
+Completion tokens number: 135610. 
+*******gpt-4*******
+Prompt tokens number: 271635
+Completion tokens number: 42744. Full price: 10.71369
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 187383
+Completion tokens number: 10218. Full price: 2.18037
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 623247
+Completion tokens number: 137856. 
+*******gpt-4*******
+Prompt tokens number: 274053
+Completion tokens number: 43098. Full price: 10.807469999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 190167
+Completion tokens number: 10362. Full price: 2.21253
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 625306
+Completion tokens number: 138498. 
+*******gpt-4*******
+Prompt tokens number: 275522
+Completion tokens number: 43321. Full price: 10.864919999999998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 191112
+Completion tokens number: 10412. Full price: 2.22348
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 626164
+Completion tokens number: 138869. 
+*******gpt-4*******
+Prompt tokens number: 276014
+Completion tokens number: 43424. Full price: 10.88586
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 191665
+Completion tokens number: 10437. Full price: 2.2297599999999997
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 626847
+Completion tokens number: 139102. 
+*******gpt-4*******
+Prompt tokens number: 276375
+Completion tokens number: 43486. Full price: 10.900409999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 192087
+Completion tokens number: 10461. Full price: 2.2346999999999997
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 635217
+Completion tokens number: 141126. 
+*******gpt-4*******
+Prompt tokens number: 282369
+Completion tokens number: 44660. Full price: 11.150670000000002
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 194757
+Completion tokens number: 10617. Full price: 2.26608
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 646858
+Completion tokens number: 143608. 
+*******gpt-4*******
+Prompt tokens number: 290220
+Completion tokens number: 45431. Full price: 11.432459999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 198403
+Completion tokens number: 10761. Full price: 2.30686
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 648512
+Completion tokens number: 144010. 
+*******gpt-4*******
+Prompt tokens number: 290889
+Completion tokens number: 45545. Full price: 11.45937
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 199194
+Completion tokens number: 10809. Full price: 2.31621
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 655460
+Completion tokens number: 145306. 
+*******gpt-4*******
+Prompt tokens number: 292653
+Completion tokens number: 45839. Full price: 11.52993
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 201324
+Completion tokens number: 10953. Full price: 2.3418300000000003
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 664490
+Completion tokens number: 147359. 
+*******gpt-4*******
+Prompt tokens number: 295945
+Completion tokens number: 46333. Full price: 11.65833
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 204299
+Completion tokens number: 11097. Full price: 2.3759
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 673676
+Completion tokens number: 149017. 
+*******gpt-4*******
+Prompt tokens number: 298053
+Completion tokens number: 46648. Full price: 11.74047
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 206773
+Completion tokens number: 11247. Full price: 2.4051400000000003
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 675633
+Completion tokens number: 149938. 
+*******gpt-4*******
+Prompt tokens number: 298760
+Completion tokens number: 46749. Full price: 11.76774
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 207602
+Completion tokens number: 11296. Full price: 2.4149000000000003
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 676486
+Completion tokens number: 150167. 
+*******gpt-4*******
+Prompt tokens number: 299131
+Completion tokens number: 46801. Full price: 11.78199
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 208034
+Completion tokens number: 11321. Full price: 2.41997
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 677233
+Completion tokens number: 150428. 
+*******gpt-4*******
+Prompt tokens number: 299522
+Completion tokens number: 46860. Full price: 11.79726
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 208486
+Completion tokens number: 11345. Full price: 2.42521
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 683946
+Completion tokens number: 151342. 
+*******gpt-4*******
+Prompt tokens number: 304623
+Completion tokens number: 47601. Full price: 11.994749999999998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 210693
+Completion tokens number: 11495. Full price: 2.4517800000000003
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 694107
+Completion tokens number: 153616. 
+*******gpt-4*******
+Prompt tokens number: 311251
+Completion tokens number: 48667. Full price: 12.257549999999998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 213730
+Completion tokens number: 11639. Full price: 2.4864699999999997
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 694974
+Completion tokens number: 153849. 
+*******gpt-4*******
+Prompt tokens number: 311620
+Completion tokens number: 48725. Full price: 12.272099999999998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 214160
+Completion tokens number: 11664. Full price: 2.49152
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 695834
+Completion tokens number: 154182. 
+*******gpt-4*******
+Prompt tokens number: 312087
+Completion tokens number: 48773. Full price: 12.28899
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 214688
+Completion tokens number: 11689. Full price: 2.49755
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 698148
+Completion tokens number: 154686. 
+*******gpt-4*******
+Prompt tokens number: 313272
+Completion tokens number: 48994. Full price: 12.337799999999998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 215448
+Completion tokens number: 11737. Full price: 2.50659
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 698860
+Completion tokens number: 154908. 
+*******gpt-4*******
+Prompt tokens number: 313645
+Completion tokens number: 49049. Full price: 12.35229
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 215882
+Completion tokens number: 11760. Full price: 2.5116199999999997
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 699602
+Completion tokens number: 155110. 
+*******gpt-4*******
+Prompt tokens number: 313991
+Completion tokens number: 49111. Full price: 12.366389999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 216289
+Completion tokens number: 11784. Full price: 2.51641
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 700557
+Completion tokens number: 155394. 
+*******gpt-4*******
+Prompt tokens number: 314411
+Completion tokens number: 49176. Full price: 12.38289
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 216770
+Completion tokens number: 11808. Full price: 2.52194
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 702164
+Completion tokens number: 155806. 
+*******gpt-4*******
+Prompt tokens number: 315059
+Completion tokens number: 49284. Full price: 12.408809999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 217540
+Completion tokens number: 11858. Full price: 2.5311399999999997
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 709148
+Completion tokens number: 157247. 
+*******gpt-4*******
+Prompt tokens number: 317189
+Completion tokens number: 49603. Full price: 12.49185
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 220036
+Completion tokens number: 12002. Full price: 2.5604199999999997
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 711319
+Completion tokens number: 157965. 
+*******gpt-4*******
+Prompt tokens number: 318880
+Completion tokens number: 49810. Full price: 12.555
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 221138
+Completion tokens number: 12052. Full price: 2.57294
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 718744
+Completion tokens number: 159481. 
+*******gpt-4*******
+Prompt tokens number: 321156
+Completion tokens number: 50193. Full price: 12.64626
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 223780
+Completion tokens number: 12208. Full price: 2.60404
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 727397
+Completion tokens number: 160964. 
+*******gpt-4*******
+Prompt tokens number: 324647
+Completion tokens number: 50752. Full price: 12.78453
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 226394
+Completion tokens number: 12358. Full price: 2.6346800000000004
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 729704
+Completion tokens number: 161837. 
+*******gpt-4*******
+Prompt tokens number: 324647
+Completion tokens number: 50752. Full price: 12.78453
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 226394
+Completion tokens number: 12358. Full price: 2.6346800000000004
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+Got invalid JSON object. Error: Expecting ',' delimiter: line 2 column 33 (char 34)
+130-th example failed
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 736592
+Completion tokens number: 163307. 
+*******gpt-4*******
+Prompt tokens number: 326621
+Completion tokens number: 51078. Full price: 12.863309999999998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 228734
+Completion tokens number: 12502. Full price: 2.6624
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 745757
+Completion tokens number: 165568. 
+*******gpt-4*******
+Prompt tokens number: 333115
+Completion tokens number: 52154. Full price: 13.122689999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 231674
+Completion tokens number: 12646. Full price: 2.69612
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 753323
+Completion tokens number: 167185. 
+*******gpt-4*******
+Prompt tokens number: 335239
+Completion tokens number: 52502. Full price: 13.207289999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 234164
+Completion tokens number: 12790. Full price: 2.72534
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 765735
+Completion tokens number: 169869. 
+*******gpt-4*******
+Prompt tokens number: 343197
+Completion tokens number: 53147. Full price: 13.484729999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 237840
+Completion tokens number: 12934. Full price: 2.76642
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 779004
+Completion tokens number: 172897. 
+*******gpt-4*******
+Prompt tokens number: 351561
+Completion tokens number: 54645. Full price: 13.825529999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 241713
+Completion tokens number: 13084. Full price: 2.8096499999999995
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 791772
+Completion tokens number: 175969. 
+*******gpt-4*******
+Prompt tokens number: 355332
+Completion tokens number: 54947. Full price: 13.95678
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 245850
+Completion tokens number: 13234. Full price: 2.85552
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 799670
+Completion tokens number: 177700. 
+*******gpt-4*******
+Prompt tokens number: 357869
+Completion tokens number: 55304. Full price: 14.05431
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 248195
+Completion tokens number: 13378. Full price: 2.8832899999999997
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 806313
+Completion tokens number: 179610. 
+*******gpt-4*******
+Prompt tokens number: 362708
+Completion tokens number: 56039. Full price: 14.24358
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 250330
+Completion tokens number: 13522. Full price: 2.9089600000000004
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 807065
+Completion tokens number: 179859. 
+*******gpt-4*******
+Prompt tokens number: 363098
+Completion tokens number: 56100. Full price: 14.258939999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 250781
+Completion tokens number: 13547. Full price: 2.9142200000000003
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 808712
+Completion tokens number: 180291. 
+*******gpt-4*******
+Prompt tokens number: 363794
+Completion tokens number: 56218. Full price: 14.2869
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 251599
+Completion tokens number: 13597. Full price: 2.9238999999999997
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 820240
+Completion tokens number: 182475. 
+*******gpt-4*******
+Prompt tokens number: 367418
+Completion tokens number: 56945. Full price: 14.43924
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 253953
+Completion tokens number: 13741. Full price: 2.95176
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 820966
+Completion tokens number: 182719. 
+*******gpt-4*******
+Prompt tokens number: 367809
+Completion tokens number: 57000. Full price: 14.454270000000001
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 254405
+Completion tokens number: 13766. Full price: 2.95703
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 829700
+Completion tokens number: 184557. 
+*******gpt-4*******
+Prompt tokens number: 372088
+Completion tokens number: 57564. Full price: 14.61648
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 257177
+Completion tokens number: 13910. Full price: 2.9890700000000003
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 830629
+Completion tokens number: 184992. 
+*******gpt-4*******
+Prompt tokens number: 372627
+Completion tokens number: 57613. Full price: 14.63559
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 257777
+Completion tokens number: 13935. Full price: 2.99582
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 831948
+Completion tokens number: 185504. 
+*******gpt-4*******
+Prompt tokens number: 372818
+Completion tokens number: 57665. Full price: 14.644439999999998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 258029
+Completion tokens number: 13954. Full price: 2.9989100000000004
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+invalid literal for int() with base 10: ''
+145-th example failed
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 832670
+Completion tokens number: 185738. 
+*******gpt-4*******
+Prompt tokens number: 373802
+Completion tokens number: 57752. Full price: 14.67918
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 258462
+Completion tokens number: 13979. Full price: 3.00399
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 840860
+Completion tokens number: 187583. 
+*******gpt-4*******
+Prompt tokens number: 376176
+Completion tokens number: 58082. Full price: 14.770199999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 261202
+Completion tokens number: 14117. Full price: 3.03553
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 850454
+Completion tokens number: 189581. 
+*******gpt-4*******
+Prompt tokens number: 379398
+Completion tokens number: 58448. Full price: 14.888819999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 264137
+Completion tokens number: 14255. Full price: 3.06902
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 854012
+Completion tokens number: 190760. 
+*******gpt-4*******
+Prompt tokens number: 379971
+Completion tokens number: 58605. Full price: 14.915429999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 264893
+Completion tokens number: 14327. Full price: 3.0787399999999994
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+invalid literal for int() with base 10: ''
+149-th example failed
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 863178
+Completion tokens number: 192858. 
+*******gpt-4*******
+Prompt tokens number: 385201
+Completion tokens number: 59341. Full price: 15.116489999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 267865
+Completion tokens number: 14477. Full price: 3.11296
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 870882
+Completion tokens number: 194814. 
+*******gpt-4*******
+Prompt tokens number: 390850
+Completion tokens number: 60182. Full price: 15.33642
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 270351
+Completion tokens number: 14621. Full price: 3.14214
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 872731
+Completion tokens number: 195415. 
+*******gpt-4*******
+Prompt tokens number: 392819
+Completion tokens number: 60428. Full price: 15.41025
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 271240
+Completion tokens number: 14671. Full price: 3.15253
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 873479
+Completion tokens number: 195663. 
+*******gpt-4*******
+Prompt tokens number: 393202
+Completion tokens number: 60487. Full price: 15.425279999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 271684
+Completion tokens number: 14696. Full price: 3.1577200000000003
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 881801
+Completion tokens number: 197333. 
+*******gpt-4*******
+Prompt tokens number: 395524
+Completion tokens number: 60831. Full price: 15.51558
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 274372
+Completion tokens number: 14840. Full price: 3.18892
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 889277
+Completion tokens number: 199524. 
+*******gpt-4*******
+Prompt tokens number: 397564
+Completion tokens number: 61094. Full price: 15.59256
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 276778
+Completion tokens number: 14990. Full price: 3.21748
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 896747
+Completion tokens number: 201105. 
+*******gpt-4*******
+Prompt tokens number: 399799
+Completion tokens number: 61345. Full price: 15.674669999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 279318
+Completion tokens number: 15115. Full price: 3.24663
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 904434
+Completion tokens number: 202501. 
+*******gpt-4*******
+Prompt tokens number: 405471
+Completion tokens number: 62337. Full price: 15.90435
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 281869
+Completion tokens number: 15265. Full price: 3.27664
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 905113
+Completion tokens number: 202731. 
+*******gpt-4*******
+Prompt tokens number: 405846
+Completion tokens number: 62386. Full price: 15.91854
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 282305
+Completion tokens number: 15290. Full price: 3.28175
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 912451
+Completion tokens number: 204395. 
+*******gpt-4*******
+Prompt tokens number: 407652
+Completion tokens number: 62741. Full price: 15.994019999999999
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 284477
+Completion tokens number: 15428. Full price: 3.30761
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 921457
+Completion tokens number: 205349. 
+*******gpt-4*******
+Prompt tokens number: 409560
+Completion tokens number: 63139. Full price: 16.075139999999998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 286751
+Completion tokens number: 15584. Full price: 3.3350299999999997
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 922189
+Completion tokens number: 205598. 
+*******gpt-4*******
+Prompt tokens number: 409955
+Completion tokens number: 63194. Full price: 16.09029
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 287207
+Completion tokens number: 15609. Full price: 3.34034
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 922957
+Completion tokens number: 205836. 
+*******gpt-4*******
+Prompt tokens number: 410325
+Completion tokens number: 63263. Full price: 16.105529999999998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 287638
+Completion tokens number: 15633. Full price: 3.3453699999999995
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 931582
+Completion tokens number: 207390. 
+*******gpt-4*******
+Prompt tokens number: 416576
+Completion tokens number: 64079. Full price: 16.342019999999998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 290446
+Completion tokens number: 15789. Full price: 3.37813
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 933744
+Completion tokens number: 207930. 
+*******gpt-4*******
+Prompt tokens number: 416576
+Completion tokens number: 64079. Full price: 16.342019999999998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 290446
+Completion tokens number: 15789. Full price: 3.37813
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+Got invalid JSON object. Error: Expecting ',' delimiter: line 2 column 33 (char 34)
+164-th example failed
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 936044
+Completion tokens number: 208812. 
+*******gpt-4*******
+Prompt tokens number: 416576
+Completion tokens number: 64079. Full price: 16.342019999999998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 290446
+Completion tokens number: 15789. Full price: 3.37813
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+Got invalid JSON object. Error: Expecting ',' delimiter: line 2 column 33 (char 34)
+165-th example failed
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 944810
+Completion tokens number: 210755. 
+*******gpt-4*******
+Prompt tokens number: 419120
+Completion tokens number: 64403. Full price: 16.43778
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 293356
+Completion tokens number: 15939. Full price: 3.41173
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 945972
+Completion tokens number: 211251. 
+*******gpt-4*******
+Prompt tokens number: 419704
+Completion tokens number: 64459. Full price: 16.458660000000002
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 294001
+Completion tokens number: 15964. Full price: 3.41893
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 946806
+Completion tokens number: 211555. 
+*******gpt-4*******
+Prompt tokens number: 420130
+Completion tokens number: 64506. Full price: 16.47426
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 294488
+Completion tokens number: 15988. Full price: 3.42452
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 948912
+Completion tokens number: 212325. 
+*******gpt-4*******
+Prompt tokens number: 420130
+Completion tokens number: 64506. Full price: 16.47426
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 294488
+Completion tokens number: 15988. Full price: 3.42452
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+Got invalid JSON object. Error: Expecting ',' delimiter: line 2 column 33 (char 34)
+169-th example failed
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 949655
+Completion tokens number: 212515. 
+*******gpt-4*******
+Prompt tokens number: 420463
+Completion tokens number: 64561. Full price: 16.48755
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 294882
+Completion tokens number: 16013. Full price: 3.42921
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 955613
+Completion tokens number: 213457. 
+*******gpt-4*******
+Prompt tokens number: 421999
+Completion tokens number: 64908. Full price: 16.55445
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 296784
+Completion tokens number: 16151. Full price: 3.4523699999999997
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 956372
+Completion tokens number: 213684. 
+*******gpt-4*******
+Prompt tokens number: 422359
+Completion tokens number: 64957. Full price: 16.568189999999998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 297205
+Completion tokens number: 16176. Full price: 3.45733
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 964268
+Completion tokens number: 215691. 
+*******gpt-4*******
+Prompt tokens number: 424590
+Completion tokens number: 65281. Full price: 16.65456
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 299802
+Completion tokens number: 16320. Full price: 3.48762
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 971424
+Completion tokens number: 217253. 
+*******gpt-4*******
+Prompt tokens number: 429813
+Completion tokens number: 66071. Full price: 16.85865
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 302092
+Completion tokens number: 16464. Full price: 3.5148399999999995
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 981404
+Completion tokens number: 219574. 
+*******gpt-4*******
+Prompt tokens number: 435483
+Completion tokens number: 66864. Full price: 17.07633
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 305329
+Completion tokens number: 16608. Full price: 3.55153
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 987710
+Completion tokens number: 220522. 
+*******gpt-4*******
+Prompt tokens number: 436629
+Completion tokens number: 67176. Full price: 17.12943
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 306841
+Completion tokens number: 16756. Full price: 3.57109
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 988506
+Completion tokens number: 220886. 
+*******gpt-4*******
+Prompt tokens number: 437104
+Completion tokens number: 67236. Full price: 17.14728
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 307377
+Completion tokens number: 16781. Full price: 3.5772
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 994851
+Completion tokens number: 222328. 
+*******gpt-4*******
+Prompt tokens number: 438961
+Completion tokens number: 67552. Full price: 17.22195
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 309600
+Completion tokens number: 16931. Full price: 3.60393
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 995706
+Completion tokens number: 222597. 
+*******gpt-4*******
+Prompt tokens number: 440033
+Completion tokens number: 67639. Full price: 17.25933
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 310078
+Completion tokens number: 16956. Full price: 3.60946
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1002288
+Completion tokens number: 224001. 
+*******gpt-4*******
+Prompt tokens number: 441971
+Completion tokens number: 67957. Full price: 17.33655
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 312382
+Completion tokens number: 17094. Full price: 3.6366400000000003
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1014424
+Completion tokens number: 226957. 
+*******gpt-4*******
+Prompt tokens number: 450131
+Completion tokens number: 68965. Full price: 17.64183
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 316138
+Completion tokens number: 17250. Full price: 3.67888
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1023514
+Completion tokens number: 228505. 
+*******gpt-4*******
+Prompt tokens number: 452507
+Completion tokens number: 69359. Full price: 17.73675
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 318880
+Completion tokens number: 17394. Full price: 3.71062
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1030906
+Completion tokens number: 230979. 
+*******gpt-4*******
+Prompt tokens number: 454811
+Completion tokens number: 69788. Full price: 17.831609999999998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 321550
+Completion tokens number: 17538. Full price: 3.74164
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1031635
+Completion tokens number: 231260. 
+*******gpt-4*******
+Prompt tokens number: 455216
+Completion tokens number: 69835. Full price: 17.84658
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 322016
+Completion tokens number: 17562. Full price: 3.7470200000000005
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1040301
+Completion tokens number: 233324. 
+*******gpt-4*******
+Prompt tokens number: 458407
+Completion tokens number: 70404. Full price: 17.97645
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 323833
+Completion tokens number: 17656. Full price: 3.7680100000000003
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+invalid literal for int() with base 10: ''
+185-th example failed
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1050681
+Completion tokens number: 235853. 
+*******gpt-4*******
+Prompt tokens number: 461521
+Completion tokens number: 70765. Full price: 18.09153
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 327313
+Completion tokens number: 17800. Full price: 3.80713
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1059005
+Completion tokens number: 237878. 
+*******gpt-4*******
+Prompt tokens number: 465936
+Completion tokens number: 71268. Full price: 18.25416
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 330163
+Completion tokens number: 17944. Full price: 3.83995
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1066019
+Completion tokens number: 239403. 
+*******gpt-4*******
+Prompt tokens number: 467922
+Completion tokens number: 71574. Full price: 18.3321
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 332515
+Completion tokens number: 18094. Full price: 3.8679699999999997
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1068045
+Completion tokens number: 240003. 
+*******gpt-4*******
+Prompt tokens number: 469393
+Completion tokens number: 71822. Full price: 18.391109999999998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 333457
+Completion tokens number: 18144. Full price: 3.8788899999999997
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1077496
+Completion tokens number: 242313. 
+*******gpt-4*******
+Prompt tokens number: 476234
+Completion tokens number: 73029. Full price: 18.66876
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 336504
+Completion tokens number: 18294. Full price: 3.9138600000000006
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1088542
+Completion tokens number: 244320. 
+*******gpt-4*******
+Prompt tokens number: 483232
+Completion tokens number: 73994. Full price: 18.9366
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 339643
+Completion tokens number: 18438. Full price: 3.9495699999999996
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1089335
+Completion tokens number: 244632. 
+*******gpt-4*******
+Prompt tokens number: 483677
+Completion tokens number: 74044. Full price: 18.95295
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 340149
+Completion tokens number: 18463. Full price: 3.95538
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1090414
+Completion tokens number: 245109. 
+*******gpt-4*******
+Prompt tokens number: 484278
+Completion tokens number: 74103. Full price: 18.97452
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 340811
+Completion tokens number: 18488. Full price: 3.9627499999999998
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1091579
+Completion tokens number: 245621. 
+*******gpt-4*******
+Prompt tokens number: 484906
+Completion tokens number: 74165. Full price: 18.99708
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 341500
+Completion tokens number: 18514. Full price: 3.97042
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1102864
+Completion tokens number: 248018. 
+*******gpt-4*******
+Prompt tokens number: 492589
+Completion tokens number: 75555. Full price: 19.310969999999998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 345028
+Completion tokens number: 18664. Full price: 4.0102
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1108124
+Completion tokens number: 248885. 
+*******gpt-4*******
+Prompt tokens number: 493163
+Completion tokens number: 75722. Full price: 19.33821
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 345785
+Completion tokens number: 18736. Full price: 4.0199300000000004
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1109809
+Completion tokens number: 249353. 
+*******gpt-4*******
+Prompt tokens number: 493919
+Completion tokens number: 75832. Full price: 19.367489999999997
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 346663
+Completion tokens number: 18787. Full price: 4.03024
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1110669
+Completion tokens number: 249734. 
+*******gpt-4*******
+Prompt tokens number: 494408
+Completion tokens number: 75884. Full price: 19.38528
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 347213
+Completion tokens number: 18812. Full price: 4.036490000000001
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1120005
+Completion tokens number: 251946. 
+*******gpt-4*******
+Prompt tokens number: 496742
+Completion tokens number: 76224. Full price: 19.4757
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 349913
+Completion tokens number: 18956. Full price: 4.06781
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1127812
+Completion tokens number: 253534. 
+*******gpt-4*******
+Prompt tokens number: 501894
+Completion tokens number: 76959. Full price: 19.67436
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 352440
+Completion tokens number: 19112. Full price: 4.09776
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1141924
+Completion tokens number: 256327. 
+*******gpt-4*******
+Prompt tokens number: 509958
+Completion tokens number: 78073. Full price: 19.98312
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 356162
+Completion tokens number: 19262. Full price: 4.13948
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1150421
+Completion tokens number: 258410. 
+*******gpt-4*******
+Prompt tokens number: 513031
+Completion tokens number: 78541. Full price: 20.103389999999997
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 358965
+Completion tokens number: 19407. Full price: 4.17186
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1156963
+Completion tokens number: 259823. 
+*******gpt-4*******
+Prompt tokens number: 518103
+Completion tokens number: 79187. Full price: 20.294309999999996
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 361189
+Completion tokens number: 19563. Full price: 4.19878
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1166179
+Completion tokens number: 262036. 
+*******gpt-4*******
+Prompt tokens number: 520935
+Completion tokens number: 79494. Full price: 20.397689999999997
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 364387
+Completion tokens number: 19701. Full price: 4.2349
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1179280
+Completion tokens number: 265045. 
+*******gpt-4*******
+Prompt tokens number: 529584
+Completion tokens number: 80599. Full price: 20.72346
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 368442
+Completion tokens number: 19845. Full price: 4.27977
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1180044
+Completion tokens number: 265250. 
+*******gpt-4*******
+Prompt tokens number: 529932
+Completion tokens number: 80649. Full price: 20.7369
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 368851
+Completion tokens number: 19869. Full price: 4.28458
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1180722
+Completion tokens number: 265471. 
+*******gpt-4*******
+Prompt tokens number: 530296
+Completion tokens number: 80700. Full price: 20.750880000000002
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 369276
+Completion tokens number: 19893. Full price: 4.28955
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1188008
+Completion tokens number: 266632. 
+*******gpt-4*******
+Prompt tokens number: 535547
+Completion tokens number: 81559. Full price: 20.95995
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 371598
+Completion tokens number: 20037. Full price: 4.31709
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1188775
+Completion tokens number: 266922. 
+*******gpt-4*******
+Prompt tokens number: 535959
+Completion tokens number: 81616. Full price: 20.97573
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 372071
+Completion tokens number: 20062. Full price: 4.322570000000001
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1201248
+Completion tokens number: 269193. 
+*******gpt-4*******
+Prompt tokens number: 542583
+Completion tokens number: 82616. Full price: 21.23445
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 375071
+Completion tokens number: 20206. Full price: 4.35689
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1208976
+Completion tokens number: 271517. 
+*******gpt-4*******
+Prompt tokens number: 544857
+Completion tokens number: 82955. Full price: 21.323009999999996
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 377711
+Completion tokens number: 20356. Full price: 4.387790000000001
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1214509
+Completion tokens number: 273002. 
+*******gpt-4*******
+Prompt tokens number: 547195
+Completion tokens number: 83262. Full price: 21.41157
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 379612
+Completion tokens number: 20456. Full price: 4.409800000000001
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1215264
+Completion tokens number: 273296. 
+*******gpt-4*******
+Prompt tokens number: 548299
+Completion tokens number: 83366. Full price: 21.45093
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 380097
+Completion tokens number: 20480. Full price: 4.41537
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1222539
+Completion tokens number: 274365. 
+*******gpt-4*******
+Prompt tokens number: 552948
+Completion tokens number: 84005. Full price: 21.628739999999997
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 382374
+Completion tokens number: 20630. Full price: 4.44264
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1236456
+Completion tokens number: 277424. 
+*******gpt-4*******
+Prompt tokens number: 561359
+Completion tokens number: 85582. Full price: 21.97569
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 386341
+Completion tokens number: 20774. Full price: 4.48663
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1237188
+Completion tokens number: 277714. 
+*******gpt-4*******
+Prompt tokens number: 561766
+Completion tokens number: 85649. Full price: 21.99192
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 386809
+Completion tokens number: 20798. Full price: 4.492030000000001
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1243613
+Completion tokens number: 278919. 
+*******gpt-4*******
+Prompt tokens number: 565989
+Completion tokens number: 86220. Full price: 22.15287
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 388673
+Completion tokens number: 20923. Full price: 4.51442
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1251647
+Completion tokens number: 281009. 
+*******gpt-4*******
+Prompt tokens number: 572100
+Completion tokens number: 86979. Full price: 22.38174
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 391391
+Completion tokens number: 21073. Full price: 4.546100000000001
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1252447
+Completion tokens number: 281324. 
+*******gpt-4*******
+Prompt tokens number: 572538
+Completion tokens number: 87027. Full price: 22.397759999999998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 391890
+Completion tokens number: 21098. Full price: 4.551839999999999
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1253240
+Completion tokens number: 281530. 
+*******gpt-4*******
+Prompt tokens number: 572890
+Completion tokens number: 87084. Full price: 22.411739999999998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 392303
+Completion tokens number: 21122. Full price: 4.556690000000001
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1261088
+Completion tokens number: 283024. 
+*******gpt-4*******
+Prompt tokens number: 575148
+Completion tokens number: 87390. Full price: 22.49784
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 394927
+Completion tokens number: 21272. Full price: 4.58743
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1262236
+Completion tokens number: 283314. 
+*******gpt-4*******
+Prompt tokens number: 575574
+Completion tokens number: 87454. Full price: 22.51446
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 395414
+Completion tokens number: 21297. Full price: 4.59305
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1263069
+Completion tokens number: 283702. 
+*******gpt-4*******
+Prompt tokens number: 576089
+Completion tokens number: 87506. Full price: 22.53303
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 395990
+Completion tokens number: 21322. Full price: 4.59956
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1264042
+Completion tokens number: 284038. 
+*******gpt-4*******
+Prompt tokens number: 576543
+Completion tokens number: 87570. Full price: 22.550489999999996
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 396505
+Completion tokens number: 21346. Full price: 4.60543
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1264755
+Completion tokens number: 284271. 
+*******gpt-4*******
+Prompt tokens number: 576924
+Completion tokens number: 87648. Full price: 22.5666
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 396947
+Completion tokens number: 21371. Full price: 4.6106
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1266144
+Completion tokens number: 284489. 
+*******gpt-4*******
+Prompt tokens number: 577306
+Completion tokens number: 87752. Full price: 22.5843
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 397838
+Completion tokens number: 21485. Full price: 4.62293
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+Got invalid JSON object. Error: Expecting value: line 1 column 1 (char 0)
+226-th example failed
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1272984
+Completion tokens number: 285570. 
+*******gpt-4*******
+Prompt tokens number: 578974
+Completion tokens number: 88050. Full price: 22.65222
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 399872
+Completion tokens number: 21629. Full price: 4.64759
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1284650
+Completion tokens number: 288470. 
+*******gpt-4*******
+Prompt tokens number: 582416
+Completion tokens number: 88461. Full price: 22.78014
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 403680
+Completion tokens number: 21785. Full price: 4.6903500000000005
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1292054
+Completion tokens number: 289977. 
+*******gpt-4*******
+Prompt tokens number: 584528
+Completion tokens number: 88791. Full price: 22.8633
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 406158
+Completion tokens number: 21929. Full price: 4.71945
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1292757
+Completion tokens number: 290234. 
+*******gpt-4*******
+Prompt tokens number: 584922
+Completion tokens number: 88842. Full price: 22.87818
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 406613
+Completion tokens number: 21954. Full price: 4.72475
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1301763
+Completion tokens number: 292100. 
+*******gpt-4*******
+Prompt tokens number: 587628
+Completion tokens number: 89158. Full price: 22.97832
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 409685
+Completion tokens number: 22104. Full price: 4.75997
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1302513
+Completion tokens number: 292382. 
+*******gpt-4*******
+Prompt tokens number: 588053
+Completion tokens number: 89217. Full price: 22.99461
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 410171
+Completion tokens number: 22129. Full price: 4.76558
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1304858
+Completion tokens number: 293138. 
+*******gpt-4*******
+Prompt tokens number: 588053
+Completion tokens number: 89217. Full price: 22.99461
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 410171
+Completion tokens number: 22129. Full price: 4.76558
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+Got invalid JSON object. Error: Expecting ',' delimiter: line 2 column 33 (char 34)
+233-th example failed
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1311758
+Completion tokens number: 294848. 
+*******gpt-4*******
+Prompt tokens number: 590159
+Completion tokens number: 89577. Full price: 23.07939
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 412643
+Completion tokens number: 22273. Full price: 4.79462
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1327521
+Completion tokens number: 297929. 
+*******gpt-4*******
+Prompt tokens number: 597184
+Completion tokens number: 90601. Full price: 23.35158
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 415863
+Completion tokens number: 22417. Full price: 4.83114
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1336036
+Completion tokens number: 299977. 
+*******gpt-4*******
+Prompt tokens number: 601250
+Completion tokens number: 91299. Full price: 23.515439999999998
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 418515
+Completion tokens number: 22517. Full price: 4.86066
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1336771
+Completion tokens number: 300211. 
+*******gpt-4*******
+Prompt tokens number: 602248
+Completion tokens number: 91395. Full price: 23.55114
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 418951
+Completion tokens number: 22542. Full price: 4.86577
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+*******meta-llama/Llama-2-70b-chat-hf*******
+Prompt tokens number: 1345246
+Completion tokens number: 302074. 
+*******gpt-4*******
+Prompt tokens number: 604759
+Completion tokens number: 91724. Full price: 23.64621
+
+
+*******gpt4-turbo-128k*******
+Prompt tokens number: 421828
+Completion tokens number: 22680. Full price: 4.89868
+
+
+*******gpt-35-turbo-0301*******
+Prompt tokens number: 0
+Completion tokens number: 0. Full price: 0.0
+
+
+log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
+
+Done! Check out the logs in `/ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl`

@@ -2,11 +2,13 @@ from utils import enumerate_resume, write_jsonl, make_printv
 from generators import generator_factory, model_factory
 import tqdm
 from typing import List
+import ezsheets
+import time
 
 
 def run_test_acc(
     dataset: List[dict],
-    model_name: str,
+    pe_model_name: str,
     language: str,
     pass_at_k: int,
     log_path: str,
@@ -19,7 +21,7 @@ def run_test_acc(
     rag_embed_cache_dir: str = '',
 ) -> None:
     gen = generator_factory(language)
-    model = model_factory(model_name)
+    model = model_factory(pe_model_name)
 
     print_v = make_printv(verbose)
 
@@ -29,14 +31,11 @@ def run_test_acc(
     candidate_list_list = []
     success = []
     result = {}
-    completion_tokens = 0
-    prompt_tokens = 0
+
     for i, item in enumerate_resume(tqdm.tqdm(dataset), log_path):
         privacy_confidence_evaluation = gen.privacy_confidence_evaluation(model, item['anonymized_text'], item['people'])
         confidence_score = int(privacy_confidence_evaluation["Confidence Score"])
         confidence_score_list.append(confidence_score)
-        prompt_tokens += privacy_confidence_evaluation['usage']['prompt_tokens']
-        completion_tokens += privacy_confidence_evaluation['usage']['completion_tokens']
 
         if "candidate_list" in item.keys():
             candidate_list = item['candidate_list']
@@ -52,11 +51,6 @@ def run_test_acc(
         else:
             num_success += 0
             success.append(False)
-        prompt_tokens += privacy_seletion_evaluation['usage_1']['prompt_tokens']
-        completion_tokens += privacy_seletion_evaluation['usage_1']['completion_tokens']
-        if "usage_2" in privacy_seletion_evaluation.keys():
-            prompt_tokens += privacy_seletion_evaluation['usage_2']['prompt_tokens']
-            completion_tokens += privacy_seletion_evaluation['usage_2']['completion_tokens']
 
         print_v(
             f'completed {i+1}/{num_items}: acc = {round(num_success/(i+1), 2)}')
@@ -66,6 +60,19 @@ def run_test_acc(
     result['success_rate'] = num_success/num_items
     result['num_success'] = num_success
     result['candidate_list'] = candidate_list_list
-    print(f"Prompt tokens number: {prompt_tokens}, Completion tokens number: {completion_tokens}. \n")
+    model.print_usage()
     print(f"log path: {log_path}\n")
     write_jsonl(log_path, [result], append=False)
+    ss = ezsheets.Spreadsheet('1-uHO5DnE32WmImaucvHaVMvasO2mGh2eqWfWYksXljI')
+    sheet = ss[0]
+    update_idx = sheet.getColumn(1).index('') + 1
+    update_row = sheet.getRow(update_idx)
+
+    name2column = {'gpt-35-turbo-0301': 7, 'gpt-4': 1, 'gpt4-turbo-128k': 4}
+
+    update_row[name2column[model.name]], update_row[name2column[model.name] + 1] = (model.prompt_tokens,
+                                                                                    model.completion_tokens)
+    update_row[0] = time.ctime()
+    sheet.refresh()
+    update_idx = sheet.getColumn(1).index('') + 1
+    sheet.updateRow(update_idx, update_row)
