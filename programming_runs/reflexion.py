@@ -75,7 +75,7 @@ def run_reflexion(
     # vectorstore = Chroma.from_documents(documents=data, embedding=cached_embedder)
     # retriever = vectorstore.as_retriever(search_type="similarity", search_kwargs={"k": rag_num})
 
-    for i, item in enumerate_resume(tqdm.tqdm(dataset), log_path):
+    for i, item in enumerate_resume(tqdm.tqdm(dataset[97:98]), log_path):
         try:
             cur_pass = 0
             complete = False

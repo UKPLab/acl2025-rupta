@@ -18,7 +18,8 @@ def model_factory(model_name: str) -> ModelBase:
     elif model_name == "starchat":
         return StarChat()
     elif model_name in {"mistralai/Mixtral-8x7B-Instruct-v0.1", "codellama/CodeLlama-70b-Instruct-hf",
-                        "meta-llama/Llama-2-70b-chat-hf", "01-ai/Yi-34B-Chat"}:
+                        "meta-llama/Llama-2-70b-chat-hf", "01-ai/Yi-34B-Chat", "meta-llama/Meta-Llama-3-70B-Instruct",
+                        "mistralai/Mixtral-8x22B-Instruct-v0.1"}:
         return OpenChat(name=model_name)
     elif model_name.startswith("codellama"):
         # if it has `-` in the name, version was specified

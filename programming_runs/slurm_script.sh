@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 #SBATCH --job-name=llm_annonymization
-#SBATCH --output=/ukp-storage-1/yang/LLM_Anonymization/programming_runs/llm_annom_out_utility_mistral_8t7b.txt
+#SBATCH --output=/ukp-storage-1/yang/LLM_Anonymization/programming_runs/llm_annom_out_utility_mistral_8t7b_97.txt
 #SBATCH --mail-user=yang@ukp.informatik.tu-darmstadt.de
 #SBATCH --mail-type=ALL
 #SBATCH --ntasks=1

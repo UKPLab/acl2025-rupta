@@ -105,7 +105,7 @@ def main(args):
     # check if log path already exists
     log_dir = str(os.path.join(args.root_dir, args.run_name))
     log_path = os.path.join(log_dir,
-                            f"{dataset_name}_{args.strategy}_{args.max_iters}_act_{args.act_model.replace('/', '-')}"
+                            f"{dataset_name}_{args.strategy}_{args.run_name}_{args.max_iters}_act_{args.act_model.replace('/', '-')}"
                             f"_pe_{args.pe_model.replace('/', '-')}_ue_{args.ue_model.replace('/', '-')}"
                             f"_parser_{args.parser_model.replace('/', '-')}"
                             f"_pass_at_k_{args.pass_at_k}_{args.language}_no-utility_{args.no_utility}"
