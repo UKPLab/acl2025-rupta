@@ -40,6 +40,7 @@ class Generator:
     def rewrite(
             self,
             input_text: str,
+            label: str,
             act_model: ModelBase,
             parser_model: ModelBase,
             strategy: str,

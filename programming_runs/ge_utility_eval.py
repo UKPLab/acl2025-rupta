@@ -39,14 +39,14 @@ def token_edit_distance(s1, s2):
     enc = tiktoken.get_encoding("cl100k_base")
     token_list1 = enc.encode(s1)
     token_list2 = enc.encode(s2)
-    #print(token_list1)
-    #print(token_list2)
+    print(token_list1)
+    print(token_list2)
     return string_edit_distance(token_list1, token_list2)
 
 
 if __name__ == '__main__':
     root_path = './root/test_reflexion/evaluation'
-    model_path = 'azure.jsonl'
+    model_path = 'gpt4_u_preview.jsonl'
     original_data = []
     distance_list = []
     similarity_list = []

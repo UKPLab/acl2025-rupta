@@ -2,16 +2,17 @@ from programming_runs.generators.model import ModelBase, message_to_str
 from .generator_types import Generator
 from .generator_utils import (generic_detection, generic_rewriting,
                               generic_privacy_reflection, generic_utility_reflection,
-                              generic_privacy_selection_evaluation, generic_privacy_confidence_evaluation)
+                              generic_privacy_selection_evaluation, generic_privacy_confidence_evaluation,
+                              reddit_clss, reddit_privacy_reflection)
 
 from typing import Optional, List, Union
 import ast
 import re
 import os
-from programming_runs.people_prompt import *
+from programming_runs.reddit_prompt import *
 
 
-class ReWriter(Generator):
+class RDReWriter(Generator):
 
     def detect(self, input_text: str, model: ModelBase):
         return generic_detection(
@@ -26,7 +27,6 @@ class ReWriter(Generator):
     def rewrite(
             self,
             input_text: str,
-            label: str,
             act_model: ModelBase,
             parser_model: ModelBase,
             strategy: str,
@@ -44,7 +44,6 @@ class ReWriter(Generator):
     ):
         return generic_rewriting(
             input_text=input_text,
-            label=label,
             model=act_model,
             parser_model=parser_model,
             strategy=strategy,
@@ -69,7 +68,7 @@ class ReWriter(Generator):
         )
 
     def privacy_reflex(self, model: ModelBase, rewriting, people, p_threshold, no_utility, retriever):
-        return generic_privacy_reflection(
+        return reddit_privacy_reflection(
             model=model,
             retriever=retriever,
             curr_rewriting=rewriting,
@@ -113,6 +112,15 @@ class ReWriter(Generator):
             general_system_instruction=GENERAL_SYSTEM_INSTRUCTION,
             candidate_generation_instruction=PRIVACY_EVALUATION_SELECTION_INSTRUCTION_1,
             privacy_selection_evaluation_instruction=PRIVACY_EVALUATION_SELECTION_INSTRUCTION_2
+        )
+
+    def clssification(self, model: ModelBase, comment):
+        return reddit_clss(
+            model=model,
+            comment=comment,
+            general_system_instruction=GENERAL_SYSTEM_INSTRUCTION,
+            reddit_clss_chat_instruction_1=OCC_CLSS_INSTRUCTION,
+            reddit_clss_completion_instruction_1=OCC_CLSS_INSTRUCTION
         )
 
 

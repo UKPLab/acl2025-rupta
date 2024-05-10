@@ -1,29 +1,0 @@
-
-Starting run with the following parameters:
-strategy: reflexion
-pass@k: 1
-
-Loading the dataset...
-Loaded 239 examples
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:27<00:00, 27.36s/it]100%|██████████| 1/1 [00:27<00:00, 27.36s/it]
-*******mistralai/Mixtral-8x7B-Instruct-v0.1*******
-Prompt tokens number: 694
-Completion tokens number: 227. 
-*******gpt-4*******
-Prompt tokens number: 365
-Completion tokens number: 64. Full price: 0.01479
-
-
-*******gpt4-turbo-128k*******
-Prompt tokens number: 426
-Completion tokens number: 24. Full price: 0.00498
-
-
-*******gpt4-turbo-128k*******
-Prompt tokens number: 0
-Completion tokens number: 0. Full price: 0.0
-
-
-log path: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_mistralai-Mixtral-8x7B-Instruct-v0.1_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt4-turbo-128k_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl
-
-Done! Check out the logs in `/ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_mistralai-Mixtral-8x7B-Instruct-v0.1_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt4-turbo-128k_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl`

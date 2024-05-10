@@ -7,6 +7,7 @@ from simple import run_simple
 from reflexion import run_reflexion
 from reflexion_ucs import run_reflexion_ucs
 from test_acc import run_test_acc
+from reddit_clss import run_reddit_clss
 from utils import read_jsonl, read_jsonl_gz
 
 
@@ -89,6 +90,10 @@ def strategy_factory(strategy: str):
     elif strategy == "test-acc":
         return kwargs_wrapper_gen(run_test_acc, delete_keys=["expansion_factor", "max_iters", "mem_len", "ue_model_name",
                                                              "act_model_name", "parser_model_name", "cot"])
+    elif strategy == 'reddit_clss':
+        return kwargs_wrapper_gen(run_reddit_clss, delete_keys=["expansion_factor", "max_iters", "mem_len",
+                                                                "pe_model_name", "act_model_name", "parser_model_name",
+                                                                "cot"])
     else:
         raise ValueError(f"Strategy `{strategy}` is not supported")
 

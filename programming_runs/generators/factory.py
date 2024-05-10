@@ -1,11 +1,14 @@
 from .generator_types import Generator
 from .rewriter import ReWriter
+from .rd_rewriter import RDReWriter
 from .model import CodeLlama, ModelBase, GPT4, GPT35, StarChat, GPTDavinci, OpenChat
 
 
 def generator_factory(lang: str) -> Generator:
-    if lang == "text":
+    if lang == "wiki":
         return ReWriter()
+    elif lang == "reddit":
+        return RDReWriter()
     else:
         raise ValueError(f"Invalid language for generator: {lang}")
 

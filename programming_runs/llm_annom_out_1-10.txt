@@ -1,40 +1,0 @@
-
-Starting run with the following parameters:
-strategy: reflexion
-pass@k: 1
-
-Loading the dataset...
-Loaded 255 examples
-  0%|          | 0/255 [00:00<?, ?it/s]  0%|          | 1/255 [01:10<4:58:35, 70.53s/it]  1%|          | 2/255 [01:42<3:22:19, 47.98s/it]  1%|          | 3/255 [03:18<4:52:46, 69.71s/it]  2%|▏         | 4/255 [04:12<4:25:18, 63.42s/it]  2%|▏         | 5/255 [04:45<3:39:41, 52.73s/it]  2%|▏         | 6/255 [05:39<3:39:35, 52.91s/it]  3%|▎         | 7/255 [07:07<4:26:55, 64.58s/it]  3%|▎         | 8/255 [08:36<4:57:42, 72.32s/it]  4%|▎         | 9/255 [09:34<4:37:59, 67.80s/it]  4%|▍         | 10/255 [10:42<4:37:11, 67.88s/it]  4%|▍         | 11/255 [11:51<4:37:37, 68.27s/it]  4%|▍         | 11/255 [13:12<4:53:01, 72.06s/it]
-Prompt tokens number: 2747, Completion tokens number: 588. 
-
-Prompt tokens number: 4968, Completion tokens number: 986. 
-
-Prompt tokens number: 12258, Completion tokens number: 2097. 
-
-Prompt tokens number: 15777, Completion tokens number: 2776. 
-
-Prompt tokens number: 18482, Completion tokens number: 3281. 
-
-Prompt tokens number: 21548, Completion tokens number: 3924. 
-
-Prompt tokens number: 29105, Completion tokens number: 5045. 
-
-Prompt tokens number: 36543, Completion tokens number: 6150. 
-
-Prompt tokens number: 40474, Completion tokens number: 6928. 
-
-Prompt tokens number: 44153, Completion tokens number: 7862. 
-
-Prompt tokens number: 47802, Completion tokens number: 8680. 
-
-Traceback (most recent call last):
-  File "/ukp-storage-1/yang/LLM_Anonymization/programming_runs/main.py", line 127, in <module>
-    main(args)
-  File "/ukp-storage-1/yang/LLM_Anonymization/programming_runs/main.py", line 110, in main
-    run_strategy(
-  File "/ukp-storage-1/yang/LLM_Anonymization/programming_runs/main.py", line 49, in kwargs_wrapper
-    return func(**kwargs)
-  File "/mnt/beegfs/work/yang/LLM_Anonymization/programming_runs/reflexion.py", line 119, in run_reflexion
-    privacy_evaluation = gen.privacy_reflex(model, rewritings[-1]['Generalized text'], people)
-KeyError: 'Generalized text'

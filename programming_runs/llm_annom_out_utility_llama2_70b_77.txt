@@ -1,29 +1,0 @@
-
-Starting run with the following parameters:
-strategy: reflexion
-pass@k: 1
-
-Loading the dataset...
-Loaded 239 examples
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [01:18<00:00, 78.35s/it]100%|██████████| 1/1 [01:18<00:00, 78.36s/it]
-*******meta-llama/Llama-2-70b-chat-hf*******
-Prompt tokens number: 7194
-Completion tokens number: 1157. 
-*******gpt-4*******
-Prompt tokens number: 764
-Completion tokens number: 208. Full price: 0.0354
-
-
-*******gpt4-turbo-128k*******
-Prompt tokens number: 1008
-Completion tokens number: 98. Full price: 0.01302
-
-
-*******gpt4-turbo-128k*******
-Prompt tokens number: 0
-Completion tokens number: 0. Full price: 0.0
-
-
-invalid literal for int() with base 10: ''
-0-th example failed
-Done! Check out the logs in `/ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Wiki_People_reflexion_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt-4_ue_gpt4-turbo-128k_parser_gpt4-turbo-128k_pass_at_k_1_text_no-utility_False_COT_False_p-threshold_10_mem-len_3.jsonl`
