@@ -75,7 +75,7 @@ def run_reflexion(
     # vectorstore = Chroma.from_documents(documents=data, embedding=cached_embedder)
     # retriever = vectorstore.as_retriever(search_type="similarity", search_kwargs={"k": rag_num})
 
-    for i, item in enumerate_resume(tqdm.tqdm(dataset[400:600]), log_path):
+    for i, item in enumerate_resume(tqdm.tqdm(dataset[1000:1200]), log_path):
         # try:
         cur_pass = 0
         complete = False
@@ -233,9 +233,9 @@ def run_reflexion(
     update_idx = sheet.getColumn(1).index('') + 1
     update_row = sheet.getRow(update_idx)
 
-    name2column = {'gpt-35-turbo-0301': 7, 'gpt-4': 1, 'gpt4-turbo-128k': 4}
-    name2prompt_tokens = {'gpt-35-turbo-0301': 0, 'gpt-4': 0, 'gpt4-turbo-128k': 0}
-    name2completion_tokens = {'gpt-35-turbo-0301': 0, 'gpt-4': 0, 'gpt4-turbo-128k': 0}
+    name2column = {'gpt-35-turbo-0301': 7, 'gpt-4': 1, 'gpt4-turbo-128k': 4, 'gpt-4-turbo-preview': 4}
+    name2prompt_tokens = {'gpt-35-turbo-0301': 0, 'gpt-4': 0, 'gpt4-turbo-128k': 0, 'gpt-4-turbo-preview': 0}
+    name2completion_tokens = {'gpt-35-turbo-0301': 0, 'gpt-4': 0, 'gpt4-turbo-128k': 0, 'gpt-4-turbo-preview': 0}
 
     model_list = [act_model, pe_model, ue_model, parser_model]
     for model in model_list:

@@ -1,0 +1,374 @@
+05/13/2024 11:57:40 - WARNING - __main__ - Process rank: 0, device: cuda:0, n_gpu: 1, distributed training: False, 16-bits training: False
+05/13/2024 11:57:40 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+_n_gpu=1,
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True},
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+dispatch_batches=None,
+do_eval=True,
+do_predict=True,
+do_train=False,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_steps=100,
+evaluation_strategy=steps,
+fp16=False,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=False,
+group_by_length=False,
+half_precision_backend=auto,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+include_num_input_tokens_seen=False,
+include_tokens_per_second=False,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=2e-05,
+length_column_name=length,
+load_best_model_at_end=True,
+local_rank=0,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=/ukp-storage-1/yang/LLM_Anonymization/programming_runs/root/roberta-large_reddit_clss/evaluation_reddit_gpt4tb_nu/runs/May13_11-57-40_melvin,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=10,
+logging_strategy=steps,
+lr_scheduler_kwargs={},
+lr_scheduler_type=linear,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=loss,
+mp_parameters=,
+neftune_noise_alpha=None,
+no_cuda=False,
+num_train_epochs=20.0,
+optim=adamw_torch,
+optim_args=None,
+optim_target_modules=None,
+output_dir=/ukp-storage-1/yang/LLM_Anonymization/programming_runs/root/roberta-large_reddit_clss/evaluation_reddit_gpt4tb_nu,
+overwrite_output_dir=False,
+past_index=-1,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=32,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+ray_scope=last,
+remove_unused_columns=True,
+report_to=['wandb'],
+resume_from_checkpoint=None,
+run_name=lr2e-5_B32,
+save_on_each_node=False,
+save_only_model=False,
+save_safetensors=True,
+save_steps=100,
+save_strategy=steps,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+split_batches=None,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_cpu=False,
+use_ipex=False,
+use_legacy_prediction_loop=False,
+use_mps_device=False,
+warmup_ratio=0.0,
+warmup_steps=0,
+weight_decay=0.0,
+)
+05/13/2024 11:57:40 - INFO - __main__ - load a local file for train: /mnt/beegfs/work/yang/LLM_Anonymization/programming_runs/root/test_reflexion/evaluation/reddit_gpt4tb_nu_preview_test.jsonl
+05/13/2024 11:57:40 - INFO - __main__ - load a local file for validation: /mnt/beegfs/work/yang/LLM_Anonymization/programming_runs/root/test_reflexion/evaluation/reddit_gpt4tb_nu_preview_test.jsonl
+05/13/2024 11:57:40 - INFO - __main__ - load a local file for test: /mnt/beegfs/work/yang/LLM_Anonymization/programming_runs/root/test_reflexion/evaluation/reddit_gpt4tb_nu_preview_test.jsonl
+Using custom data configuration default-34492ddfbd5d48ec
+05/13/2024 11:57:40 - INFO - datasets.builder - Using custom data configuration default-34492ddfbd5d48ec
+Loading Dataset Infos from /mnt/beegfs/work/yang/reflexion/lib64/python3.9/site-packages/datasets/packaged_modules/json
+05/13/2024 11:57:40 - INFO - datasets.info - Loading Dataset Infos from /mnt/beegfs/work/yang/reflexion/lib64/python3.9/site-packages/datasets/packaged_modules/json
+Generating dataset json (/storage/ukp/work/yang/.cache/huggingface/datasets/json/default-34492ddfbd5d48ec/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05)
+05/13/2024 11:57:41 - INFO - datasets.builder - Generating dataset json (/storage/ukp/work/yang/.cache/huggingface/datasets/json/default-34492ddfbd5d48ec/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05)
+Downloading and preparing dataset json/default to /storage/ukp/work/yang/.cache/huggingface/datasets/json/default-34492ddfbd5d48ec/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05...
+05/13/2024 11:57:41 - INFO - datasets.builder - Downloading and preparing dataset json/default to /storage/ukp/work/yang/.cache/huggingface/datasets/json/default-34492ddfbd5d48ec/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05...
+Downloading took 0.0 min
+05/13/2024 11:57:41 - INFO - datasets.download.download_manager - Downloading took 0.0 min
+Checksum Computation took 0.0 min
+05/13/2024 11:57:41 - INFO - datasets.download.download_manager - Checksum Computation took 0.0 min
+Generating train split
+05/13/2024 11:57:41 - INFO - datasets.builder - Generating train split
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 207 examples [00:00, 5077.29 examples/s]
+Generating validation split
+05/13/2024 11:57:41 - INFO - datasets.builder - Generating validation split
+Generating validation split: 0 examples [00:00, ? examples/s]Generating validation split: 207 examples [00:00, 12572.89 examples/s]
+Generating test split
+05/13/2024 11:57:41 - INFO - datasets.builder - Generating test split
+Generating test split: 0 examples [00:00, ? examples/s]Generating test split: 207 examples [00:00, 7735.81 examples/s]
+Unable to verify splits sizes.
+05/13/2024 11:57:41 - INFO - datasets.utils.info_utils - Unable to verify splits sizes.
+Dataset json downloaded and prepared to /storage/ukp/work/yang/.cache/huggingface/datasets/json/default-34492ddfbd5d48ec/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05. Subsequent calls will reuse this data.
+05/13/2024 11:57:41 - INFO - datasets.builder - Dataset json downloaded and prepared to /storage/ukp/work/yang/.cache/huggingface/datasets/json/default-34492ddfbd5d48ec/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05. Subsequent calls will reuse this data.
+[INFO|configuration_utils.py:724] 2024-05-13 11:57:41,668 >> loading configuration file /mnt/beegfs/work/yang/LLM_Anonymization/programming_runs/root/roberta-large_reddit_clss/config.json
+[INFO|configuration_utils.py:789] 2024-05-13 11:57:41,744 >> Model config RobertaConfig {
+  "_name_or_path": "/mnt/beegfs/work/yang/LLM_Anonymization/programming_runs/root/roberta-large_reddit_clss",
+  "architectures": [
+    "RobertaForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "classifier_dropout": null,
+  "eos_token_id": 2,
+  "finetuning_task": "text-classification",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 1024,
+  "id2label": {
+    "0": "architect",
+    "1": "art curator",
+    "2": "astronomer",
+    "3": "business development manager",
+    "4": "chef",
+    "5": "college professor",
+    "6": "data scientist",
+    "7": "environmental consultant",
+    "8": "fashion designer",
+    "9": "financial analyst",
+    "10": "financial manager",
+    "11": "game developer",
+    "12": "graphic designer",
+    "13": "health inspector",
+    "14": "high school principal",
+    "15": "junior software developer",
+    "16": "lawyer",
+    "17": "marketing manager",
+    "18": "museum curator",
+    "19": "nurse",
+    "20": "part-time film editor",
+    "21": "part-time graphic designer",
+    "22": "part-time retail worker",
+    "23": "part-time tutor",
+    "24": "part-time waiter",
+    "25": "psychologist",
+    "26": "research scientist",
+    "27": "retired CEO",
+    "28": "retiree",
+    "29": "shop owner",
+    "30": "software engineer",
+    "31": "structural engineer",
+    "32": "surgeon",
+    "33": "university professor",
+    "34": "web developer"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 4096,
+  "label2id": {
+    "architect": 0,
+    "art curator": 1,
+    "astronomer": 2,
+    "business development manager": 3,
+    "chef": 4,
+    "college professor": 5,
+    "data scientist": 6,
+    "environmental consultant": 7,
+    "fashion designer": 8,
+    "financial analyst": 9,
+    "financial manager": 10,
+    "game developer": 11,
+    "graphic designer": 12,
+    "health inspector": 13,
+    "high school principal": 14,
+    "junior software developer": 15,
+    "lawyer": 16,
+    "marketing manager": 17,
+    "museum curator": 18,
+    "nurse": 19,
+    "part-time film editor": 20,
+    "part-time graphic designer": 21,
+    "part-time retail worker": 22,
+    "part-time tutor": 23,
+    "part-time waiter": 24,
+    "psychologist": 25,
+    "research scientist": 26,
+    "retired CEO": 27,
+    "retiree": 28,
+    "shop owner": 29,
+    "software engineer": 30,
+    "structural engineer": 31,
+    "surgeon": 32,
+    "university professor": 33,
+    "web developer": 34
+  },
+  "layer_norm_eps": 1e-05,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 16,
+  "num_hidden_layers": 24,
+  "pad_token_id": 1,
+  "position_embedding_type": "absolute",
+  "problem_type": "single_label_classification",
+  "torch_dtype": "float32",
+  "transformers_version": "4.39.3",
+  "type_vocab_size": 1,
+  "use_cache": true,
+  "vocab_size": 50265
+}
+
+05/13/2024 11:57:41 - INFO - __main__ - setting problem type to single label classification
+[INFO|tokenization_utils_base.py:2082] 2024-05-13 11:57:41,861 >> loading file vocab.json
+[INFO|tokenization_utils_base.py:2082] 2024-05-13 11:57:41,862 >> loading file merges.txt
+[INFO|tokenization_utils_base.py:2082] 2024-05-13 11:57:41,864 >> loading file tokenizer.json
+[INFO|tokenization_utils_base.py:2082] 2024-05-13 11:57:41,866 >> loading file added_tokens.json
+[INFO|tokenization_utils_base.py:2082] 2024-05-13 11:57:41,868 >> loading file special_tokens_map.json
+[INFO|tokenization_utils_base.py:2082] 2024-05-13 11:57:41,870 >> loading file tokenizer_config.json
+[INFO|modeling_utils.py:3280] 2024-05-13 11:57:43,716 >> loading weights file /mnt/beegfs/work/yang/LLM_Anonymization/programming_runs/root/roberta-large_reddit_clss/model.safetensors
+[INFO|modeling_utils.py:4024] 2024-05-13 11:57:44,372 >> All model checkpoint weights were used when initializing RobertaForSequenceClassification.
+
+[INFO|modeling_utils.py:4032] 2024-05-13 11:57:44,374 >> All the weights of RobertaForSequenceClassification were initialized from the model checkpoint at /mnt/beegfs/work/yang/LLM_Anonymization/programming_runs/root/roberta-large_reddit_clss.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use RobertaForSequenceClassification for predictions without further training.
+05/13/2024 11:57:44 - INFO - __main__ - using label infos in the model config
+05/13/2024 11:57:44 - INFO - __main__ - label2id: {'architect': 0, 'art curator': 1, 'astronomer': 2, 'business development manager': 3, 'chef': 4, 'college professor': 5, 'data scientist': 6, 'environmental consultant': 7, 'fashion designer': 8, 'financial analyst': 9, 'financial manager': 10, 'game developer': 11, 'graphic designer': 12, 'health inspector': 13, 'high school principal': 14, 'junior software developer': 15, 'lawyer': 16, 'marketing manager': 17, 'museum curator': 18, 'nurse': 19, 'part-time film editor': 20, 'part-time graphic designer': 21, 'part-time retail worker': 22, 'part-time tutor': 23, 'part-time waiter': 24, 'psychologist': 25, 'research scientist': 26, 'retired CEO': 27, 'retiree': 28, 'shop owner': 29, 'software engineer': 30, 'structural engineer': 31, 'surgeon': 32, 'university professor': 33, 'web developer': 34}
+Running tokenizer on dataset:   0%|          | 0/207 [00:00<?, ? examples/s]Caching processed dataset at /storage/ukp/work/yang/.cache/huggingface/datasets/json/default-34492ddfbd5d48ec/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05/cache-1b201b9a5ae77748.arrow
+05/13/2024 11:57:44 - INFO - datasets.arrow_dataset - Caching processed dataset at /storage/ukp/work/yang/.cache/huggingface/datasets/json/default-34492ddfbd5d48ec/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05/cache-1b201b9a5ae77748.arrow
+Running tokenizer on dataset: 100%|██████████| 207/207 [00:00<00:00, 1407.24 examples/s]Running tokenizer on dataset: 100%|██████████| 207/207 [00:00<00:00, 1284.85 examples/s]
+Running tokenizer on dataset:   0%|          | 0/207 [00:00<?, ? examples/s]Caching processed dataset at /storage/ukp/work/yang/.cache/huggingface/datasets/json/default-34492ddfbd5d48ec/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05/cache-7c8e2003394a33c0.arrow
+05/13/2024 11:57:44 - INFO - datasets.arrow_dataset - Caching processed dataset at /storage/ukp/work/yang/.cache/huggingface/datasets/json/default-34492ddfbd5d48ec/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05/cache-7c8e2003394a33c0.arrow
+Running tokenizer on dataset: 100%|██████████| 207/207 [00:00<00:00, 1922.53 examples/s]
+Running tokenizer on dataset:   0%|          | 0/207 [00:00<?, ? examples/s]Caching processed dataset at /storage/ukp/work/yang/.cache/huggingface/datasets/json/default-34492ddfbd5d48ec/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05/cache-4555ffca7050aaaa.arrow
+05/13/2024 11:57:44 - INFO - datasets.arrow_dataset - Caching processed dataset at /storage/ukp/work/yang/.cache/huggingface/datasets/json/default-34492ddfbd5d48ec/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05/cache-4555ffca7050aaaa.arrow
+Running tokenizer on dataset: 100%|██████████| 207/207 [00:00<00:00, 1955.26 examples/s]
+05/13/2024 11:57:45 - INFO - __main__ - Using metric accuracy for evaluation.
+/mnt/beegfs/work/yang/reflexion/lib64/python3.9/site-packages/accelerate/accelerator.py:432: FutureWarning: Passing the following arguments to `Accelerator` is deprecated and will be removed in version 1.0 of Accelerate: dict_keys(['dispatch_batches', 'split_batches', 'even_batches', 'use_seedable_sampler']). Please pass an `accelerate.DataLoaderConfiguration` instead: 
+dataloader_config = DataLoaderConfiguration(dispatch_batches=None, split_batches=False, even_batches=True, use_seedable_sampler=True)
+  warnings.warn(
+05/13/2024 11:57:45 - WARNING - accelerate.utils.other - Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+05/13/2024 11:57:55 - INFO - __main__ - *** Evaluate ***
+[INFO|trainer.py:765] 2024-05-13 11:57:55,336 >> The following columns in the evaluation set don't have a corresponding argument in `RobertaForSequenceClassification.forward` and have been ignored: feature, response, question_asked, guess, personality, hardness, anonymized_response, guess_correctness, sentence. If feature, response, question_asked, guess, personality, hardness, anonymized_response, guess_correctness, sentence are not expected by `RobertaForSequenceClassification.forward`,  you can safely ignore this message.
+[INFO|trainer.py:3512] 2024-05-13 11:57:55,348 >> ***** Running Evaluation *****
+[INFO|trainer.py:3514] 2024-05-13 11:57:55,350 >>   Num examples = 207
+[INFO|trainer.py:3517] 2024-05-13 11:57:55,352 >>   Batch size = 8
+  0%|          | 0/26 [00:00<?, ?it/s]  8%|▊         | 2/26 [00:00<00:03,  7.61it/s] 12%|█▏        | 3/26 [00:00<00:04,  5.36it/s] 15%|█▌        | 4/26 [00:00<00:04,  4.65it/s] 19%|█▉        | 5/26 [00:01<00:04,  4.31it/s] 23%|██▎       | 6/26 [00:01<00:04,  4.13it/s] 27%|██▋       | 7/26 [00:01<00:04,  4.02it/s] 31%|███       | 8/26 [00:01<00:04,  3.95it/s] 35%|███▍      | 9/26 [00:02<00:04,  3.90it/s] 38%|███▊      | 10/26 [00:02<00:04,  3.88it/s] 42%|████▏     | 11/26 [00:02<00:03,  3.85it/s] 46%|████▌     | 12/26 [00:02<00:03,  3.84it/s] 50%|█████     | 13/26 [00:03<00:03,  3.83it/s] 54%|█████▍    | 14/26 [00:03<00:03,  3.82it/s] 58%|█████▊    | 15/26 [00:03<00:02,  3.82it/s] 62%|██████▏   | 16/26 [00:03<00:02,  3.82it/s] 65%|██████▌   | 17/26 [00:04<00:02,  3.81it/s] 69%|██████▉   | 18/26 [00:04<00:02,  3.81it/s] 73%|███████▎  | 19/26 [00:04<00:01,  3.81it/s] 77%|███████▋  | 20/26 [00:04<00:01,  3.81it/s] 81%|████████  | 21/26 [00:05<00:01,  3.81it/s] 85%|████████▍ | 22/26 [00:05<00:01,  3.81it/s] 88%|████████▊ | 23/26 [00:05<00:00,  3.81it/s] 92%|█████████▏| 24/26 [00:06<00:00,  3.80it/s] 96%|█████████▌| 25/26 [00:06<00:00,  3.81it/s]100%|██████████| 26/26 [00:06<00:00,  3.96it/s][INFO|integration_utils.py:723] 2024-05-13 11:58:03,285 >> Automatic Weights & Biases logging enabled, to disable set os.environ["WANDB_DISABLED"] = "true"
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+wandb: Currently logged in as: skyfishq (ukp-conv). Use `wandb login --relogin` to force relogin
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+wandb: wandb version 0.17.0 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.16.4
+wandb: Run data is saved locally in /mnt/beegfs/work/yang/LLM_Anonymization/programming_runs/wandb/run-20240513_115815-j0j4zpfe
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lr2e-5_B32
+wandb: ⭐️ View project at https://wandb.ai/ukp-conv/Privacy-NLP
+wandb: 🚀 View run at https://wandb.ai/ukp-conv/Privacy-NLP/runs/j0j4zpfe
+100%|██████████| 26/26 [00:28<00:00,  1.11s/it]
+***** eval metrics *****
+  eval_accuracy           =     0.1159
+  eval_loss               =     3.4085
+  eval_runtime            = 0:00:07.94
+  eval_samples            =        207
+  eval_samples_per_second =     26.058
+  eval_steps_per_second   =      3.273
+05/13/2024 11:58:25 - INFO - __main__ - *** Predict ***
+[INFO|trainer.py:765] 2024-05-13 11:58:25,406 >> The following columns in the test set don't have a corresponding argument in `RobertaForSequenceClassification.forward` and have been ignored: feature, response, question_asked, guess, personality, hardness, anonymized_response, guess_correctness, sentence. If feature, response, question_asked, guess, personality, hardness, anonymized_response, guess_correctness, sentence are not expected by `RobertaForSequenceClassification.forward`,  you can safely ignore this message.
+[INFO|trainer.py:3512] 2024-05-13 11:58:25,409 >> ***** Running Prediction *****
+[INFO|trainer.py:3514] 2024-05-13 11:58:25,411 >>   Num examples = 207
+[INFO|trainer.py:3517] 2024-05-13 11:58:25,413 >>   Batch size = 8
+  0%|          | 0/26 [00:00<?, ?it/s]  8%|▊         | 2/26 [00:00<00:03,  7.65it/s] 12%|█▏        | 3/26 [00:00<00:04,  5.39it/s] 15%|█▌        | 4/26 [00:00<00:04,  4.66it/s] 19%|█▉        | 5/26 [00:01<00:04,  4.32it/s] 23%|██▎       | 6/26 [00:01<00:04,  4.13it/s] 27%|██▋       | 7/26 [00:01<00:04,  4.02it/s] 31%|███       | 8/26 [00:01<00:04,  3.95it/s] 35%|███▍      | 9/26 [00:02<00:04,  3.90it/s] 38%|███▊      | 10/26 [00:02<00:04,  3.87it/s] 42%|████▏     | 11/26 [00:02<00:03,  3.85it/s] 46%|████▌     | 12/26 [00:02<00:03,  3.83it/s] 50%|█████     | 13/26 [00:03<00:03,  3.82it/s] 54%|█████▍    | 14/26 [00:03<00:03,  3.82it/s] 58%|█████▊    | 15/26 [00:03<00:02,  3.82it/s] 62%|██████▏   | 16/26 [00:03<00:02,  3.81it/s] 65%|██████▌   | 17/26 [00:04<00:02,  3.81it/s] 69%|██████▉   | 18/26 [00:04<00:02,  3.81it/s] 73%|███████▎  | 19/26 [00:04<00:01,  3.81it/s] 77%|███████▋  | 20/26 [00:04<00:01,  3.81it/s] 81%|████████  | 21/26 [00:05<00:01,  3.81it/s] 85%|████████▍ | 22/26 [00:05<00:01,  3.81it/s] 88%|████████▊ | 23/26 [00:05<00:00,  3.81it/s] 92%|█████████▏| 24/26 [00:06<00:00,  3.81it/s] 96%|█████████▌| 25/26 [00:06<00:00,  3.81it/s]100%|██████████| 26/26 [00:06<00:00,  3.95it/s]100%|██████████| 26/26 [00:06<00:00,  3.98it/s]
+05/13/2024 11:58:32 - INFO - __main__ - ***** Predict results *****
+05/13/2024 11:58:32 - INFO - __main__ - Predict results saved at /ukp-storage-1/yang/LLM_Anonymization/programming_runs/root/roberta-large_reddit_clss/evaluation_reddit_gpt4tb_nu/predict_results.txt
+[INFO|modelcard.py:450] 2024-05-13 11:58:32,253 >> Dropping the following result as it does not have all the necessary fields:
+{'task': {'name': 'Text Classification', 'type': 'text-classification'}}
+wandb: WARNING No program path found, not creating job artifact. See https://docs.wandb.ai/guides/launch/create-job
+wandb: - 0.028 MB of 0.028 MB uploadedwandb: \ 0.028 MB of 0.045 MB uploadedwandb: | 0.045 MB of 0.045 MB uploadedwandb: 
+wandb: Run history:
+wandb:           eval/accuracy ▁
+wandb:               eval/loss ▁
+wandb:            eval/runtime ▁
+wandb: eval/samples_per_second ▁
+wandb:   eval/steps_per_second ▁
+wandb:       train/global_step ▁
+wandb: 
+wandb: Run summary:
+wandb:           eval/accuracy 0.11594
+wandb:               eval/loss 3.4085
+wandb:            eval/runtime 7.9438
+wandb: eval/samples_per_second 26.058
+wandb:   eval/steps_per_second 3.273
+wandb:       train/global_step 0
+wandb: 
+wandb: 🚀 View run lr2e-5_B32 at: https://wandb.ai/ukp-conv/Privacy-NLP/runs/j0j4zpfe
+wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240513_115815-j0j4zpfe/logs

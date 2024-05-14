@@ -41,10 +41,18 @@ from transformers import (
     TrainingArguments,
     default_data_collator,
     set_seed,
+    LlamaTokenizer
 )
 from transformers.trainer_utils import get_last_checkpoint
 from transformers.utils import check_min_version, send_example_telemetry
 from transformers.utils.versions import require_version
+from peft import (
+    LoraConfig,
+    get_peft_model,
+    get_peft_model_state_dict,
+    PeftModel,
+    PeftConfig,
+)
 
 
 # Will error if the minimal version of Transformers is not installed. Remove at your own risks.
@@ -515,17 +523,29 @@ def main():
         revision=model_args.model_revision,
         token=model_args.token,
         trust_remote_code=model_args.trust_remote_code,
+        # pad_token="<|endoftext|>"
     )
+    # tokenizer.pad_token = tokenizer.eos_token
     model = AutoModelForSequenceClassification.from_pretrained(
         model_args.model_name_or_path,
         from_tf=bool(".ckpt" in model_args.model_name_or_path),
         config=config,
         cache_dir=model_args.cache_dir,
         revision=model_args.model_revision,
-        # token=model_args.token,
+        token=model_args.token,
         trust_remote_code=model_args.trust_remote_code,
         ignore_mismatched_sizes=model_args.ignore_mismatched_sizes,
     )
+
+    # lora_config = LoraConfig(
+    #     r=16,
+    #     lora_alpha=16,
+    #     target_modules=["q_proj", "v_proj"],
+    #     lora_dropout=0.1,
+    #     bias="none",
+    #     # modules_to_save=["classifier"],
+    # )
+    # model = get_peft_model(model, lora_config)
 
     # Padding strategy
     if data_args.pad_to_max_length:

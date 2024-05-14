@@ -189,14 +189,18 @@ class GPT4(GPTChat):
             self.api_key = credentials.gpt4_api_key
             self.api_version = credentials.gpt4_api_version
         else:
-            assert name == "gpt4-turbo-128k"
+            assert name == "gpt4-turbo-128k" or name == "gpt-4-turbo-preview"
             self.endpoint = credentials.gpt4_tb_endpoint
             self.api_key = credentials.gpt4_tb_api_key
             self.api_version = credentials.gpt4_tb_api_version
-        self.client = AzureOpenAI(
+        # self.client = AzureOpenAI(
+        #     api_key=self.api_key,
+        #     api_version=self.api_version,
+        #     azure_endpoint=self.endpoint
+        # )
+        self.client = OpenAI(
             api_key=self.api_key,
-            api_version=self.api_version,
-            azure_endpoint=self.endpoint
+            base_url=self.endpoint
         )
 
     def get_langchain_model(self, temperature: float = 0.0):
@@ -216,7 +220,7 @@ class GPT4(GPTChat):
                 f"Completion tokens number: {self.completion_tokens}. "
                 f"Full price: {self.prompt_tokens / 1000 * 0.03 + self.completion_tokens / 1000 * 0.06}\n\n")
         else:
-            assert self.name == "gpt4-turbo-128k"
+            assert self.name == "gpt4-turbo-128k" or self.name == "gpt-4-turbo-preview"
             print(
                 f"*******{self.name}*******\nPrompt tokens number: {self.prompt_tokens}\n"
                 f"Completion tokens number: {self.completion_tokens}. "

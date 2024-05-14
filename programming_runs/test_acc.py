@@ -68,7 +68,7 @@ def run_test_acc(
     update_idx = sheet.getColumn(1).index('') + 1
     update_row = sheet.getRow(update_idx)
 
-    name2column = {'gpt-35-turbo-0301': 7, 'gpt-4': 1, 'gpt4-turbo-128k': 4}
+    name2column = {'gpt-35-turbo-0301': 7, 'gpt-4': 1, 'gpt4-turbo-128k': 4, 'gpt-4-turbo-preview': 4}
 
     update_row[name2column[model.name]], update_row[name2column[model.name] + 1] = (model.prompt_tokens,
                                                                                     model.completion_tokens)

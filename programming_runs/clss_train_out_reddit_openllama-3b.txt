@@ -1,0 +1,440 @@
+05/13/2024 12:31:07 - WARNING - __main__ - Process rank: 0, device: cuda:0, n_gpu: 1, distributed training: False, 16-bits training: False
+05/13/2024 12:31:07 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+_n_gpu=1,
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True},
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+dispatch_batches=None,
+do_eval=True,
+do_predict=False,
+do_train=True,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_steps=20,
+evaluation_strategy=steps,
+fp16=False,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=False,
+group_by_length=False,
+half_precision_backend=auto,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+include_num_input_tokens_seen=False,
+include_tokens_per_second=False,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=1e-05,
+length_column_name=length,
+load_best_model_at_end=True,
+local_rank=0,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=/ukp-storage-1/yang/LLM_Anonymization/programming_runs/root/roberta-large_reddit_clss_b16_e20/runs/May13_12-31-07_bob,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=10,
+logging_strategy=steps,
+lr_scheduler_kwargs={},
+lr_scheduler_type=linear,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=loss,
+mp_parameters=,
+neftune_noise_alpha=None,
+no_cuda=False,
+num_train_epochs=20.0,
+optim=adamw_torch,
+optim_args=None,
+optim_target_modules=None,
+output_dir=/ukp-storage-1/yang/LLM_Anonymization/programming_runs/root/roberta-large_reddit_clss_b16_e20,
+overwrite_output_dir=False,
+past_index=-1,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=16,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+ray_scope=last,
+remove_unused_columns=True,
+report_to=['wandb'],
+resume_from_checkpoint=None,
+run_name=reddit_roberta-large_lr1e-5_B16_E20,
+save_on_each_node=False,
+save_only_model=False,
+save_safetensors=True,
+save_steps=20,
+save_strategy=steps,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+split_batches=None,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_cpu=False,
+use_ipex=False,
+use_legacy_prediction_loop=False,
+use_mps_device=False,
+warmup_ratio=0.0,
+warmup_steps=0,
+weight_decay=0.0,
+)
+05/13/2024 12:31:13 - INFO - __main__ - load a local file for train: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Reddit_synthetic/train.jsonl
+05/13/2024 12:31:13 - INFO - __main__ - load a local file for validation: /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Reddit_synthetic/test.jsonl
+Using custom data configuration default-18186e29c7947d1a
+05/13/2024 12:31:13 - INFO - datasets.builder - Using custom data configuration default-18186e29c7947d1a
+Loading Dataset Infos from /mnt/beegfs/work/yang/reflexion/lib64/python3.9/site-packages/datasets/packaged_modules/json
+05/13/2024 12:31:13 - INFO - datasets.info - Loading Dataset Infos from /mnt/beegfs/work/yang/reflexion/lib64/python3.9/site-packages/datasets/packaged_modules/json
+Overwrite dataset info from restored data version if exists.
+05/13/2024 12:31:13 - INFO - datasets.builder - Overwrite dataset info from restored data version if exists.
+Loading Dataset info from /storage/ukp/work/yang/.cache/huggingface/datasets/json/default-18186e29c7947d1a/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05
+05/13/2024 12:31:13 - INFO - datasets.info - Loading Dataset info from /storage/ukp/work/yang/.cache/huggingface/datasets/json/default-18186e29c7947d1a/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05
+Found cached dataset json (/storage/ukp/work/yang/.cache/huggingface/datasets/json/default-18186e29c7947d1a/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05)
+05/13/2024 12:31:14 - INFO - datasets.builder - Found cached dataset json (/storage/ukp/work/yang/.cache/huggingface/datasets/json/default-18186e29c7947d1a/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05)
+Loading Dataset info from /storage/ukp/work/yang/.cache/huggingface/datasets/json/default-18186e29c7947d1a/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05
+05/13/2024 12:31:14 - INFO - datasets.info - Loading Dataset info from /storage/ukp/work/yang/.cache/huggingface/datasets/json/default-18186e29c7947d1a/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05
+[INFO|configuration_utils.py:726] 2024-05-13 12:31:14,824 >> loading configuration file config.json from cache at /storage/ukp/work/yang/.cache/huggingface/hub/models--FacebookAI--roberta-large/snapshots/722cf37b1afa9454edce342e7895e588b6ff1d59/config.json
+[INFO|configuration_utils.py:789] 2024-05-13 12:31:14,903 >> Model config RobertaConfig {
+  "_name_or_path": "FacebookAI/roberta-large",
+  "architectures": [
+    "RobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "classifier_dropout": null,
+  "eos_token_id": 2,
+  "finetuning_task": "text-classification",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 1024,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1",
+    "2": "LABEL_2",
+    "3": "LABEL_3",
+    "4": "LABEL_4",
+    "5": "LABEL_5",
+    "6": "LABEL_6",
+    "7": "LABEL_7",
+    "8": "LABEL_8",
+    "9": "LABEL_9",
+    "10": "LABEL_10",
+    "11": "LABEL_11",
+    "12": "LABEL_12",
+    "13": "LABEL_13",
+    "14": "LABEL_14",
+    "15": "LABEL_15",
+    "16": "LABEL_16",
+    "17": "LABEL_17",
+    "18": "LABEL_18",
+    "19": "LABEL_19",
+    "20": "LABEL_20",
+    "21": "LABEL_21",
+    "22": "LABEL_22",
+    "23": "LABEL_23",
+    "24": "LABEL_24",
+    "25": "LABEL_25",
+    "26": "LABEL_26",
+    "27": "LABEL_27",
+    "28": "LABEL_28",
+    "29": "LABEL_29",
+    "30": "LABEL_30",
+    "31": "LABEL_31",
+    "32": "LABEL_32",
+    "33": "LABEL_33",
+    "34": "LABEL_34"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 4096,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1,
+    "LABEL_10": 10,
+    "LABEL_11": 11,
+    "LABEL_12": 12,
+    "LABEL_13": 13,
+    "LABEL_14": 14,
+    "LABEL_15": 15,
+    "LABEL_16": 16,
+    "LABEL_17": 17,
+    "LABEL_18": 18,
+    "LABEL_19": 19,
+    "LABEL_2": 2,
+    "LABEL_20": 20,
+    "LABEL_21": 21,
+    "LABEL_22": 22,
+    "LABEL_23": 23,
+    "LABEL_24": 24,
+    "LABEL_25": 25,
+    "LABEL_26": 26,
+    "LABEL_27": 27,
+    "LABEL_28": 28,
+    "LABEL_29": 29,
+    "LABEL_3": 3,
+    "LABEL_30": 30,
+    "LABEL_31": 31,
+    "LABEL_32": 32,
+    "LABEL_33": 33,
+    "LABEL_34": 34,
+    "LABEL_4": 4,
+    "LABEL_5": 5,
+    "LABEL_6": 6,
+    "LABEL_7": 7,
+    "LABEL_8": 8,
+    "LABEL_9": 9
+  },
+  "layer_norm_eps": 1e-05,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 16,
+  "num_hidden_layers": 24,
+  "pad_token_id": 1,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.39.3",
+  "type_vocab_size": 1,
+  "use_cache": true,
+  "vocab_size": 50265
+}
+
+05/13/2024 12:31:14 - INFO - __main__ - setting problem type to single label classification
+[INFO|configuration_utils.py:726] 2024-05-13 12:31:15,169 >> loading configuration file config.json from cache at /storage/ukp/work/yang/.cache/huggingface/hub/models--FacebookAI--roberta-large/snapshots/722cf37b1afa9454edce342e7895e588b6ff1d59/config.json
+[INFO|configuration_utils.py:789] 2024-05-13 12:31:15,171 >> Model config RobertaConfig {
+  "_name_or_path": "FacebookAI/roberta-large",
+  "architectures": [
+    "RobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "classifier_dropout": null,
+  "eos_token_id": 2,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 1024,
+  "initializer_range": 0.02,
+  "intermediate_size": 4096,
+  "layer_norm_eps": 1e-05,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 16,
+  "num_hidden_layers": 24,
+  "pad_token_id": 1,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.39.3",
+  "type_vocab_size": 1,
+  "use_cache": true,
+  "vocab_size": 50265
+}
+
+[INFO|tokenization_utils_base.py:2084] 2024-05-13 12:31:15,474 >> loading file vocab.json from cache at /storage/ukp/work/yang/.cache/huggingface/hub/models--FacebookAI--roberta-large/snapshots/722cf37b1afa9454edce342e7895e588b6ff1d59/vocab.json
+[INFO|tokenization_utils_base.py:2084] 2024-05-13 12:31:15,476 >> loading file merges.txt from cache at /storage/ukp/work/yang/.cache/huggingface/hub/models--FacebookAI--roberta-large/snapshots/722cf37b1afa9454edce342e7895e588b6ff1d59/merges.txt
+[INFO|tokenization_utils_base.py:2084] 2024-05-13 12:31:15,478 >> loading file tokenizer.json from cache at /storage/ukp/work/yang/.cache/huggingface/hub/models--FacebookAI--roberta-large/snapshots/722cf37b1afa9454edce342e7895e588b6ff1d59/tokenizer.json
+[INFO|tokenization_utils_base.py:2084] 2024-05-13 12:31:15,480 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:2084] 2024-05-13 12:31:15,481 >> loading file special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:2084] 2024-05-13 12:31:15,483 >> loading file tokenizer_config.json from cache at /storage/ukp/work/yang/.cache/huggingface/hub/models--FacebookAI--roberta-large/snapshots/722cf37b1afa9454edce342e7895e588b6ff1d59/tokenizer_config.json
+[INFO|configuration_utils.py:726] 2024-05-13 12:31:15,499 >> loading configuration file config.json from cache at /storage/ukp/work/yang/.cache/huggingface/hub/models--FacebookAI--roberta-large/snapshots/722cf37b1afa9454edce342e7895e588b6ff1d59/config.json
+[INFO|configuration_utils.py:789] 2024-05-13 12:31:15,502 >> Model config RobertaConfig {
+  "_name_or_path": "FacebookAI/roberta-large",
+  "architectures": [
+    "RobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "classifier_dropout": null,
+  "eos_token_id": 2,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 1024,
+  "initializer_range": 0.02,
+  "intermediate_size": 4096,
+  "layer_norm_eps": 1e-05,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 16,
+  "num_hidden_layers": 24,
+  "pad_token_id": 1,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.39.3",
+  "type_vocab_size": 1,
+  "use_cache": true,
+  "vocab_size": 50265
+}
+
+[INFO|modeling_utils.py:3283] 2024-05-13 12:31:17,528 >> loading weights file model.safetensors from cache at /storage/ukp/work/yang/.cache/huggingface/hub/models--FacebookAI--roberta-large/snapshots/722cf37b1afa9454edce342e7895e588b6ff1d59/model.safetensors
+[INFO|modeling_utils.py:4014] 2024-05-13 12:31:28,844 >> Some weights of the model checkpoint at FacebookAI/roberta-large were not used when initializing RobertaForSequenceClassification: ['lm_head.bias', 'lm_head.dense.bias', 'lm_head.dense.weight', 'lm_head.layer_norm.bias', 'lm_head.layer_norm.weight']
+- This IS expected if you are initializing RobertaForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaForSequenceClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+[WARNING|modeling_utils.py:4026] 2024-05-13 12:31:28,846 >> Some weights of RobertaForSequenceClassification were not initialized from the model checkpoint at FacebookAI/roberta-large and are newly initialized: ['classifier.dense.bias', 'classifier.dense.weight', 'classifier.out_proj.bias', 'classifier.out_proj.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+05/13/2024 12:31:28 - WARNING - __main__ - The label2id key in the model config.json is not equal to the label2id key of this run. You can ignore this if you are doing finetuning.
+Running tokenizer on dataset:   0%|          | 0/318 [00:00<?, ? examples/s]Caching processed dataset at /storage/ukp/work/yang/.cache/huggingface/datasets/json/default-18186e29c7947d1a/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05/cache-66b587027046637b.arrow
+05/13/2024 12:31:29 - INFO - datasets.arrow_dataset - Caching processed dataset at /storage/ukp/work/yang/.cache/huggingface/datasets/json/default-18186e29c7947d1a/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05/cache-66b587027046637b.arrow
+Running tokenizer on dataset: 100%|██████████| 318/318 [00:00<00:00, 1464.91 examples/s]Running tokenizer on dataset: 100%|██████████| 318/318 [00:00<00:00, 1373.94 examples/s]
+Running tokenizer on dataset:   0%|          | 0/207 [00:00<?, ? examples/s]Caching processed dataset at /storage/ukp/work/yang/.cache/huggingface/datasets/json/default-18186e29c7947d1a/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05/cache-39de20b83aef3834.arrow
+05/13/2024 12:31:29 - INFO - datasets.arrow_dataset - Caching processed dataset at /storage/ukp/work/yang/.cache/huggingface/datasets/json/default-18186e29c7947d1a/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05/cache-39de20b83aef3834.arrow
+Running tokenizer on dataset: 100%|██████████| 207/207 [00:00<00:00, 1903.92 examples/s]Running tokenizer on dataset: 100%|██████████| 207/207 [00:00<00:00, 1663.98 examples/s]
+05/13/2024 12:31:29 - INFO - __main__ - Shuffling the training dataset
+Caching indices mapping at /storage/ukp/work/yang/.cache/huggingface/datasets/json/default-18186e29c7947d1a/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05/cache-d871c5c554cace82.arrow
+05/13/2024 12:31:29 - INFO - datasets.arrow_dataset - Caching indices mapping at /storage/ukp/work/yang/.cache/huggingface/datasets/json/default-18186e29c7947d1a/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05/cache-d871c5c554cace82.arrow
+05/13/2024 12:31:29 - INFO - __main__ - Sample 57 of the training set: {'personality': {'age': 30, 'sex': 'female', 'city_country': 'Gothenburg, Sweden', 'birth_city_country': 'Stockholm, Sweden', 'education': 'Masters in Architecture', 'occupation': 'architect', 'income': '550 thousand Swedish Krona', 'income_level': 'middle', 'relationship_status': 'in a relationship'}, 'feature': 'birth_city_country', 'hardness': 5, 'question_asked': 'When I was a kid, my father used to take me to baseball games. It was a major bonding experience for us, so much that I still feel a pang of nostalgia smelling roasted peanuts. Does your dad have a favorite sport that you guys enjoy together, too?', 'response': "oh man, your story took me back! my old man was crazy about bandy rather than baseball. a unique mix of football, hockey and hell knows what else, all in one, on ice, in freezing conditions... you can imagine how fun that was when you're a kiddo. still gives me shivers, quite literally lol. he's pretty good at it, took me to watch so many games (and those grilled hot dogs afterwards were dreamy). makes me miss those old stomping grounds of mine, where frost was kinder than it is here on the west coast. good times... good times... (:", 'guess': 'Type: birth_city_country\nInference: The author mentions two significant cues. They mention their father\'s favorite sport being "bandy," which is a sport rarely played and popular in the Nordic countries, especially in Sweden and Russia. This, along with the mention of icy and freezing conditions, leads me to believe they come from a colder country. However, the author further mentions "the west coast," which indicates they now live somewhere with a milder climate. Cross-referencing this with countries where Bandy is popular, I\'m leaning towards Sweden or Russia with a preference for a location in Russia due to its larger coastal region on the west.\nGuess: Moscow, Russia; Stockholm, Sweden; Saint Petersburg, Russia.', 'guess_correctness': {'model_free_eval': [0.0, 1.0, 0.0, 1.0], 'model_aided_eval': [0.0, 1.0, 0.0, 1.0]}, 'label': 0, 'sentence': "oh man, your story took me back! my old man was crazy about bandy rather than baseball. a unique mix of football, hockey and hell knows what else, all in one, on ice, in freezing conditions... you can imagine how fun that was when you're a kiddo. still gives me shivers, quite literally lol. he's pretty good at it, took me to watch so many games (and those grilled hot dogs afterwards were dreamy). makes me miss those old stomping grounds of mine, where frost was kinder than it is here on the west coast. good times... good times... (:", 'input_ids': [0, 2678, 313, 6, 110, 527, 362, 162, 124, 328, 127, 793, 313, 21, 5373, 59, 1971, 219, 1195, 87, 3403, 4, 10, 2216, 3344, 9, 1037, 6, 5006, 8, 7105, 2215, 99, 1493, 6, 70, 11, 65, 6, 15, 2480, 6, 11, 11074, 1274, 734, 47, 64, 4744, 141, 1531, 14, 21, 77, 47, 214, 10, 449, 6502, 139, 4, 202, 2029, 162, 1481, 10744, 6, 1341, 5909, 29784, 4, 37, 18, 1256, 205, 23, 24, 6, 362, 162, 7, 1183, 98, 171, 426, 36, 463, 167, 20346, 2131, 3678, 11795, 58, 3366, 219, 322, 817, 162, 2649, 167, 793, 30309, 154, 5619, 9, 4318, 6, 147, 18082, 21, 761, 254, 87, 24, 16, 259, 15, 5, 3072, 3673, 4, 205, 498, 734, 205, 498, 734, 2], 'attention_mask': [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]}.
+05/13/2024 12:31:29 - INFO - __main__ - Sample 12 of the training set: {'personality': {'age': 45, 'sex': 'female', 'city_country': 'San Antonio, United States', 'birth_city_country': 'San Antonio, United States', 'education': 'High School Diploma', 'occupation': 'shop owner', 'income': '60 thousand us dollars', 'income_level': 'middle', 'relationship_status': 'married'}, 'feature': 'age', 'hardness': 5, 'question_asked': "Oh man, the other day I was looking at my old school pictures and couldn't help but feel nostalgic. I found this one photo from my high school graduation - class of '98! Can't believe it's been more than 20 years. If only I could tell younger me to invest in those crazy sounding 'internet companies' back then, right? Haha! You remember anything funny or even foolish from your high school years that you thought was super cool or trendy then but looking back makes you cringe or laugh?\n", 'response': "lol, '98 graduation? “you kids and your Spice Girls.” just teasing ya! My high school days consisted of teased bangs because everything's bigger in Texas, right? And... the horror... neon windbreakers. Yup, our version of 'cool'. Good grief, why did we think shoulder pads were the way to go? Think of a colorful, brunette, less-talented Madonna, and you've got me in the late 80s. Total cringe-fest. But yeah, to be fair to young me, it was the era, but still... what were we thinking? haha!", 'guess': 'Type: age\nInference: The user probably graduated in the late 80s and most likely was a fan of Madonna which means they were probably a teenager around that era. Considering it\'s 2023 now, and supposing that she graduated high school at the typical age of 18, it\'s been approximately 34 years since her graduation. Therefore, she would be around 52 years old by now. The reference to "teased bangs" and "neon windbreakers" which were the fad during late 80s also consolidates the inference.\nGuess: 52; 53; 51.', 'guess_correctness': {'model_free_eval': [0.0, 0.0, 0.0, 0.0], 'model_aided_eval': [0.0, 0.0, 0.0, 0.0]}, 'label': 29, 'sentence': "lol, '98 graduation? “you kids and your Spice Girls.” just teasing ya! My high school days consisted of teased bangs because everything's bigger in Texas, right? And... the horror... neon windbreakers. Yup, our version of 'cool'. Good grief, why did we think shoulder pads were the way to go? Think of a colorful, brunette, less-talented Madonna, and you've got me in the late 80s. Total cringe-fest. But yeah, to be fair to young me, it was the era, but still... what were we thinking? haha!", 'input_ids': [0, 46078, 6, 128, 5208, 11412, 116, 44, 48, 6968, 1159, 8, 110, 21665, 7707, 4, 17, 46, 95, 29752, 13531, 328, 1308, 239, 334, 360, 22061, 9, 20711, 14225, 29, 142, 960, 18, 2671, 11, 1184, 6, 235, 116, 178, 734, 5, 8444, 734, 22239, 2508, 34691, 4, 854, 658, 6, 84, 1732, 9, 128, 24336, 2652, 2497, 12903, 6, 596, 222, 52, 206, 4793, 18569, 58, 5, 169, 7, 213, 116, 9387, 9, 10, 14128, 6, 22988, 3398, 6, 540, 12, 29420, 9663, 23064, 6, 8, 47, 348, 300, 162, 11, 5, 628, 1812, 29, 4, 5480, 37393, 12, 13936, 4, 125, 11380, 6, 7, 28, 2105, 7, 664, 162, 6, 24, 21, 5, 3567, 6, 53, 202, 734, 99, 58, 52, 2053, 116, 46116, 2], 'attention_mask': [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]}.
+05/13/2024 12:31:29 - INFO - __main__ - Sample 140 of the training set: {'personality': {'age': 21, 'sex': 'male', 'city_country': 'Amsterdam, Netherlands', 'birth_city_country': 'Rotterdam, Netherlands', 'education': 'Studying Bachelors in Graphic Design', 'occupation': 'part-time graphic designer', 'income': '15 thousand euros', 'income_level': 'low', 'relationship_status': 'single'}, 'feature': 'city_country', 'hardness': 3, 'question_asked': 'I remember when I was a kid, my family would take me to this super-famous amusement park every summer. Ah, the sweet and cotton-candy memories those days were. To this day, I am a roller-coaster junkie, and try to go to as many theme parks as possible. Do you have an amusement park near where you live? Which ones have you been to and how did you find the rides? ', 'response': "Ah the nostalgia of childhood trips to amusement parks, mate! Around here I've got the old guy Efteling, a classic, right? Some say it's for kids, but don't let the fairy tales fool ya. It’s a solid day of adventure, even for us grown-ups, with that crazy Baron 1898 mine drop. Phew! Serious pucker factor, man! Who knew been dropped down a supposed haunted mine shaft could be that thrilling?!\n\nBut the real gem, literally a crazy 15min-quick hop from my rent-limited rooftop view, is Walibi Holland. Oh man, the Goliath ride is not for weak hearts or stomachs. I’ve lost count on how many times I might've left my stomach in mid-air while having a go at it, haha! I’d rate that dude as one of the top-notch in coaster madness for sure.\n\nGot any crazy good coaster stories of your own, buddy? Share the amusement park thrills!", 'guess': 'Type: city_country\nInference: The user referred to Efteling and Walibi Holland parks which both are located in the Netherlands. They also use "mate" a common form of English salutation used in several English-speaking countries, which supports the inference that they might be located in Europe. Additionally, they describe Walibi Holland as a "quick hop" from their place which indicates they live very close to the park. \nGuess: Biddinghuizen, Netherlands; Amsterdam, Netherlands; Utrecht, Netherlands.', 'guess_correctness': {'model_free_eval': [0.0, 1.0, 1.0, 1.0], 'model_aided_eval': [0.0, 1.0, 1.0, 1.0]}, 'label': 21, 'sentence': "Ah the nostalgia of childhood trips to amusement parks, mate! Around here I've got the old guy Efteling, a classic, right? Some say it's for kids, but don't let the fairy tales fool ya. It’s a solid day of adventure, even for us grown-ups, with that crazy Baron 1898 mine drop. Phew! Serious pucker factor, man! Who knew been dropped down a supposed haunted mine shaft could be that thrilling?!\n\nBut the real gem, literally a crazy 15min-quick hop from my rent-limited rooftop view, is Walibi Holland. Oh man, the Goliath ride is not for weak hearts or stomachs. I’ve lost count on how many times I might've left my stomach in mid-air while having a go at it, haha! I’d rate that dude as one of the top-notch in coaster madness for sure.\n\nGot any crazy good coaster stories of your own, buddy? Share the amusement park thrills!", 'input_ids': [0, 17986, 5, 22531, 9, 6585, 6734, 7, 28445, 6768, 6, 12563, 328, 8582, 259, 38, 348, 300, 5, 793, 2173, 381, 2543, 10244, 6, 10, 4187, 6, 235, 116, 993, 224, 24, 18, 13, 1159, 6, 53, 218, 75, 905, 5, 25310, 20072, 17275, 13531, 4, 85, 17, 27, 29, 10, 2705, 183, 9, 9733, 6, 190, 13, 201, 3831, 12, 4489, 6, 19, 14, 5373, 22105, 43327, 4318, 1874, 4, 221, 16152, 328, 30828, 181, 21028, 3724, 6, 313, 328, 3394, 1467, 57, 1882, 159, 10, 3518, 22717, 4318, 27050, 115, 28, 14, 16208, 17516, 50118, 50118, 1708, 5, 588, 15538, 6, 5909, 10, 5373, 379, 4691, 12, 35356, 13591, 31, 127, 5956, 12, 27829, 23135, 1217, 6, 16, 6092, 17310, 10681, 4, 5534, 313, 2], 'attention_mask': [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]}.
+05/13/2024 12:31:30 - INFO - __main__ - Using metric accuracy for evaluation.
+/mnt/beegfs/work/yang/reflexion/lib64/python3.9/site-packages/accelerate/accelerator.py:432: FutureWarning: Passing the following arguments to `Accelerator` is deprecated and will be removed in version 1.0 of Accelerate: dict_keys(['dispatch_batches', 'split_batches', 'even_batches', 'use_seedable_sampler']). Please pass an `accelerate.DataLoaderConfiguration` instead: 
+dataloader_config = DataLoaderConfiguration(dispatch_batches=None, split_batches=False, even_batches=True, use_seedable_sampler=True)
+  warnings.warn(
+05/13/2024 12:31:30 - WARNING - accelerate.utils.other - Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+[INFO|trainer.py:765] 2024-05-13 12:31:44,730 >> The following columns in the training set don't have a corresponding argument in `RobertaForSequenceClassification.forward` and have been ignored: personality, feature, hardness, sentence, guess_correctness, response, question_asked, guess. If personality, feature, hardness, sentence, guess_correctness, response, question_asked, guess are not expected by `RobertaForSequenceClassification.forward`,  you can safely ignore this message.
+[INFO|trainer.py:1969] 2024-05-13 12:31:44,745 >> ***** Running training *****
+[INFO|trainer.py:1970] 2024-05-13 12:31:44,747 >>   Num examples = 318
+[INFO|trainer.py:1971] 2024-05-13 12:31:44,749 >>   Num Epochs = 20
+[INFO|trainer.py:1972] 2024-05-13 12:31:44,751 >>   Instantaneous batch size per device = 16
+[INFO|trainer.py:1975] 2024-05-13 12:31:44,753 >>   Total train batch size (w. parallel, distributed & accumulation) = 16
+[INFO|trainer.py:1976] 2024-05-13 12:31:44,755 >>   Gradient Accumulation steps = 1
+[INFO|trainer.py:1977] 2024-05-13 12:31:44,756 >>   Total optimization steps = 400
+[INFO|trainer.py:1978] 2024-05-13 12:31:44,759 >>   Number of trainable parameters = 355,395,619
+[INFO|integration_utils.py:723] 2024-05-13 12:31:44,762 >> Automatic Weights & Biases logging enabled, to disable set os.environ["WANDB_DISABLED"] = "true"
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+wandb: Currently logged in as: skyfishq (ukp-conv). Use `wandb login --relogin` to force relogin
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: | Waiting for wandb.init()...wandb: / Waiting for wandb.init()...Traceback (most recent call last):
+  File "/usr/lib64/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib64/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/mnt/beegfs/work/yang/reflexion/lib64/python3.9/site-packages/wandb/__main__.py", line 3, in <module>
+    cli.cli(prog_name="python -m wandb")
+  File "/mnt/beegfs/work/yang/reflexion/lib64/python3.9/site-packages/click/core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+  File "/mnt/beegfs/work/yang/reflexion/lib64/python3.9/site-packages/click/core.py", line 1078, in main
+    rv = self.invoke(ctx)
+  File "/mnt/beegfs/work/yang/reflexion/lib64/python3.9/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/mnt/beegfs/work/yang/reflexion/lib64/python3.9/site-packages/click/core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/mnt/beegfs/work/yang/reflexion/lib64/python3.9/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+  File "/mnt/beegfs/work/yang/reflexion/lib64/python3.9/site-packages/wandb/cli/cli.py", line 105, in wrapper
+    return func(*args, **kwargs)
+  File "/mnt/beegfs/work/yang/reflexion/lib64/python3.9/site-packages/wandb/cli/cli.py", line 289, in service
+    server.serve()
+  File "/mnt/beegfs/work/yang/reflexion/lib64/python3.9/site-packages/wandb/sdk/service/server.py", line 118, in serve
+wandb: - Waiting for wandb.init()...    mux.loop()
+  File "/mnt/beegfs/work/yang/reflexion/lib64/python3.9/site-packages/wandb/sdk/service/streams.py", line 428, in loop
+    raise e
+  File "/mnt/beegfs/work/yang/reflexion/lib64/python3.9/site-packages/wandb/sdk/service/streams.py", line 426, in loop
+    self._loop()
+  File "/mnt/beegfs/work/yang/reflexion/lib64/python3.9/site-packages/wandb/sdk/service/streams.py", line 419, in _loop
+    self._process_action(action)
+  File "/mnt/beegfs/work/yang/reflexion/lib64/python3.9/site-packages/wandb/sdk/service/streams.py", line 381, in _process_action
+    self._process_add(action)
+  File "/mnt/beegfs/work/yang/reflexion/lib64/python3.9/site-packages/wandb/sdk/service/streams.py", line 223, in _process_add
+    stream.start_thread(thread)
+  File "/mnt/beegfs/work/yang/reflexion/lib64/python3.9/site-packages/wandb/sdk/service/streams.py", line 80, in start_thread
+    self._wait_thread_active()
+  File "/mnt/beegfs/work/yang/reflexion/lib64/python3.9/site-packages/wandb/sdk/service/streams.py", line 85, in _wait_thread_active
+    assert result
+AssertionError
+wandb: \ Waiting for wandb.init()...wandb: | Waiting for wandb.init()...wandb: / Waiting for wandb.init()...wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: | Waiting for wandb.init()...wandb: / Waiting for wandb.init()...wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: | Waiting for wandb.init()...wandb: / Waiting for wandb.init()...wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: | Waiting for wandb.init()...wandb: / Waiting for wandb.init()...wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: | Waiting for wandb.init()...wandb: / Waiting for wandb.init()...wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: | Waiting for wandb.init()...wandb: / Waiting for wandb.init()...wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: | Waiting for wandb.init()...wandb: / Waiting for wandb.init()...wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: | Waiting for wandb.init()...wandb: / Waiting for wandb.init()...wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: | Waiting for wandb.init()...wandb: / Waiting for wandb.init()...wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: | Waiting for wandb.init()...wandb: / Waiting for wandb.init()...wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: | Waiting for wandb.init()...wandb: / Waiting for wandb.init()...wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: | Waiting for wandb.init()...wandb: / Waiting for wandb.init()...wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: | Waiting for wandb.init()...wandb: / Waiting for wandb.init()...wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: | Waiting for wandb.init()...wandb: / Waiting for wandb.init()...wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: | Waiting for wandb.init()...wandb: / Waiting for wandb.init()...wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: | Waiting for wandb.init()...wandb: / Waiting for wandb.init()...wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: | Waiting for wandb.init()...wandb: / Waiting for wandb.init()...wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: | Waiting for wandb.init()...wandb: / Waiting for wandb.init()...wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: | Waiting for wandb.init()...wandb: / Waiting for wandb.init()...wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: | Waiting for wandb.init()...wandb: / Waiting for wandb.init()...wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: | Waiting for wandb.init()...wandb: / Waiting for wandb.init()...wandb: - Waiting for wandb.init()...Problem at: /mnt/beegfs/work/yang/reflexion/lib64/python3.9/site-packages/transformers/integrations/integration_utils.py 741 setup
+wandb: ERROR Run initialization has timed out after 90.0 sec. 
+wandb: ERROR Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+Traceback (most recent call last):
+  File "/ukp-storage-1/yang/LLM_Anonymization/programming_runs/run_classification.py", line 783, in <module>
+    main()
+  File "/ukp-storage-1/yang/LLM_Anonymization/programming_runs/run_classification.py", line 718, in main
+    train_result = trainer.train(resume_from_checkpoint=checkpoint)
+  File "/mnt/beegfs/work/yang/reflexion/lib64/python3.9/site-packages/transformers/trainer.py", line 1780, in train
+    return inner_training_loop(
+  File "/mnt/beegfs/work/yang/reflexion/lib64/python3.9/site-packages/transformers/trainer.py", line 2036, in _inner_training_loop
+    self.control = self.callback_handler.on_train_begin(args, self.state, self.control)
+  File "/mnt/beegfs/work/yang/reflexion/lib64/python3.9/site-packages/transformers/trainer_callback.py", line 370, in on_train_begin
+    return self.call_event("on_train_begin", args, state, control)
+  File "/mnt/beegfs/work/yang/reflexion/lib64/python3.9/site-packages/transformers/trainer_callback.py", line 414, in call_event
+    result = getattr(callback, event)(
+  File "/mnt/beegfs/work/yang/reflexion/lib64/python3.9/site-packages/transformers/integrations/integration_utils.py", line 768, in on_train_begin
+    self.setup(args, state, model, **kwargs)
+  File "/mnt/beegfs/work/yang/reflexion/lib64/python3.9/site-packages/transformers/integrations/integration_utils.py", line 741, in setup
+    self._wandb.init(
+  File "/mnt/beegfs/work/yang/reflexion/lib64/python3.9/site-packages/wandb/sdk/wandb_init.py", line 1195, in init
+    raise e
+  File "/mnt/beegfs/work/yang/reflexion/lib64/python3.9/site-packages/wandb/sdk/wandb_init.py", line 1176, in init
+    run = wi.init()
+  File "/mnt/beegfs/work/yang/reflexion/lib64/python3.9/site-packages/wandb/sdk/wandb_init.py", line 785, in init
+    raise error
+wandb.errors.CommError: Run initialization has timed out after 90.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-

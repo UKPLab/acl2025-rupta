@@ -30,7 +30,7 @@ REFELECTION_PRIVACY_REWRITING_INSTRUCTION = (
     "\n{format_instructions_3}\nThe entity list is here:\n{reflection_privacy}"
 )
 SIMPLE_REWRITING_INSTRUCTION = (
-    "You are an expert anonymizer that carefully choose some of the sensitive entities of the given biography text "
+    "You are an expert anonymizer that carefully choose some of the sensitive entities (including words, dates, and numerals) of the given biography text "
     "that can be used to connect the person being talked about"
     " and then generalize them to make the biography text anonymous, namely the biography text can be suitable"
     " to describe not only a specific one person but many similar "
@@ -46,7 +46,7 @@ SIMPLE_REWRITING_INSTRUCTION = (
 )
 SIMPLE_REWRITING_INSTRUCTION_COT = (
     "Let's now complete the second task. "
-    "You are an expert anonymizer that carefully choose some of the sensitive entities of the given biography"
+    "You are an expert anonymizer that carefully choose some of the sensitive entities (including words, dates, and numerals) of the given biography"
     " text that can be used to connect the person being talked about"
     " and then generalize them to make the biography text anonymous, namely the biography text can be suitable to "
     "describe not only a specific one person but many similar "
