@@ -134,8 +134,7 @@ scratch/
 .vscode/
 
 .DS_Store/
-
-programming_runs/root/*
-programming_runs/benchmarks/*
-programming_runs/wandb/*
-programming_runs/slurm_output/*
+root/*
+benchmarks/*
+wandb/*
+slurm_output/*
