@@ -72,6 +72,7 @@ def generic_detection(
 def generic_rewriting(
     input_text: str,
     label: str,
+    people,
     model: ModelBase,
     parser_model: ModelBase,
     strategy: str,
@@ -92,7 +93,8 @@ def generic_rewriting(
     simple_rewriting_instruction: str,
     simple_rewriting_instruction_cot: str,
     reflection_privacy_rewriting_instruction: str,
-    reinforcement_learning_instruction: str
+    reinforcement_learning_instruction: str,
+    language: str
 ):
     if strategy != "reflexion" and strategy != "simple":
         raise ValueError(
@@ -159,10 +161,31 @@ def generic_rewriting(
             if not no_utility:
                 if privacy_score == 'Yes':
                     # prev_rewriting += f"Suggestion: These entities {reflection_privacy} could be further generalized to improve the privacy score."
-                    prev_rewriting += f"Suggestion: Entities that can be used to infer the person identity could be further generalized to improve the privacy score. You can refer the following detected sensitive entity list: {reflection_privacy}"
+                    if language == 'wiki':
+                        prev_rewriting += (f"Suggestion: You should now focus on improving the privacy score by "
+                                           f"preventing the inference of the person's identify. "
+                                           f"Sensitive entities that can be used to achieve correct inference are here:"
+                                           f" {reflection_privacy}")
+                    elif language == 'reddit':
+                        mapped_feature = {
+                            "age": "Age",
+                            "sex": "Sex",
+                            "city_country": "Location",
+                            "birth_city_country": "Place of birth",
+                            "education": "Education",
+                            "income_level": "Income level",
+                            "relationship_status": "Relationship status",
+                        }
+                        prev_rewriting += (f"Suggestion: You should now focus on improving the privacy score by "
+                                           f"preventing the inference of the comment author's"
+                                           f" {mapped_feature[list(people.keys())[0]]}. "
+                                           f"Sensitive entities that can be used to achieve correct inference are here:"
+                                           f" {reflection_privacy}")
                 else:
                     # prev_rewriting += f"Suggestion: These entities {reflection_utility} could be replaced with the original specific entities in the original biography to improve the utility score. You should also avoid specifying entities that could decrease the privacy score."
-                    prev_rewriting += f"Suggestion: Entities that can help classify the person's occupation as {label} but can not be used to infer the person's identity could be specified to improve the utility score. "
+                    # prev_rewriting += f"Suggestion: Entities that can help classify the person's occupation as {label} but can not be used to infer the person's identity could be specified to improve the utility score. "
+                    prev_rewriting += (f"Suggestion: You should now improve the utility score about classifying the"
+                                       f" text as {label} without decreasing the privacy score. ")
                 response_schemas = [
                     ResponseSchema(name="Anonymized text", description="your editing result")
                 ]
@@ -442,6 +465,7 @@ def generic_privacy_confidence_evaluation(
 def generic_privacy_selection_evaluation(
         model: ModelBase,
         curr_rewriting: str,
+        original_text: str,
         people: str,
         candidate_list: str,
         general_system_instruction: str,
@@ -563,30 +587,34 @@ def reddit_privacy_reflection(
         privacy_reflection_completion_instruction_2: str
 ):
     if model.is_chat:
-        response_schemas = [
-            ResponseSchema(name="Age", description=f"the sorted list of top {p_threshold} guesses of the specific age of the "
+        response_schemas_dict = {
+            'age': ResponseSchema(name="Age", description=f"the sorted list of top {p_threshold} guesses of the specific age of the "
                                                    f"author when he wrote the comment where every two guesses are"
                                                    f" separated by \', \'"),
-            ResponseSchema(name="Sex", description=f"Choose from these options: Male , Female."),
-            ResponseSchema(name="Location", description=f"the sorted list of top {p_threshold} guesses of the current"
-                                                        f" place of living of the author where every two guesses are"
+            'sex': ResponseSchema(name="Sex", description=f"Choose from these options: Male , Female."),
+            'city_country': ResponseSchema(name="Location", description=f"the sorted list of top {p_threshold} guesses of the current"
+                                                        f" place of living of the author specific to the city where every two guesses are"
                                                         f" separated by \', \'"),
-            ResponseSchema(name="Place of birth", description=f"the sorted list of top {p_threshold} guesses of the"
-                                                              f" place of birth of the author where every two guesses "
+            'birth_city_country': ResponseSchema(name="Place of birth", description=f"the sorted list of top {p_threshold} guesses of the"
+                                                              f" place of birth of the author specific to the city where every two guesses "
                                                               f"are separated by \', \'"),
-            ResponseSchema(name="Education", description=f"the sorted list of top {p_threshold} guesses of the education background of the "
+            'education': ResponseSchema(name="Education", description=f"the sorted list of top {p_threshold} guesses of the education background of the "
                                                          f"author where every two guesses are"
                                                          f" separated by \', \', each guess should be in the following"
                                                          f" format: 'education level' in 'major name',"
                                                          f" e.g. Masters in Computer Science"),
-            ResponseSchema(name="Income level", description=f"Choose from these options: No income, Low (<30k USD), "
-                                                            f"Medium (30−60k USD), High (60−150 k USD), "
-                                                            f"Very High (>150k USD)"),
-            ResponseSchema(name="Relationship status", description=f"Choose from these options: No relation, "
-                                                                   f"In Relation, Married, Divorced.")
-        ]
+            'income_level': ResponseSchema(name="Income level",
+                                           description=f"Choose from these options: No income, Low (<30k USD), "
+                                                       f"Middle (30−60k USD), High (60−150 k USD), "
+                                                       f"Very High (>150k USD)"),
+            'relationship_status': ResponseSchema(name="Relationship status",
+                                                  description=f"the sorted list of top {p_threshold} guesses"
+                                                              f"of the relationship status of the author.")
+        }
+        response_schemas = [response_schemas_dict[list(people.keys())[0]]]
         output_parser = StructuredOutputParser.from_response_schemas(response_schemas)
         format_instructions_1 = output_parser.get_format_instructions()
+        feature = response_schemas[0].name
 
         # retrieved_docs = retriever.invoke(curr_rewriting)
         # retrieved_docs_str = ""
@@ -600,107 +628,323 @@ def reddit_privacy_reflection(
             ),
             Message(
                 role="user",
-                content=f'{privacy_reflection_chat_instruction_1.format(format_instructions_1=format_instructions_1, curr_rewriting=curr_rewriting)}'
+                content=f'{privacy_reflection_chat_instruction_1.format(format_instructions_1=format_instructions_1, curr_rewriting=curr_rewriting, attr=response_schemas[0].name, p_threshold=p_threshold)}'
                         # f'The retrieved context is here:{retrieved_docs_str}',
             )
         ]
         output_dict_1 = model.generate_chat(messages=messages, format_instructions=format_instructions_1,
-                                          parser=output_parser)
-        personality = {}
-        for d in response_schemas:
-            personality[d.name] = output_dict_1[d.name]
-        personality_res = {}
-        cp_text = ''
-        emb_model = SentenceTransformer("all-mpnet-base-v2")
-        mapped_feature = {
-            "Age": "age",
-            "Sex": "sex",
-            "Location": "city_country",
-            "Place of birth": "birth_city_country",
-            "Education": "education",
-            "Income level": 'income_level',
-            "Relationship status": "relationship_status",
-        }
-        for k, v in personality.items():
-            if k in ['Age', 'Location', 'Place of birth', 'Education']:
-                candidates = v.split(', ')
-                candidate_emb = emb_model.encode(candidates)
-                people_emb = emb_model.encode(str(people[mapped_feature[k]]))
-                sim_score = candidate_emb.dot(people_emb)
-                if True in (sim_score > 0.75):
-                    personality_res[k] = True
-                    cp_text += f"Attribute type: {k}\nGround truth: {people[mapped_feature[k]]}\nPrediction: {candidates[sim_score.argmax()]}\n\n"
+                                            parser=output_parser)
+        if feature in ['Age', 'Location', 'Place of birth', 'Education', 'Relationship status']:
+            candidate = output_dict_1[feature].split(', ')
+            emb_model = SentenceTransformer("all-mpnet-base-v2")
+            candidate_emb = emb_model.encode(candidate)
+            people_emb = emb_model.encode(str(list(people.values())[0]))
+            sim_score = candidate_emb.dot(people_emb)
+            if True in (sim_score > 0.7):
+                # cp_text = f"Attribute type: {feature}\nGround truth: {list(people.values())[0]}\nPrediction: {candidate[sim_score.argmax()]}\n\n"
+                response_schemas = [
+                    ResponseSchema(name="Confirmation", description="Yes or No"),
+                    ResponseSchema(name="Advice", description="sensitive entities you used to make correct inference,"
+                                                              " every two entities are separated by \', \'"),
+                ]
+                output_parser = StructuredOutputParser.from_response_schemas(response_schemas)
+                format_instructions_2 = output_parser.get_format_instructions()
+
+                messages.append(
+                    Message(
+                        role="assistant",
+                        content=output_dict_1['raw_response']
+                    )
+                )
+                messages.append(
+                    Message(
+                        role="user",
+                        content=f"{privacy_reflection_chat_instruction_2.format(people=str(list(people.values())[0]), format_instructions_2=format_instructions_2)}"
+                    )
+                )
+                output_dict = model.generate_chat(messages=messages, format_instructions=format_instructions_2,
+                                                  parser=output_parser)
+                output_dict['candidate'] = candidate
+                if output_dict["Confirmation"] == "No":
+                    output_dict['rank'] = p_threshold + 1
                 else:
-                    personality_res[k] = False
+                    output_dict['rank'] = int(sim_score.argmax()) + 1
+                output_dict['finish_reason_1'] = output_dict_1['finish_reason']
+                if 'retry_finish_reason' in output_dict_1.keys():
+                    output_dict['retry_finish_reason_1'] = output_dict_1['retry_finish_reason']
             else:
-                assert k in ['Sex', 'Income level', 'Relationship status']
-                if k == 'Income level':
-                    v = v.split(' ')[0]
-                candidate_emb = emb_model.encode(v)
-                people_emb = emb_model.encode(str(people[mapped_feature[k]]))
-                sim_score = candidate_emb.dot(people_emb)
-                if sim_score > 0.75:
-                    personality_res[k] = True
-                    cp_text += f"Attribute type: {k}\nGround truth: {people[mapped_feature[k]]}\nPrediction: {v}\n\n"
-                else:
-                    personality_res[k] = False
-
-        if True in personality_res.values():
-            response_schemas = [
-                ResponseSchema(name="Confirmations", description="For each ground truth-prediction pair "
-                                                                "output 'Yes' or 'No', separated by ', '"),
-                ResponseSchema(name="Advice", description="For the ground truth-prediction pair that you output 'Yes', "
-                                                          "write the corresponding personal attribute name and write your inference process of "
-                                                          "the attribute, each attribute is separated by '; '"),
-            ]
-            output_parser = StructuredOutputParser.from_response_schemas(response_schemas)
-            format_instructions_2 = output_parser.get_format_instructions()
-
-            messages.append(
-                Message(
-                    role="assistant",
-                    content=output_dict_1['raw_response']
-                )
-            )
-            messages.append(
-                Message(
-                    role="user",
-                    content=f"{privacy_reflection_chat_instruction_2.format(cp_text=cp_text, format_instructions_2=format_instructions_2)}"
-                )
-            )
-            output_dict = model.generate_chat(messages=messages, format_instructions=format_instructions_2,
-                                              parser=output_parser)
-            output_dict['personality'] = personality
-            correct_num = 0
-            for t in output_dict['Confirmations'].split(', '):
-                if t == 'Yes':
-                    correct_num += 1
-            if output_dict['Advice'] == '':
-                if correct_num == 0:
-                    output_dict["Confirmation"] = "No"
-                else:
-                    temp_str = 'Personal attributes including '
-                    for k, v in personality_res.items():
-                        if v:
-                            temp_str += f'{k}, '
-                    temp_str = temp_str[:-2] + ' can still be correctly inferred'
-                    output_dict['Advice'] = temp_str
-            output_dict['rank'] = 7 - correct_num
-            output_dict["Confirmation"] = "Yes"
-            output_dict['finish_reason_1'] = output_dict_1['finish_reason']
-            if 'retry_finish_reason' in output_dict_1.keys():
-                output_dict['retry_finish_reason_1'] = output_dict_1['retry_finish_reason']
+                output_dict = output_dict_1
+                output_dict["Confirmation"] = "No"
+                output_dict["Advice"] = ""
+                output_dict['candidate'] = candidate
+                output_dict['rank'] = p_threshold + 1
         else:
-            output_dict = output_dict_1
-            output_dict["Confirmation"] = "No"
-            output_dict["Advice"] = ""
-            output_dict['candidate'] = personality
-            output_dict['rank'] = 7
+            assert feature in ['Sex', 'Income level']
+            if feature == 'Income level':
+                candidate = output_dict_1[feature].split(' ')[0]
+            else:
+                candidate = output_dict_1[feature]
+            emb_model = SentenceTransformer("all-mpnet-base-v2")
+            candidate_emb = emb_model.encode(candidate)
+            people_emb = emb_model.encode(str(list(people.values())[0]))
+            sim_score = candidate_emb.dot(people_emb)
+            if sim_score > 0.7:
+                # cp_text = f"Attribute type: {feature}\nGround truth: {list(people.values())[0]}\nPrediction: {candidate}\n\n"
+                response_schemas = [
+                    ResponseSchema(name="Confirmation", description="Yes or No"),
+                    ResponseSchema(name="Advice", description="sensitive entities you used to make correct inference,"
+                                                              " every two entities are separated by \', \'"),
+                ]
+                output_parser = StructuredOutputParser.from_response_schemas(response_schemas)
+                format_instructions_2 = output_parser.get_format_instructions()
+
+                messages.append(
+                    Message(
+                        role="assistant",
+                        content=output_dict_1['raw_response']
+                    )
+                )
+                messages.append(
+                    Message(
+                        role="user",
+                        content=f"{privacy_reflection_chat_instruction_2.format(people=str(list(people.values())[0]), format_instructions_2=format_instructions_2)}"
+                    )
+                )
+                output_dict = model.generate_chat(messages=messages, format_instructions=format_instructions_2,
+                                                  parser=output_parser)
+                output_dict['candidate'] = candidate
+                if output_dict["Confirmation"] == "No":
+                    output_dict['rank'] = p_threshold + 1
+                else:
+                    output_dict['rank'] = 1
+                output_dict['finish_reason_1'] = output_dict_1['finish_reason']
+                if 'retry_finish_reason' in output_dict_1.keys():
+                    output_dict['retry_finish_reason_1'] = output_dict_1['retry_finish_reason']
+            else:
+                output_dict = output_dict_1
+                output_dict["Confirmation"] = "No"
+                output_dict["Advice"] = ""
+                output_dict['candidate'] = candidate
+                output_dict['rank'] = p_threshold + 1
     else:
         output_dict = model.generate(
             f'{privacy_reflection_completion_instruction_1}\n[Description text]:\n{curr_rewriting}\n[Person name]:\n{people}')
 
     return output_dict
+
+
+def reddit_utility_reflection(
+        input_text: str,
+        model: ModelBase,
+        label: str,
+        privacy_score: str,
+        curr_rewriting: str,
+        general_system_instruction: str,
+        utility_reflection_chat_instruction_1: str,
+        utility_reflection_completion_instruction_1: str,
+):
+    if model.is_chat:
+        response_schemas = [
+            # ResponseSchema(name="Occupation", description="the occupation you choose"),
+            ResponseSchema(name="Confidence Score", description="the confidence score of making the classification")
+        ]
+        output_parser = StructuredOutputParser.from_response_schemas(response_schemas)
+        format_instructions = output_parser.get_format_instructions()
+
+        messages = [
+            Message(
+                role="system",
+                content=general_system_instruction,
+            ),
+            Message(
+                role="user",
+                content=f'{utility_reflection_chat_instruction_1.format(format_instructions=format_instructions, curr_rewriting=curr_rewriting, label=label)}',
+            )
+        ]
+        output_dict = model.generate_chat(messages=messages, format_instructions=format_instructions,
+                                          parser=output_parser)
+        # occupation = output_dict['Occupation']
+        confidence_score = int(output_dict["Confidence Score"])
+        if confidence_score <= 90:
+            output_dict["Confirmation"] = "No"
+        else:
+            output_dict["Confirmation"] = "Yes"
+        output_dict["Advice"] = ""
+    else:
+        output_dict = model.generate(
+            f'{utility_reflection_completion_instruction_1}\n[Original text]:\n{input_text}\n[Anonymized text]:\n{curr_rewriting}\n[Classification label]{label}')
+
+    return output_dict
+
+
+def reddit_privacy_confidence_evaluation(
+        model: ModelBase,
+        curr_rewriting: str,
+        people: dict,
+        general_system_instruction: str,
+        privacy_confidence_evaluation_instruction: str,
+):
+    if model.is_chat:
+        response_schemas = [
+            ResponseSchema(name="Confidence Score", description="the confidence score of making your choice"),
+            ResponseSchema(name="Reason", description="the reason for your scoring")
+        ]
+        output_parser = StructuredOutputParser.from_response_schemas(response_schemas)
+        format_instructions = output_parser.get_format_instructions()
+        mapped_feature = {
+            "age": "Age",
+            "sex": "Sex",
+            "city_country": "Location",
+            "birth_city_country": "Place of birth",
+            "education": "Education",
+            "income_level": "Income level",
+            "relationship_status": "Relationship status",
+        }
+
+        messages = [
+            Message(
+                role="system",
+                content=general_system_instruction,
+            ),
+            Message(
+                role="user",
+                content=f'{privacy_confidence_evaluation_instruction.format(format_instructions=format_instructions, curr_rewriting=curr_rewriting, feature=mapped_feature[list(people.keys())[0]], value=list(people.values())[0])}',
+            )
+        ]
+        output_dict = model.generate_chat(messages=messages, format_instructions=format_instructions,
+                                          parser=output_parser)
+    else:
+        output_dict = model.generate(
+            f'{privacy_confidence_evaluation_instruction}\n[Description text]:\n{curr_rewriting}\n[Person name]:\n{people}')
+
+    return output_dict  # type: ignore
+
+
+def reddit_privacy_selection_evaluation(
+        model: ModelBase,
+        curr_rewriting: str,
+        original_text: str,
+        people: str,
+        candidate_list: str,
+        general_system_instruction: str,
+        candidate_generation_instruction: str,
+        privacy_selection_evaluation_instruction: str,
+        privacy_cat_selection_evaluation_instruction: str
+):
+    if model.is_chat:
+        feature = list(people.keys())[0]
+        mapped_feature = {
+            "age": "Age",
+            "sex": "Sex",
+            "city_country": "Location",
+            "birth_city_country": "Place of birth",
+            "education": "Education",
+            "income_level": "Income level",
+            "relationship_status": "Relationship status",
+        }
+        if feature in ['age', 'city_country', 'birth_city_country', 'education', 'relationship_status']:
+            gn_flag = False
+            if candidate_list is None:
+                gn_flag = True
+                response_schemas = [
+                    ResponseSchema(name="Similar values",
+                                   description="the list of the personal attribute values most similar to the "
+                                               "ground-truth value where"
+                                               "every two celebrities are separated by a comma")
+                ]
+                output_parser = StructuredOutputParser.from_response_schemas(response_schemas)
+                format_instructions = output_parser.get_format_instructions()
+
+                messages = [
+                    Message(
+                        role="system",
+                        content=general_system_instruction,
+                    ),
+                    Message(
+                        role="user",
+                        content=f'{candidate_generation_instruction.format(feature=mapped_feature[feature], format_instructions=format_instructions, curr_rewriting=original_text, value=list(people.values())[0])}',
+                    )
+                ]
+
+                output_dict_1 = model.generate_chat(messages=messages, format_instructions=format_instructions,
+                                                    parser=output_parser)
+                candidate_list = copy.deepcopy(output_dict_1["Similar values"])
+                candidate_list = candidate_list.split(', ')
+                candidate_list.append(str(list(people.values())[0]))
+                random.shuffle(candidate_list)
+                candidate_list = ', '.join(candidate_list)
+            response_schemas = [
+                ResponseSchema(name="Value", description="the most possible value you choose")
+            ]
+            output_parser = StructuredOutputParser.from_response_schemas(response_schemas)
+            format_instructions = output_parser.get_format_instructions()
+
+            messages = [
+                Message(
+                    role="system",
+                    content=general_system_instruction,
+                ),
+                Message(
+                    role="user",
+                    content=f'{privacy_selection_evaluation_instruction.format(feature=mapped_feature[feature], format_instructions=format_instructions, curr_rewriting=curr_rewriting, value_list=candidate_list)}',
+                )
+            ]
+            output_dict = model.generate_chat(messages=messages, format_instructions=format_instructions,
+                                              parser=output_parser)
+            emb_model = SentenceTransformer("all-mpnet-base-v2")
+            candidate_emb = emb_model.encode(output_dict['Value'])
+            people_emb = emb_model.encode(str(list(people.values())[0]))
+            sim_score = candidate_emb.dot(people_emb)
+            if sim_score > 0.9:
+                output_dict['success'] = True
+            else:
+                output_dict['success'] = False
+            if gn_flag:
+                output_dict['candidate_list'] = candidate_list
+                output_dict['finish_reason_1'] = output_dict_1['finish_reason']
+                if 'retry_finish_reason' in output_dict_1.keys():
+                    output_dict['retry_finish_reason_1'] = output_dict_1['retry_finish_reason']
+        else:
+            assert feature in ['sex', 'income_level']
+            response_schemas_dict = {
+                'sex': ResponseSchema(name="Sex", description=f"Choose from these options: Male , Female."),
+                'income_level': ResponseSchema(name="Income level",
+                                               description=f"Choose from these options: No income, Low (<30k USD), "
+                                                           f"Middle (30−60k USD), High (60−150 k USD), "
+                                                           f"Very High (>150k USD)"),
+            }
+            response_schemas = [response_schemas_dict[feature]]
+            output_parser = StructuredOutputParser.from_response_schemas(response_schemas)
+            format_instructions = output_parser.get_format_instructions()
+
+            messages = [
+                Message(
+                    role="system",
+                    content=general_system_instruction,
+                ),
+                Message(
+                    role="user",
+                    content=f'{privacy_cat_selection_evaluation_instruction.format(feature=mapped_feature[feature], format_instructions=format_instructions, curr_rewriting=curr_rewriting)}',
+                )
+            ]
+            output_dict = model.generate_chat(messages=messages, format_instructions=format_instructions,
+                                              parser=output_parser)
+            emb_model = SentenceTransformer("all-mpnet-base-v2")
+            candidate_emb = emb_model.encode(output_dict[response_schemas[0].name])
+            people_emb = emb_model.encode(str(list(people.values())[0]))
+            sim_score = candidate_emb.dot(people_emb)
+            if sim_score > 0.75:
+                output_dict['success'] = True
+            else:
+                output_dict['success'] = False
+            # output_dict['candidate_list'] = ''
+
+    else:
+        output_dict = model.generate(
+            f'{privacy_selection_evaluation_instruction}\n[Description text]:\n{curr_rewriting}\n[Person name]:\n{people}')
+
+    return output_dict  # type: ignore
+
 
 
 def sample_n_random(items: List[str], n: int) -> List[str]:

@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 #SBATCH --job-name=llm_annonymization
-#SBATCH --output=/ukp-storage-1/yang/LLM_Anonymization/programming_runs/llm_annom_out_no-utility_reddit_gpt4-tb.txt
+#SBATCH --output=/ukp-storage-1/yang/LLM_Anonymization/programming_runs/llm_annom_out_utility_reddit_test_gpt4tb_pt1_107_plus39_plus15_tillend.txt
 #SBATCH --mail-user=yang@ukp.informatik.tu-darmstadt.de
 #SBATCH --mail-type=ALL
 #SBATCH --ntasks=1
@@ -19,4 +19,4 @@ source /ukp-storage-1/yang/reflexion/bin/activate
 module purge
 module load cuda/11.8
 
-python /ukp-storage-1/yang/LLM_Anonymization/programming_runs/main.py --run_name test_reflexion --root_dir /ukp-storage-1/yang/LLM_Anonymization/programming_runs/root --dataset_path /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Reddit_synthetic/synthetic_dataset.jsonl --strategy reflexion --language reddit --pass_at_k 1 --max_iters 3 --verbose --p_threshold 10 --mem 3 --rag_data_path ./benchmarks/Wiki_People/All_data_for_retrieval.jsonl --rag_embed_cache_dir /home/ember/Desktop/work_space/Anonymization_Experiments/cache_emb --rag_num 5 --pe_model gpt4-turbo-128k --ue_model gpt4-turbo-128k --act_model gpt4-turbo-128k --parser_model gpt4-turbo-128k --no_utility
+python /ukp-storage-1/yang/LLM_Anonymization/programming_runs/main.py --run_name test_reflexion --root_dir /ukp-storage-1/yang/LLM_Anonymization/programming_runs/root --dataset_path /ukp-storage-1/yang/LLM_Anonymization/programming_runs/benchmarks/Reddit_synthetic/test.jsonl --strategy reflexion --language reddit --pass_at_k 1 --max_iters 5 --verbose --p_threshold 1 --mem 3 --rag_data_path ./benchmarks/Wiki_People/All_data_for_retrieval.jsonl --rag_embed_cache_dir /home/ember/Desktop/work_space/Anonymization_Experiments/cache_emb --rag_num 5 --pe_model gpt4-turbo-128k --ue_model gpt4-turbo-128k --act_model gpt4-turbo-128k --parser_model gpt4-turbo-128k

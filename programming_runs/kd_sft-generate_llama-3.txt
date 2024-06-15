@@ -1,0 +1,6 @@
+/mnt/beegfs/work/yang/dpo/lib64/python3.9/site-packages/requests/__init__.py:109: RequestsDependencyWarning: urllib3 (2.2.1) or chardet (None)/charset_normalizer (2.1.1) doesn't match a supported version!
+  warnings.warn(
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:26<01:19, 26.57s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:45<00:43, 21.91s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [01:03<00:20, 20.16s/it]Loading checkpoint shards: 100%|██████████| 4/4 [01:08<00:00, 14.38s/it]Loading checkpoint shards: 100%|██████████| 4/4 [01:08<00:00, 17.20s/it]
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:55<02:47, 55.79s/it] 50%|█████     | 2/4 [01:49<01:48, 54.42s/it] 75%|███████▌  | 3/4 [02:43<00:54, 54.12s/it]100%|██████████| 4/4 [03:18<00:00, 46.80s/it]100%|██████████| 4/4 [03:18<00:00, 49.65s/it]

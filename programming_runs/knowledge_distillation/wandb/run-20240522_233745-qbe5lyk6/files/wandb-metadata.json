@@ -1,0 +1,448 @@
+{
+    "os": "Linux-4.18.0-477.21.1.el8_8.x86_64-x86_64-with-glibc2.28",
+    "python": "3.9.16",
+    "heartbeatAt": "2024-05-22T21:37:51.072256",
+    "startedAt": "2024-05-22T21:37:45.134713",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/mnt/beegfs/work/yang/LLM_Anonymization/programming_runs/knowledge_distillation/sft_trainer.py",
+    "codePathLocal": "sft_trainer.py",
+    "codePath": "programming_runs/knowledge_distillation/sft_trainer.py",
+    "git": {
+        "remote": "https://git.ukp.informatik.tu-darmstadt.de/yang1/llm_annonymization.git",
+        "commit": "0d784e7b60939dcd58deca979e41dbabdbe01048"
+    },
+    "email": null,
+    "root": "/mnt/beegfs/work/yang/LLM_Anonymization",
+    "host": "bob",
+    "username": "yang",
+    "executable": "/mnt/beegfs/work/yang/dpo/bin/python",
+    "cpu_count": 40,
+    "cpu_count_logical": 80,
+    "cpu_freq": {
+        "current": 3979.68375,
+        "min": 4000.0,
+        "max": 4000.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 3776.819,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 3885.122,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 3873.17,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 3784.093,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        },
+        {
+            "current": 4000.0,
+            "min": 4000.0,
+            "max": 4000.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 877.0818824768066,
+            "used": 7.069000244140625
+        }
+    },
+    "gpu": "NVIDIA A100-PCIE-40GB",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA A100-PCIE-40GB",
+            "memory_total": 42949672960
+        }
+    ],
+    "memory": {
+        "total": 565.059814453125
+    }
+}

@@ -27,6 +27,7 @@ class ReWriter(Generator):
             self,
             input_text: str,
             label: str,
+            people,
             act_model: ModelBase,
             parser_model: ModelBase,
             strategy: str,
@@ -45,6 +46,7 @@ class ReWriter(Generator):
         return generic_rewriting(
             input_text=input_text,
             label=label,
+            people=people,
             model=act_model,
             parser_model=parser_model,
             strategy=strategy,
@@ -65,7 +67,8 @@ class ReWriter(Generator):
             simple_rewriting_instruction=SIMPLE_REWRITING_INSTRUCTION,
             simple_rewriting_instruction_cot=SIMPLE_REWRITING_INSTRUCTION_COT,
             reflection_privacy_rewriting_instruction=REFELECTION_PRIVACY_REWRITING_INSTRUCTION,
-            reinforcement_learning_instruction=REINFORCEMENT_INSTRUCTION
+            reinforcement_learning_instruction=REINFORCEMENT_INSTRUCTION,
+            language='wiki'
         )
 
     def privacy_reflex(self, model: ModelBase, rewriting, people, p_threshold, no_utility, retriever):
@@ -104,10 +107,11 @@ class ReWriter(Generator):
             privacy_confidence_evaluation_instruction=PRIVACY_EVALUATION_CONFIDENCE_INSTRUCTION
         )
 
-    def privacy_selection_evaluation(self, model: ModelBase, rewriting, people, candidate_list):
+    def privacy_selection_evaluation(self, model: ModelBase, rewriting, original_text, people, candidate_list):
         return generic_privacy_selection_evaluation(
             model=model,
             curr_rewriting=rewriting,
+            original_text=original_text,
             people=people,
             candidate_list=candidate_list,
             general_system_instruction=GENERAL_SYSTEM_INSTRUCTION,

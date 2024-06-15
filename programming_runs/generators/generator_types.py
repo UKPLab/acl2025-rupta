@@ -41,6 +41,7 @@ class Generator:
             self,
             input_text: str,
             label: str,
+            people,
             act_model: ModelBase,
             parser_model: ModelBase,
             strategy: str,
@@ -71,5 +72,5 @@ class Generator:
         ...
 
     @abstractmethod
-    def privacy_selection_evaluation(self, model: ModelBase, rewriting, people, candidate_list):
+    def privacy_selection_evaluation(self, model: ModelBase, rewriting, original_text, people, candidate_list):
         ...

@@ -33,19 +33,49 @@ def run_test_acc(
     result = {}
 
     for i, item in enumerate_resume(tqdm.tqdm(dataset), log_path):
-        privacy_confidence_evaluation = gen.privacy_confidence_evaluation(model, item['anonymized_text'], item['people'])
+        if language == 'wiki':
+            anonymized_text = item['anonymized_text']
+            original_text = item['text']
+            people = item['people']
+        elif language == 'reddit':
+            anonymized_text = item['anonymized_response']
+            original_text = item['response']
+            people = {item['feature']: item['personality'][item['feature']]}
+
+        privacy_confidence_evaluation = gen.privacy_confidence_evaluation(model, anonymized_text, people)
         confidence_score = int(privacy_confidence_evaluation["Confidence Score"])
         confidence_score_list.append(confidence_score)
 
-        if "candidate_list" in item.keys():
-            candidate_list = item['candidate_list']
-        else:
-            candidate_list = None
-        privacy_seletion_evaluation = gen.privacy_selection_evaluation(model, item['anonymized_text'], item['people'],
-                                                                      candidate_list)
-        if "candidate_list" not in item.keys():
-            candidate_list_list.append(privacy_seletion_evaluation["candidate_list"])
-        if privacy_seletion_evaluation["success"]:
+        if language == 'wiki':
+            if "candidate_list" in item.keys():
+                candidate_list = item['candidate_list']
+            else:
+                candidate_list = None
+            privacy_selection_evaluation = gen.privacy_selection_evaluation(model, anonymized_text, original_text, people,
+                                                                            candidate_list)
+            if "candidate_list" not in item.keys():
+                candidate_list_list.append(privacy_selection_evaluation["candidate_list"])
+        elif language == 'reddit':
+            feature = list(people.keys())[0]
+            if feature in ['age', 'city_country', 'birth_city_country', 'education', 'relationship_status']:
+                if "candidate_list" in item.keys():
+                    candidate_list = item['candidate_list']
+                else:
+                    candidate_list = None
+                privacy_selection_evaluation = gen.privacy_selection_evaluation(model, anonymized_text, original_text,
+                                                                                people,
+                                                                                candidate_list)
+                if "candidate_list" not in item.keys():
+                    candidate_list_list.append(privacy_selection_evaluation["candidate_list"])
+            else:
+                assert feature in ['sex', 'income_level']
+                candidate_list = None
+                privacy_selection_evaluation = gen.privacy_selection_evaluation(model, anonymized_text, original_text,
+                                                                                people,
+                                                                                candidate_list)
+                if "candidate_list" not in item.keys():
+                    candidate_list_list.append(['None'])
+        if privacy_selection_evaluation["success"]:
             num_success += 1
             success.append(True)
         else:
@@ -68,7 +98,7 @@ def run_test_acc(
     update_idx = sheet.getColumn(1).index('') + 1
     update_row = sheet.getRow(update_idx)
 
-    name2column = {'gpt-35-turbo-0301': 7, 'gpt-4': 1, 'gpt4-turbo-128k': 4, 'gpt-4-turbo-preview': 4}
+    name2column = {'gpt-35-turbo-0301': 7, 'gpt-4': 1, 'gpt4-turbo-128k': 4, 'gpt-4-turbo-preview': 10}
 
     update_row[name2column[model.name]], update_row[name2column[model.name] + 1] = (model.prompt_tokens,
                                                                                     model.completion_tokens)

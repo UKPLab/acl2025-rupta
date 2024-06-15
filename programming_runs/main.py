@@ -105,7 +105,7 @@ def main(args):
 
     # get the dataset name
     # dataset_name = os.path.basename(args.dataset_path).replace(".jsonl", "")
-    dataset_name = os.path.dirname(args.dataset_path).replace("./benchmarks/", "")
+    dataset_name = args.language
 
     # check if log path already exists
     log_dir = str(os.path.join(args.root_dir, args.run_name))

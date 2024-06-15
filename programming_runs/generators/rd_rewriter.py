@@ -1,9 +1,8 @@
 from programming_runs.generators.model import ModelBase, message_to_str
 from .generator_types import Generator
 from .generator_utils import (generic_detection, generic_rewriting,
-                              generic_privacy_reflection, generic_utility_reflection,
-                              generic_privacy_selection_evaluation, generic_privacy_confidence_evaluation,
-                              reddit_clss, reddit_privacy_reflection)
+                              reddit_clss, reddit_privacy_reflection, reddit_privacy_confidence_evaluation,
+                              reddit_privacy_selection_evaluation, reddit_utility_reflection)
 
 from typing import Optional, List, Union
 import ast
@@ -27,6 +26,8 @@ class RDReWriter(Generator):
     def rewrite(
             self,
             input_text: str,
+            label: str,
+            people,
             act_model: ModelBase,
             parser_model: ModelBase,
             strategy: str,
@@ -44,6 +45,8 @@ class RDReWriter(Generator):
     ):
         return generic_rewriting(
             input_text=input_text,
+            label=label,
+            people=people,
             model=act_model,
             parser_model=parser_model,
             strategy=strategy,
@@ -64,7 +67,8 @@ class RDReWriter(Generator):
             simple_rewriting_instruction=SIMPLE_REWRITING_INSTRUCTION,
             simple_rewriting_instruction_cot=SIMPLE_REWRITING_INSTRUCTION_COT,
             reflection_privacy_rewriting_instruction=REFELECTION_PRIVACY_REWRITING_INSTRUCTION,
-            reinforcement_learning_instruction=REINFORCEMENT_INSTRUCTION
+            reinforcement_learning_instruction=REINFORCEMENT_INSTRUCTION,
+            language='reddit'
         )
 
     def privacy_reflex(self, model: ModelBase, rewriting, people, p_threshold, no_utility, retriever):
@@ -83,7 +87,7 @@ class RDReWriter(Generator):
         )
 
     def utility_reflex(self, input_text: str, model: ModelBase, rewriting, label, privacy_score):
-        return generic_utility_reflection(
+        return reddit_utility_reflection(
             input_text=input_text,
             model=model,
             label=label,
@@ -95,7 +99,7 @@ class RDReWriter(Generator):
         )
 
     def privacy_confidence_evaluation(self, model: ModelBase, rewriting, people):
-        return generic_privacy_confidence_evaluation(
+        return reddit_privacy_confidence_evaluation(
             model=model,
             curr_rewriting=rewriting,
             people=people,
@@ -103,15 +107,17 @@ class RDReWriter(Generator):
             privacy_confidence_evaluation_instruction=PRIVACY_EVALUATION_CONFIDENCE_INSTRUCTION
         )
 
-    def privacy_selection_evaluation(self, model: ModelBase, rewriting, people, candidate_list):
-        return generic_privacy_selection_evaluation(
+    def privacy_selection_evaluation(self, model: ModelBase, rewriting, original_text, people, candidate_list):
+        return reddit_privacy_selection_evaluation(
             model=model,
             curr_rewriting=rewriting,
+            original_text=original_text,
             people=people,
             candidate_list=candidate_list,
             general_system_instruction=GENERAL_SYSTEM_INSTRUCTION,
             candidate_generation_instruction=PRIVACY_EVALUATION_SELECTION_INSTRUCTION_1,
-            privacy_selection_evaluation_instruction=PRIVACY_EVALUATION_SELECTION_INSTRUCTION_2
+            privacy_selection_evaluation_instruction=PRIVACY_EVALUATION_SELECTION_INSTRUCTION_2,
+            privacy_cat_selection_evaluation_instruction=PRIVACY_EVALUATION_SELECTION_INSTRUCTION_3,
         )
 
     def clssification(self, model: ModelBase, comment):
