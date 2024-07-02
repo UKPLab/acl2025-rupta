@@ -1,111 +1,0 @@
-/mnt/beegfs/work/yang/dpo/lib64/python3.9/site-packages/requests/__init__.py:109: RequestsDependencyWarning: urllib3 (2.2.1) or chardet (None)/charset_normalizer (2.1.1) doesn't match a supported version!
-  warnings.warn(
-`low_cpu_mem_usage` was None, now set to True since model is quantized.
-Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:12<00:12, 12.81s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:20<00:00,  9.55s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:20<00:00, 10.04s/it]
-`low_cpu_mem_usage` was None, now set to True since model is quantized.
-Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:13<00:13, 13.28s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:20<00:00,  9.88s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:20<00:00, 10.39s/it]
-You are using the default legacy behaviour of the <class 'transformers.models.llama.tokenization_llama_fast.LlamaTokenizerFast'>. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thoroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565
-Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-Found max lenth: 4096
-Map:   0%|          | 0/1984 [00:00<?, ? examples/s]Map: 100%|██████████| 1984/1984 [00:00<00:00, 69645.88 examples/s]
-Map:   0%|          | 0/249 [00:00<?, ? examples/s]Map: 100%|██████████| 249/249 [00:00<00:00, 55936.03 examples/s]
-/mnt/beegfs/work/yang/dpo/lib64/python3.9/site-packages/transformers/training_args.py:1474: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
-  warnings.warn(
-Parameter 'function'=<bound method DPOTrainer.tokenize_row of <trl.trainer.dpo_trainer.DPOTrainer object at 0x7fa482c13130>> of the transform datasets.arrow_dataset.Dataset._map_single couldn't be hashed properly, a random hash was used instead. Make sure your transforms and parameters are serializable with pickle or dill for the dataset fingerprinting and caching to work. If you reuse this transform, the caching mechanism will consider it to be different from the previous calls and recompute everything. This warning is only showed once. Subsequent hashing failures won't be showed.
-trainable params: 25165824 || all params: 2033980416 || trainables%: 1.2372697299362787
-Map:   0%|          | 0/1984 [00:00<?, ? examples/s]Map:   1%|▏         | 27/1984 [00:00<00:07, 259.91 examples/s]Map:   3%|▎         | 58/1984 [00:00<00:06, 279.24 examples/s]Map:   5%|▍         | 95/1984 [00:00<00:05, 315.25 examples/s]Map:   6%|▋         | 127/1984 [00:00<00:05, 315.26 examples/s]Map:   9%|▊         | 173/1984 [00:00<00:05, 304.22 examples/s]Map:  11%|█         | 222/1984 [00:00<00:05, 309.93 examples/s]Map:  14%|█▎        | 269/1984 [00:00<00:05, 308.22 examples/s]Map:  16%|█▌        | 313/1984 [00:01<00:05, 300.47 examples/s]Map:  18%|█▊        | 353/1984 [00:01<00:05, 322.34 examples/s]Map:  20%|█▉        | 392/1984 [00:01<00:04, 337.07 examples/s]Map:  22%|██▏       | 430/1984 [00:01<00:04, 346.34 examples/s]Map:  24%|██▍       | 482/1984 [00:01<00:04, 340.46 examples/s]Map:  26%|██▌       | 517/1984 [00:01<00:04, 341.80 examples/s]Map:  28%|██▊       | 556/1984 [00:01<00:04, 352.24 examples/s]Map:  30%|██▉       | 594/1984 [00:01<00:03, 353.28 examples/s]Map:  32%|███▏      | 642/1984 [00:01<00:03, 338.37 examples/s]Map:  35%|███▍      | 688/1984 [00:02<00:04, 322.48 examples/s]Map:  37%|███▋      | 735/1984 [00:02<00:03, 316.42 examples/s]Map:  39%|███▉      | 773/1984 [00:02<00:03, 329.13 examples/s]Map:  41%|████▏     | 823/1984 [00:02<00:03, 324.65 examples/s]Map:  43%|████▎     | 858/1984 [00:02<00:03, 328.54 examples/s]Map:  46%|████▌     | 904/1984 [00:02<00:03, 315.98 examples/s]Map:  47%|████▋     | 941/1984 [00:02<00:03, 327.13 examples/s]Map:  49%|████▉     | 979/1984 [00:03<00:03, 332.34 examples/s]Map:  51%|█████▏    | 1021/1984 [00:03<00:05, 166.14 examples/s]Map:  53%|█████▎    | 1060/1984 [00:03<00:04, 198.04 examples/s]Map:  55%|█████▌    | 1093/1984 [00:03<00:04, 220.55 examples/s]Map:  57%|█████▋    | 1128/1984 [00:03<00:03, 244.94 examples/s]Map:  59%|█████▊    | 1162/1984 [00:03<00:03, 262.59 examples/s]Map:  61%|██████    | 1211/1984 [00:04<00:02, 280.68 examples/s]Map:  63%|██████▎   | 1248/1984 [00:04<00:02, 299.44 examples/s]Map:  66%|██████▌   | 1301/1984 [00:04<00:02, 310.33 examples/s]Map:  67%|██████▋   | 1337/1984 [00:04<00:02, 319.56 examples/s]Map:  70%|███████   | 1390/1984 [00:04<00:01, 328.87 examples/s]Map:  73%|███████▎  | 1442/1984 [00:04<00:01, 330.40 examples/s]Map:  75%|███████▌  | 1495/1984 [00:04<00:01, 332.91 examples/s]Map:  78%|███████▊  | 1546/1984 [00:05<00:01, 331.84 examples/s]Map:  80%|████████  | 1589/1984 [00:05<00:01, 315.72 examples/s]Map:  82%|████████▏ | 1625/1984 [00:05<00:01, 324.21 examples/s]Map:  84%|████████▍ | 1665/1984 [00:05<00:00, 340.27 examples/s]Map:  86%|████████▌ | 1703/1984 [00:05<00:00, 347.03 examples/s]Map:  88%|████████▊ | 1742/1984 [00:05<00:00, 356.00 examples/s]Map:  90%|█████████ | 1787/1984 [00:05<00:00, 333.31 examples/s]Map:  93%|█████████▎| 1836/1984 [00:05<00:00, 325.96 examples/s]Map:  94%|█████████▍| 1874/1984 [00:06<00:00, 337.70 examples/s]Map:  97%|█████████▋| 1927/1984 [00:06<00:00, 338.58 examples/s]Map:  99%|█████████▉| 1967/1984 [00:06<00:00, 351.53 examples/s]Map: 100%|██████████| 1984/1984 [00:06<00:00, 288.28 examples/s]
-Map:   0%|          | 0/249 [00:00<?, ? examples/s]Map:  11%|█         | 28/249 [00:00<00:00, 276.50 examples/s]Map:  24%|██▍       | 60/249 [00:00<00:00, 289.81 examples/s]Map:  37%|███▋      | 93/249 [00:00<00:00, 298.49 examples/s]Map:  50%|█████     | 125/249 [00:00<00:00, 302.15 examples/s]Map:  64%|██████▍   | 159/249 [00:00<00:00, 309.35 examples/s]Map:  78%|███████▊  | 194/249 [00:00<00:00, 320.60 examples/s]Map:  91%|█████████ | 227/249 [00:00<00:00, 320.69 examples/s]Map: 100%|██████████| 249/249 [00:00<00:00, 277.87 examples/s]
-Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-/mnt/beegfs/work/yang/dpo/lib64/python3.9/site-packages/requests/__init__.py:109: RequestsDependencyWarning: urllib3 (2.2.1) or chardet (None)/charset_normalizer (2.1.1) doesn't match a supported version!
-  warnings.warn(
-wandb: Currently logged in as: skyfishq (ukp-conv). Use `wandb login --relogin` to force relogin
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-wandb: Tracking run with wandb version 0.17.0
-wandb: Run data is saved locally in /mnt/beegfs/work/yang/LLM_Anonymization/programming_runs/wandb/run-20240523_120247-cqr3lfmd
-wandb: Run `wandb offline` to turn off syncing.
-wandb: Syncing run dpo_microsoft--phi-3-mini-4k-instruct_None_lr-0.0002_ep-15_bz-8-acc-4_lora-r-16-ap-32
-wandb: ⭐️ View project at https://wandb.ai/ukp-conv/Privacy-NLP
-wandb: 🚀 View run at https://wandb.ai/ukp-conv/Privacy-NLP/runs/cqr3lfmd
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-/mnt/beegfs/work/yang/dpo/lib64/python3.9/site-packages/peft/utils/save_and_load.py:195: UserWarning: Could not find a config file in /mnt/beegfs/work/yang/LLM_Anonymization/programming_runs/root/knowledge_distillation/sft/sft_microsoft--phi-3-mini-4k-instruct_Instruction_lr-0.0002_ep-15_bz-8-acc-4_lora-r-32-ap-64/final_merged_checkpoint - will assume that the vocabulary was not modified.
-  warnings.warn(
-  0%|          | 0/930 [00:00<?, ?it/s]You are not running the flash-attention implementation, expect numerical differences.
-Could not estimate the number of tokens of the input, floating-point operations will not be computed
-  0%|          | 1/930 [01:15<19:30:03, 75.57s/it]  0%|          | 2/930 [02:08<16:03:22, 62.29s/it]Traceback (most recent call last):
-  File "/ukp-storage-1/yang/LLM_Anonymization/programming_runs/knowledge_distillation/dpo_trainer.py", line 160, in <module>
-    dpo_trainer.train()
-  File "/mnt/beegfs/work/yang/dpo/lib64/python3.9/site-packages/transformers/trainer.py", line 1885, in train
-    return inner_training_loop(
-  File "/mnt/beegfs/work/yang/dpo/lib64/python3.9/site-packages/transformers/trainer.py", line 2216, in _inner_training_loop
-    tr_loss_step = self.training_step(model, inputs)
-  File "/mnt/beegfs/work/yang/dpo/lib64/python3.9/site-packages/transformers/trainer.py", line 3238, in training_step
-    loss = self.compute_loss(model, inputs)
-  File "/mnt/beegfs/work/yang/dpo/lib64/python3.9/site-packages/trl/trainer/dpo_trainer.py", line 1081, in compute_loss
-    loss, metrics = self.get_batch_loss_metrics(model, inputs, train_eval="train")
-  File "/mnt/beegfs/work/yang/dpo/lib64/python3.9/site-packages/trl/trainer/dpo_trainer.py", line 1044, in get_batch_loss_metrics
-    ) = self.concatenated_forward(self.ref_model, batch)
-  File "/mnt/beegfs/work/yang/dpo/lib64/python3.9/site-packages/trl/trainer/dpo_trainer.py", line 985, in concatenated_forward
-    all_logits = model(
-  File "/mnt/beegfs/work/yang/dpo/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
-    return forward_call(*args, **kwargs)
-  File "/mnt/beegfs/work/yang/dpo/lib64/python3.9/site-packages/accelerate/utils/operations.py", line 822, in forward
-    return model_forward(*args, **kwargs)
-  File "/mnt/beegfs/work/yang/dpo/lib64/python3.9/site-packages/accelerate/utils/operations.py", line 810, in __call__
-    return convert_to_fp32(self.model_forward(*args, **kwargs))
-  File "/mnt/beegfs/work/yang/dpo/lib64/python3.9/site-packages/torch/amp/autocast_mode.py", line 14, in decorate_autocast
-    return func(*args, **kwargs)
-  File "/mnt/beegfs/work/yang/dpo/lib64/python3.9/site-packages/accelerate/hooks.py", line 166, in new_forward
-    output = module._old_forward(*args, **kwargs)
-  File "/mnt/beegfs/work/yang/dpo/lib64/python3.9/site-packages/transformers/models/phi3/modeling_phi3.py", line 1253, in forward
-    outputs = self.model(
-  File "/mnt/beegfs/work/yang/dpo/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
-    return forward_call(*args, **kwargs)
-  File "/mnt/beegfs/work/yang/dpo/lib64/python3.9/site-packages/accelerate/hooks.py", line 166, in new_forward
-    output = module._old_forward(*args, **kwargs)
-  File "/mnt/beegfs/work/yang/dpo/lib64/python3.9/site-packages/transformers/models/phi3/modeling_phi3.py", line 1131, in forward
-    layer_outputs = decoder_layer(
-  File "/mnt/beegfs/work/yang/dpo/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
-    return forward_call(*args, **kwargs)
-  File "/mnt/beegfs/work/yang/dpo/lib64/python3.9/site-packages/accelerate/hooks.py", line 166, in new_forward
-    output = module._old_forward(*args, **kwargs)
-  File "/mnt/beegfs/work/yang/dpo/lib64/python3.9/site-packages/transformers/models/phi3/modeling_phi3.py", line 852, in forward
-    attn_outputs, self_attn_weights, present_key_value = self.self_attn(
-  File "/mnt/beegfs/work/yang/dpo/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
-    return forward_call(*args, **kwargs)
-  File "/mnt/beegfs/work/yang/dpo/lib64/python3.9/site-packages/accelerate/hooks.py", line 166, in new_forward
-    output = module._old_forward(*args, **kwargs)
-  File "/mnt/beegfs/work/yang/dpo/lib64/python3.9/site-packages/transformers/models/phi3/modeling_phi3.py", line 386, in forward
-    attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(value_states.dtype)
-  File "/mnt/beegfs/work/yang/dpo/lib64/python3.9/site-packages/torch/nn/functional.py", line 1845, in softmax
-    ret = input.softmax(dim, dtype=dtype)
-torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 6.84 GiB (GPU 0; 47.54 GiB total capacity; 29.33 GiB already allocated; 5.52 GiB free; 41.44 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
-wandb: - 96.413 MB of 96.434 MB uploadedwandb: \ 96.434 MB of 96.434 MB uploadedwandb: 🚀 View run dpo_microsoft--phi-3-mini-4k-instruct_None_lr-0.0002_ep-15_bz-8-acc-4_lora-r-16-ap-32 at: https://wandb.ai/ukp-conv/Privacy-NLP/runs/cqr3lfmd
-wandb: ⭐️ View project at: https://wandb.ai/ukp-conv/Privacy-NLP
-wandb: Synced 6 W&B file(s), 0 media file(s), 4 artifact file(s) and 0 other file(s)
-wandb: Find logs at: ./wandb/run-20240523_120247-cqr3lfmd/logs

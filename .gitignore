@@ -146,3 +146,9 @@ benchmarks/Reddit_synthetic/*
 !benchmarks/Reddit_synthetic/.gitkeep
 wandb/*
 slurm_output/*
+token-sheets.pickle
+token-drive.pickle
+credentials-sheets.json
+old_scripts/*
+kd_generation_results/*
+presidio/*
