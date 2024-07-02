@@ -1,4 +1,4 @@
-from programming_runs.generators.model import ModelBase, message_to_str
+from generators.model import ModelBase, message_to_str
 from .generator_types import Generator
 from .generator_utils import (generic_detection, generic_rewriting,
                               generic_privacy_reflection, generic_utility_reflection,
@@ -8,7 +8,7 @@ from typing import Optional, List, Union
 import ast
 import re
 import os
-from programming_runs.people_prompt import *
+from people_prompt import *
 
 
 class ReWriter(Generator):

@@ -1,0 +1,85 @@
+
+Starting run with the following parameters:
+strategy: test-acc
+pass@k: 1
+
+Loading the dataset...
+Loaded 50 examples
+  0%|          | 0/50 [00:00<?, ?it/s]completed 1/50: acc = 0.0
+  2%|▏         | 1/50 [00:17<14:17, 17.51s/it]completed 2/50: acc = 0.0
+  4%|▍         | 2/50 [00:27<10:36, 13.26s/it]completed 3/50: acc = 0.33
+  6%|▌         | 3/50 [00:35<08:16, 10.57s/it]completed 4/50: acc = 0.25
+  8%|▊         | 4/50 [00:51<09:53, 12.90s/it]completed 5/50: acc = 0.2
+ 10%|█         | 5/50 [00:58<08:03, 10.74s/it]completed 6/50: acc = 0.17
+ 12%|█▏        | 6/50 [01:05<06:57,  9.49s/it]completed 7/50: acc = 0.29
+ 14%|█▍        | 7/50 [01:13<06:31,  9.10s/it]completed 8/50: acc = 0.25
+ 16%|█▌        | 8/50 [01:31<08:09, 11.64s/it]completed 9/50: acc = 0.22
+ 18%|█▊        | 9/50 [01:46<08:52, 12.98s/it]completed 10/50: acc = 0.2
+ 20%|██        | 10/50 [01:56<07:56, 11.90s/it]completed 11/50: acc = 0.18
+ 22%|██▏       | 11/50 [02:05<07:14, 11.13s/it]completed 12/50: acc = 0.25
+ 24%|██▍       | 12/50 [02:15<06:44, 10.64s/it]completed 13/50: acc = 0.31
+ 26%|██▌       | 13/50 [02:21<05:45,  9.35s/it]completed 14/50: acc = 0.36
+ 28%|██▊       | 14/50 [02:38<07:02, 11.74s/it]completed 15/50: acc = 0.33
+ 30%|███       | 15/50 [02:45<05:52, 10.07s/it]completed 16/50: acc = 0.31
+ 32%|███▏      | 16/50 [02:56<05:52, 10.38s/it]completed 17/50: acc = 0.35
+ 34%|███▍      | 17/50 [03:02<05:01,  9.13s/it]completed 18/50: acc = 0.33
+ 36%|███▌      | 18/50 [03:09<04:31,  8.50s/it]completed 19/50: acc = 0.32
+ 38%|███▊      | 19/50 [03:18<04:26,  8.60s/it]completed 20/50: acc = 0.3
+ 40%|████      | 20/50 [03:27<04:22,  8.76s/it]completed 21/50: acc = 0.29
+ 42%|████▏     | 21/50 [03:38<04:32,  9.38s/it]completed 22/50: acc = 0.27
+ 44%|████▍     | 22/50 [03:46<04:12,  9.01s/it]completed 23/50: acc = 0.3
+ 46%|████▌     | 23/50 [03:55<04:01,  8.96s/it]completed 24/50: acc = 0.33
+ 48%|████▊     | 24/50 [04:01<03:28,  8.01s/it]completed 25/50: acc = 0.36
+ 50%|█████     | 25/50 [04:08<03:18,  7.95s/it]completed 26/50: acc = 0.38
+ 52%|█████▏    | 26/50 [04:19<03:32,  8.84s/it]completed 27/50: acc = 0.37
+ 54%|█████▍    | 27/50 [04:29<03:27,  9.02s/it]completed 28/50: acc = 0.36
+ 56%|█████▌    | 28/50 [04:46<04:11, 11.44s/it]completed 29/50: acc = 0.34
+ 58%|█████▊    | 29/50 [04:53<03:34, 10.20s/it]completed 30/50: acc = 0.37
+ 60%|██████    | 30/50 [05:00<03:01,  9.06s/it]completed 31/50: acc = 0.35
+ 62%|██████▏   | 31/50 [05:06<02:36,  8.23s/it]completed 32/50: acc = 0.34
+ 64%|██████▍   | 32/50 [05:13<02:22,  7.93s/it]completed 33/50: acc = 0.36
+ 66%|██████▌   | 33/50 [05:20<02:11,  7.74s/it]completed 34/50: acc = 0.35
+ 68%|██████▊   | 34/50 [05:28<02:04,  7.77s/it]completed 35/50: acc = 0.37
+ 70%|███████   | 35/50 [05:33<01:41,  6.75s/it]completed 36/50: acc = 0.36
+ 72%|███████▏  | 36/50 [05:39<01:32,  6.61s/it]completed 37/50: acc = 0.38
+ 74%|███████▍  | 37/50 [05:44<01:19,  6.12s/it]completed 38/50: acc = 0.37
+ 76%|███████▌  | 38/50 [05:52<01:19,  6.63s/it]completed 39/50: acc = 0.38
+ 78%|███████▊  | 39/50 [06:00<01:18,  7.17s/it]completed 40/50: acc = 0.38
+ 80%|████████  | 40/50 [06:09<01:16,  7.67s/it]completed 41/50: acc = 0.39
+ 82%|████████▏ | 41/50 [06:18<01:12,  8.10s/it]completed 42/50: acc = 0.4
+ 84%|████████▍ | 42/50 [06:23<00:58,  7.27s/it]completed 43/50: acc = 0.42
+ 86%|████████▌ | 43/50 [06:31<00:51,  7.32s/it]completed 44/50: acc = 0.41
+ 88%|████████▊ | 44/50 [06:37<00:41,  6.85s/it]completed 45/50: acc = 0.42
+ 90%|█████████ | 45/50 [06:52<00:46,  9.38s/it]completed 46/50: acc = 0.41
+ 92%|█████████▏| 46/50 [06:58<00:33,  8.41s/it]completed 47/50: acc = 0.4
+ 94%|█████████▍| 47/50 [07:09<00:28,  9.34s/it]completed 48/50: acc = 0.42
+ 96%|█████████▌| 48/50 [07:19<00:18,  9.36s/it]completed 49/50: acc = 0.43
+ 98%|█████████▊| 49/50 [07:26<00:08,  8.64s/it]completed 50/50: acc = 0.44
+100%|██████████| 50/50 [07:34<00:00,  8.41s/it]100%|██████████| 50/50 [07:34<00:00,  9.08s/it]
+*******gpt4-turbo-128k*******
+Prompt tokens number: 47192
+Completion tokens number: 7946. Full price: 0.7102999999999999
+
+
+log path: root/evaluate_reflexion_reddit_gpt4_u_preview_sample3/reddit_test-acc_evaluate_reflexion_reddit_gpt4_u_preview_sample3_5_act_meta-llama-Llama-2-70b-chat-hf_pe_gpt4-turbo-128k_ue_gpt4-turbo-128k_parser_gpt-35-turbo-0301_pass_at_k_1_reddit_no-utility_False_COT_False_p-threshold_3_mem-len_3.jsonl
+
+Traceback (most recent call last):
+  File "/ukp-storage-1/yang/LLM_Anonymization/main.py", line 174, in <module>
+    main(args)
+  File "/ukp-storage-1/yang/LLM_Anonymization/main.py", line 147, in main
+    run_strategy(
+  File "/ukp-storage-1/yang/LLM_Anonymization/main.py", line 71, in kwargs_wrapper
+    return func(**kwargs)
+  File "/mnt/beegfs/work/yang/LLM_Anonymization/test_acc.py", line 96, in run_test_acc
+    ss = ezsheets.Spreadsheet('1-uHO5DnE32WmImaucvHaVMvasO2mGh2eqWfWYksXljI')
+  File "/mnt/beegfs/work/yang/reflexion/lib64/python3.9/site-packages/ezsheets/__init__.py", line 189, in __init__
+    init()  # Initialize this module if not done so already.
+  File "/mnt/beegfs/work/yang/reflexion/lib64/python3.9/site-packages/ezsheets/__init__.py", line 1768, in init
+    creds.refresh(Request())
+  File "/mnt/beegfs/work/yang/reflexion/lib64/python3.9/site-packages/google/oauth2/credentials.py", line 431, in refresh
+    ) = reauth.refresh_grant(
+  File "/mnt/beegfs/work/yang/reflexion/lib64/python3.9/site-packages/google/oauth2/reauth.py", line 365, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File "/mnt/beegfs/work/yang/reflexion/lib64/python3.9/site-packages/google/oauth2/_client.py", line 72, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Bad Request', {'error': 'invalid_grant', 'error_description': 'Bad Request'})

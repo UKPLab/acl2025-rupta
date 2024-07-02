@@ -1,4 +1,4 @@
-from programming_runs.generators.model import ModelBase, message_to_str
+from generators.model import ModelBase, message_to_str
 from .generator_types import Generator
 from .generator_utils import (generic_detection, generic_rewriting,
                               reddit_clss, reddit_privacy_reflection, reddit_privacy_confidence_evaluation,
@@ -8,7 +8,7 @@ from typing import Optional, List, Union
 import ast
 import re
 import os
-from programming_runs.reddit_prompt import *
+from reddit_prompt import *
 
 
 class RDReWriter(Generator):

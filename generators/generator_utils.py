@@ -1,6 +1,6 @@
 import copy
 
-from programming_runs.generators.model import ModelBase, Message
+from generators.model import ModelBase, Message
 import random
 import json
 from sentence_transformers import SentenceTransformer

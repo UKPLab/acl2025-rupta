@@ -1,0 +1,1 @@
+slurmstepd: error: *** JOB 96604 ON melvin CANCELLED AT 2024-06-26T11:43:53 ***

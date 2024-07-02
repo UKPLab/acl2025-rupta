@@ -12,7 +12,7 @@ from openai import OpenAI
 from openai import AzureOpenAI
 from langchain_openai import AzureChatOpenAI
 from langchain_openai import ChatOpenAI
-import programming_runs.credentials as credentials
+import credentials as credentials
 
 MessageRole = Literal["system", "user", "assistant"]
 
