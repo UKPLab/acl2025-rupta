@@ -152,3 +152,4 @@ credentials-sheets.json
 old_scripts/*
 kd_generation_results/*
 presidio/*
+credentials/*
