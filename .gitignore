@@ -135,6 +135,10 @@ scratch/
 
 .DS_Store/
 root/*
+!root/.gitkeep
 benchmarks/*
+!benchmarks/.gitkeep
+!benchmarks/Wiki_People/.gitkeep
+!benchmarks/Reddit_synthetic/.gitkeep
 wandb/*
 slurm_output/*
