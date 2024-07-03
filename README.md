@@ -1,14 +1,10 @@
-<p  align="center">
-  <img src='logo.png' width='200'>
-</p>
 
 # Robust Utility-Preserving Text Anonymization Based on Large Language Models
-[![Arxiv](https://img.shields.io/badge/Arxiv-YYMM.NNNNN-red?style=flat-square&logo=arxiv&logoColor=white)](https://put-here-your-paper.com)
-[![License](https://img.shields.io/github/license/UKPLab/ukp-project-template)](https://opensource.org/licenses/Apache-2.0)
-[![Python Versions](https://img.shields.io/badge/Python-3.9-blue.svg?style=flat&logo=python&logoColor=white)](https://www.python.org/)
-[![CI](https://github.com/UKPLab/ukp-project-template/actions/workflows/main.yml/badge.svg)](https://github.com/UKPLab/ukp-project-template/actions/workflows/main.yml)
+[![Arxiv](https://img.shields.io/badge/Arxiv-YYMM.NNNNN-red?style=flat-square&logo=arxiv&logoColor=white)](https://put-here-your-paper.com)[![License](https://img.shields.io/github/license/UKPLab/ukp-project-template)](https://opensource.org/licenses/Apache-2.0)[![Python Versions](https://img.shields.io/badge/Python-3.9-blue.svg?style=flat&logo=python&logoColor=white)](https://www.python.org/)
 
-This is the official code of the paper "Robust Utility-Preserving Text Anonymization Based on Large Language Models".
+![image-20240703122437612](https://s2.loli.net/2024/07/03/hVt2FYrJ5CDTp4g.png)
+
+This is the official code of the paper "Robust Utility-Preserving Text Anonymization Based on Large Language Models". It contains the needed data and  the implementation of the RUPTA anonymization method, the evaluation method of disclosure risk and information loss and the necessary code to implement the knowledge distillation experiment. 
 
 > **Abstract:** Text anonymization is crucial for sharing sensitive data while maintaining privacy. Existing techniques face the emerging challenges of re-identification attack ability of Large Language Models (LLMs), which have shown advanced capability in memorizing detailed information and patterns as well as connecting disparate pieces of information. In defending against LLM-based re-identification attacks, anonymization could jeopardize the utility of the resulting anonymized data in downstream tasks---the trade-off between privacy and data utility requires deeper understanding within the context of LLMs. This paper proposes a framework composed of three LLM-based components---a privacy evaluator, a utility evaluator, and an optimization component, which work collaboratively to perform anonymization. To provide a practical model for large-scale and real-time environments, we distill the anonymization capabilities into a lightweight model using Direct Preference Optimization (DPO).
 
@@ -24,17 +20,19 @@ Don't hesitate to send us an e-mail or report an issue, if something is broken (
 ### Dataset
 
 1. Download [DB-Bio](https://drive.google.com/file/d/1oXWI2mh_mkrs2bZs4riGgbYbQoA9RNzD/view?usp=sharing) dataset and put data files into `./benchmarks/Wiki_People`
-2. Download the split [PersonalReddit]() dataset and put data files into `./benchmarks/Reddit_synthetic`
+2. Download the split [PersonalReddit](https://drive.google.com/file/d/1Z6Xs6zgsn7tkdcW5SElRzbSqUhZFLjwX/view?usp=sharing) dataset and put data files into `./benchmarks/Reddit_synthetic`
 
 
 ### Environment
 ```bash
 python -m venv rupta
-source .venv/bin/activate
-pip install requirements.txt
+source ./rupta/bin/activate
+pip install -r requirements.txt
 ```
 ## Usage
 ### Anonymise
+
+This is the script to perform the RUPTA anonymization method proposed in this paper.
 
 - DB-bio dataset
 
@@ -49,6 +47,8 @@ pip install requirements.txt
   ```
 
 ### Disclosure Risk Evaluation
+
+This is the script to evaluate the disclosure risk of the anonymized text.
 
 - DB-bio dataset
 
@@ -67,6 +67,8 @@ pip install requirements.txt
     ```
 
 ### Information Loss Evaluation
+
+This is the script to evaluate the information loss of the anonymized text.
 
 - DB-bio dataset
 
@@ -89,6 +91,8 @@ pip install requirements.txt
     ```
 
 ### Knowledge Distillation
+
+This is how you can distill the anonymization ability of GPT-4 on the DB-bio dataset into smaller model. The anonymization result of GPT-4 Is provided in the DB-bio dataset directory.
 
 1. Set the wandb
 
@@ -125,7 +129,7 @@ pip install requirements.txt
 
 ## Reference
 
-The code in this project refers to the code in the following repository: 
+The code implementation in this project refers to some of the code in the following repositories: 
 
 1. [Reflexion](https://github.com/noahshinn/reflexion/tree/main/programming_runs)
 2. [llama2-fine-tune](https://github.com/mzbac/llama2-fine-tune/tree/master)
