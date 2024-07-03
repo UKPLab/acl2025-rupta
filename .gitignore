@@ -153,3 +153,5 @@ old_scripts/*
 kd_generation_results/*
 presidio/*
 credentials/*
+executors/*
+human-eval/*

@@ -23,89 +23,124 @@ Don't hesitate to send us an e-mail or report an issue, if something is broken (
 ## Getting Started
 ### Dataset
 
+1. Download [DB-Bio](https://drive.google.com/file/d/1oXWI2mh_mkrs2bZs4riGgbYbQoA9RNzD/view?usp=sharing) dataset and put data files into `./benchmarks/Wiki_People`
+2. Download the split [PersonalReddit]() dataset and put data files into `./benchmarks/Reddit_synthetic`
+
 
 ### Environment
-If you want to set up this template:
-
-1. Request a repository on UKP Lab's GitHub by following the standard procedure on the wiki. It will install the template directly. Alternatively, set it up in your personal GitHub account by clicking **[Use this template](https://github.com/rochacbruno/python-project-template/generate)**.
-2. Wait until the first run of CI finishes. Github Actions will commit to your new repo with a "✅ Ready to clone and code" message.
-3. Delete optional files: 
-    - If you don't need automatic documentation generation, you can delete folder `docs`, file `.github\workflows\docs.yml` and `mkdocs.yml`
-    - If you don't want automatic testing, you can delete folder `tests` and file `.github\workflows\tests.yml`
-4. Prepare a virtual environment:
 ```bash
-python -m venv .venv
+python -m venv rupta
 source .venv/bin/activate
-pip install .
-pip install -r requirements-dev.txt # Only needed for development
+pip install requirements.txt
 ```
-5. Adapt anything else (for example this file) to your project. 
-
-6. Read the file [ABOUT_THIS_TEMPLATE.md](ABOUT_THIS_TEMPLATE.md)  for more information about development.
-
 ## Usage
+### Anonymise
 
-### Using the classes
+- DB-bio dataset
 
-To import classes/methods of `ukp_project_template` from inside the package itself you can use relative imports: 
+  ```shell
+  python main.py --run_name test_dbbio --root_dir root --dataset_path ./benchmarks/Wiki_People/test.jsonl --strategy reflexion --language wiki --pass_at_k 1 --max_iters 5 --verbose --p_threshold 10 --mem 3 --pe_model gpt4-turbo-128k --ue_model gpt4-turbo-128k --act_model gpt4-turbo-128k --parser_model gpt4-turbo-128k
+  ```
 
-```py
-from .base import BaseClass # Notice how I omit the package name
+- PersonalReddit dataset
 
-BaseClass().something()
-```
+  ```shell
+  python main.py --run_name test_personalreddit --root_dir root --dataset_path ./benchmarks/Reddit_synthetic/test.jsonl --strategy reflexion --language reddit --pass_at_k 1 --max_iters 5 --verbose --p_threshold 3 --mem 3 --pe_model gpt4-turbo-128k --ue_model gpt4-turbo-128k --act_model gpt4-turbo-128k --parser_model gpt4-turbo-128k
+  ```
 
-To import classes/methods from outside the package (e.g. when you want to use the package in some other project) you can instead refer to the package name:
+### Disclosure Risk Evaluation
 
-```py
-from ukp_project_template import BaseClass # Notice how I omit the file name
-from ukp_project_template.subpackage import SubPackageClass # Here it's necessary because it's a subpackage
+- DB-bio dataset
 
-BaseClass().something()
-SubPackageClass().something()
-```
+  - Prepare the data file to be evaluated following the examples in `./examples/db_bio_example.jsonl`
 
-### Using scripts
+  - ```shell
+    python main.py --run_name privacy_evaluation_dbbio --root_dir root --dataset_path ./examples/db_bio_example.jsonl --strategy test-acc --language wiki --pe_model gpt4-turbo-128k --pass_at_k 1 --max_iters 5 --verbose --p_threshold 10 --mem 3 --act_model meta-llama/Llama-2-70b-chat-hf --parser_model gpt-35-turbo-0301 --ue_model gpt4-turbo-128k
+    ```
 
-This is how you can use `ukp_project_template` from command line:
+- PersonalReddit dataset
 
-```bash
-$ python -m ukp_project_template
-```
+  - Prepare the data file to be evaluated following the examples in `./examples/personalreddit_example.jsonl`
 
-### Expected results
+  - ```shell
+    python main.py --run_name privacy_evaluation_dbbio --root_dir root --dataset_path ./examples/personalreddit_example.jsonl --strategy test-acc --language reddit --pe_model gpt4-turbo-128k --pass_at_k 1 --max_iters 5 --verbose --p_threshold 10 --mem 3 --act_model meta-llama/Llama-2-70b-chat-hf --parser_model gpt-35-turbo-0301 --ue_model gpt4-turbo-128k
+    ```
 
-After running the experiments, you should expect the following results:
+### Information Loss Evaluation
 
-(Feel free to describe your expected results here...)
+- DB-bio dataset
 
-### Parameter description
+  - Prepare the data file to be evaluated following the examples in `./examples/db_bio_example.jsonl`
 
-* `x, --xxxx`: This parameter does something nice
+  - [Download the classifier](https://drive.google.com/file/d/1DqG9wUa0q6-qz-SR2pzxB9QVMmez4teU/view?usp=sharing) and put the directory of the trained parameter into the directory `./root`
 
-* ...
+  - ```shell
+    python run_classification.py --model_name_or_path ./root/bert_cls_sampled3 --train_file ./examples/db_bio_example.jsonl --validation_file ./examples/db_bio_example.jsonl --test_file ./examples/db_bio_example.jsonl --shuffle_train_dataset --metric_name accuracy --text_column_name anonymized_text --label_column_name label --do_eval --do_predict --max_seq_length 512 --per_device_train_batch_size 32 --learning_rate 2e-5 --num_train_epochs 20 --output_dir ./root/bert_cls_sampled3/evaluation_test_original --report_to wandb --run_name lr2e-5_B32 --logging_steps 10 --eval_steps 100 --save_steps 100 --load_best_model_at_end --evaluation_strategy steps
+    ```
 
-* `z, --zzzz`: This parameter does something even nicer
+- PersonalReddit dataset
 
-## Development
+  - Prepare the data file to be evaluated following the examples in `./examples/personalreddit_example.jsonl`
 
-Read the FAQs in [ABOUT_THIS_TEMPLATE.md](ABOUT_THIS_TEMPLATE.md) to learn more about how this template works and where you should put your classes & methods. Make sure you've correctly installed `requirements-dev.txt` dependencies
+  - [Download the classifier](https://drive.google.com/file/d/1g8ri2VRQCsN489YruPtNG0lgNtAZ8IaI/view?usp=sharing) and put the directory of the trained parameter into the directory `./root`
+
+  - ```shell
+    python run_classification.py --model_name_or_path ./root/roberta-large_reddit_clss_b16_e20 --train_file ./examples/personalreddit_example.jsonl --validation_file ./examples/personalreddit_example.jsonl --test_file ./examples/personalreddit_example.jsonl --shuffle_train_dataset --metric_name accuracy --text_column_name anonymized_response --label_column_name label --do_eval --do_predict --max_seq_length 512 --per_device_train_batch_size 32 --learning_rate 2e-5 --num_train_epochs 20 --output_dir ./root/roberta-large_reddit_clss_b16_e20/evaluation_test_original --report_to wandb --run_name lr2e-5_B32 --logging_steps 10 --eval_steps 100 --save_steps 100 --load_best_model_at_end --evaluation_strategy steps
+    ```
+
+### Knowledge Distillation
+
+1. Set the wandb
+
+   ```shell
+   export WANDB_PROJECT=Privacy-NLP
+   export WANDB_API_KEY=
+   ```
+
+2. Set the path of necessary files in the `sft_trainer.py`, `merge_peft_adapters.py`, `dpo_trainer.py`, `generate.py`.
+
+3. SFT phase
+
+   ```shell
+   python ./knowledge_distillation/sft_trainer.py
+   ```
+
+4. Merge the trained PEFT modules with the original model
+
+   ```shell
+   python ./merge_peft_adapters.py
+   ```
+
+5. DPO phase
+
+   ```shell
+   python ./knowledge_distillation/dpo_trainer.py
+   ```
+
+6. Generate anonymized text
+
+   ```shell
+   python ./knowledge_distillation/generate.py
+   ```
+
+## Reference
+
+The code in this project refers to the code in the following repository: 
+
+1. [Reflexion](https://github.com/noahshinn/reflexion/tree/main/programming_runs)
+2. [llama2-fine-tune](https://github.com/mzbac/llama2-fine-tune/tree/master)
+
 
 ## Cite
 
 Please use the following citation:
 
 ```
-@InProceedings{smith:20xx:CONFERENCE_TITLE,
-  author    = {Smith, John},
-  title     = {My Paper Title},
-  booktitle = {Proceedings of the 20XX Conference on XXXX},
-  month     = mmm,
-  year      = {20xx},
-  address   = {Gotham City, USA},
-  publisher = {Association for XXX},
-  pages     = {XXXX--XXXX},
-  url       = {http://xxxx.xxx}
+@article{xxxxx,
+  title={Robust Utility-Preserving Text Anonymization Based on Large Language Models},
+  author={Yang, Tianyu and Zhu, Xiaodan and Gurevych, Iryna},
+  journal={arXiv preprint arXiv:xxxx},
+  year={2024}
 }
 ```
 

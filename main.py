@@ -43,9 +43,9 @@ def get_args():
                         help="The maximum length of memory", default=3)
     parser.add_argument("--p_threshold", type=int,
                         help="The maximum number of distinguishable people", default=10)
-    parser.add_argument("--rag_data_path", type=str,
+    parser.add_argument("--rag_data_path", type=str, default="./benchmarks/Wiki_People/All_data_for_retrieval.jsonl",
                         help="The path of rag data")
-    parser.add_argument("--rag_embed_cache_dir", type=str,
+    parser.add_argument("--rag_embed_cache_dir", type=str, default="/home/ember/Desktop/work_space/Anonymization_Experiments/cache_emb",
                         help="The embedding cache directory")
     parser.add_argument("--rag_num", type=int,
                         help="The maximum number of retrieved documents", default=5)
