@@ -19,8 +19,8 @@ Don't hesitate to send us an e-mail or report an issue, if something is broken (
 ## Getting Started
 ### Dataset
 
-1. Download [DB-Bio](https://drive.google.com/file/d/1oXWI2mh_mkrs2bZs4riGgbYbQoA9RNzD/view?usp=sharing) dataset and put data files into `./benchmarks/Wiki_People`
-2. Download the split [PersonalReddit](https://drive.google.com/file/d/1Z6Xs6zgsn7tkdcW5SElRzbSqUhZFLjwX/view?usp=sharing) dataset and put data files into `./benchmarks/Reddit_synthetic`
+1. Download [DB-Bio](https://drive.google.com/file/d/1oXWI2mh_mkrs2bZs4riGgbYbQoA9RNzD/view?usp=sharing) dataset and put data files into `./benchmarks/Wiki_People` (We sampled and processed the [original dataset](https://www.kaggle.com/datasets/danofer/dbpedia-classes ) to get it.).
+2. Download the split [PersonalReddit](https://drive.google.com/file/d/1Z6Xs6zgsn7tkdcW5SElRzbSqUhZFLjwX/view?usp=sharing) dataset and put data files into `./benchmarks/Reddit_synthetic` (We splited the original [PersonalReddit](https://github.com/eth-sri/llmprivacy/tree/main/data/synthetic) into train and test partitions).
 
 
 ### Environment
@@ -52,7 +52,7 @@ This is the script to evaluate the disclosure risk of the anonymized text.
 
 - DB-bio dataset
 
-  - Prepare the data file to be evaluated following the examples in `./examples/db_bio_example.jsonl`
+  - Prepare the data file to be evaluated following the examples in `./examples/db_bio_example.jsonl`.
 
   - ```shell
     python main.py --run_name privacy_evaluation_dbbio --root_dir root --dataset_path ./examples/db_bio_example.jsonl --strategy test-acc --language wiki --pe_model gpt4-turbo-128k --pass_at_k 1 --max_iters 5 --verbose --p_threshold 10 --mem 3 --act_model meta-llama/Llama-2-70b-chat-hf --parser_model gpt-35-turbo-0301 --ue_model gpt4-turbo-128k
@@ -60,7 +60,7 @@ This is the script to evaluate the disclosure risk of the anonymized text.
 
 - PersonalReddit dataset
 
-  - Prepare the data file to be evaluated following the examples in `./examples/personalreddit_example.jsonl`
+  - Prepare the data file to be evaluated following the examples in `./examples/personalreddit_example.jsonl`.
 
   - ```shell
     python main.py --run_name privacy_evaluation_dbbio --root_dir root --dataset_path ./examples/personalreddit_example.jsonl --strategy test-acc --language reddit --pe_model gpt4-turbo-128k --pass_at_k 1 --max_iters 5 --verbose --p_threshold 10 --mem 3 --act_model meta-llama/Llama-2-70b-chat-hf --parser_model gpt-35-turbo-0301 --ue_model gpt4-turbo-128k
@@ -72,9 +72,9 @@ This is the script to evaluate the information loss of the anonymized text.
 
 - DB-bio dataset
 
-  - Prepare the data file to be evaluated following the examples in `./examples/db_bio_example.jsonl`
+  - Prepare the data file to be evaluated following the examples in `./examples/db_bio_example.jsonl`.
 
-  - [Download the classifier](https://drive.google.com/file/d/1DqG9wUa0q6-qz-SR2pzxB9QVMmez4teU/view?usp=sharing) and put the directory of the trained parameter into the directory `./root`
+  - [Download the classifier](https://drive.google.com/file/d/1DqG9wUa0q6-qz-SR2pzxB9QVMmez4teU/view?usp=sharing) and put the directory of the trained parameter into the directory `./root`.
 
   - ```shell
     python run_classification.py --model_name_or_path ./root/bert_cls_sampled3 --train_file ./examples/db_bio_example.jsonl --validation_file ./examples/db_bio_example.jsonl --test_file ./examples/db_bio_example.jsonl --shuffle_train_dataset --metric_name accuracy --text_column_name anonymized_text --label_column_name label --do_eval --do_predict --max_seq_length 512 --per_device_train_batch_size 32 --learning_rate 2e-5 --num_train_epochs 20 --output_dir ./root/bert_cls_sampled3/evaluation_test_original --report_to wandb --run_name lr2e-5_B32 --logging_steps 10 --eval_steps 100 --save_steps 100 --load_best_model_at_end --evaluation_strategy steps
@@ -82,9 +82,9 @@ This is the script to evaluate the information loss of the anonymized text.
 
 - PersonalReddit dataset
 
-  - Prepare the data file to be evaluated following the examples in `./examples/personalreddit_example.jsonl`
+  - Prepare the data file to be evaluated following the examples in `./examples/personalreddit_example.jsonl`.
 
-  - [Download the classifier](https://drive.google.com/file/d/1g8ri2VRQCsN489YruPtNG0lgNtAZ8IaI/view?usp=sharing) and put the directory of the trained parameter into the directory `./root`
+  - [Download the classifier](https://drive.google.com/file/d/1g8ri2VRQCsN489YruPtNG0lgNtAZ8IaI/view?usp=sharing) and put the directory of the trained parameter into the directory `./root`.
 
   - ```shell
     python run_classification.py --model_name_or_path ./root/roberta-large_reddit_clss_b16_e20 --train_file ./examples/personalreddit_example.jsonl --validation_file ./examples/personalreddit_example.jsonl --test_file ./examples/personalreddit_example.jsonl --shuffle_train_dataset --metric_name accuracy --text_column_name anonymized_response --label_column_name label --do_eval --do_predict --max_seq_length 512 --per_device_train_batch_size 32 --learning_rate 2e-5 --num_train_epochs 20 --output_dir ./root/roberta-large_reddit_clss_b16_e20/evaluation_test_original --report_to wandb --run_name lr2e-5_B32 --logging_steps 10 --eval_steps 100 --save_steps 100 --load_best_model_at_end --evaluation_strategy steps
@@ -94,7 +94,7 @@ This is the script to evaluate the information loss of the anonymized text.
 
 This is how you can distill the anonymization ability of GPT-4 on the DB-bio dataset into smaller model. The anonymization result of GPT-4 Is provided in the DB-bio dataset directory.
 
-1. Set the wandb
+1. Set the wandb.
 
    ```shell
    export WANDB_PROJECT=Privacy-NLP
@@ -103,25 +103,25 @@ This is how you can distill the anonymization ability of GPT-4 on the DB-bio dat
 
 2. Set the path of necessary files in the `sft_trainer.py`, `merge_peft_adapters.py`, `dpo_trainer.py`, `generate.py`.
 
-3. SFT phase
+3. SFT phase.
 
    ```shell
    python ./knowledge_distillation/sft_trainer.py
    ```
 
-4. Merge the trained PEFT modules with the original model
+4. Merge the trained PEFT modules with the original model.
 
    ```shell
    python ./merge_peft_adapters.py
    ```
 
-5. DPO phase
+5. DPO phase.
 
    ```shell
    python ./knowledge_distillation/dpo_trainer.py
    ```
 
-6. Generate anonymized text
+6. Generate the anonymized text.
 
    ```shell
    python ./knowledge_distillation/generate.py
