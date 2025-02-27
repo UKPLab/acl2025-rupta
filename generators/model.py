@@ -207,6 +207,11 @@ class GPT4(GPTChat):
                 f"*******{self.name}*******\nPrompt tokens number: {self.prompt_tokens}\n"
                 f"Completion tokens number: {self.completion_tokens}. "
                 f"Full price: {self.prompt_tokens / 1000 * 0.03 + self.completion_tokens / 1000 * 0.06}\n\n")
+        elif self.name == "gpt-4o-mini":
+            print(
+                f"*******{self.name}*******\nPrompt tokens number: {self.prompt_tokens}\n"
+                f"Completion tokens number: {self.completion_tokens}. "
+                f"Full price: {self.prompt_tokens / 1000 * 0.00015 + self.completion_tokens / 1000 * 0.0006}\n\n")
         else:
             assert self.name == "gpt4-turbo-128k" or self.name == "gpt-4-turbo-preview"
             print(

@@ -40,6 +40,7 @@ def run_reflexion(
     model_usage = {
         'gpt-35-turbo-0301': {'prompt_tokens': 0, 'completion_tokens': 0},
         'gpt-4': {'prompt_tokens': 0, 'completion_tokens': 0},
+        'gpt-4o-mini': {'prompt_tokens': 0, 'completion_tokens': 0},
         'gpt4-turbo-128k': {'prompt_tokens': 0, 'completion_tokens': 0},
         'gpt-4-turbo-preview': {'prompt_tokens': 0, 'completion_tokens': 0}
     }
