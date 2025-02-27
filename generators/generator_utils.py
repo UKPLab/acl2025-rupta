@@ -340,19 +340,17 @@ def generic_privacy_reflection(
                                             parser=output_parser)
         
         print(f"DEBUG - output_dict_1 structure: {output_dict_1}")
+        
         # In generic_privacy_reflection function
         # Before accessing output_dict_1[feature]
-        if feature not in output_dict_1:
-            # Handle the missing key gracefully
-            print(f"Warning: '{feature}' not found in output_dict_1. Available keys: {list(output_dict_1.keys())}")
-            # Provide a default value or alternative behavior
-            candidates = []  # Default empty list
+        if "Candidates" not in output_dict_1:
+            print(f"Warning: 'Candidates' not found in output_dict_1. Available keys: {list(output_dict_1.keys())}")
+            candidate = []  # Default empty list
+        elif isinstance(output_dict_1["Candidates"], str):
+            candidate = output_dict_1["Candidates"].split(', ')
         else:
-            # Original logic when the key exists
-            if isinstance(output_dict_1[feature], str):
-                candidates = output_dict_1[feature].split(', ')
-            else:
-                candidates = output_dict_1[feature]  # Assume it's already a list
+            candidate = output_dict_1["Candidates"]  # Assume it's already a list
+
         
         emb_model = SentenceTransformer("all-mpnet-base-v2")
         candidate_emb = emb_model.encode(candidate)
