@@ -48,7 +48,13 @@ jobs:
           pip install "numpy>=1.17.0"
           pip install "pandas>=1.0.0"
           pip install "tqdm>=4.27.0"
-          
+
+      - name: Setup API credentials
+        shell: bash -l {0}
+        run: |
+          # Create credentials file with GitHub secrets
+          # Note: You need to add these secrets in your GitHub repository settings
+          echo "OPENAI_API_KEY = '${{ secrets.OPENAI_API_KEY }}'" > credentials.py
           
       - name: Download DB-Bio dataset
         shell: bash -l {0}
