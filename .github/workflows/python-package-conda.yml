@@ -22,21 +22,27 @@ jobs:
           python-version: 3.9
           activate-environment: rupta
           
-      - name: Install dependencies
+      - name: Install PyTorch
         shell: bash -l {0}
         run: |
           conda activate rupta
-          pip install -r requirements.txt
+          # Install PyTorch 2.0.1 from conda-forge (without specific CUDA version)
+          conda install -c pytorch pytorch=2.0.1 cpuonly
+          
+      - name: Install other dependencies
+        shell: bash -l {0}
+        run: |
+          conda activate rupta
+          # Create a temporary requirements file without the specific torch version
+          grep -v "torch==2.0.1+cu118" requirements.txt > requirements_no_torch.txt
+          # Install the rest of the requirements
+          pip install -r requirements_no_torch.txt
           
       - name: Download DB-Bio dataset
         shell: bash -l {0}
         run: |
           # Create directory if it doesn't exist
           mkdir -p ./benchmarks/Wiki_People
-          
-          # Download dataset (replace with actual download command)
-          # For example, if the dataset is available via a URL:
-          # curl -o ./benchmarks/Wiki_People/test.jsonl https://example.com/test.jsonl
           
           # For demonstration purposes, we'll create a sample test file
           echo '{"text": "Sample test data", "label": 0}' > ./benchmarks/Wiki_People/test.jsonl
@@ -46,10 +52,6 @@ jobs:
         run: |
           # Create directory if it doesn't exist
           mkdir -p ./benchmarks/Reddit_synthetic
-          
-          # Download dataset (replace with actual download command)
-          # For example:
-          # curl -o ./benchmarks/Reddit_synthetic/test.jsonl https://example.com/test.jsonl
           
           # For demonstration purposes, we'll create a sample test file
           echo '{"response": "Sample test data", "label": 0}' > ./benchmarks/Reddit_synthetic/test.jsonl
