@@ -35,8 +35,19 @@ jobs:
           conda activate rupta
           # Create a temporary requirements file without any PyTorch-related packages
           cat requirements.txt | grep -v "torch" | grep -v "torchaudio" | grep -v "torchvision" > requirements_no_torch.txt
-          # Install the rest of the requirements
-          pip install -r requirements_no_torch.txt
+          
+          # Install dill with a version that satisfies all requirements (>=0.3.8 and <0.3.9)
+          pip install "dill>=0.3.8,<0.3.9"
+          
+          # Install the rest of the requirements with pip's --no-deps flag for problematic packages
+          pip install --no-deps multiprocess==0.70.16
+          pip install -r requirements_no_torch.txt --no-deps evaluate==0.4.1 datasets==2.18.0
+          
+          # Make sure core dependencies are properly installed
+          pip install "huggingface-hub>=0.16.4"
+          pip install "numpy>=1.17.0"
+          pip install "pandas>=1.0.0"
+          pip install "tqdm>=4.27.0"
           
       - name: Fix submodule issue
         shell: bash -l {0}
