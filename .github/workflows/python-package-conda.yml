@@ -57,7 +57,7 @@ jobs:
           mkdir -p ./benchmarks/Wiki_People
           
           # For demonstration purposes, we'll create a sample test file
-          echo '{"text": "Sample test data", "label": 0}' > ./benchmarks/Wiki_People/test.jsonl
+          cat examples/db_bio_example.jsonl > ./benchmarks/Wiki_People/test.jsonl
           
       - name: Download PersonalReddit dataset
         shell: bash -l {0}
@@ -66,7 +66,7 @@ jobs:
           mkdir -p ./benchmarks/Reddit_synthetic
           
           # For demonstration purposes, we'll create a sample test file
-          echo '{"response": "Sample test data", "label": 0}' > ./benchmarks/Reddit_synthetic/test.jsonl
+          cat examples/personalreddit_example.jsonl > ./benchmarks/Reddit_synthetic/test.jsonl
           
       - name: Run DB-Bio anonymization (small test)
         shell: bash -l {0}
