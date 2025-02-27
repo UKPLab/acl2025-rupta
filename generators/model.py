@@ -185,10 +185,12 @@ class GPT4(GPTChat):
     def __init__(self, name):
         super().__init__(name)
         if name == "gpt-4":
+            self.endpoint = credentials.gpt4_endpoint
             self.api_key = credentials.gpt4_api_key
             self.api_version = credentials.gpt4_api_version
         else:
             assert name == "gpt4-turbo-128k" or name == "gpt-4-turbo-preview"
+            self.endpoint = credentials.gpt4_tb_endpoint
             self.api_key = credentials.gpt4_tb_api_key
             self.api_version = credentials.gpt4_tb_api_version
         self.client = AzureOpenAI(
