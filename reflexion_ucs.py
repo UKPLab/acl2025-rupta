@@ -1,5 +1,5 @@
 import warnings
-from lazzzy.ucs import ucs
+from lazy.ucs import ucs
 from utils import enumerate_resume, write_jsonl
 from executors import executor_factory
 from generators import generator_factory, model_factory
