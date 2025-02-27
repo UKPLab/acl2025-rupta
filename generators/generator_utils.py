@@ -338,10 +338,19 @@ def generic_privacy_reflection(
         ]
         output_dict_1 = model.generate_chat(messages=messages, format_instructions=format_instructions_1,
                                             parser=output_parser)
-        if isinstance(output_dict_1[feature], str):
-                candidate = output_dict_1[feature].split(', ')
+        # In generic_privacy_reflection function
+        # Before accessing output_dict_1[feature]
+        if feature not in output_dict_1:
+            # Handle the missing key gracefully
+            print(f"Warning: '{feature}' not found in output_dict_1. Available keys: {list(output_dict_1.keys())}")
+            # Provide a default value or alternative behavior
+            candidates = []  # Default empty list
         else:
-                candidate = output_dict_1[feature]
+            # Original logic when the key exists
+            if isinstance(output_dict_1[feature], str):
+                candidates = output_dict_1[feature].split(', ')
+            else:
+                candidates = output_dict_1[feature]  # Assume it's already a list
         
         emb_model = SentenceTransformer("all-mpnet-base-v2")
         candidate_emb = emb_model.encode(candidate)
