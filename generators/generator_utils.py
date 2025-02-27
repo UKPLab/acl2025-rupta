@@ -338,6 +338,8 @@ def generic_privacy_reflection(
         ]
         output_dict_1 = model.generate_chat(messages=messages, format_instructions=format_instructions_1,
                                             parser=output_parser)
+        
+        print(f"DEBUG - output_dict_1 structure: {output_dict_1}")
         # In generic_privacy_reflection function
         # Before accessing output_dict_1[feature]
         if feature not in output_dict_1:
