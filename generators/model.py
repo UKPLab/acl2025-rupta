@@ -186,7 +186,7 @@ class GPT4(GPTChat):
         super().__init__(name)
 
         self.client = OpenAI(
-            api_key=self.OPENAI_API_KEY
+            api_key=credentials.OPENAI_API_KEY
         )
         
         # self.client = OpenAI(
