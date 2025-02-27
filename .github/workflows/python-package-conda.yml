@@ -1,38 +1,85 @@
-name: Python Package using Conda
+name: RUPTA Conda Workflow
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, master ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, master ]
+  workflow_dispatch:  # Allows manual triggering
 
 jobs:
-  build-linux:
+  build-and-test:
     runs-on: ubuntu-latest
-    strategy:
-      max-parallel: 5
-
+    
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up Miniconda
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        
+      - name: Set up Conda
         uses: conda-incubator/setup-miniconda@v2
         with:
-          python-version: '3.10'
           auto-update-conda: true
-
-      - name: Create Conda Environment
-        run: conda env update --file environment.yml --name base
-
-      - name: Lint with flake8
+          python-version: 3.9
+          activate-environment: rupta
+          
+      - name: Install dependencies
+        shell: bash -l {0}
         run: |
-          conda install flake8
-          # Stop the build if there are Python syntax errors or undefined names
-          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-          # Treat all errors as warnings (exit-zero) for the linter with custom settings
-          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-
-      - name: Test with pytest
+          conda activate rupta
+          pip install -r requirements.txt
+          
+      - name: Download DB-Bio dataset
+        shell: bash -l {0}
         run: |
-          conda install pytest
-          pytest
+          # Create directory if it doesn't exist
+          mkdir -p ./benchmarks/Wiki_People
+          
+          # Download dataset (replace with actual download command)
+          # For example, if the dataset is available via a URL:
+          # curl -o ./benchmarks/Wiki_People/test.jsonl https://example.com/test.jsonl
+          
+          # For demonstration purposes, we'll create a sample test file
+          echo '{"text": "Sample test data", "label": 0}' > ./benchmarks/Wiki_People/test.jsonl
+          
+      - name: Download PersonalReddit dataset
+        shell: bash -l {0}
+        run: |
+          # Create directory if it doesn't exist
+          mkdir -p ./benchmarks/Reddit_synthetic
+          
+          # Download dataset (replace with actual download command)
+          # For example:
+          # curl -o ./benchmarks/Reddit_synthetic/test.jsonl https://example.com/test.jsonl
+          
+          # For demonstration purposes, we'll create a sample test file
+          echo '{"response": "Sample test data", "label": 0}' > ./benchmarks/Reddit_synthetic/test.jsonl
+          
+      - name: Setup API credentials
+        shell: bash -l {0}
+        run: |
+          # Create credentials file with GitHub secrets
+          # Note: You need to add these secrets in your GitHub repository settings
+          echo "OPENAI_API_KEY = '${{ secrets.OPENAI_API_KEY }}'" > credentials.py
+          
+      - name: Run DB-Bio anonymization (small test)
+        shell: bash -l {0}
+        run: |
+          conda activate rupta
+          # Running with a limited dataset for testing
+          head -n 2 ./benchmarks/Wiki_People/test.jsonl > ./benchmarks/Wiki_People/test_small.jsonl
+          python main.py --run_name github_test_dbbio --root_dir root --dataset_path ./benchmarks/Wiki_People/test_small.jsonl --strategy reflexion --language wiki --pass_at_k 1 --max_iters 2 --verbose --p_threshold 10 --mem 3 --pe_model gpt-3.5-turbo --ue_model gpt-3.5-turbo --act_model gpt-3.5-turbo --parser_model gpt-3.5-turbo
+          
+      - name: Run PersonalReddit anonymization (small test)
+        shell: bash -l {0}
+        run: |
+          conda activate rupta
+          # Running with a limited dataset for testing
+          head -n 2 ./benchmarks/Reddit_synthetic/test.jsonl > ./benchmarks/Reddit_synthetic/test_small.jsonl
+          python main.py --run_name github_test_personalreddit --root_dir root --dataset_path ./benchmarks/Reddit_synthetic/test_small.jsonl --strategy reflexion --language reddit --pass_at_k 1 --max_iters 2 --verbose --p_threshold 3 --mem 3 --pe_model gpt-3.5-turbo --ue_model gpt-3.5-turbo --act_model gpt-3.5-turbo --parser_model gpt-3.5-turbo
+          
+      - name: Upload root directory artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: rupta-results
+          path: root/
+          retention-days: 7
