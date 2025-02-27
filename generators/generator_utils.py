@@ -341,7 +341,7 @@ def generic_privacy_reflection(
         if isinstance(output_dict_1[feature], str):
                 candidate = output_dict_1[feature].split(', ')
         else:
-        candidate = output_dict_1[feature]
+                candidate = output_dict_1[feature]
         
         emb_model = SentenceTransformer("all-mpnet-base-v2")
         candidate_emb = emb_model.encode(candidate)
