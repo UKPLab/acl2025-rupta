@@ -74,7 +74,7 @@ def run_reflexion(
     # vectorstore = Chroma.from_documents(documents=data, embedding=cached_embedder)
     # retriever = vectorstore.as_retriever(search_type="similarity", search_kwargs={"k": rag_num})
 
-    # Track token usage for models
+    # Track total token usage for models
     model_usage = {
         'gpt-35-turbo-0301': {'prompt_tokens': 0, 'completion_tokens': 0},
         'gpt-4': {'prompt_tokens': 0, 'completion_tokens': 0},
@@ -224,19 +224,24 @@ def run_reflexion(
             item["detection_result"] = detection_i
         write_jsonl(log_path, [item], append=True)
         
-        # Print usage statistics instead of updating spreadsheet
+        # Print current usage statistics
+        print(f"\n=== Token Usage for Example {i} ===")
+        # Still use the original model print methods for compatibility
         act_model.print_usage()
         pe_model.print_usage()
         ue_model.print_usage()
         parser_model.print_usage()
-        print(f"log path: {log_path}\n")
         
-        # Update model usage tracking
+        # Print per-example detailed stats
+        print("\nDetailed Token Usage:")
         model_list = [act_model, pe_model, ue_model, parser_model]
         for model in model_list:
             if model.name in model_usage:
+                print(f"{model.name:<20} - Prompt: {model.prompt_tokens} tokens, Completion: {model.completion_tokens} tokens")
                 model_usage[model.name]['prompt_tokens'] += model.prompt_tokens
                 model_usage[model.name]['completion_tokens'] += model.completion_tokens
+        
+        print(f"log path: {log_path}\n")
 
         # except Exception as e:
         #     act_model.print_usage()
@@ -246,11 +251,19 @@ def run_reflexion(
         #     write_jsonl(log_path, [{'status': 'Failed'}], append=True)
         #     print(f"{e}\n{i}-th example failed")
     
-    # Print verbose summary of token usage at the end (instead of updating spreadsheet)
-    print(f"=== Token Usage Summary ({time.ctime()}) ===")
-    print(f"{'Model Name':<20} {'Prompt Tokens':<15} {'Completion Tokens':<15}")
-    print("-" * 50)
+    # Print verbose summary of accumulated token usage at the end
+    print(f"\n=== FINAL TOKEN USAGE SUMMARY ({time.ctime()}) ===")
+    print(f"{'Model Name':<20} {'Prompt Tokens':<15} {'Completion Tokens':<15} {'Total Tokens':<15}")
+    print("-" * 65)
+    total_prompt = 0
+    total_completion = 0
     for model_name, tokens in model_usage.items():
         if tokens['prompt_tokens'] > 0 or tokens['completion_tokens'] > 0:
-            print(f"{model_name:<20} {tokens['prompt_tokens']:<15} {tokens['completion_tokens']:<15}")
-    print("=" * 50)
+            total = tokens['prompt_tokens'] + tokens['completion_tokens']
+            print(f"{model_name:<20} {tokens['prompt_tokens']:<15} {tokens['completion_tokens']:<15} {total:<15}")
+            total_prompt += tokens['prompt_tokens']
+            total_completion += tokens['completion_tokens']
+    
+    print("-" * 65)
+    print(f"{'TOTAL':<20} {total_prompt:<15} {total_completion:<15} {total_prompt + total_completion:<15}")
+    print("=" * 65)
