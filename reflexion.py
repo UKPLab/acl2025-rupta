@@ -229,10 +229,10 @@ def run_reflexion(
         #     parser_model.print_usage()
         #     write_jsonl(log_path, [{'status': 'Failed'}], append=True)
         #     print(f"{e}\n{i}-th example failed")
-    ss = ezsheets.Spreadsheet('1-uHO5DnE32WmImaucvHaVMvasO2mGh2eqWfWYksXljI')
-    sheet = ss[0]
-    update_idx = sheet.getColumn(1).index('') + 1
-    update_row = sheet.getRow(update_idx)
+    #ss = ezsheets.Spreadsheet('1-uHO5DnE32WmImaucvHaVMvasO2mGh2eqWfWYksXljI')
+    #sheet = ss[0]
+    #update_idx = sheet.getColumn(1).index('') + 1
+    #update_row = sheet.getRow(update_idx)
 
     name2column = {'gpt-35-turbo-0301': 7, 'gpt-4': 1, 'gpt4-turbo-128k': 4, 'gpt-4-turbo-preview': 10}
     name2prompt_tokens = {'gpt-35-turbo-0301': 0, 'gpt-4': 0, 'gpt4-turbo-128k': 0, 'gpt-4-turbo-preview': 0}
@@ -244,10 +244,10 @@ def run_reflexion(
             name2prompt_tokens[model.name] += model.prompt_tokens
             name2completion_tokens[model.name] += model.completion_tokens
     for k, v in name2prompt_tokens.items():
-        update_row[name2column[k]] = v
+        #update_row[name2column[k]] = v
     for k, v in name2completion_tokens.items():
-        update_row[name2column[k] + 1] = v
-    update_row[0] = time.ctime()
-    sheet.refresh()
-    update_idx = sheet.getColumn(1).index('') + 1
-    sheet.updateRow(update_idx, update_row)
+        #update_row[name2column[k] + 1] = v
+    #update_row[0] = time.ctime()
+    #sheet.refresh()
+    #update_idx = sheet.getColumn(1).index('') + 1
+    #sheet.updateRow(update_idx, update_row)
