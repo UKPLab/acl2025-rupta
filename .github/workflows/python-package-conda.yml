@@ -68,13 +68,6 @@ jobs:
           # For demonstration purposes, we'll create a sample test file
           echo '{"response": "Sample test data", "label": 0}' > ./benchmarks/Reddit_synthetic/test.jsonl
           
-      - name: Setup API credentials
-        shell: bash -l {0}
-        run: |
-          # Create credentials file with GitHub secrets
-          # Note: You need to add these secrets in your GitHub repository settings
-          echo "OPENAI_API_KEY = '${{ secrets.OPENAI_API_KEY }}'" > credentials.py
-          
       - name: Run DB-Bio anonymization (small test)
         shell: bash -l {0}
         run: |
