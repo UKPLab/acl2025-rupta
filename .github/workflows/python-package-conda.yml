@@ -22,21 +22,34 @@ jobs:
           python-version: 3.9
           activate-environment: rupta
           
-      - name: Install PyTorch
+      - name: Install PyTorch ecosystem
         shell: bash -l {0}
         run: |
           conda activate rupta
-          # Install PyTorch 2.0.1 from conda-forge (without specific CUDA version)
-          conda install -c pytorch pytorch=2.0.1 cpuonly
+          # Install PyTorch ecosystem packages from conda-forge (without specific CUDA version)
+          conda install -c pytorch pytorch=2.0.1 torchaudio=2.0.2 torchvision=0.15.2 cpuonly
           
       - name: Install other dependencies
         shell: bash -l {0}
         run: |
           conda activate rupta
-          # Create a temporary requirements file without the specific torch version
-          grep -v "torch==2.0.1+cu118" requirements.txt > requirements_no_torch.txt
+          # Create a temporary requirements file without any PyTorch-related packages
+          cat requirements.txt | grep -v "torch" | grep -v "torchaudio" | grep -v "torchvision" > requirements_no_torch.txt
           # Install the rest of the requirements
           pip install -r requirements_no_torch.txt
+          
+      - name: Fix submodule issue
+        shell: bash -l {0}
+        run: |
+          # Check if the lazzzy submodule is referenced in .gitmodules
+          if grep -q "lazzzy" .gitmodules; then
+            # If it exists but has issues, try to update it
+            git submodule update --init --recursive
+          else
+            # If it doesn't exist in .gitmodules but is referenced elsewhere, create a dummy directory
+            mkdir -p lazzzy
+            touch lazzzy/README.md
+          fi
           
       - name: Download DB-Bio dataset
         shell: bash -l {0}
