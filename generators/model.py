@@ -203,12 +203,9 @@ class GPT4(GPTChat):
         # )
 
     def get_langchain_model(self, temperature: float = 0.0):
-        return AzureChatOpenAI(
-            azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
-            openai_api_version=os.getenv("OPENAI_API_VERSION"),
-            deployment_name=self.name,
-            openai_api_key=os.getenv("AZURE_OPENAI_API_KEY"),
-            openai_api_type="azure",
+        return ChatOpenAI(
+            model_name=self.name,
+            openai_api_key=self.api_key,
             temperature=temperature
         )
 
