@@ -73,7 +73,7 @@ jobs:
         run: |
           conda activate rupta
           # Running with a limited dataset for testing
-          head -n 2 ./benchmarks/Wiki_People/test.jsonl > ./benchmarks/Wiki_People/test_small.jsonl
+          head -n 200 ./benchmarks/Wiki_People/test.jsonl > ./benchmarks/Wiki_People/test_small.jsonl
           python main.py --run_name github_test_dbbio --root_dir root --dataset_path ./benchmarks/Wiki_People/test_small.jsonl --strategy reflexion --language wiki --pass_at_k 1 --max_iters 2 --verbose --p_threshold 10 --mem 3 --pe_model gpt4-turbo-128k --ue_model gpt4-turbo-128k --act_model gpt4-turbo-128k --parser_model gpt4-turbo-128k
           
       - name: Run PersonalReddit anonymization (small test)
@@ -81,7 +81,7 @@ jobs:
         run: |
           conda activate rupta
           # Running with a limited dataset for testing
-          head -n 2 ./benchmarks/Reddit_synthetic/test.jsonl > ./benchmarks/Reddit_synthetic/test_small.jsonl
+          head -n 200 ./benchmarks/Reddit_synthetic/test.jsonl > ./benchmarks/Reddit_synthetic/test_small.jsonl
           python main.py --run_name github_test_personalreddit --root_dir root --dataset_path ./benchmarks/Reddit_synthetic/test_small.jsonl --strategy reflexion --language reddit --pass_at_k 1 --max_iters 2 --verbose --p_threshold 3 --mem 3 --pe_model gpt4-turbo-128k --ue_model gpt4-turbo-128k --act_model gpt4-turbo-128k --parser_model gpt4-turbo-128k
           
       - name: Upload root directory artifacts
