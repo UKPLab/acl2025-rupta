@@ -338,7 +338,11 @@ def generic_privacy_reflection(
         ]
         output_dict_1 = model.generate_chat(messages=messages, format_instructions=format_instructions_1,
                                             parser=output_parser)
-        candidate = output_dict_1["Candidates"].split(', ')
+        if isinstance(output_dict_1[feature], str):
+                candidate = output_dict_1[feature].split(', ')
+        else:
+        candidate = output_dict_1[feature]
+        
         emb_model = SentenceTransformer("all-mpnet-base-v2")
         candidate_emb = emb_model.encode(candidate)
         people_emb = emb_model.encode(people)
