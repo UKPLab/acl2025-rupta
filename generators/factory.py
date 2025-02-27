@@ -14,7 +14,7 @@ def generator_factory(lang: str) -> Generator:
 
 
 def model_factory(model_name: str) -> ModelBase:
-    if model_name in {"gpt-4", "gpt4-turbo-128k", "gpt-4-turbo-preview"}:
+    if model_name in {"gpt-4", "gpt4-turbo-128k", "gpt-4-turbo-preview", "gpt-4o-mini"}:
         return GPT4(name=model_name)
     elif model_name == "gpt-35-turbo-0301":
         return GPT35(name=model_name)

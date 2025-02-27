@@ -184,32 +184,20 @@ class GPTChat(ModelBase):
 class GPT4(GPTChat):
     def __init__(self, name):
         super().__init__(name)
-        if name == "gpt-4":
-            self.endpoint = credentials.gpt4_endpoint
-            self.api_key = credentials.gpt4_api_key
-            self.api_version = credentials.gpt4_api_version
-        else:
-            assert name == "gpt4-turbo-128k" or name == "gpt-4-turbo-preview"
-            self.endpoint = credentials.gpt4_tb_endpoint
-            self.api_key = credentials.gpt4_tb_api_key
-            self.api_version = credentials.gpt4_tb_api_version
-        self.client = AzureOpenAI(
-            api_key=self.api_key,
-            api_version=self.api_version,
-            azure_endpoint=self.endpoint
+
+        self.client = OpenAI(
+            api_key=credentials.OPENAI_API_KEY
         )
+        
         # self.client = OpenAI(
         #     api_key=self.api_key,
         #     base_url=self.endpoint
         # )
 
     def get_langchain_model(self, temperature: float = 0.0):
-        return AzureChatOpenAI(
-            azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
-            openai_api_version=os.getenv("OPENAI_API_VERSION"),
-            deployment_name=self.name,
-            openai_api_key=os.getenv("AZURE_OPENAI_API_KEY"),
-            openai_api_type="azure",
+        return ChatOpenAI(
+            model_name=self.name,
+            openai_api_key=self.api_key,
             temperature=temperature
         )
 
@@ -219,6 +207,11 @@ class GPT4(GPTChat):
                 f"*******{self.name}*******\nPrompt tokens number: {self.prompt_tokens}\n"
                 f"Completion tokens number: {self.completion_tokens}. "
                 f"Full price: {self.prompt_tokens / 1000 * 0.03 + self.completion_tokens / 1000 * 0.06}\n\n")
+        elif self.name == "gpt-4o-mini":
+            print(
+                f"*******{self.name}*******\nPrompt tokens number: {self.prompt_tokens}\n"
+                f"Completion tokens number: {self.completion_tokens}. "
+                f"Full price: {self.prompt_tokens / 1000 * 0.00015 + self.completion_tokens / 1000 * 0.0006}\n\n")
         else:
             assert self.name == "gpt4-turbo-128k" or self.name == "gpt-4-turbo-preview"
             print(

@@ -1,16 +1,2 @@
-gpt4_endpoint = ""
-# gpt4_endpoint = "https://api.openai.com/v1"
-gpt4_api_key = ""
-# gpt4_api_key = ""
-gpt4_api_version = "2023-05-15"
-gpt4_tb_endpoint = ""
-# gpt4_tb_endpoint = "https://api.openai.com/v1"
-gpt4_tb_api_key = ""
-# gpt4_tb_api_key = ""
-gpt4_tb_api_version = "2023-05-15"
-gpt35_endpoint = ""
-gpt35_api_key = ""
-gpt35_api_version = "2023-05-15"
-openllm_endpoint = ""
-openllm_api_key = ""
-~                                                    
+OPENAI_API_KEY = "sk-proj-xC28zQzLgo76HTYZrRaAT3BlbkFJ2Gv7gc7DqKUoLk2kaJrz"
+

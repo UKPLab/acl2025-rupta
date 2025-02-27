@@ -1,0 +1,98 @@
+name: RUPTA Conda Workflow
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:  # Allows manual triggering
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Set up Conda
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          auto-update-conda: true
+          python-version: 3.9
+          activate-environment: rupta
+          
+      - name: Install PyTorch ecosystem
+        shell: bash -l {0}
+        run: |
+          conda activate rupta
+          # Install PyTorch ecosystem packages from conda-forge (without specific CUDA version)
+          conda install -c pytorch pytorch=2.0.1 torchaudio=2.0.2 torchvision=0.15.2 cpuonly
+          
+      - name: Install other dependencies
+        shell: bash -l {0}
+        run: |
+          conda activate rupta
+          # Create a temporary requirements file without any PyTorch-related packages
+          cat requirements.txt | grep -v "torch" | grep -v "torchaudio" | grep -v "torchvision" > requirements_no_torch.txt
+          
+          # Install dill with a version that satisfies all requirements (>=0.3.8 and <0.3.9)
+          pip install "dill>=0.3.8,<0.3.9"
+          
+          # Install the rest of the requirements with pip's --no-deps flag for problematic packages
+          pip install --no-deps multiprocess==0.70.16
+          pip install -r requirements_no_torch.txt --no-deps evaluate==0.4.1 datasets==2.18.0
+          
+          # Make sure core dependencies are properly installed
+          pip install "huggingface-hub>=0.16.4"
+          pip install "numpy>=1.17.0"
+          pip install "pandas>=1.0.0"
+          pip install "tqdm>=4.27.0"
+
+      - name: Setup API credentials
+        shell: bash -l {0}
+        run: |
+          # Create credentials file with GitHub secrets
+          # Note: You need to add these secrets in your GitHub repository settings
+          echo "OPENAI_API_KEY = '${{ secrets.OPENAI_API_KEY }}'" > credentials.py
+          
+      - name: Download DB-Bio dataset
+        shell: bash -l {0}
+        run: |
+          # Create directory if it doesn't exist
+          mkdir -p ./benchmarks/Wiki_People
+          
+          # For demonstration purposes, we'll create a sample test file
+          cat examples/db_bio_example.jsonl > ./benchmarks/Wiki_People/test.jsonl
+          
+      - name: Download PersonalReddit dataset
+        shell: bash -l {0}
+        run: |
+          # Create directory if it doesn't exist
+          mkdir -p ./benchmarks/Reddit_synthetic
+          
+          # For demonstration purposes, we'll create a sample test file
+          cat examples/personalreddit_example.jsonl > ./benchmarks/Reddit_synthetic/test.jsonl
+          
+      - name: Run DB-Bio anonymization (small test)
+        shell: bash -l {0}
+        run: |
+          conda activate rupta
+          # Running with a limited dataset for testing
+          head -n 164 ./benchmarks/Wiki_People/test.jsonl > ./benchmarks/Wiki_People/test_small.jsonl
+          python main.py --verbose --run_name github_test_dbbio --root_dir root --dataset_path ./benchmarks/Wiki_People/test_small.jsonl --strategy reflexion --language wiki --pass_at_k 1 --max_iters 2 --verbose --p_threshold 10 --mem 3 --pe_model gpt-4o-mini --ue_model gpt-4o-mini --act_model gpt-4o-mini --parser_model gpt-4o-mini
+          
+      - name: Run PersonalReddit anonymization (small test)
+        shell: bash -l {0}
+        run: |
+          conda activate rupta
+          # Running with a limited dataset for testing
+          head -n 164 ./benchmarks/Reddit_synthetic/test.jsonl > ./benchmarks/Reddit_synthetic/test_small.jsonl
+          python main.py --verbose --run_name github_test_personalreddit --root_dir root --dataset_path ./benchmarks/Reddit_synthetic/test_small.jsonl --strategy reflexion --language reddit --pass_at_k 1 --max_iters 2 --verbose --p_threshold 3 --mem 3 --pe_model gpt-4o-mini --ue_model gpt-4o-mini --act_model gpt-4o-mini --parser_model gpt-4o-mini
+          
+      - name: Upload root directory artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: rupta-results
+          path: root/
+          retention-days: 7
