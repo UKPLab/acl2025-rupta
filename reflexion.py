@@ -2,7 +2,6 @@ import tqdm
 
 from utils import enumerate_resume, make_printv, write_jsonl, resume_success_count
 from generators import generator_factory, model_factory
-import ezsheets
 import time
 # from langchain_community.document_loaders.csv_loader import CSVLoader
 # from langchain_community.document_loaders import JSONLoader
@@ -74,6 +73,14 @@ def run_reflexion(
     # )
     # vectorstore = Chroma.from_documents(documents=data, embedding=cached_embedder)
     # retriever = vectorstore.as_retriever(search_type="similarity", search_kwargs={"k": rag_num})
+
+    # Track token usage for models
+    model_usage = {
+        'gpt-35-turbo-0301': {'prompt_tokens': 0, 'completion_tokens': 0},
+        'gpt-4': {'prompt_tokens': 0, 'completion_tokens': 0},
+        'gpt4-turbo-128k': {'prompt_tokens': 0, 'completion_tokens': 0},
+        'gpt-4-turbo-preview': {'prompt_tokens': 0, 'completion_tokens': 0}
+    }
 
     for i, item in enumerate_resume(tqdm.tqdm(dataset[107 + 39 + 15:]), log_path):
         # try:
@@ -216,11 +223,20 @@ def run_reflexion(
         if cot:
             item["detection_result"] = detection_i
         write_jsonl(log_path, [item], append=True)
+        
+        # Print usage statistics instead of updating spreadsheet
         act_model.print_usage()
         pe_model.print_usage()
         ue_model.print_usage()
         parser_model.print_usage()
         print(f"log path: {log_path}\n")
+        
+        # Update model usage tracking
+        model_list = [act_model, pe_model, ue_model, parser_model]
+        for model in model_list:
+            if model.name in model_usage:
+                model_usage[model.name]['prompt_tokens'] += model.prompt_tokens
+                model_usage[model.name]['completion_tokens'] += model.completion_tokens
 
         # except Exception as e:
         #     act_model.print_usage()
@@ -229,25 +245,12 @@ def run_reflexion(
         #     parser_model.print_usage()
         #     write_jsonl(log_path, [{'status': 'Failed'}], append=True)
         #     print(f"{e}\n{i}-th example failed")
-    #ss = ezsheets.Spreadsheet('1-uHO5DnE32WmImaucvHaVMvasO2mGh2eqWfWYksXljI')
-    #sheet = ss[0]
-    #update_idx = sheet.getColumn(1).index('') + 1
-    #update_row = sheet.getRow(update_idx)
-
-    name2column = {'gpt-35-turbo-0301': 7, 'gpt-4': 1, 'gpt4-turbo-128k': 4, 'gpt-4-turbo-preview': 10}
-    name2prompt_tokens = {'gpt-35-turbo-0301': 0, 'gpt-4': 0, 'gpt4-turbo-128k': 0, 'gpt-4-turbo-preview': 0}
-    name2completion_tokens = {'gpt-35-turbo-0301': 0, 'gpt-4': 0, 'gpt4-turbo-128k': 0, 'gpt-4-turbo-preview': 0}
-
-    model_list = [act_model, pe_model, ue_model, parser_model]
-    for model in model_list:
-        if model.name in name2column.keys():
-            name2prompt_tokens[model.name] += model.prompt_tokens
-            name2completion_tokens[model.name] += model.completion_tokens
-    for k, v in name2prompt_tokens.items():
-        #update_row[name2column[k]] = v
-    for k, v in name2completion_tokens.items():
-        #update_row[name2column[k] + 1] = v
-    #update_row[0] = time.ctime()
-    #sheet.refresh()
-    #update_idx = sheet.getColumn(1).index('') + 1
-    #sheet.updateRow(update_idx, update_row)
+    
+    # Print verbose summary of token usage at the end (instead of updating spreadsheet)
+    print(f"=== Token Usage Summary ({time.ctime()}) ===")
+    print(f"{'Model Name':<20} {'Prompt Tokens':<15} {'Completion Tokens':<15}")
+    print("-" * 50)
+    for model_name, tokens in model_usage.items():
+        if tokens['prompt_tokens'] > 0 or tokens['completion_tokens'] > 0:
+            print(f"{model_name:<20} {tokens['prompt_tokens']:<15} {tokens['completion_tokens']:<15}")
+    print("=" * 50)
