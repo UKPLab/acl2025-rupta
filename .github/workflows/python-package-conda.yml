@@ -13,10 +13,10 @@ jobs:
     
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         
       - name: Set up Conda
-        uses: conda-incubator/setup-miniconda@v2
+        uses: conda-incubator/setup-miniconda@v3
         with:
           auto-update-conda: true
           python-version: 3.9
@@ -78,7 +78,7 @@ jobs:
           python main.py --run_name github_test_personalreddit --root_dir root --dataset_path ./benchmarks/Reddit_synthetic/test_small.jsonl --strategy reflexion --language reddit --pass_at_k 1 --max_iters 2 --verbose --p_threshold 3 --mem 3 --pe_model gpt-3.5-turbo --ue_model gpt-3.5-turbo --act_model gpt-3.5-turbo --parser_model gpt-3.5-turbo
           
       - name: Upload root directory artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: rupta-results
           path: root/
