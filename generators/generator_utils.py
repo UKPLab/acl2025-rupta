@@ -655,13 +655,13 @@ def reddit_privacy_reflection(
         if feature in ['Age', 'Location', 'Place of birth', 'Education', 'Relationship status']:
             # In generic_privacy_reflection function
             # Before accessing output_dict_1[feature]
-            if "feature" not in output_dict_1:
-                print(f"Warning: 'feature' not found in output_dict_1. Available keys: {list(output_dict_1.keys())}")
+            if feature not in output_dict_1:
+                print(f"Warning: feature {feature} not found in output_dict_1. Available keys: {list(output_dict_1.keys())}")
                 candidate = []  # Default empty list
-            elif isinstance(output_dict_1["feature"], str):
-                candidate = output_dict_1["feature"].split(', ')
+            elif isinstance(output_dict_1[feature], str):
+                candidate = output_dict_1[feature].split(', ')
             else:
-                candidate = output_dict_1["feature"]  # Assume it's already a list
+                candidate = output_dict_1[feature]  # Assume it's already a list
 
             emb_model = SentenceTransformer("all-mpnet-base-v2")
             candidate_emb = emb_model.encode(candidate)
