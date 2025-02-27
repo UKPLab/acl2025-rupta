@@ -39,8 +39,9 @@ jobs:
           # Install dill with a version that satisfies all requirements (>=0.3.8 and <0.3.9)
           pip install "dill>=0.3.8,<0.3.9"
           
-          # Install the rest of the requirements
-          pip install -r requirements_no_torch.txt
+          # Install the rest of the requirements with pip's --no-deps flag for problematic packages
+          pip install --no-deps multiprocess==0.70.16
+          pip install -r requirements_no_torch.txt --no-deps evaluate==0.4.1 datasets==2.18.0
           
           # Make sure core dependencies are properly installed
           pip install "huggingface-hub>=0.16.4"
@@ -48,26 +49,6 @@ jobs:
           pip install "pandas>=1.0.0"
           pip install "tqdm>=4.27.0"
           
-      - name: Fix lazzzy submodule issue
-        shell: bash -l {0}
-        run: |
-          # Create lazzzy directory and structure if it doesn't exist
-          mkdir -p lazzzy
-          touch lazzzy/README.md
-          
-          # If there's a specific structure expected in the lazzzy module, create basic files
-          mkdir -p lazzzy/src
-          touch lazzzy/src/__init__.py
-          
-          # If the code explicitly looks for specific files within lazzzy, create them
-          # Example:
-          echo "# Placeholder class" > lazzzy/src/model.py
-          echo "class LazzzyModel:\n    def __init__(self):\n        pass\n    def predict(self, data):\n        return data" >> lazzzy/src/model.py
-          
-          # If needed, create an empty .gitmodules file to prevent future errors
-          if [ ! -f .gitmodules ]; then
-            echo "# Git submodules" > .gitmodules
-          fi
           
       - name: Download DB-Bio dataset
         shell: bash -l {0}
