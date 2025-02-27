@@ -193,11 +193,10 @@ class GPT4(GPTChat):
             self.endpoint = credentials.gpt4_tb_endpoint
             self.api_key = credentials.gpt4_tb_api_key
             self.api_version = credentials.gpt4_tb_api_version
-        self.client = AzureOpenAI(
-            api_key=self.api_key,
-            api_version=self.api_version,
-            azure_endpoint=self.endpoint
+        self.client = OpenAI(
+            api_key=self.api_key
         )
+        
         # self.client = OpenAI(
         #     api_key=self.api_key,
         #     base_url=self.endpoint
