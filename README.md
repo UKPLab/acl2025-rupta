@@ -1,6 +1,6 @@
 
 # Robust Utility-Preserving Text Anonymization Based on Large Language Models
-[![Arxiv](https://img.shields.io/badge/Arxiv-YYMM.NNNNN-red?style=flat-square&logo=arxiv&logoColor=white)](https://put-here-your-paper.com)[![License](https://img.shields.io/github/license/UKPLab/ukp-project-template)](https://opensource.org/licenses/Apache-2.0)[![Python Versions](https://img.shields.io/badge/Python-3.9-blue.svg?style=flat&logo=python&logoColor=white)](https://www.python.org/)
+[![Arxiv](https://img.shields.io/badge/Arxiv-2407.11770-red?style=flat-square&logo=arxiv&logoColor=white)](https://put-here-your-paper.com)[![License](https://img.shields.io/github/license/UKPLab/ukp-project-template)](https://opensource.org/licenses/Apache-2.0)[![Python Versions](https://img.shields.io/badge/Python-3.9-blue.svg?style=flat&logo=python&logoColor=white)](https://www.python.org/)
 
 ![image-20240703122437612](https://s2.loli.net/2024/07/03/hVt2FYrJ5CDTp4g.png)
 
@@ -140,10 +140,10 @@ The code implementation in this project refers to some of the code in the follow
 Please use the following citation:
 
 ```
-@article{xxxxx,
+@article{yang2024robust,
   title={Robust Utility-Preserving Text Anonymization Based on Large Language Models},
   author={Yang, Tianyu and Zhu, Xiaodan and Gurevych, Iryna},
-  journal={arXiv preprint arXiv:xxxx},
+  journal={arXiv preprint arXiv:2407.11770},
   year={2024}
 }
 ```
